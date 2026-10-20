@@ -1,0 +1,44 @@
+{
+  "g3": {
+    "accepted_proposals": 142172,
+    "orientation_split": 0.5,
+    "proposal_support_fraction": 0.568688,
+    "scalar_reciprocal_measure_quartiles": [
+      60.87951002056896,
+      128.36782528362676,
+      223.24017440540462
+    ],
+    "suggested_altitude_ratio_split": 0.32811024232335123,
+    "suggested_diameter_split": 30.45964790588737,
+    "suggested_edge_ratio_split": 0.47249279827725843,
+    "suggested_scalar_edges": [
+      0.0,
+      60.87951002056896,
+      128.36782528362676,
+      223.24017440540462,
+      567.75070956508
+    ]
+  },
+  "g4": {
+    "accepted_proposals": 46613,
+    "orientation_split": 0.5,
+    "proposal_support_fraction": 0.186452,
+    "scalar_reciprocal_measure_quartiles": [
+      114.32388138556603,
+      219.27169251329508,
+      465.8971675989662
+    ],
+    "suggested_altitude_ratio_split": 0.09538391621450383,
+    "suggested_diameter_split": 32.57585887450625,
+    "suggested_edge_ratio_split": 0.3326776775692606,
+    "suggested_scalar_edges": [
+      0.0,
+      114.32388138556603,
+      219.27169251329508,
+      465.8971675989662,
+      5595.247814072682
+    ]
+  },
+  "samples_per_order": 250000,
+  "seed": 2026101902
+}

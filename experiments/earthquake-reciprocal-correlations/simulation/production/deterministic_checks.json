@@ -1,0 +1,39 @@
+{
+  "K_endpoint_delta": {
+    "left": 0.4928069788029141,
+    "pass": true,
+    "right": 0.4928069788029141
+  },
+  "all_pass": true,
+  "box_overlap": {
+    "actual": 105.0,
+    "expected": 105.0,
+    "pass": true
+  },
+  "ordered_factors": {
+    "pair": 2,
+    "pass": true,
+    "quad": 24,
+    "triple": 6
+  },
+  "tetrahedron_volume": {
+    "actual": 1.0,
+    "expected": 1.0,
+    "pass": true
+  },
+  "triangle_area_3_4_5": {
+    "actual": 6.0,
+    "expected": 6.0,
+    "pass": true
+  },
+  "triangle_diameter": {
+    "actual": 5.0,
+    "expected": 5.0,
+    "pass": true
+  },
+  "triangle_min_altitude": {
+    "actual": 2.4,
+    "expected": 2.4,
+    "pass": true
+  }
+}

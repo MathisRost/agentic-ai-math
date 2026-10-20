@@ -1,0 +1,103 @@
+{
+  "estimator": {
+    "estimator_parent_label_policy": "Labels excluded from every estimator; used only for this allocation count.",
+    "parent_allocation_unordered_admissible_tuple_counts": {
+      "g2": {
+        "1": 260549,
+        "2": 247
+      },
+      "g3": {
+        "1": 6501,
+        "2": 34,
+        "3": 0
+      },
+      "g4": {
+        "1": 123,
+        "2": 3,
+        "3": 0,
+        "4": 0
+      }
+    },
+    "runtime_seconds": 7.740457459000005
+  },
+  "geometry_samples_per_order": 1000000,
+  "known_intensity_used": 1.571273848878242e-09,
+  "model": {
+    "B_km2": 25881.341943820735,
+    "C2_km": 40503.84337695874,
+    "C3_km2": 248998981.41316935,
+    "C4_km3": 515442830546.145,
+    "C_km2": 76860.85184804132,
+    "I_km2": 15712.738488782421,
+    "J_km4": 213217923.0962888,
+    "a2_km_minus5": 1e-13,
+    "a3_km_minus7": 9.659468220104731e-19,
+    "a4_km_minus9": 3.141868710745654e-24,
+    "delta_km": 0.49,
+    "max_simplex_diameter_km": 36.21,
+    "pair_max_distance_km": 50.01,
+    "rho_km_minus3": 1.571273848878242e-09,
+    "stream_candidate_rates_per_km3": {
+      "pair": 7.85636924439121e-10,
+      "quad": 2.145387241776392e-12,
+      "singleton_direct": 1.2934883734780507e-12,
+      "singleton_quad": 1.7163097934211137e-11,
+      "singleton_triple": 1.0297858760526682e-10,
+      "triple": 3.4326195868422274e-11
+    },
+    "tetrahedron_min_altitude_km": 0.98,
+    "triangle_min_altitude_km": 0.49
+  },
+  "replications": 200000,
+  "sampler": {
+    "accepted_parent_marks": {
+      "pair": 320346,
+      "quad": 156,
+      "singleton_direct": 623,
+      "singleton_quad": 1461,
+      "singleton_triple": 23765,
+      "triple": 7932
+    },
+    "candidate_box_side_km": 1300.02,
+    "count_variance": 5.327438757093784,
+    "empty_realisations": 47055,
+    "max_count": 19,
+    "mean_count": 2.71849,
+    "mean_thinning_weight_over_candidates": {
+      "pair": 0.9277506166100218,
+      "quad": 0.17223041716650095,
+      "singleton_direct": 1.0,
+      "singleton_quad": 0.19197350831827267,
+      "singleton_triple": 0.5232351909932258,
+      "triple": 0.5200491287803506
+    },
+    "observed_points": 543698,
+    "proposed_candidates": {
+      "pair": 345206,
+      "quad": 899,
+      "singleton_direct": 623,
+      "singleton_quad": 7632,
+      "singleton_triple": 45396,
+      "triple": 15263
+    },
+    "runtime_seconds": 56.160115082999994,
+    "visible_points_by_stream": {
+      "pair": 504150,
+      "quad": 514,
+      "singleton_direct": 506,
+      "singleton_quad": 1154,
+      "singleton_triple": 18606,
+      "triple": 18768
+    }
+  },
+  "seed": 2026101903,
+  "side_km": 1200.0,
+  "software": {
+    "matplotlib": "3.9.4",
+    "numpy": "2.0.2",
+    "python": "3.9.6",
+    "scipy": "1.13.1"
+  },
+  "stage": "production",
+  "uncertainty": "Pointwise normal intervals from independent realisation contributions; geometric-normaliser error reported separately."
+}

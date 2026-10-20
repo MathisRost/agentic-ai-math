@@ -1,0 +1,27 @@
+{
+  "estimator": {
+    "estimator_parent_label_policy": "Labels excluded from every estimator; used only for this allocation count.",
+    "parent_allocation_unordered_admissible_tuple_counts": {
+      "g2": {
+        "1": 0,
+        "2": 48176
+      },
+      "g3": {
+        "1": 0,
+        "2": 0,
+        "3": 17051
+      },
+      "g4": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 7006
+      }
+    },
+    "runtime_seconds": 4.255774959000007
+  },
+  "intensity_per_km3": 3e-05,
+  "replications": 200,
+  "seed": 2026102903,
+  "side_km": 120.0
+}

@@ -1,0 +1,52 @@
+\section{The restricted existence question and its limits}
+\label{sec:obstructions}
+
+\subsection{The restricted question}
+
+
+We ask whether there exist a simple stationary isotropic process on $\R^3$, an intensity $\rho\in(0,\infty)$ and positive constants $C_2,C_3,C_4$ such that its local factorial moments through order four are finite and its full correlations obey $g_2=C_2/D$, $g_3=C_3/A$ and $g_4=C_4/V$ on the domains below. We choose the constants and intensity together as part of the construction; we do not claim to realise arbitrary independently prescribed coefficients.
+
+For positive parameters $\delta,h,H,M,P$, define
+\begin{align*}
+ S_2&=\{\delta\leq D\leq P\},\\
+ S_3&=\{A>0,\ d_{\max}\leq M,\ h_3\geq h\},\\
+ S_4&=\{V>0,\ d_{\max}\leq M,\ h_4\geq H\}.
+\end{align*}
+A sufficient compatibility range is
+\begin{equation}
+ 0<\delta\leq h\leq H<\sqrt{2/3}\,M,\qquad M\leq P<\infty.
+ \label{eq:parameter-range}
+\end{equation}
+The support nesting then holds: each face of a supported tetrahedron is a supported triangle, and each edge of such a triangle is a supported pair. The admissible sets contain open families of different shapes. The theorem below gives the general compatible-domain condition and an explicit witness.
+
+These are domains of correlation identities, not exclusions on all observed configurations. Points from different clusters can form tuples outside them. We first show why removing the upper scale or allowing unrestricted tetrahedral flattening changes the existence question.
+
+\subsection{A reciprocal-distance tail}
+
+\begin{proposition}
+\label{prop:pair-tail}
+Let $\X$ be stationary and locally finite on $\R^3$, with intensity $0<\rho<\infty$. Suppose its second factorial moment measure has a density on all sufficiently separated pairs. There is no finite $C>0$ such that $g_2(x,y)=C/|x-y|$ for almost every pair at all sufficiently large separations.
+\end{proposition}
+
+The contradiction uses only occupancy of separated boxes. A positive intensity gives a fixed positive probability that a bounded box is occupied. If the full pair density decayed as $1/D$, the probability that two far-separated boxes were both occupied would tend to zero. Taking many boxes at increasing separation then contradicts the second-moment inequality $(\E S)^2\leq\E S^2$. Appendix~\ref{app:obstructions} gives the details. The result concerns an infinite-range strengthening and does not contradict observations over a finite range.
+
+\begin{proposition}
+\label{prop:higher-tail}
+Let $\X$ be stationary with positive finite intensity. A full identity $g_3=C_3/A$ with $C_3>0$ cannot hold on all nondegenerate triangles whose minimum altitude exceeds a fixed positive threshold and whose diameter is unrestricted. The same holds for $g_4=C_4/V$ on all tetrahedra whose minimum vertex altitude exceeds a fixed positive threshold. In each case the density must represent the full factorial moment measure on the stated domain.
+\end{proposition}
+
+This higher-order obstruction needs no finite local $k$th moment assumption. The proof places many boxes at dilated centres for which every triple or quadruple is nondegenerate. A reciprocal content density makes the joint occupancy of any $k$ distinct boxes uniformly small, while Jensen's inequality forces the $k$th moment of the total occupancy count to be at least the $k$th power of its mean. Appendix~\ref{app:obstructions} gives the details. The fixed absolute altitude threshold is part of the statement; no claim is made for a scale-invariant shape restriction.
+
+\subsection{Arbitrarily flat tetrahedra}
+
+\begin{proposition}
+\label{prop:flat}
+Let $\X$ be stationary with intensity $0<\rho<\infty$, a full fourth product density $m_4$, and finite fourth factorial moments on bounded sets. For each noncollinear base $(x_1,x_2,x_3)$, choose orthonormal base-plane vectors $e_1,e_2$ and unit normal $n$. Suppose a domain contains every configuration
+\[
+ (x_1,x_2,x_3,x_1+s e_1+t e_2+u n),\qquad
+ (x_1,x_2,x_3,s,t)\in E,\quad 0<|u|<\epsilon,
+\]
+where $E$ has positive finite $11$-dimensional Lebesgue measure, is independent of $u$, and its base areas lie between fixed positive finite bounds. Suppose all four vertices lie in one bounded window. Then $g_4=C_4/V$, with $C_4>0$, cannot hold almost everywhere on this family.
+\end{proposition}
+
+To see the singularity, fix a base triangle of area $A>0$ and write the fourth vertex in plane coordinates and signed height $u$. Then $V=A|u|/3$. The coordinate Jacobian is a positive constant independent of $u$, so integrating $1/V$ over a set with $u$ near zero includes a positive multiple of $\int_0^\epsilon du/u$. This diverges, whereas the expected number of ordered quadruples in a bounded window is finite. A positive lower altitude removes this singular boundary. The full measure argument appears in Appendix~\ref{app:obstructions}.

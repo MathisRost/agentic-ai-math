@@ -1,0 +1,15 @@
+\section{Cluster normalisation and parent partitions}
+\label{app:partitions}
+
+We justify the same-parent density formula used in Theorem~\ref{thm:main}. A type-$j$ parent at $z$ has relative configuration $\{0,Y_2,\ldots,Y_j\}$ with symmetric density $F_j(0,y_2,\ldots,y_j)/Z_j$ and parent rate $Z_j/j!$. At order $j$, assign an ordered observed tuple to the $j$ labelled daughters in $j!$ ways. The transformation from parent location and offsets to the observed locations has absolute Jacobian one. Reanchoring at whichever observed coordinate is listed first is also a determinant-one linear transformation. Symmetry of $F_j$ therefore gives the full same-parent density $F_j$.
+
+For an ordered $r$-tuple with $r<j$, integrate the $j$-tuple density over the remaining $j-r$ locations. Each specified ordered $r$-tuple is counted $(j-r)!$ times among the assignments of the unobserved daughters. Thus its same-parent density is
+\[
+ b_r^{(j)}(x_1,\ldots,x_r)
+ =\frac1{(j-r)!}\int F_j(x_1,\ldots,x_j)\,dx_{r+1}\cdots dx_j.
+\]
+The singleton stream contributes $\lambda_1$ at order one. Summing over types and using \eqref{eq:Fkernels} yields $b_1=\rho$, $b_2=q_2$, $b_3=q_3$, and $b_4=q_4$. At orders above four, every nonzero same-parent block has size at most four.
+
+Each ordered tuple has a unique partition of its indices by parent. For distinct Poisson parents, the factorial moment measure is the product of their intensity measures. One can see this first for disjoint bounded parent cells, using independent Poisson counts and $\E(N)_r=\lambda^r$, then extend to nonnegative functions by simple approximation and monotone convergence. A partition with blocks of size at most four contributes the product of the corresponding $b_r$ terms. In particular, at orders two through four the partition sums are exactly \eqref{eq:full-partitions}. This argument is an identity of measures against nonnegative test functions, so it also rules out an omitted singular part in those densities.
+
+The expressions $q_2,q_3,q_4$ are the factorial-cumulant densities of the constructed process: the moment--cumulant partition relations through order four have precisely the forms in \eqref{eq:full-partitions}. The proof of the reciprocal identities only needs the full moment formulas, but this interpretation explains why the recursive subtraction has the form it does.

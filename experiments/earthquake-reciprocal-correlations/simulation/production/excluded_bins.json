@@ -1,0 +1,13 @@
+{
+  "excluded": [
+    {
+      "classification": "geometrically empty, not an unobserved positive-volume bin and not evidence of precision",
+      "family": "altitude_ratio",
+      "level": "low",
+      "order": 3,
+      "reason": "Analytically empty: A=d_max*h_min/2 and h_min/d_max<=0.3281 imply A<=0.5*0.3281*M^2=215.10 km^2, below this bin's lower edge 223.24 km^2.",
+      "scalar_bin": 3
+    }
+  ],
+  "policy": "Correlation summaries require a positive finite estimated geometric volume."
+}

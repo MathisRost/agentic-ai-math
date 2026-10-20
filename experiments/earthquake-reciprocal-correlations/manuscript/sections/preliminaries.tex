@@ -1,0 +1,49 @@
+\section{Preliminaries}
+\label{sec:prelim}
+
+\subsection{Factorial moment measures and product densities}
+
+Let $\X$ be a simple, locally finite point process on $\R^3$. Simplicity means that no location occurs more than once, and local finiteness means that every bounded set contains finitely many points almost surely. For a positive integer $k$, let $\X^k_{\ne}$ denote ordered $k$-tuples of distinct points of $\X$. The $k$th factorial moment measure is defined by
+\begin{equation}
+ \E\sum_{(x_1,\ldots,x_k)\in\X^k_{\ne}} f(x_1,\ldots,x_k)
+ =\int f(x_1,\ldots,x_k)\,\alpha^{(k)}(d x_1\cdots d x_k)
+ \label{eq:factorial-measure}
+\end{equation}
+for nonnegative measurable $f$; see, for example, \citet{daleyVereJones2008}. Distinctness is essential: the vertices of a simplex are different events, and an event cannot fill two vertex positions.
+
+If $\alpha^{(k)}$ is absolutely continuous with respect to $3k$-dimensional Lebesgue measure, its Radon--Nikodym derivative $m_k$ is the (ordered) product density. Thus
+\begin{equation}
+ \E\sum_{\X^k_{\ne}} f(x_1,\ldots,x_k)
+ =\int_{(\R^3)^k} f(x_1,\ldots,x_k)m_k(x_1,\ldots,x_k)\,d x_1\cdots d x_k.
+ \label{eq:campbell}
+\end{equation}
+For disjoint bounded sets $B_1,\ldots,B_k$, the integral of $m_k$ over their product is the expected number of ordered tuples with one point in each set. In a small-region heuristic, $m_k(x_1,\ldots,x_k)$ is the local density of such tuples near the specified locations. Other points elsewhere in the process are unrestricted. This is why $m_k$ is not the density of the event that a specified bounded window contains exactly those $k$ points and no others; that event is described by an exact-configuration or Janossy density.
+
+The integral of $m_k$ over $W^k$ for a bounded $W$ equals the factorial count moment $\E(X(W))_k$, where $(n)_k=n(n-1)\cdots(n-k+1)$. For finite second moments this also gives $\operatorname{Var}X(W)=\rho|W|+\int_{W^2}(m_2(x,y)-\rho^2)\,dx\,dy$ in the stationary case. Existence of a density is a local measure statement and does not by itself imply that all such integrals are finite. We will state moment assumptions separately when they are needed.
+
+\subsection{Normalised correlations}
+
+If the process is stationary with intensity $\rho\in(0,\infty)$, its one-point density is $m_1(x)=\rho$. We use the normalisation
+\[
+ g_k(x_1,\ldots,x_k)=\frac{m_k(x_1,\ldots,x_k)}{\rho^k}.
+\]
+This is the stationary version of dividing the product density by the product of the one-point intensities. For a homogeneous Poisson process, $m_k=\rho^k$ and $g_k=1$. A value above one means that tuples near the specified configuration are more frequent than under the Poisson process of the same intensity; a value below one means they are less frequent.
+
+The term \emph{full} distinguishes $g_k$ from connected or factorial-cumulant quantities. At order two the factorial-cumulant density is $m_2-\rho^2$. In the finite-cluster process below, the full densities through order four are sums over all partitions of the tuple according to common parent. The terms from different parents cannot be dropped when claiming an identity for $g_k$.
+
+For an isotropic stationary process in three dimensions, the reduced second-order moment is summarised by
+\begin{equation}
+ K(r)=4\pi\int_0^r s^2g_2(s)\,ds.
+ \label{eq:K-definition}
+\end{equation}
+The Poisson reference is $K_{\mathrm P}(r)=4\pi r^3/3$. This integrated statistic is useful for checking a sampler and a pair estimator, but it does not determine $g_3$ or $g_4$. We therefore use it as the first, not the final, numerical diagnostic.
+
+\subsection{Simplex geometry and domains}
+
+For two points, write $D=|x_2-x_1|$. For a nondegenerate triangle with vertices $x_1,x_2,x_3$, let $A$ be its area and $d_{\max}$ its longest side. Its least altitude is
+\[
+ h_3=\frac{2A}{d_{\max}}.
+\]
+For four affinely independent points, let $V$ be the tetrahedron's volume and let $A_i$ be the area of the face opposite $x_i$. The altitude from $x_i$ to that face is $3V/A_i$; we write $h_4=\min_i3V/A_i$.
+
+Scaling every coordinate by $s>0$ multiplies $D$ and each altitude by $s$, $A$ by $s^2$, and $V$ by $s^3$. Flattening is different: the diameter can stay bounded while a triangle area or tetrahedron volume approaches zero. Our domains control both scale and flattening.

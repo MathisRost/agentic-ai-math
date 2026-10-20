@@ -1,0 +1,55 @@
+\section{Translation-corrected correlation estimators}
+\label{app:estimators}
+
+This appendix records the common estimator used in Section~\ref{sec:simulation}. Let $W$ be a rectangular observation box, let $X_b$ be the $b$th of $R$ independent restrictions of the process to $W$, and take the model intensity $\rho$ as known. For an ordered $k$-tuple write $h_1=0$ and $h_i=x_i-x_1$. Its translation overlap is
+\[
+ v_W(h)=\left|\bigcap_{i=1}^k(W-h_i)\right|.
+\]
+If the side lengths of $W$ are $L_q$, then
+\[
+ v_W(h)=\prod_{q=1}^3\left(L_q-\left[\max_i h_{iq}-\min_i h_{iq}\right]\right)_+.
+\]
+
+For a relative-configuration bin $B\subset\R^{3(k-1)}$ contained in the relevant admissible domain, define
+\begin{equation}
+ T_k(B)=\frac{1}{R\rho^k}\sum_{b=1}^R
+ \sum_{(x_1,\ldots,x_k)\in X_{b,\ne}^k}
+ \frac{\1\{h\in B\}}{v_W(h)}.
+ \label{eq:Tk-estimator}
+\end{equation}
+The change of variables from the tuple to its anchor and relative positions gives
+\[
+ \E T_k(B)=\int_B g_k(0,h_2,\ldots,h_k)\,dh.
+\]
+Consequently $T_k(B)/|B|$ estimates the bin average of the full correlation, including tuples whose points have different parents. If unordered tuples are enumerated, the implementation restores the corresponding ordered multiplicity.
+
+Let $G_2=D$, $G_3=A$ and $G_4=V$. The reciprocal target for a finite bin is
+\begin{equation}
+ \overline g_{k,\mathrm{target}}(B)
+ =\frac{C_k}{|B|}\int_B\frac{dh}{G_k(0,h)},
+ \label{eq:bin-target}
+\end{equation}
+not $C_k/G_k$ evaluated at a bin midpoint. The compensated estimator is
+\begin{equation}
+ \widehat C_k(B)=\frac{1}{R\rho^k|B|}\sum_{b=1}^R
+ \sum_{(x_1,\ldots,x_k)\in X_{b,\ne}^k}
+ \frac{\1\{h\in B\}G_k(0,h)}{v_W(h)}.
+ \label{eq:compensated-estimator}
+\end{equation}
+Its expectation is exactly $C_k$ for the cluster-model target. Monte Carlo uncertainty is computed over the independent realisations, not over the dependent tuples within a realisation. The geometric bin volumes and reciprocal integrals for orders three and four are evaluated independently of the observed process; their numerical uncertainty is reported with the simulation results.
+
+For completeness, let $Y_b(B)$ denote the $b$th realisation's inner sum in
+\eqref{eq:Tk-estimator}, divided by $\rho^k|B|$, and let
+\[
+ \overline Y=\frac1R\sum_{b=1}^R Y_b,\qquad
+ s_Y^2=\frac1{R-1}\sum_{b=1}^R(Y_b-\overline Y)^2.
+\]
+The displayed raw-correlation interval is
+$\overline Y\pm1.95996\,s_Y/\sqrt R$.  The compensated interval uses the same
+formula after replacing the inner sum by its $G_k$-weighted version in
+\eqref{eq:compensated-estimator}; the $K$ intervals are formed analogously from
+one translation-corrected contribution per realisation. Empty realisations
+therefore contribute zeros. These are pointwise normal intervals for the mean
+estimator, not simultaneous bands. For orders three and four the independent
+geometric-normaliser error is tabulated separately and is not folded into
+$s_Y/\sqrt R$.

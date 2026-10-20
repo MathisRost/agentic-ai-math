@@ -1,0 +1,61 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[round,authoryear]{natbib}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Exact reciprocal simplex correlations and their limitations as an earthquake model},pdfsubject={Working manuscript, 19 October 2026}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\1}{\mathbf 1}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\K}{K}
+\newcommand{\M}{\mathcal M}
+\newcommand{\X}{X}
+
+\title{Exact reciprocal simplex correlations and their limitations as an earthquake model}
+\author{}
+\date{Draft: 19 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Empirical studies of earthquake catalogues have reported approximate reciprocal dependence on distance for pairs, area for triples, and volume for quadruples. We ask whether one stationary point process can satisfy all three laws as exact full factorial correlations. We construct a simple isotropic finite-cluster process for which the answer is yes on explicit finite distance and shape domains. The construction accounts for every allocation of tuple points to different parents and yields nonnegative cluster densities with the required marginals. We also show why reciprocal tails cannot persist to every scale and why a reciprocal-volume law cannot include unrestricted flattening when fourth local moments are finite. A separate simulation study checks the bounded-window sampler and translation-corrected estimators against the analytical model, while keeping numerical evidence distinct from the proof. The $K$-function and pooled pair and triangle estimates reproduce their targets at the predeclared resolution; only 126 admissible tetrahedra are observed, so the fourth-order estimates remain underpowered. The resulting process is a compatibility witness, not a fitted earthquake model: its intensity is extremely low, it lacks temporal and magnitude dynamics, and a matched comparison with the historical catalogues remains to be done.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/preliminaries}
+\input{sections/obstructions}
+\input{sections/construction}
+\input{sections/gibbs_sampling}
+\input{sections/simulation_study}
+\input{sections/earthquake_comparison}
+\input{sections/discussion}
+
+\appendix
+\input{sections/appendix_bounds}
+\input{sections/appendix_partitions}
+\input{sections/appendix_obstructions}
+\input{sections/appendix_sampler}
+\input{sections/appendix_estimators}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,89 @@
+\section{Geometric bounds and positivity}
+\label{app:bounds}
+
+This appendix supplies the estimates used in the existence proof. All kernels are zero off their supports, and all integrations below are justified by Tonelli's theorem because the reciprocal kernels are nonnegative.
+
+\begin{lemma}[Marginal bounds]
+\label{lem:marginal-bounds}
+For the domains in Theorem~\ref{thm:main},
+\[
+ \M K_3\leq B K_2,\qquad \M K_4\leq C K_3,
+\]
+where $B,C$ are given in \eqref{eq:geom-constants}.
+\end{lemma}
+
+\begin{proof}
+Fix a pair at distance $d>0$. Write $r$ for the distance from the omitted vertex to the line through the pair. Its triangle area is $dr/2$. On the support the omitted vertex lies in the ball of radius $M$ about one endpoint, so cylindrical coordinates give
+\[
+ \int_{B(0,M)}\frac{dz}{r}
+ =4\pi\int_0^M\sqrt{M^2-r^2}\,dr=\pi^2M^2.
+\]
+It follows that $\int K_3(12z)dz\leq 2\pi^2M^2/d=B/d$. If the pair is outside $S_2$, no supported triangle can contain it: each edge of a triangle with least altitude at least $h$ is at least $h\geq\delta$, and its length is at most $M\leq P$. Thus the marginal vanishes there.
+
+Now fix a nondegenerate triangle of area $A$, and write $u$ for signed height of the omitted vertex above its plane. A supported tetrahedron requires $|u|\geq H$ and lies inside the ball of radius $M$ about a base vertex. At height $u$, the in-plane cross-section has area at most $\pi(M^2-u^2)$, and $V=A|u|/3$. Hence
+\[
+ \int K_4(123z)\,dz
+ \leq\frac{6\pi}{A}\int_H^M\frac{M^2-u^2}{u}\,du
+ =\frac{C}{A}.
+\]
+The marginal vanishes outside $S_3$ because each face of a supported tetrahedron is a supported triangle. Indeed, the altitude of a face vertex to an opposite face edge is at least its distance to the tetrahedron face plane, and so is at least $H\geq h$; its edges are at most $M$.
+\end{proof}
+
+\begin{lemma}[Pointwise positivity]
+\label{lem:kernel-positive}
+Write
+\begin{align*}
+ E_2&=\frac{\rho^2P}{a_2},\\
+ E_3&=\frac{\rho^3M^2}{2a_3}+\frac{3\rho a_2M}{2a_3},\\
+ E_4&=\frac{\rho^4M^3}{6a_4}+\frac{\rho^2a_2M^2}{a_4}
+       +\frac{a_2^2M}{2a_4}+\frac{4\rho a_3M}{3a_4}.
+\end{align*}
+If $E_j\leq1/2$ for $j=2,3,4$, then
+\[
+ \frac12a_jK_j\leq q_j\leq a_jK_j,\quad j=2,3,4,
+\]
+and the actual cluster kernels satisfy
+\[
+ F_4\geq\frac12a_4K_4,\qquad F_3\geq\frac14a_3K_3,
+ \qquad F_2\geq\frac14a_2K_2.
+\]
+\end{lemma}
+
+\begin{proof}
+On $S_2$, multiplying the constant subtraction in $q_2$ by $D/a_2$ gives at most $E_2$. This proves the first pair of bounds. For a triangle of diameter at most $M$, $A\leq M^2/2$ and $A/d\leq M/2$ for every edge $d$. Applying $q_2\leq a_2K_2$ to the three pair terms in $q_3$ bounds the total subtraction relative to $a_3/A$ by $E_3$. Hence the bounds for $q_3$ follow.
+
+For a tetrahedron of diameter at most $M$, determinant and face-area estimates give
+\[
+ V\leq M^3/6,\quad V/d\leq M^2/6,\quad
+ V/(d_{ij}d_{\ell r})\leq M/6,\quad V/A_J\leq M/3.
+\]
+The third estimate is for disjoint edges. For example,
+\[
+ 6V=|\det(x_2-x_1,x_3-x_1,x_4-x_3)|\leq d_{12}M d_{34};
+\]
+the other pairings follow by relabelling. Using the already established bounds on $q_2$ and $q_3$ in \eqref{eq:q4}, the six pair terms, three pairings and four faces contribute at most the four terms displayed in $E_4$. This proves the bounds for $q_4$ by induction.
+
+The marginal inequalities now imply
+\[
+ F_3=q_3-\M q_4\geq(a_3/2-a_4C)K_3=\tfrac14a_3K_3,
+\]
+since $a_4C=a_3/4$. Also, from \eqref{eq:Fkernels},
+\[
+ F_2=q_2-\M q_3+\tfrac12\M^2q_4
+ \geq (a_2/2-a_3B)K_2=\tfrac14a_2K_2,
+\]
+since $a_3B=a_2/4$. Finally $F_4=q_4\geq a_4K_4/2$. The alternate expression $F_2=q_2-\M F_3-\frac12\M^2F_4$ gives $F_2\leq q_2$, while $F_3\leq q_3$ follows from its definition. These bounds show finiteness and positivity of every normaliser $Z_j$.
+\end{proof}
+
+For the explicit witness, $I<16000$, $B<26000$, $C<110000$, $M<37$ and $P<51$. The first three follow from $\pi<22/7$ and $\log(M/H)<4$; the latter inequality follows from $M/H<37<e^4$. Substitution of \eqref{eq:amplitudes} into the errors gives
+\[
+ E_2<0.0013056,\qquad E_3<0.009238116,\qquad E_4<0.119547065<\tfrac12.
+\]
+For clarity, the expressions after substitution are
+\begin{align*}
+ E_2&=a_2 I^2P,\\
+ E_3&=2a_2^2I^3BM^2+6a_2IB M,\\
+ E_4&=\tfrac83a_2^3I^4BCM^3+16a_2^2I^2BCM^2
+       +8a_2BCM+\tfrac{16}{3}a_2ICM.
+\end{align*}
+Every coefficient is nonnegative, so these elementary upper bounds certify the continuum positivity inequalities.

@@ -1,0 +1,8 @@
+\section{Sampling the process in a bounded window}
+\label{sec:sampling}
+
+The parent and mark laws above define a whole-space process. To sample its restriction to a bounded observation window $W$, draw every parent that could send at least one point into $W$, including parents outside $W$. Since all offsets have norm at most $P$, parents farther than $P$ from $W$ cannot contribute. The singleton process is sampled directly in $W$.
+
+The normalising constants $Z_j$ need not be evaluated numerically. Appendix~\ref{app:sampler} gives independent Poisson candidate streams whose thinning rates recover the three mark densities exactly. Its proposal distributions have explicit densities, and all acceptance probabilities lie in $[0,1]$ by the positivity bounds already proved. This is an exact probabilistic sampling specification. It does not certify a floating-point implementation or report a simulation comparison.
+
+The sampling order is: generate the finite candidate parent streams on a box containing $W\oplus B(0,P)$; generate the auxiliary geometric proposals and accept or reject each candidate using the stated ratios; retain accepted daughters in $W$; and generate the independent singleton points in $W$. Restricting only parents inside $W$ would be incorrect near the boundary.

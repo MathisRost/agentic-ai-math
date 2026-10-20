@@ -1,0 +1,20 @@
+\section{Introduction}
+\label{sec:intro}
+
+Spatial earthquake studies have compared the number of observed pairs, triples and quadruples with the corresponding counts in randomised catalogues. The reported summaries suggest reciprocal dependence on pair distance, triangle area and tetrahedron volume over resolved ranges of scales and shapes \citep{kaganKnopoff1980,kagan1981three,kagan1981four}. These are empirical comparisons of finite catalogues. Their ratios depend on the observation window, the random reference catalogue and the chosen configuration bins; they are not automatically the product densities of a stationary process. The distinction matters when we turn an empirical pattern into a mathematical question. Exercise~12.6.11 of \citet{daleyVereJones2008} asks whether the reciprocal factorial-density forms are compatible and whether fault-based processes can reproduce them approximately. We study the exact question on explicitly restricted domains.
+
+Here we ask whether the three reciprocal forms can hold simultaneously as exact, full correlation identities on specified nontrivial domains. The answer is yes. We construct one simple stationary isotropic process on all of $\R^3$ with positive finite intensity and finite local exponential moments, whose full second-, third- and fourth-order product densities satisfy
+\[
+ g_2(x_1,x_2)=\frac{C_2}{D},\qquad
+ g_3(x_1,x_2,x_3)=\frac{C_3}{A},\qquad
+ g_4(x_1,x_2,x_3,x_4)=\frac{C_4}{V}
+\]
+on finite distance and shape domains. Here $D$ is pair distance, $A$ is triangle area, and $V$ is tetrahedron volume. The constants are positive and fixed across each entire domain.
+
+The exactness concerns the full process. A tuple may use points from several clusters, and all such parent allocations contribute to $g_k$. We first prescribe the full densities and subtract these cross-parent terms. We then recover genuine cluster laws by subtracting the lower-order marginals of clusters of larger sizes. This second step is the delicate one: formal residual kernels would not define a point process unless they were nonnegative and integrable. Explicit geometric bounds and a small but fixed intensity verify those properties.
+
+Point-process realisability has a substantial literature. Kuna, Lebowitz and Speer give low-density realisability results for pair functions and, under additional hard-core and range hypotheses, triplet factors; they also study the realisability problem for pair correlation functions \citep{kunaLebowitzSpeer2007,kunaLebowitzSpeer2011}. These results give context for the cluster construction, but they do not establish the simultaneous reciprocal identities on the restricted pair, triangle and tetrahedron domains proved here.
+
+There are also clear limits to the identities. A full reciprocal-distance law cannot persist to arbitrarily large distances for a stationary process of positive finite intensity. A reciprocal-volume law through arbitrarily flat tetrahedra would force an infinite fourth factorial moment in a bounded window. These obstructions explain two restrictions in our theorem: a finite upper range and a positive lower bound on tetrahedral altitudes. They do not rule out the finite resolved domains used below.
+
+The selected witness uses pair distances from $0.49$ to $50.01$, triangles of diameter at most $36.21$ and least altitude at least $0.49$, and tetrahedra of diameter at most $36.21$ and least vertex-to-opposite-face altitude at least $0.98$, in kilometres. Its intensity is about $1.57\times10^{-9}\,\mathrm{km}^{-3}$. We first establish the exact identities analytically, then check the bounded-window implementation through the three-dimensional $K$-function and full second- to fourth-order estimators. Only after those implementation checks do we return to the earthquake motivation. The historical observation mask has not been recovered, so the present paper does not make a matched catalogue comparison.

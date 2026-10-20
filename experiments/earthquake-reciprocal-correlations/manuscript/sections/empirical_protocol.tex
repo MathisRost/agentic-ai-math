@@ -1,0 +1,37 @@
+\section{A comparison with earthquake catalogues: protocol and limitation}
+\label{sec:protocol}
+
+The existence theorem concerns intrinsic product densities of an ideal stationary process. It does not show that the constructed process reproduces the finite-catalogue ratios reported in earthquake studies. In particular, one must simulate the observation window, event selection, location uncertainty, tuple bins and reference catalogues before comparing those quantities. A stationary $g_k$ cannot be read directly as a catalogue-normalised ratio without that observation model.
+
+\subsection{Count and nearest-neighbour pilot}
+
+The count bounds used below follow directly from the cluster size cap. Write $N=X(W)$ and $\mu=\rho|W|$. If $Y_z\in\{0,\ldots,4\}$ is the number contributed by a marked parent at $z$, the Poisson sum formula gives $\mu=\int\E Y_z\,\Lambda(dz)$ and $\operatorname{Var}N=\int\E Y_z^2\,\Lambda(dz)$, where $\Lambda$ includes all parent types. Since $Y_z\leq Y_z^2\leq4Y_z$, we have $\mu\leq\operatorname{Var}N\leq4\mu$. Moreover,
+\[
+ \Pr\{N=0\}=\exp\{-\int\Pr(Y_z>0)\,\Lambda(dz)\},\qquad
+ e^{-\mu}\leq\Pr\{N=0\}\leq e^{-\mu/4},
+\]
+because $\E Y_z/4\leq\Pr(Y_z>0)\leq\E Y_z$.
+
+
+We implemented the exact rejection sampler for the baseline witness with cutoffs $\delta=h=0.5$, $H=1$, $M=36.2$ and $P=50$ km. Both this baseline and the expanded witness are instances of Theorem~\ref{thm:main}. In $20{,}000$ independent cubes of side $378$ km, the analytic mean count was $0.08483$ and the simulated mean was $0.08405$ (Monte Carlo standard error $0.00283$). The sample variance was $0.15979$, within the analytic bound $[\mu,4\mu]=[0.08483,0.33932]$. The empty-window fraction was $0.95345$ (95\% Wilson interval $[0.95044,0.95628]$), within the analytic void bounds $[0.91867,0.97902]$.
+
+Only 691 windows contained at least two points. Pooling events from those windows, the nearest-neighbour distance quantiles were $15.43$, $36.16$ and $47.24$ km at levels $0.1$, $0.5$ and $0.9$; $99.17\%$ of these distances were at most $50$ km. The run accepted one quadruple parent, so it cannot assess tetrahedron frequencies. These are count and nearest-neighbour descriptions of the synthetic model.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=0.95\textwidth]{figures/exact_finite_cluster_count_pilot_v02.pdf}
+ \caption{Count distribution and analytic void-probability bounds for the baseline finite-cluster witness in $20{,}000$ simulated $378$ km cubes.}
+ \label{fig:count-pilot}
+\end{figure}
+
+This pilot checks the sampler's count behaviour, not the exact continuum identities, which follow from the analytic construction. It uses floating-point geometric decisions and is not interval-certified. It does not estimate pair, triangle or tetrahedron frequencies, catalogue-normalised tuple ratios, finite-window corrections or location-error effects.
+
+\subsection{Matched comparison: protocol and limitation}
+
+The planned comparison will use the published pair, triangle and tetrahedron designs as its primary reference, retaining their observation geometry, bin definitions and Poisson catalogue normalisation. For each simulated catalogue it will record counts, empty-window frequency, count dispersion, pair-distance and nearest-neighbour summaries, triangle and tetrahedron shape distributions, and the same binned tuple ratios used in the source studies. Replicates will be independent and the model parameters will remain fixed across orders. Empty and low-count catalogues will be retained. Ratios of expected tuple counts will be reported separately from expectations of catalogue-normalised ratios, since these are different statistics.
+
+\subsection{Status and limitations}
+
+The matched comparison has not been performed. There are no simulated pair, triangle or tetrahedron ratio results, no fitted earthquake parameters and no claim of agreement or disagreement with earthquake catalogues.
+
+The historical spatial mask and event selection have not been recovered, so a $378$ km cube can be used only as an illustrative window and cannot be treated as the original observation footprint. On that assumed volume, the baseline witness has expected count $\mu=0.08483$, compared with the 803-event catalogue described by \citet{kagan1981three}. The at-most-four-daughter count inequality gives $\mathbb P\{N\geq803\}<e^{-1637}$ under this conditional assumption. Indeed, if each Poisson parent contributes $Y\leq4$ points to the window, then $e^{\theta Y}-1\leq (Y/4)(e^{4\theta}-1)$, so $\log\mathbb E e^{\theta N}\leq(\mu/4)(e^{4\theta}-1)$. The Chernoff bound, optimised at $e^{4\theta}=803/\mu$, gives the displayed exponent. This is not a matched count test. The exact witness also has very low intensity by construction. A useful empirical model would require further constraints on intensity, catalogue variability, time, magnitude and fault geometry; these lie beyond the theorem proved here.

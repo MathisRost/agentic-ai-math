@@ -1,0 +1,148 @@
+\section{A finite-cluster construction}
+\label{sec:construction}
+
+We first state a general sufficient condition, then give an explicit witness. Lengths are measured in a fixed unit. Choose
+\[
+ 0<\delta\leq h\leq H<\sqrt{2/3}\,M,\qquad M\leq P<\infty,
+\]
+with $S_2,S_3,S_4$ as in Section~\ref{sec:obstructions}.
+
+Define the geometric constants
+\begin{align}
+ I&=2\pi(P^2-\delta^2), & L&=\frac{4\pi}{3}(P^3-\delta^3),\\
+ B&=2\pi^2M^2, & C&=6\pi\left[M^2\log(M/H)-\frac{M^2-H^2}{2}\right].
+ \label{eq:geom-constants}
+\end{align}
+Take
+\begin{equation}
+ a_2=a>0,\qquad
+ a_3=\frac{a_2}{4B},\qquad
+ a_4=\frac{a_2}{16BC},\qquad
+ \rho=a_2I.
+ \label{eq:amplitudes}
+\end{equation}
+The positive scale $a$ is chosen so that the three relative subtraction bounds
+\begin{align*}
+ E_2&=\frac{\rho^2P}{a_2},\\
+ E_3&=\frac{\rho^3M^2}{2a_3}+\frac{3\rho a_2M}{2a_3},\\
+ E_4&=\frac{\rho^4M^3}{6a_4}+\frac{\rho^2a_2M^2}{a_4}
+       +\frac{a_2^2M}{2a_4}+\frac{4\rho a_3M}{3a_4}
+\end{align*}
+are at most $1/2$. Such a positive $a$ exists for every compatible choice of geometric parameters: after substitution, each error is a polynomial in $a$ with nonnegative coefficients and zero constant term. The units of $a_2,a_3,a_4,\rho$ are respectively length$^{-5}$, length$^{-7}$, length$^{-9}$ and length$^{-3}$, so $C_k=a_k/\rho^k$ has units length$^{k-1}$.
+
+The construction uses three kinds of density. The target $m_j$ counts all ordered tuples; $q_j$ will count those whose vertices share one parent; and $F_j$ will describe parents emitting exactly $j$ points. For example, a triangle can use three different parents, one pair from a common parent and a third point from another, or a single parent for all three vertices. The respective densities are $\rho^3$, $\rho(q_2(12)+q_2(13)+q_2(23))$, and $q_3(123)$. Subtracting the first two contributions from $a_3/A$ explains the definition of $q_3$ below. The full parent-partition calculation is given in Appendix~\ref{app:partitions}.
+
+For $j=2,3,4$, define $K_2(12)=\1_{S_2}(12)/D(12)$, $K_3(123)=\1_{S_3}(123)/A(123)$ and $K_4(1234)=\1_{S_4}(1234)/V(1234)$, with value zero on degenerate configurations. Define the same-parent kernels successively by
+\begin{align}
+ q_2(12)&=\1_{S_2}(12)\left(\frac{a_2}{D(12)}-\rho^2\right),\label{eq:q2}\\
+ q_3(123)&=\1_{S_3}(123)\left(\frac{a_3}{A(123)}-\rho^3-\rho\sum_{i<j}q_2(ij)\right),\label{eq:q3}\\
+ q_4(1234)&=\1_{S_4}(1234)\left(\frac{a_4}{V(1234)}-\rho^4-\rho^2\sum_{i<j}q_2(ij)
+ -\sum_{ij|\ell r}q_2(ij)q_2(\ell r)-\rho\sum_{|J|=3}q_3(J)\right).\label{eq:q4}
+\end{align}
+In the third sum of \eqref{eq:q4}, $ij|\ell r$ runs over the three pairings $12|34$, $13|24$, and $14|23$. The final sum runs over the four triangular faces. Reciprocals are evaluated only on the support indicated by the leading indicator.
+
+A same-parent triangle need not be an entire cluster: it may be three of a four-point cluster's daughters. We must therefore recover the densities for clusters of each exact size from the $q_j$. Let $\M$ denote integration over one omitted point, for example $\M q_4(123)=\int q_4(123z)\,dz$. A four-point cluster contributes $\M F_4$ to the same-parent triangle density and $\tfrac12\M^2F_4$ to the same-parent pair density. Thus
+\[
+ q_4=F_4,\qquad q_3=F_3+\M F_4,\qquad
+ q_2=F_2+\M F_3+\tfrac12\M^2F_4.
+\]
+The factor $1/2$ accounts for the two orders of the omitted daughters; Appendix~\ref{app:partitions} derives the general multiplicity. Solving these equations from order four downwards gives
+\begin{equation}
+ F_4=q_4,\qquad F_3=q_3-\M q_4,\qquad
+ F_2=q_2-\M q_3+\tfrac12\M^2q_4,
+ \label{eq:Fkernels}
+\end{equation}
+and their anchored normalising constants are
+\[
+ Z_j=\int F_j(0,y_2,\ldots,y_j)\,dy_2\cdots dy_j,\qquad j=2,3,4.
+\]
+The kernels are symmetric and translation invariant, so anchoring any coordinate gives the same integral.
+
+\begin{theorem}[Exact reciprocal laws on compatible domains]
+\label{thm:main}
+For every compatible geometric parameter choice above and every $a>0$ with $E_2,E_3,E_4\leq1/2$, there is a simple stationary isotropic point process $\X$ on $\R^3$ with intensity $\rho=a_2I>0$, finite local exponential moments and infinitely many points almost surely. Its factorial moment measures have ordinary Lebesgue densities at every finite order, and its full densities through order four obey
+\begin{align*}
+ g_2(12)&=\frac{C_2}{D(12)} && (12\in S_2),\\
+ g_3(123)&=\frac{C_3}{A(123)} && (123\in S_3),\\
+ g_4(1234)&=\frac{C_4}{V(1234)} && (1234\in S_4),
+\end{align*}
+where $C_j=a_j/\rho^j$ are positive and fixed on their respective domains. The equalities hold almost everywhere; the explicit density versions in the proof satisfy them at each nondegenerate configuration in the displayed sets. The same construction has independence between restrictions to sets separated by more than $2P$.
+\end{theorem}
+
+\begin{proof}
+The marginal estimates in Lemma~\ref{lem:marginal-bounds} and the geometric bounds in Lemma~\ref{lem:kernel-positive} imply
+\[
+ \tfrac12a_jK_j\leq q_j\leq a_jK_j,\qquad
+ F_4\geq\tfrac12a_4K_4,\quad F_3\geq\tfrac14a_3K_3,\quad F_2\geq\tfrac14a_2K_2.
+\]
+All these kernels are finite, have finite anchored integrals and are locally integrable in the full coordinates. In particular $0<Z_j<\infty$. For general compatible parameters, choose a regular tetrahedron of side $s$ with $\sqrt{3/2}\,H<s<M$; its vertex altitudes exceed $H$ and its edges lie below $P$. Small anchored neighbourhoods of this tetrahedron, its faces and its edges have positive measure within the corresponding supports.
+
+Take independent homogeneous Poisson parent processes of types $j=2,3,4$, with rates $Z_j/j!$. A type-$j$ parent at $z$ emits the cluster
+\[
+ \{z,z+Y_2,\ldots,z+Y_j\},\qquad
+ (Y_2,\ldots,Y_j)\text{ has density }F_j(0,\cdot)/Z_j.
+\]
+Add an independent singleton Poisson process of rate
+\begin{equation}
+ \lambda_1=\rho^2L+\frac{Z_3}{2}+\frac{Z_4}{3}.
+ \label{eq:singleton-rate}
+\end{equation}
+The bounds above make each cluster mark a probability density. The support cutoffs bound every offset by $P$, and continuous densities give distinct points within clusters. The Poisson parent locations and continuous marks exclude collisions between distinct parents. Only parents in the bounded $P$-enlargement of a bounded observation window can contribute there; their number is finite Poisson and each emits at most four points. Thus the process is simple, locally finite, and has finite local exponential moments. Translation and rotation invariance of the parent laws and kernels give stationarity and isotropy. Since $\lambda_1>0$, the singleton process has infinitely many points almost surely.
+
+We verify the intensity and densities, including all parent allocations. Put $Q_j=\int q_j(0,y_2,\ldots,y_j)\,dy_2\cdots dy_j$. Integrating \eqref{eq:Fkernels} gives
+\[
+ Z_4=Q_4,\qquad Z_3=Q_3-Q_4,\qquad Z_2=Q_2-Q_3+\tfrac12Q_4,
+ \qquad Q_2=a_2I-\rho^2L.
+\]
+A cluster of size $j$ contributes $Z_j/(j-1)!$ points per unit volume. Hence the non-singleton intensity is $Q_2-Q_3/2+Q_4/6$. Adding \eqref{eq:singleton-rate} gives $Q_2+\rho^2L=\rho$.
+
+For a type-$j$ cluster, its same-parent ordered $r$-tuple density is $\M^{j-r}F_j/(j-r)!$. The factor arises because the parent rate is $Z_j/j!$, the ordered assignment to daughter labels has $j!$ possibilities at full order, and integrating out $j-r$ unobserved daughters counts each ordered $r$-tuple $(j-r)!$ times. Consequently the summed same-parent densities, including singletons, are $\rho,q_2,q_3,q_4$ at orders one through four. Each tuple's parent allocation is a set partition, so the full densities are
+\begin{align}
+ m_2(12)&=\rho^2+q_2(12),\\
+ m_3(123)&=\rho^3+\rho\sum_{i<j}q_2(ij)+q_3(123),\\
+ m_4(1234)&=\rho^4+\rho^2\sum_{i<j}q_2(ij)
+ +\sum_{ij|\ell r}q_2(ij)q_2(\ell r)+\rho\sum_{|J|=3}q_3(J)+q_4(1234).
+ \label{eq:full-partitions}
+\end{align}
+The Poisson factorial identity for distinct parents proves these formulas as identities of measures; Tonelli's theorem justifies the integrations. Substituting \eqref{eq:q2}--\eqref{eq:q4} cancels every different-parent term on the nested supports and leaves $m_2=a_2/D$, $m_3=a_3/A$ and $m_4=a_4/V$. Division by $\rho^j$ proves the three claims. The parent regions that can influence two sets at distance greater than $2P$ are disjoint, so the restrictions are independent.
+\end{proof}
+
+\begin{corollary}[An explicit witness]
+With $\delta=h=0.49$, $H=0.98$, $M=36.21$, $P=50.01$ km and $a_2=10^{-13}\,\mathrm{km}^{-5}$, the inequalities $E_j<1/2$ hold. The process in Theorem~\ref{thm:main} has intensity $\rho\approx1.571273848878242\times10^{-9}\,\mathrm{km}^{-3}$ and covers the three expanded domains stated in the introduction.
+\end{corollary}
+
+\subsection{A cluster Gibbs representation}
+\label{sec:gibbs}
+
+The Poisson construction can also be described by a finite Gibbs law for a single rooted packet. The root is the parent location, which is itself one of the emitted points. This is a representation of the cluster mark; it is not a Gibbs specification for the unlabelled process $\X$.
+
+Merge the four independent parent streams into one marked Poisson process of rate
+\[
+ \kappa=\lambda_1+Z_2/2!+Z_3/3!+Z_4/4!.
+\]
+For a packet rooted at the origin, let the anchored reference measure be
+\begin{equation}
+\nu(d\eta)=\sum_{r=0}^3\frac{\ell_0^{-3r}}{r!}\,du_1\cdots du_r,
+ \qquad \eta=\{0,u_1,\ldots,u_r\},
+ \label{eq:anchored-reference}
+\end{equation}
+with the $r=0$ term a unit atom and each integral restricted to distinct offsets in $B(0,P)$. Symmetric functions of the offsets are understood, so the factor $1/r!$ removes their ordering. We take $\ell_0=1$ km and understand each $r$-fold term as $\ell_0^{-3r}\,du_1\cdots du_r$; this makes the reference measure and its densities dimensionless. The density of the packet law with respect to $\nu$ is
+\begin{equation}
+ w(\{0\})=\frac{\lambda_1}{\kappa},\qquad
+ w(\{0\}\cup U)=\frac{\ell_0^{3(j-1)}F_j(0,U)}{j\kappa},\quad |U|=j-1\in\{1,2,3\}.
+ \label{eq:gibbs-weight}
+\end{equation}
+It is zero for packets with more than four points, coincident offsets, or offsets outside the corresponding support. The $1/j$ in \eqref{eq:gibbs-weight} is required: its integral against $\ell_0^{-3(j-1)}dU/(j-1)!$ is $Z_j/(j!\kappa)$, the type-$j$ parent rate divided by $\kappa$. Thus the weights normalise to one.
+
+On the positive support define the finite energy $\mathcal E(\eta)=-\log w(\eta)$; set $\mathcal E=+\infty$ off the support. The hard support and four-point cap are separate constraints. The remaining energy can be written as a sum of rooted interactions of orders two, three and four by Möbius inversion over subsets of the satellites. Every subset of a feasible satellite set is feasible by support nesting, so all weights in the following expression are positive. For a feasible satellite set $U$, put
+\[
+ E(U)=-\log\frac{w(\{0\}\cup U)}{w(\{0\})},\quad E(\varnothing)=0,
+ \qquad \phi(U)=\sum_{B\subseteq U}(-1)^{|U|-|B|}E(B).
+\]
+Then $E(U)=\sum_{\varnothing\ne B\subseteq U}\phi(B)$. Terms with $|B|=1,2,3$ are respectively the rooted pair, triple and quadruple interactions. This factorisation is exact, but it is only a finite-cluster energy with a distinguished root.
+
+With the convention in \eqref{eq:anchored-reference}, the Papangelou insertion intensity is the ratio of successive densities. For a positive-weight packet with satellite set $U$ and $|U|=r<3$,
+\[
+\lambda(u;U)=\ell_0^{-3}\frac{w(\{0\}\cup U\cup\{u\})}{w(\{0\}\cup U)}.
+\]
+It is zero when the insertion violates the support or the size cap. In particular, for an empty satellite set the ratio is $F_2(0,u)/(2\lambda_1)$; for one satellite $v$ it is $2F_3(0,v,u)/(3F_2(0,v))$; and for two satellites $v,w$ it is $3F_4(0,v,w,u)/(4F_3(0,v,w))$. At size four no further insertion is allowed. We use this description to interpret the constructed mark law; no conditional intensity for the entire unlabelled point process is asserted.

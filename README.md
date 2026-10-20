@@ -18,9 +18,11 @@ in the slides and source notes.
 - `scripts/` — diagram builders, local draw.io exporter and QR-code builder.
 - `sources/` — source records and provenance for the talk.
 - `style/sketch/` — diagram style references and Kalam fonts with their licence.
-- `experiments/` — reserved for experiments to be added later.
+- `experiments/` — reproducible case-study manuscripts, code and run outputs.
 
-## Published research experiment
+## Published research experiments
+
+### Agent research bundle
 
 The [`experiments/reciprocal-simplex-agentic-research/`](experiments/reciprocal-simplex-agentic-research/README.md)
 folder contains the complete public-facing architecture and audit bundle for a
@@ -33,8 +35,15 @@ accounting.
 The bundle publishes structured reasoning summaries and decision records, not
 raw private chain-of-thought or copied third-party source PDFs.
 
-Other research-run logs and manuscript sources are not included. Some speaker
-notes refer to additional local materials.
+### Manuscript and numerical study
+
+The [`experiments/earthquake-reciprocal-correlations/`](experiments/earthquake-reciprocal-correlations/README.md)
+folder contains the final manuscript and editable LaTeX source, simulation
+code, saved pilot and production outputs, and an auditable agent decision
+summary for the same reciprocal-simplex-correlation case study.
+
+Both releases exclude raw private chain-of-thought and copied third-party
+source PDFs. Some speaker notes refer to additional local materials.
 
 ## Build the slides
 

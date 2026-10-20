@@ -1,0 +1,48 @@
+\section{Proofs of the obstruction statements}
+\label{app:obstructions}
+
+\subsection{The pair tail}
+
+Let $B$ be a bounded cube of volume $v>0$, and let $p=\mathbb P\{\X(B)>0\}$. Since $\E\X(B)=\rho v>0$, we have $p>0$. Suppose, for contradiction, that for almost every pair with distance at least $r_0$,
+\[
+ m_2(x,y)\leq\frac{\rho^2C}{|x-y|}
+\]
+for a finite $C$. Choose $R>r_0$ so large that $\varepsilon=\rho^2Cv^2/R<p^2/2$. For any integer $n$, take $n$ translates $B_1,\ldots,B_n$ of $B$ with mutual distances at least $R$. Let $I_i=\1\{\X(B_i)>0\}$ and $S_n=\sum_i I_i$. Stationarity gives $\E I_i=p$. For $i\ne j$, disjointness and the second factorial density imply
+\[
+ \E(I_iI_j)\leq\E[\X(B_i)\X(B_j)]
+ =\int_{B_i}\int_{B_j}m_2(x,y)\,dy\,dx\leq\varepsilon.
+\]
+Consequently,
+\[
+ n^2p^2=(\E S_n)^2\leq\E S_n^2
+ \leq np+n(n-1)\varepsilon.
+\]
+Divide by $n^2$ and let $n\to\infty$. This gives $p^2\leq\varepsilon<p^2/2$, a contradiction. This proves Proposition~\ref{prop:pair-tail}; the same argument excludes any uniform upper bound $g_2(x,y)\leq b(|x-y|)$ for which $b(r)\to0$.
+
+\subsection{Higher-order reciprocal tails}
+
+The same occupancy idea rules out reciprocal area and volume laws extending to arbitrarily large configurations when the minimum altitudes have fixed positive lower bounds. More precisely, suppose the full $k$th product density is $\rho^k C_k/G_k$ on every $k$-simplex whose relevant altitudes exceed a fixed finite threshold, with no upper diameter bound; here $k=3$ or $4$, and $G_k$ is area or volume. Fix the cube $B$ and its occupancy probability $p>0$ from above, and set $\eta=p^k/2$.
+
+For each $n\geq k$, choose centres $c_i=(i,i^2,i^3)$, $1\leq i\leq n$. Every three centres are noncollinear and every four are affinely independent, by the nonzero Vandermonde determinants of their coordinate projections. For a fixed $n$, take boxes $B_i(T)=Tc_i+B$. As $T\to\infty$, every choice of $k$ points from distinct boxes has simplex content at least a positive constant times $T^{k-1}$, and its nonzero altitudes grow at least linearly in $T$. The bounds are uniform over the boxes because their rescaled points converge uniformly to the finitely many nondegenerate centre tuples. Choose $T=T_n$ large enough that every such tuple lies in the asserted domain and its integrated density over any product of $k$ distinct boxes is at most $\eta$:
+\[
+ \int_{B_{i_1}(T_n)}\cdots\int_{B_{i_k}(T_n)}m_k(x_1,\ldots,x_k)\,dx_k\cdots dx_1
+ \leq \frac{\rho^k C_k v^k}{\inf G_k}\leq\eta.
+\]
+With $I_i=\1\{\X(B_i(T_n))>0\}$ and $S_n=\sum_iI_i$, each product of $k$ distinct indicators has expectation at most $\eta$. Expand $S_n^k$ into ordered index tuples. There are $(n)_k$ all-distinct tuples; each other term is at most one. By Jensen's inequality and stationarity,
+\[
+ (np)^k\leq\E S_n^k\leq(n)_k\eta+n^k-(n)_k.
+\]
+Divide by $n^k$ and let $n\to\infty$. The result $p^k\leq\eta=p^k/2$ is impossible. This higher-order statement concerns an unrestricted upper scale; it is separate from the finite-range tetrahedron obstruction below.
+
+\subsection{The flat-tetrahedron singularity}
+
+Use the family $E$ in Proposition~\ref{prop:flat}. The frame may be chosen measurably by taking $e_1$ along $x_2-x_1$, $n$ in the direction of $(x_2-x_1)\times(x_3-x_1)$ and $e_2=n\times e_1$. For each fixed noncollinear base, the map $(s,t,u)\mapsto x_1+s e_1+t e_2+u n$ preserves three-dimensional Lebesgue measure. Fubini's theorem therefore gives the full four-point volume element $dx_1\,dx_2\,dx_3\,ds\,dt\,du$; variation of the base does not remove any dimensions.
+
+Since $V=A|u|/3$, the integral of $m_4=\rho^4C_4/V$ over this family is
+\[
+ \left(\int_E\frac{3\rho^4C_4}{A}\,dx_1\,dx_2\,dx_3\,ds\,dt\right)
+ \left(\int_{0<|u|<\epsilon}\frac{du}{|u|}\right)=\infty.
+\]
+The first factor is positive and finite by the area and measure bounds; the second diverges. Tonelli's theorem justifies the factorisation. The integral is bounded above by $\E(X(W))_4$ for the bounded window containing the family, contradicting its finiteness.
+
+In particular, the obstruction applies if a reciprocal-volume law is required for every nondegenerate tetrahedron of diameter below any fixed $M>0$: choose a sufficiently small coplanar square, vary its first three vertices and the fourth vertex's in-plane coordinates over bounded open neighbourhoods with compact closures, and then allow every sufficiently small nonzero height. This provides such a family $E$ while retaining distinct vertices and diameter below $M$. A shape domain whose permitted in-plane sections shrink with the height need not contain this product family; the proposition makes no assertion about that case.
