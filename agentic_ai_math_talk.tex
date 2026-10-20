@@ -729,22 +729,22 @@
 \end{frame}
 
 \begin{frame}[t]{Heuristics for agentic research}
-  \noindent{\fontsize{9}{10.7}\selectfont
+  \noindent{\fontsize{9}{10}\selectfont
   \setlength{\tabcolsep}{0pt}
   \renewcommand{\arraystretch}{1}
   \begin{tabular}{@{}p{0.42\textwidth}@{\hspace{4mm}}p{0.54\textwidth}@{}}
     {\color{teal}\bfseries Heuristic} & {\color{chartorange}\bfseries Intuition} \\
     \midrule
     \raggedright\textbf{Explore distinct approaches independently.} {\color{teal}[1]}
-      & \raggedright Different starting points can reveal approaches that others miss.\tabularnewline[1.6mm]
-    \raggedright\textbf{Ask for a proof or a counterexample.} {\color{teal}[2]}
-      & \raggedright Let the agent show that the claim is false; do not let it silently change the problem to obtain a proof.\tabularnewline[1.6mm]
-    \raggedright\textbf{Delegate precise mathematical obligations.} {\color{teal}[3]}
-      & \raggedright Explicit assumptions and dependencies make partial progress and remaining gaps visible.\tabularnewline[1.6mm]
-    \raggedright\textbf{Preserve each claim's status and evidence.} {\color{teal}[4]}
-      & \raggedright Reuse must not turn a conjecture or rejected argument into an ``established lemma''.\tabularnewline[1.6mm]
-    \raggedright\textbf{Fix identified errors; stop if no progress is made.} {\color{teal}[5]}
-      & \raggedright Check that each error was repaired. Repeated approval is not evidence of a correct proof.\tabularnewline
+      & \raggedright Different starting points can reveal approaches that others miss.\tabularnewline[0.5mm]
+    \raggedright\textbf{Fix identified errors; stop if no progress is made.} {\color{teal}[2]}
+      & \raggedright Check that each error was repaired. Repeated approval is not evidence of a correct proof.\tabularnewline[0.5mm]
+    \raggedright\textbf{Ask for a proof or a counterexample.} {\color{teal}[3]}
+      & \raggedright The statement you give the agent might be false. Explicitly allow it to disprove the statement instead of assuming a proof must exist.\tabularnewline[0.5mm]
+    \raggedright\textbf{Delegate precise mathematical obligations.} {\color{teal}[4]}
+      & \raggedright When splitting the work between agents, specify exactly what each agent needs to establish and under which assumptions.\tabularnewline[0.5mm]
+    \raggedright\textbf{Preserve each claim's status and evidence.} {\color{teal}[5]}
+      & \raggedright Reuse must not turn a conjecture or rejected argument into an ``established lemma''.\tabularnewline
     \bottomrule
   \end{tabular}\par}
   \vspace{1mm}
@@ -754,10 +754,10 @@
   \vspace{1mm}
   {\fontsize{6.8}{8}\selectfont\color{teal}
     \href{https://aclanthology.org/2026.findings-acl.1694/}{[1] Zhu et al. (2026)};\quad
-    \href{https://arxiv.org/html/2510.04721v1}{[2] Petrov et al. (2025)};\quad
-    \href{https://arxiv.org/html/2605.22875v1}{[3] Zhao et al. (2026)};\par
-    \href{https://arxiv.org/html/2610.04829v1}{[4] Xu et al. (2026)};\quad
-    \href{https://arxiv.org/html/2605.06651v1}{[5] Zheng et al. (2026)}.\par}
+    \href{https://arxiv.org/html/2605.06651v1}{[2] Zheng et al. (2026)};\quad
+    \href{https://arxiv.org/html/2510.04721v1}{[3] Petrov et al. (2025)};\par
+    \href{https://arxiv.org/html/2605.22875v1}{[4] Zhao et al. (2026)};\quad
+    \href{https://arxiv.org/html/2610.04829v1}{[5] Xu et al. (2026)}.\par}
   \note{These five heuristics complement the preceding slide's context and
     communication principles. The slide follows the owner's supplied rule and
     intuition format. They are evidence-informed design choices, not universally
@@ -778,7 +778,18 @@
     DOI: 10.18653/v1/2026.findings-acl.1694.
     \url{https://aclanthology.org/2026.findings-acl.1694/}.
 
-    2. A fixed target prevents apparent success through changing the problem.
+    2. Review can optimise an argument for the reviewer without repairing it.
+    Require objections to identify exact steps and revisions to supply concrete
+    mathematical responses. If a loop produces no new evidence, change the
+    checking method or retain the unresolved gap. The AI co-mathematician paper
+    reports reviewer-pleasing false consensus and non-terminating review cycles.
+    These observed failures motivate the heuristic; they do not establish a
+    universally optimal number of rounds or stopping rule.
+    Reference: Daniel Zheng et al. (2026), \emph{AI Co-Mathematician:
+    Accelerating Mathematicians with Agentic AI}, arXiv:2605.06651v1, Section 7.
+    \url{https://arxiv.org/html/2605.06651v1}.
+
+    3. A fixed target prevents apparent success through changing the problem.
     A demand for a proof can encourage defence of a false premise. Permit a
     counterexample, and require any added hypothesis or weakened conclusion to
     be reported explicitly. BrokenMath finds that prompting models to validate
@@ -790,7 +801,7 @@
     arXiv:2510.04721v1, Section 5.1.
     \url{https://arxiv.org/html/2510.04721v1}.
 
-    3. Precise obligations make coordination and checking easier. Assigning a
+    4. Precise obligations make coordination and checking easier. Assigning a
     bound under explicit hypotheses exposes what another agent may assume and
     which later steps depend on the result. Let the decomposition evolve with
     the mathematics. RMA's ablations support problem analysis, assumption
@@ -803,7 +814,7 @@
     arXiv:2605.22875v1, Table 3 and Section 4.3.
     \url{https://arxiv.org/html/2605.22875v1}.
 
-    4. Memory can amplify discoveries and mistakes. A statement from a rejected
+    5. Memory can amplify discoveries and mistakes. A statement from a rejected
     proof may depend on an assumption introduced for contradiction. Preserve
     assumptions, dependencies, evidence, source context and verification status
     when storing it. The Viva La Vida audit documents extracted critique claims
@@ -813,18 +824,7 @@
     Reference: Benji Xu, Ken Zheng and Noah Han (2026), \emph{Viva La Vida:
     Verification and Accumulation Failures in Multi-Agent Proof Search},
     arXiv:2610.04829v1, Section 5.
-    \url{https://arxiv.org/html/2610.04829v1}.
-
-    5. Review can optimise an argument for the reviewer without repairing it.
-    Require objections to identify exact steps and revisions to supply concrete
-    mathematical responses. If a loop produces no new evidence, change the
-    checking method or retain the unresolved gap. The AI co-mathematician paper
-    reports reviewer-pleasing false consensus and non-terminating review cycles.
-    These observed failures motivate the heuristic; they do not establish a
-    universally optimal number of rounds or stopping rule.
-    Reference: Daniel Zheng et al. (2026), \emph{AI Co-Mathematician:
-    Accelerating Mathematicians with Agentic AI}, arXiv:2605.06651v1, Section 7.
-    \url{https://arxiv.org/html/2605.06651v1}.}
+    \url{https://arxiv.org/html/2610.04829v1}.}
 \end{frame}
 
 \section{A step-by-step research example}
