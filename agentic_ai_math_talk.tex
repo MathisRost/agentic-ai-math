@@ -222,12 +222,9 @@
   \noindent\makebox[\textwidth][c]{%
     \includegraphics[clip,width=\textwidth,height=30mm,keepaspectratio]{alphaproof_architecture.pdf}}\par
   \vspace{1mm}
-  \noindent\textbf{Model:} a 3-billion-parameter encoder--decoder transformer, pretrained on code and mathematics,
-    then fine-tuned on human Lean proofs from Mathlib.\par
+  \noindent\textbf{Function:} the model reads Lean goals and hypotheses, proposes Lean tactics, and Lean returns new proof states. This means it basically talks in Lean \par
   \vspace{1mm}
-  \noindent\textbf{Search:} the model reads Lean goals and hypotheses, proposes Lean tactics, and Lean returns new proof states.\par
-  \vspace{1mm}
-  \noindent\textbf{Learning:} the model learns from proof attempts through reinforcement learning.\par
+  \noindent\textbf{additional Learning:} the model learns from proof attempts through reinforcement learning.\par
   \vspace{1.5mm}
   \noindent{IMO 2024: 28/42 points, silver-medal level (AlphaProof: 3 problems; AlphaGeometry 2: 1).}\par
   \vspace{0mm}
@@ -262,9 +259,7 @@
       {\fontsize{9}{11}\selectfont
         {\bfseries Reported mathematical results}\par
         \vspace{1mm}
-        \textbullet\ Erd\H{o}s: 2 full + 2 partial new solutions from 700 problems, assessed by experts.\par
-        \vspace{1mm}
-        And other mathematical achievements.\par}
+        \textbullet\ Erd\H{o}s: 2 full + 2 partial new solutions from 700 problems, checked by experts.\par}
     \end{column}
     \begin{column}{0.47\textwidth}
       \fontsize{8.3}{9.5}\selectfont
@@ -479,10 +474,10 @@
 \begin{frame}[t]{Step 1: Defining the problem}
   \noindent\begin{minipage}{\textwidth}
   \raggedright\fontsize{9.5}{11}\selectfont
-  \begin{enumerate}
+  \begin{itemize}
     \setlength{\itemsep}{1.5mm}
     \setlength{\parskip}{0pt}
-    \item \textbf{Count distinct tuples.} For $n\geq1$, define the \textbf{factorial moment measure}\par
+    \item  For $n\geq1$, define the \textbf{factorial moment measure}\par
       \noindent\makebox[\linewidth][c]{$\displaystyle
         \alpha^{(n)}(A):=\mathbb E\bigl[
           \sum\nolimits_{(x_1,\ldots,x_n)\in X^n_{\ne}}
@@ -490,13 +485,13 @@
         \quad A\subseteq(\mathbb R^d)^n\text{ Borel}.$}\par
       Here $X^n_{\ne}$ contains all ordered $n$-tuples of distinct points of $X$.
 
-    \item \textbf{Use disjoint regions.} For pairwise disjoint $B_1,\ldots,B_n$,\par
+    \item \textbf Note that for pairwise disjoint $B_1,\ldots,B_n$,\par
       \noindent\makebox[\linewidth][c]{$\displaystyle
         \alpha^{(n)}(B_1\times\cdots\times B_n)
         =\mathbb E[X(B_1)\cdots X(B_n)].$}\par
       One point from each region gives distinct points. No independence is needed.
 
-    \item \textbf{Introduce a density.} When it exists, the \textbf{product density} $\rho^{(n)}$ satisfies\par
+    \item  When it exists, the \textbf{product density} $\rho^{(n)}$ satisfies\par
       \noindent\makebox[\linewidth][c]{$\displaystyle
         \alpha^{(n)}(A)=\int_A\rho^{(n)}(x_1,\ldots,x_n)\,\mathrm dx_1\cdots\mathrm dx_n.$}\par
 
@@ -505,7 +500,7 @@
         \mathbb E[X(B_1)X(B_2)]
         \;\approx\;\rho^{(2)}(x_1,x_2)\,|B_1|\,|B_2|,$}\par
       provided $\rho^{(2)}$ varies little across $B_1\times B_2$.
-  \end{enumerate}
+  \end{itemize}
   \vspace{1mm}
   {\fontsize{7}{8.5}\selectfont\color{muted}
     Assume bounded Borel windows and finite local moments.\par
@@ -572,7 +567,6 @@
 \begin{frame}[t]{Step 1: the precise problem}
   \noindent\begin{minipage}{\textwidth}
   \raggedright\fontsize{9.5}{11}\selectfont
-  Fix $M,\lambda_0,h_3,h_4>0$.\par
   Find one stationary, simple point process $X$ on $\mathbb R^3$ with intensity
   $\lambda_0$, finite local moments through order four and product densities.\par
   \vspace{1mm}
