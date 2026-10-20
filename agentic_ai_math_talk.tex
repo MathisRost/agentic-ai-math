@@ -432,7 +432,14 @@
     \begin{column}{0.18\textwidth}
       \centering
       \vspace{3mm}
-      \includegraphics[clip,width=\linewidth,height=48mm,keepaspectratio]{llm_alone.pdf}
+      \includegraphics[clip,width=\linewidth,height=48mm,keepaspectratio]{llm_alone.pdf}\par
+      \vspace{2mm}
+      {\fontsize{9}{11}\selectfont $Y=f_\theta(p,c;\xi)$\par}
+      \vspace{0.5mm}
+      {\fontsize{7}{8.5}\selectfont
+        $p$: prompt; $c$: context\par
+        $\theta$: fixed model\par
+        $\xi$: randomness\par}
     \end{column}
     \begin{column}{0.40\textwidth}
       \centering
@@ -478,7 +485,16 @@
     not names for the four abstract components. Icons are official product assets:
     Claude Code documentation favicon and the installed OpenAI Codex extension's
     black blossom. Sources and asset provenance are in assets/icons/sources.json.
-    The standalone LLM produces a response from supplied context. The same LLM
+    The standalone LLM produces a response from supplied context.
+    The displayed Y=f_theta(p,c;xi) is a mathematical abstraction of generation:
+    p is the current prompt, c is the other supplied context, theta denotes the
+    fixed model parameters, and xi represents sampling randomness with decoding
+    settings held fixed. For fixed p and c, Y is a random variable taking values
+    in finite token sequences. Equivalently, fixing xi gives a deterministic
+    function of prompt and context. Deterministic decoding is a degenerate case.
+    In implementation the prompt is part of the model's total context; it is
+    separated here only to distinguish the current request from other inputs.
+    The same LLM
     can be used inside an agent loop: the surrounding program executes tool calls,
     adds results to context, and invokes the model again.
     Editable diagrams: assets/agent_components.drawio and assets/llm_alone.drawio.}
