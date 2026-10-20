@@ -663,20 +663,20 @@
   Routing between stronger and cheaper models can improve the balance of cost and quality.\par
   \vspace{1.1mm}
 
-  {\color{teal}\bfseries 4. Coordinate selectively}\quad
+  {\color{teal}\bfseries 4. Share findings and avoid duplicate work}\quad
   {\fontsize{7}{8}\selectfont
     \href{https://arxiv.org/abs/2305.14325}{\color{muted}Du et al. (2023)};
     \href{https://aclanthology.org/2025.acl-long.1170/}{\color{muted}Wang et al. (2025)}}\par
-  Let agents share useful findings. Removing agents or messages that repeat
-  the same work can save time and improve results.\par
+  Give each agent the results it needs. Redirect repeated work when it
+  adds no new information.\par
   \end{minipage}
   \vspace{1.1mm}
 
   {\fontsize{7}{8.5}\selectfont\color{muted}%
     Effects depend on the task and models. Fresh-context review is a design inference from bias and verification studies.\par}
-  \note{The opening uses f(context) as shorthand for a random text-valued
-    output, with the model and sampling settings held fixed. More explicitly,
-    f(context,U) includes the sampling randomness U. Its conditional
+  \note{The opening recalls $Y=f_{\theta}(p,c;\xi)$, with prompt p, context c,
+    fixed model parameters theta and sampling randomness xi.
+    With the model and sampling settings held fixed, the output's conditional
     distribution depends on the context; deterministic decoding is a
     degenerate special case. This is an intuition for context management,
     not a claim that context is the only factor affecting model output.
