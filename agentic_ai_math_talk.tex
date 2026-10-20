@@ -208,31 +208,36 @@
   \fontsize{9}{10.5}\selectfont
   \noindent{\fontsize{9}{11}\selectfont\color{muted}%
     Paper recap: \emph{Mathematical discoveries from program search with large language models}\par}
-  \vspace{1mm}
+  \vspace{0.5mm}
   \noindent\makebox[\textwidth][c]{%
-    \includegraphics[clip,width=\textwidth,height=27mm,keepaspectratio]{funsearch_workflow.pdf}}\par
+    \includegraphics[clip,width=\textwidth,height=23mm,keepaspectratio]{funsearch_workflow.pdf}}\par
   \vspace{-2mm}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.48\textwidth}
       {\fontsize{10}{12}\selectfont\bfseries\color{teal}Larger cap sets\par}
       \centering
-      \includegraphics[clip,width=\linewidth,height=14mm,keepaspectratio]{funsearch_cap_set.pdf}\par
+      \includegraphics[clip,width=\linewidth,height=13mm,keepaspectratio]{funsearch_cap_set.pdf}\par
       \raggedright\fontsize{8.5}{10.5}\selectfont
       No three distinct points on a line in $\mathbb{F}_3^n$.\par
       A new construction, not a proof of maximality.
     \end{column}
     \begin{column}{0.48\textwidth}
-      {\fontsize{10}{12}\selectfont\bfseries\color{teal}Better bin-packing heuristics\par}
+      {\fontsize{10}{12}\selectfont\bfseries\color{teal}Online bin-packing heuristics\par}
       \centering
-      \includegraphics[clip,width=\linewidth,height=14mm,keepaspectratio]{funsearch_bin_packing.pdf}\par
+      \includegraphics[clip,width=\linewidth,height=13mm,keepaspectratio]{funsearch_bin_packing.pdf}\par
       \raggedright\fontsize{8.5}{10.5}\selectfont
-      Pack arriving items into as few fixed-capacity bins as possible.
+      Use as few fixed-capacity bins as possible; place each item on arrival.
     \end{column}
   \end{columns}
-  \vspace{1mm}
+  \vspace{0.5mm}
   {\fontsize{6.8}{8}\selectfont\color{muted}%
-    Workflow adapted from Fig.~1; results: Fig.~4 and Table~1.
-    \href{https://doi.org/10.1038/s41586-023-06924-6}{\color{teal}Romera-Paredes et al., \emph{Nature} \textbf{625}, 468--475 (2024).}\par}
+    Workflow: Fig.~1; results: Fig.~4 and Table~1.
+    \href{https://doi.org/10.1038/s41586-023-06924-6}{\color{teal}Romera-Paredes et al. (2024).}\par}
+  \vspace{0.5mm}
+  {\fontsize{8}{9.5}\selectfont
+    \href{https://arxiv.org/abs/2506.13131}{\color{teal}\textbf{AlphaEvolve (2025)}}
+    later extended this approach: $4\times4$ complex matrix multiplication
+    with \textbf{48 scalar multiplications}, versus Strassen's 49.\par}
   \note{FunSearch uses a frozen pretrained Codey model: learning occurs in the
     population of programs and the examples selected for prompts, not through
     updating model weights. Code changes means generating a new version of the
@@ -260,7 +265,21 @@
     uses two. This is an explanatory example, not a recorded FunSearch output.
     Actual reported bin-packing results compare evolved online heuristics with
     first fit and best fit on OR-Library and Weibull benchmarks (Table 1).
+    Online means that each item must be assigned when it arrives, without
+    knowing future items, and that assignments cannot subsequently be changed.
     Empirical improvements do not establish universal superiority or optimality.
+    AlphaEvolve is a later evolutionary coding agent powered by Gemini models,
+    rather than a standalone model or a claim that it specifically improved
+    this displayed bin-packing example. Its white paper describes it as a
+    substantial enhancement of FunSearch (Section 1, Table 1).
+    Its search procedure found a rank-48 bilinear algorithm for multiplying
+    two 4-by-4 complex matrices, compared with rank 49 from recursive Strassen.
+    This counts scalar multiplications and is not a general wall-clock
+    speedup claim, a proof of optimality, or an improved asymptotic exponent.
+    The white paper distinguishes this tensor-decomposition result from
+    non-recursive methods using fewer multiplications (Section 3.1, footnote 3).
+    Checked against the local AlphaEvolve white paper and DeepMind's report
+    dated 14 May 2025; arXiv:2506.13131.
     Sources and reading notes: references/history_papers/.
     Editable diagrams: assets/funsearch_workflow.drawio,
     assets/funsearch_cap_set.drawio, assets/funsearch_bin_packing.drawio.}
