@@ -223,9 +223,9 @@
   \noindent\makebox[\textwidth][c]{%
     \includegraphics[clip,width=\textwidth,height=30mm,keepaspectratio]{alphaproof_architecture.pdf}}\par
   \vspace{1mm}
-  \noindent\textbf{Function:} the model reads Lean goals and hypotheses, proposes Lean tactics, and Lean returns new proof states. This means it basically talks in Lean \par
+  \noindent\textbf{Function:} the model reads Lean goals and hypotheses. as output it proposes Lean tactics. Lean returns new proof states. This means it basically talks in Lean and gets Lean responses. \par
   \vspace{1mm}
-  \noindent\textbf{additional Learning:} the model learns from proof attempts through reinforcement learning.\par
+  \noindent\textbf{Additional Learning:} rhe model learns from proof attempts through reinforcement learning.\par
   \vspace{1.5mm}
   \noindent{IMO 2024: 28/42 points, silver-medal level (AlphaProof: 3 problems; AlphaGeometry 2: 1).}\par
   \vspace{0mm}
@@ -427,11 +427,7 @@
     \item \texttt{skills.md}: an index of reusable methods and checks.
     \item \texttt{AGENTS.md}: standing project instructions for the agents.
   \end{itemize}
-  \vspace{3mm}
-  {\fontsize{8}{10}\selectfont\color{muted}
-    Here, \texttt{instruction.md} and \texttt{skills.md} are our project documents.\par
-    Each actual Codex skill has its own
-    \href{https://learn.chatgpt.com/docs/build-skills}{\texttt{SKILL.md}}.\par}
+
 \end{frame}
 
 \begin{frame}[t]{Step 1: Defining the problem}
@@ -467,9 +463,6 @@
     \end{column}
   \end{columns}
   \vspace{1.5mm}
-  {\fontsize{7}{8}\selectfont\color{muted}
-    \href{https://leman.stat.vt.edu/VTCourses/BaddeleyPointProcesses.pdf}{Baddeley, Sections 1.4--1.6}.
-    Pictures show simulated Poisson realisations in two dimensions.\par}
 \end{frame}
 
 \begin{frame}[t]{Step 1: Defining the problem}
@@ -486,7 +479,7 @@
         \quad A\subseteq(\mathbb R^d)^n\text{ Borel}.$}\par
       Here $X^n_{\ne}$ contains all ordered $n$-tuples of distinct points of $X$.
 
-    \item \textbf{Note} that for pairwise disjoint $B_1,\ldots,B_n$,\par
+    \item Note that for pairwise disjoint $B_1,\ldots,B_n$,\par
       \noindent\makebox[\linewidth][c]{$\displaystyle
         \alpha^{(n)}(B_1\times\cdots\times B_n)
         =\mathbb E[X(B_1)\cdots X(B_n)].$}\par
@@ -496,17 +489,13 @@
       \noindent\makebox[\linewidth][c]{$\displaystyle
         \alpha^{(n)}(A)=\int_A\rho^{(n)}(x_1,\ldots,x_n)\,\mathrm dx_1\cdots\mathrm dx_n.$}\par
 
-    \item \textbf{Read it locally.} For small disjoint regions around $x_1,x_2$,\par
+    \item \textbf  For small disjoint regions around $x_1,x_2$,\par
       \noindent\makebox[\linewidth][c]{$\displaystyle
         \mathbb E[X(B_1)X(B_2)]
         \;\approx\;\rho^{(2)}(x_1,x_2)\,|B_1|\,|B_2|,$}\par
       provided $\rho^{(2)}$ varies little across $B_1\times B_2$.
   \end{itemize}
   \vspace{1mm}
-  {\fontsize{7}{8.5}\selectfont\color{muted}
-    Bounded Borel windows. Expectations and integrals may be infinite.\par
-    \href{https://leman.stat.vt.edu/VTCourses/BaddeleyPointProcesses.pdf}{Baddeley, Section 2.3};
-    \href{https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf}{Last and Penrose, Section 4.4}.\par}
   \end{minipage}
   \note{For general processes, counts in disjoint regions may be dependent.
     One motivation is to compare $\mathbb E[X(B_1)X(B_2)]$ with
@@ -544,11 +533,7 @@
     \end{column}
   \end{columns}
   \vspace{0.5mm}
-  {\fontsize{7}{8.5}\selectfont\color{muted}
-    Simulated stationary processes, all with $\lambda=20$; $r=\|x_1-x_2\|$, $a=0.10$, $h=0.11$.\par
-    Comparisons are local; $g_2=1$ alone does not imply Poisson.
-    \href{https://leman.stat.vt.edu/VTCourses/BaddeleyPointProcesses.pdf}{Baddeley, Section 2.3};
-    \href{https://search.r-project.org/CRAN/refmans/spatstat.random/html/rMaternII.html}{spatstat documentation}.\par}
+
   \note{The cluster process has Poisson parents of intensity $\kappa=4$.
     Each parent has an independent Poisson number of offspring with mean $\mu=5$,
     independently and uniformly distributed in its disc of radius $a=0.10$.
@@ -566,41 +551,42 @@
 \end{frame}
 
 \begin{frame}[t]{Step 1: the precise problem}
+
   \noindent\begin{minipage}{\textwidth}
   \raggedright\fontsize{9.5}{11}\selectfont
-  For any prescribed intensity $\lambda_0>0$, find one stationary, simple,
-  locally finite point process $X$ on $\mathbb R^3$ with full product densities
-  through order four, finite almost everywhere.\par
-  \vspace{1mm}
-  \noindent\makebox[\textwidth][c]{%
-    \includegraphics[clip,width=0.31\textwidth,height=19mm,keepaspectratio]{simplex_segment.pdf}\hfill
-    \includegraphics[clip,width=0.31\textwidth,height=19mm,keepaspectratio]{simplex_triangle.pdf}\hfill
-    \includegraphics[clip,width=0.31\textwidth,height=19mm,keepaspectratio]{simplex_tetrahedron.pdf}}\par
-  \vspace{1mm}
-  For some constants $C_2,C_3,C_4>0$, require simultaneously:\par
+
+ \textit{The conjecture is motivated by observed spatial correlations in earthquake catalogues. See
+    \href{https://doi.org/10.1111/j.1365-246X.1980.tb04857.x}{Kagan and Knopoff (1980)};
+    Kagan (1981):
+    \href{https://doi.org/10.1111/j.1365-246X.1981.tb06948.x}{three-point}
+    and \href{https://doi.org/10.1111/j.1365-246X.1981.tb06949.x}.}
+  \vspace{2mm}
+  
+  For any intensity $\lambda_0>0$, there exists a stationary, simple,
+  locally finite point process $X$ on $\mathbb R^3$ with existing product densities,
+  such that
+  for some constants $C_2,C_3,C_4>0$,\par
   \vspace{1mm}
   \noindent\makebox[\linewidth][c]{$\displaystyle
     g_2(x_1,x_2)=\frac{C_2}{D},
     \qquad
     g_3(x_1,x_2,x_3)=\frac{C_3}{A},
     \qquad
-    g_4(x_1,x_2,x_3,x_4)=\frac{C_4}{V}.
+    g_4(x_1,x_2,x_3,x_4)=\frac{C_4}{V}
   $}\par
   \vspace{1mm}
-  Almost everywhere on nondegenerate configurations.\par
+  almost everywhere.\par
+    \vspace{1mm}
+  \noindent\makebox[\textwidth][c]{%
+    \includegraphics[clip,width=0.31\textwidth,height=19mm,keepaspectratio]{simplex_segment.pdf}\hfill
+    \includegraphics[clip,width=0.31\textwidth,height=19mm,keepaspectratio]{simplex_triangle.pdf}\hfill
+    \includegraphics[clip,width=0.31\textwidth,height=19mm,keepaspectratio]{simplex_tetrahedron.pdf}}\par
   \vspace{1mm}
   {\color{assumptionred}\textbf{Additional assumption:}
-    require these identities only for diameter $<M$, for any prescribed $M>0$.\par}
-  \vspace{1mm}
-  No lower geometric cutoffs. Fourth moments may be infinite.\par
+    require these identities only for diameter $<M$}
   \end{minipage}
-  \vspace{1mm}
-  {\fontsize{7}{8.5}\selectfont\color{muted}
-    The conjecture is motivated by observed spatial correlations in earthquake catalogues.\par
-    \href{https://doi.org/10.1111/j.1365-246X.1980.tb04857.x}{Kagan and Knopoff (1980)};
-    Kagan (1981):
-    \href{https://doi.org/10.1111/j.1365-246X.1981.tb06948.x}{three-point}
-    and \href{https://doi.org/10.1111/j.1365-246X.1981.tb06949.x}{four-point studies}.\par}
+  \vspace{2mm}
+
   \note{Astra6 run 20261020T164437Z\_astra6, statement S1 and proof\_4 v04.
     The construction covers every independently prescribed pair $(\lambda_0,M)>0$.
     The full factorial measures have globally finite-almost-everywhere densities,
@@ -837,7 +823,7 @@ Faster proofs let me explore more, different starting conditions let me explore 
       {\fontsize{14}{17}\selectfont Questions and discussion\par}
       \vspace{9mm}
       {\fontsize{10}{12}\selectfont
-        Slides and, later, the experiments:\par}
+        Slides and, experiment, documentation and the paper:\par}
       \vspace{2mm}
       {\fontsize{9}{11}\selectfont
         \href{https://github.com/MathisRost/agentic-ai-math}{github.com/MathisRost/agentic-ai-math}\par}
