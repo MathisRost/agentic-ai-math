@@ -1274,13 +1274,16 @@
       $C_z$ contains only child offsets. \textbf{The parent is retained},
       giving 1--4 points per cluster.\par
       \vspace{0.5mm}
-      \textbf{Construction.} Subtract tuples from different parents from the
-      target counts. Then build four-point clusters, fill missing triple and
-      pair counts with smaller clusters, and add singletons to set intensity.\par
+      \textbf{How many points?} The solution gives a probability distribution
+      over cluster sizes $j=1,\ldots,4$.\par
       \vspace{0.5mm}
-      \textbf{Why small intensity?} Different-parent contributions shrink
-      faster than the target densities. Their subtraction can then leave
-      \textbf{nonnegative cluster densities}.\par}
+      \textbf{Where are they placed?} For $j\geq2$, the normalised density\par
+      \vspace{0.5mm}
+      \noindent\makebox[\linewidth][c]{$\displaystyle
+        \frac{F_j(z,x_1,\ldots,x_{j-1})}{Z_j}$}\par
+      \vspace{0.5mm}
+      describes how the $j-1$ children are jointly distributed around
+      the parent $z$.\par}
     \end{column}
     \begin{column}{0.50\textwidth}
       {\fontsize{11}{13}\selectfont\bfseries\color{chartorange}Personal feedback\par}
