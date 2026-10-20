@@ -621,28 +621,30 @@
 \begin{frame}[t]{Step 3: Writing the paper}
   \vspace{3mm}
   \begin{columns}[c,onlytextwidth]
-    \begin{column}{0.58\textwidth}
+    \begin{column}{0.50\textwidth}
       \centering
       \includegraphics[clip,width=\linewidth,height=49mm,keepaspectratio]{writing_workflow.pdf}
     \end{column}
-    \begin{column}{0.38\textwidth}
-      {\fontsize{11}{13}\selectfont\bfseries Complete task\par}
-      \vspace{3mm}
-      {\fontsize{11}{14}\selectfont
+    \begin{column}{0.47\textwidth}
+      {\fontsize{10}{13}\selectfont
       \setlength{\tabcolsep}{0pt}
       \renewcommand{\arraystretch}{1.6}
-      \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+      \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}rr@{}}
         \toprule
-        Tokens & 132.5 million \\
-        Time & 3 h 47 min \\
+        & \textbf{Calculations} & \textbf{Writing} \\
         \midrule
-        Price & {\fontsize{19}{23}\selectfont\textcolor{teal}{\$78.81}} \\
+        Tokens & 132.5M & 5.78M \\
+        Time & 3 h 47 min & \textemdash \\
+        \midrule
+        Price & {\fontsize{17}{21}\selectfont\textcolor{teal}{\$78.81}}
+              & {\fontsize{17}{21}\selectfont\textcolor{teal}{\$9.44}} \\
         \bottomrule
       \end{tabular*}\par}
       \vspace{2mm}
       {\fontsize{7.5}{9}\selectfont\color{muted}
-        Tokens include cached input.\par
-        API-equivalent price in USD.\par}
+        M = million tokens, including cached input.\par
+        API-equivalent prices in USD.\par
+        Writing time unavailable in the saved summary.\par}
     \end{column}
   \end{columns}
 \end{frame}
@@ -685,17 +687,17 @@
         \textbf{Aspect} & \textbf{Feedback} \\
         \midrule
         \raggedright Mathematical correctness
-          & Positive\tabularnewline[0.2mm]
+          & \textcolor{teal}{Positive}\tabularnewline[0.2mm]
         \raggedright Research and process documentation
-          & Positive\tabularnewline[0.2mm]
+          & \textcolor{teal}{Positive}\tabularnewline[0.2mm]
         \raggedright Code writing
-          & Positive\tabularnewline[0.2mm]
+          & \textcolor{teal}{Positive}\tabularnewline[0.2mm]
         \raggedright Text writing
-          & Medium\tabularnewline[0.2mm]
+          & \textcolor{chartorange}{Medium}\tabularnewline[0.2mm]
         \raggedright Paper structuring
-          & Negative\tabularnewline[0.2mm]
+          & \textcolor[HTML]{B04E43}{Negative}\tabularnewline[0.2mm]
         \raggedright Mathematical explanation
-          & Medium\tabularnewline
+          & \textcolor{chartorange}{Medium}\tabularnewline
         \bottomrule
       \end{tabular}\par}
       \vspace{1mm}

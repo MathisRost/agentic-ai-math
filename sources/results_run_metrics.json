@@ -1,8 +1,9 @@
 {
   "slide": "Step 3: Writing the paper",
   "updated": "2026-10-20",
-  "scope": "Complete task",
+  "scope": "Complete calculation/research task",
   "source": "Owner-provided complete-task results in PDF review comment on 20 October 2026",
+  "corroborating_accounting": "agentic_research_setup/runs/20261019T114252Z_cox_rerun/token_accounting_recovered.md",
   "tokens": {
     "input": 131866681,
     "cached_input_subset_of_input": 128329472,
@@ -21,6 +22,29 @@
     "total": 78.81,
     "source": "Owner-provided result",
     "interpretation": "API-equivalent cost, not a recorded subscription charge"
+  },
+  "writing_stage": {
+    "scope": "Paper writing, including the coordinating writer, simulation specialist and fresh reader",
+    "source": "Owner-provided participant figures retained in agentic_ai_math_talk.tex at commit 2abd7b2",
+    "tokens": {
+      "uncached_input": 510000,
+      "cached_input": 5000000,
+      "output_including_reasoning": 270000,
+      "total": 5780000,
+      "calculation": "(0.51 + 5.0 + 0.27) million tokens from the saved writing-stage table"
+    },
+    "runtime": null,
+    "runtime_status": "Not supplied in the saved writing-stage summary",
+    "api_equivalent_cost": {
+      "currency": "USD",
+      "total": 9.44,
+      "participant_costs": {
+        "coordinating_writer": 5.60,
+        "simulation_specialist": 3.16,
+        "fresh_reader": 0.68
+      }
+    },
+    "display": "Separate from the calculation/research task; no combined total is displayed"
   },
   "superseded_report": {
     "slide": "Results",
