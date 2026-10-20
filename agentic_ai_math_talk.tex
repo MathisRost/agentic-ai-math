@@ -203,7 +203,7 @@
       Use as few fixed-capacity bins as possible; place each item on arrival.
     \end{column}
   \end{columns}
-  \vspace{0.5mm}
+  \vspace{2mm}
   {\fontsize{8}{9.5}\selectfont
     \href{https://arxiv.org/abs/2506.13131}{AlphaEvolve (2025)}
     later extended this approach: $4\times4$ complex matrix multiplication
@@ -222,9 +222,9 @@
   \noindent\makebox[\textwidth][c]{%
     \includegraphics[clip,width=\textwidth,height=36mm,keepaspectratio]{alphaproof_architecture.pdf}}\par
   \vspace{1mm}
-  \noindent\textbf{Search:} the LLM proposes tactics; Lean returns new proof states.\par
+  \noindent\textbf{Search:} the LLM proposes tactics and Lean returns new proof states.\par
   \vspace{1mm}
-  \noindent\textbf{Learning:} The model learns from proof attempts. For harder problems, it practises on similar ones.\par
+  \noindent\textbf{Learning:} The model learns from proof attempts..\par
   \vspace{1.5mm}
   \noindent{IMO 2024: silver-medal level --- 28/42 points with AlphaGeometry 2.}\par
   \noindent AlphaProof solved 3 problems; AlphaGeometry 2 solved 1.\par
@@ -310,13 +310,13 @@
       \vspace{1.5mm}
 
       {\bfseries Context}\par
-      The information given to the LLM now:\par
-      instructions, messages and tool results.\par
+      The information given to the LLM.\par
+      This includesinstructions, messages and tool results.\par
       \vspace{1.5mm}
 
       {\bfseries Tool}\par
       An interface to observe or change the
-      environment, e.g. search or Python.\par
+      environment, e.g. PDF-reader or Python ...\par
       \vspace{1.5mm}
 
       {\bfseries Agent}\par
@@ -367,8 +367,8 @@
     \href{https://aclanthology.org/2024.tacl-1.9/}{\color{muted}Liu et al. (2024)};
     \href{https://arxiv.org/html/2502.05167v3}{\color{muted}Modarressi et al. (2025)}}\par
   {\fontsize{8.5}{10}\selectfont%
-    \textbf{Problems:} context distraction and context clash.\par}
   Give each agent the information it needs; long histories can obscure relevant details.\par
+  \textbf{This is called:} context distraction and context clash.\par}
   \vspace{1mm}
 
   {\bfseries 2. Give review a fresh context}\quad
@@ -376,14 +376,14 @@
     \href{https://arxiv.org/html/2310.13548v4}{\color{muted}Sharma et al. (2023)};
     \href{https://arxiv.org/html/2309.11495v2}{\color{muted}Dhuliawala et al. (2023)}}\par
   {\fontsize{8.5}{10}\selectfont%
-    \textbf{Problems:} context poisoning and context confusion.\par}
   Review the draft and criteria without the writer's history; verify independently.\par
+  \textbf{This is called:} context poisoning and context confusion.\par}
   \vspace{1mm}
 
   {\bfseries 3. Match the model to the task}\quad
   {\fontsize{7}{8}\selectfont
     \href{https://arxiv.org/abs/2406.18665}{\color{muted}Ong et al., \emph{RouteLLM} (2024)}}\par
-  Routing between stronger and cheaper models can improve the balance of cost and quality.\par
+  changing between stronger and cheaper models can improve the balance of cost and quality.\par
   \vspace{1mm}
 
   {\bfseries 4. Share findings and avoid duplicate work}\quad
@@ -396,8 +396,8 @@
   {\bfseries 5. Explore distinct approaches independently}\quad
   {\fontsize{7}{8}\selectfont
     \href{https://aclanthology.org/2026.findings-acl.1694/}{\color{muted}Zhu et al. (2026)}}\par
-  Especially important for mathematics: different starting points can reveal
-  new proof strategies.\par
+  Especially important for mathematics since different starting points can lead to
+  differnt proof strategies.\par
   \end{minipage}
   \vspace{1mm}
 
@@ -426,7 +426,7 @@
     \href{https://learn.chatgpt.com/docs/build-skills}{\texttt{SKILL.md}}.\par}
 \end{frame}
 
-\begin{frame}[t]{Point processes: a Poisson example}
+\begin{frame}[t]{Step 1: Defining the problem}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.65\textwidth}
       \raggedright\fontsize{9.5}{11.5}\selectfont
@@ -435,22 +435,20 @@
       \vspace{1mm}
       Its count in a region $B$ is $X(B)=\#(X\cap B)$.\par
       \vspace{3mm}
-      {\bfseries Stationarity}\par
-      Shifting all points leaves the distribution unchanged:\par
+      {\bfseries Stationarity} means that
+      shifting all points leaves the distribution unchanged:\par
       \vspace{1mm}
       \noindent\makebox[\linewidth][c]{$\displaystyle X+t\overset{d}{=}X
         \quad\text{for every }t\in\mathbb R^d.$}\par
       \vspace{3mm}
       {\bfseries Homogeneous Poisson process, intensity $\lambda>0$}\par
-      \vspace{1mm}
-      \noindent\makebox[\linewidth][c]{$\displaystyle
-        X(B)\sim\operatorname{Poisson}(\lambda|B|),\qquad
-        \mathbb E[X(B)]=\lambda|B|.$}\par
-      \vspace{1mm}
-      Here $|B|$ is the volume of $B$; $\lambda$ is the mean number
-      of points per unit volume.\par
-      \vspace{1mm}
-      Counts in disjoint regions are independent.\par
+      \begin{itemize}
+          \item We demand that
+          \noindent\makebox[\linewidth][c]{$X(B)\sim\operatorname{Poisson}(\lambda|B|),\qquad
+        \mathbb E[X(B)]=\lambda|B|.$}
+        \item  Counts in disjoint regions are independent
+        \item Therefore $\mathbb E[X(B_1)X(B_2)] = \mathbb E[X(B_1)]\mathbb E[X(B_2)]$ for $B_1 \cap B_2 = \emptyset$.
+      \end{itemize}
     \end{column}
     \begin{column}{0.31\textwidth}
       \centering
@@ -468,33 +466,26 @@
 
 \begin{frame}[t]{Product densities: counting pairs}
   \raggedright\fontsize{9.5}{11}\selectfont
-  For $n\geq 1$, the \textbf{factorial moment measure} is defined by\par
+  This independents of counts is in general not the case. We might be for example interested in 
+  \noindent\makebox[\textwidth][c]{$\displaystyle \frac{\mathbb E[X(B_1)X(B_2)]}{\mathbb E[X(B_1)] \mathbb E[X(B_2)]}$} for more general processes \par
+  Therefore for $n\geq 1$, the \textbf{factorial moment measure} is defined by\par
   \vspace{1mm}
   \noindent\makebox[\textwidth][c]{$\displaystyle
-    \alpha^{(n)}(A):=\mathbb E
+    \alpha^{(n)}(A):=\mathbb E \left [
       \sum\nolimits_{(x_1,\ldots,x_n)\in X^n_{\ne}}
-      \mathbf 1_A(x_1,\ldots,x_n),
+      \mathbf 1_A(x_1,\ldots,x_n) \right ],
     \quad A\subseteq(\mathbb R^d)^n\text{ Borel}.$}\par
   \vspace{1.5mm}
   Here $X^n_{\ne}$ consists of all ordered tuples of distinct points of $X$.\par
+  If $A = B_1 \times B_2 \times \cdots \times B_n$ with $B_1,\ldots, B_n$ disjoin then 
+  \noindent\makebox[\textwidth][c]{$\displaystyle
+    \alpha^{(n)}(A):=\mathbb E \left [X(B_1) \cdots X(B_n) \right ]$}\par
   \vspace{1mm}
-  If $\alpha^{(n)}$ has a density, its \textbf{product density} $\rho^{(n)}$ satisfies\par
+  Under certain conditions $\alpha^{(n)}$ has a density, the so called \textbf{product density} $\rho^{(n)}$ satisfies\par
   \vspace{0.5mm}
   \noindent\makebox[\textwidth][c]{$\displaystyle
     \alpha^{(n)}(A)=\int_A\rho^{(n)}(x_1,\ldots,x_n)\,\mathrm dx_1\cdots\mathrm dx_n.$}\par
   \vspace{1mm}
-  \begin{columns}[c,onlytextwidth]
-    \begin{column}{0.48\textwidth}
-      \textbf{Example: pairs in two disjoint regions.}\par
-      $X(B_1)X(B_2)$ counts pairs with one point in each region.\par
-      Its expectation is $\alpha^{(2)}(B_1\times B_2)$.
-    \end{column}
-    \begin{column}{0.49\textwidth}
-      \centering
-      \includegraphics[clip,width=\linewidth,height=18mm,keepaspectratio]{product_density_pairs.pdf}
-    \end{column}
-  \end{columns}
-  \vspace{0.5mm}
   For small regions around $x_1,x_2$, where the density varies little:\par
   \vspace{0.5mm}
   \noindent\makebox[\textwidth][c]{$\displaystyle
@@ -517,7 +508,7 @@
         \rho^{(2)}(x_1,x_2)=\lambda^2,\qquad
         \rho^{(n)}(x_1,\ldots,x_n)=\lambda^n.$}\par
       \vspace{1.5mm}
-      For a stationary process with intensity $\lambda>0$,
+      For a stationary process with intensity $\rho^1 = \lambda>0$,
       compare its product density with this reference:\par
       \vspace{1.5mm}
       \noindent\makebox[\linewidth][c]{$\displaystyle
@@ -530,8 +521,6 @@
       {$g_n>1$: more such tuples.}\par
       {$g_n<1$: fewer such tuples.}\par
       $g_n=1$: the same local tuple density.\par
-      \vspace{1mm}
-      $n=2$: pairs; $n=3$: triangles; $n=4$: tetrahedra.\par
     \end{column}
     \begin{column}{0.30\textwidth}
       \centering
@@ -713,19 +702,19 @@
       {\fontsize{10.5}{12}\selectfont\bfseries
         What I expect to change\par}
       \vspace{2mm}
-      {\raggedright\fontsize{9}{10.8}\selectfont
-        Stronger models can increasingly plan, divide work into tasks,
-        use tools and delegate to subagents.\par
-        \vspace{0.8mm}
-        For a precise mathematical problem, one initial prompt may
+         {\fontsize{8.8}{10.5}\selectfont
+        \begin{itemize}
+        \setlength{\itemsep}{0.5mm}
+            \item  Stronger models can increasingly plan, divide work into tasks,
+        use tools and delegate to subagents.
+        \item For a precise mathematical problem, one initial prompt may
         increasingly suffice. This can still mean substantial autonomous
-        work, with no guarantee of success.\par
-        \vspace{0.8mm}
-        As platforms provide more harness functions, we will have
-        less to build ourselves.\par
-        \vspace{0.8mm}
+        work, with no guarantee of success.
+        \item 
         I also expect explanations to become less sloppy and more
-        useful for learning.\par}
+        useful for learning.
+        \end{itemize}
+      \vspace{2mm}}
     \end{column}
     \begin{column}{0.51\textwidth}
       {\fontsize{10.5}{12}\selectfont\bfseries
@@ -758,19 +747,19 @@
 \end{frame}
 
 \begin{frame}[t]{Personal take}
-  \vspace{-1mm}
+
   {\fontsize{10}{12}\selectfont
-    I find this exciting: an elegant solution, with reasoning that feels human.\par
-    Still, something is missing when I do not discover the ideas myself.\par}
+Doing math this way can be still exciting.\par
+Faster proofs let me explore more, different starting conditions let me explore different paths.\par
+ Still, something is missing when I do not discover the ideas myself.\par}
+ 
   \vspace{1.5mm}
-  {\fontsize{9.5}{11}\selectfont
-    Faster proofs let me explore more. Research was never a straight line.\par}
-  \vspace{0.5mm}
   \noindent\makebox[\textwidth][c]{%
     \includegraphics[clip,width=\textwidth,height=31mm,keepaspectratio]{personal_research_paths.pdf}}\par
   \vspace{0.5mm}
   {\fontsize{10}{12}\selectfont
-    Reaching B only helps me if I understand the mathematics.\par}
+    Reaching $B$ only helps me if I understand the mathematics.\par}
+    Reaching $B$ in different ways lets me think about where to go next i.e. $C$. \par
   \vspace{2mm}
   {\fontsize{9}{11}\selectfont
     \textbf{My concern as a PhD student:}
