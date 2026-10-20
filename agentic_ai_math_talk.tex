@@ -622,16 +622,18 @@
   {\fontsize{7}{8}\selectfont
     \href{https://aclanthology.org/2024.tacl-1.9/}{\color{muted}Liu et al. (2024)};
     \href{https://arxiv.org/html/2502.05167v3}{\color{muted}Modarressi et al. (2025)}}\par
-  Give each agent the information it needs. Long conversations can make
-  relevant details harder to find and use.\par
+  {\fontsize{8.5}{10}\selectfont\color{chartorange}%
+    \textbf{Problems:} context distraction and context clash.\par}
+  Give each agent the information it needs; long histories can obscure relevant details.\par
   \vspace{1.1mm}
 
   {\color{teal}\bfseries 2. Give review a fresh context}\quad
   {\fontsize{7}{8}\selectfont
     \href{https://arxiv.org/html/2310.13548v4}{\color{muted}Sharma et al. (2023)};
     \href{https://arxiv.org/html/2309.11495v2}{\color{muted}Dhuliawala et al. (2023)}}\par
-  Review the draft and criteria without the writer's history.
-  Framing can bias feedback; independent verification can help.\par
+  {\fontsize{8.5}{10}\selectfont\color{chartorange}%
+    \textbf{Problems:} context poisoning and context confusion.\par}
+  Review the draft and criteria without the writer's history; verify independently.\par
   \vspace{1.1mm}
 
   {\color{teal}\bfseries 3. Match the model to the task}\quad
@@ -658,7 +660,13 @@
 
   {\fontsize{7}{8.5}\selectfont\color{muted}%
     Effects depend on the task and models. Fresh-context review is a design inference from bias and verification studies.\par}
-  \note{Evidence and scope:
+  \note{The problem labels are descriptive terms requested by the owner,
+    not a taxonomy attributed to the papers cited beside each heading.
+    Here, distraction refers to irrelevant material obscuring useful details;
+    clash refers to conflicting assumptions or instructions. Poisoning refers
+    to earlier errors contaminating later reasoning, while confusion refers to
+    mixing drafting claims, review criteria and established evidence.
+    Evidence and scope:
     1. Liu et al., Lost in the Middle: How Language Models Use Long Contexts,
     TACL 2024 (arXiv 2023), varies the position of relevant information in
     multi-document QA and key-value retrieval; relevant information in the middle
