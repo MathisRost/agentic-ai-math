@@ -1,0 +1,20 @@
+{
+  "updated": "2026-10-20",
+  "outlook": "Owner-supplied expectations and custom-harness roles, edited in the owner's writing style.",
+  "supplied_report": {
+    "url": "https://www.scientificamerican.com/article/openai-unleashes-hundreds-more-math-results-upon-a-field-already-in-shock/",
+    "access": "Inaccessible via browser tool; specific single-prompt/single-agent attribution supplied by owner.",
+    "claim": "OpenAI reportedly obtained almost all results from one prompt to one agent; some may have required retries. Independent workflow reproduction remains unestablished."
+  },
+  "primary_sources": [
+    {
+      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+      "verified": "October release from an internal model; average result used compute equivalent to roughly three hours of ChatGPT Pro thinking."
+    },
+    {
+      "url": "https://github.com/openai/math#how-the-results-were-produced",
+      "verified": "Vast majority used a common procedure with an unreleased model; approximately 4000 problems attempted. Does not independently establish the reported single-agent workflow."
+    }
+  ],
+  "distinction": "Formal verification of output does not reproduce the generation workflow."
+}

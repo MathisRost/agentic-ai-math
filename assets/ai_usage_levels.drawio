@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="Codex" version="29.0.0">
+  <diagram id="ai-usage-levels" name="Five levels of AI use">
+    <mxGraphModel dx="1100" dy="430" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="430" math="0" shadow="0" background="#FFFFFF" extFonts="Kalam^https://fonts.googleapis.com/css?family=Kalam:400,700">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tier4" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;size=0.38;sketch=1;comic=0;jiggle=1.2;fillStyle=hachure;hachureGap=7;fillWeight=0.8;fillColor=#77B6B0;strokeColor=#21736F;strokeWidth=2;fontColor=#252A2D;fontSize=36;fontFamily=Kalam;fontStyle=1;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DKalam%3A400%2C700;" vertex="1" parent="1">
+          <mxGeometry x="270" y="12" width="120" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="tier3" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;size=0.22;sketch=1;comic=0;jiggle=1.2;fillStyle=hachure;hachureGap=7;fillWeight=0.8;fillColor=#8FC3BE;strokeColor=#21736F;strokeWidth=2;fontColor=#252A2D;fontSize=36;fontFamily=Kalam;fontStyle=1;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DKalam%3A400%2C700;" vertex="1" parent="1">
+          <mxGeometry x="224" y="90" width="212" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="tier2" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;size=0.1513;sketch=1;comic=0;jiggle=1.2;fillStyle=hachure;hachureGap=7;fillWeight=0.8;fillColor=#A6CEC9;strokeColor=#21736F;strokeWidth=2;fontColor=#252A2D;fontSize=36;fontFamily=Kalam;fontStyle=1;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DKalam%3A400%2C700;" vertex="1" parent="1">
+          <mxGeometry x="178" y="168" width="304" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="tier1" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;size=0.1162;sketch=1;comic=0;jiggle=1.2;fillStyle=hachure;hachureGap=7;fillWeight=0.8;fillColor=#BDDAD6;strokeColor=#21736F;strokeWidth=2;fontColor=#252A2D;fontSize=36;fontFamily=Kalam;fontStyle=1;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DKalam%3A400%2C700;" vertex="1" parent="1">
+          <mxGeometry x="132" y="246" width="396" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="tier0" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;size=0.0943;sketch=1;comic=0;jiggle=1.2;fillStyle=hachure;hachureGap=7;fillWeight=0.8;fillColor=#D2E6E2;strokeColor=#21736F;strokeWidth=2;fontColor=#252A2D;fontSize=36;fontFamily=Kalam;fontStyle=1;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DKalam%3A400%2C700;" vertex="1" parent="1">
+          <mxGeometry x="86" y="324" width="488" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="number4" value="4" style="ellipse;html=0;strokeColor=none;fillColor=#FFFFFF;fontFamily=Kalam;fontStyle=1;fontSize=36;fontColor=#252A2D;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="307" y="23.0" width="46" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="number3" value="3" style="ellipse;html=0;strokeColor=none;fillColor=#FFFFFF;fontFamily=Kalam;fontStyle=1;fontSize=36;fontColor=#252A2D;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="307" y="101.0" width="46" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="number2" value="2" style="ellipse;html=0;strokeColor=none;fillColor=#FFFFFF;fontFamily=Kalam;fontStyle=1;fontSize=36;fontColor=#252A2D;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="307" y="179.0" width="46" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="number1" value="1" style="ellipse;html=0;strokeColor=none;fillColor=#FFFFFF;fontFamily=Kalam;fontStyle=1;fontSize=36;fontColor=#252A2D;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="307" y="257.0" width="46" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="number0" value="0" style="ellipse;html=0;strokeColor=none;fillColor=#FFFFFF;fontFamily=Kalam;fontStyle=1;fontSize=36;fontColor=#252A2D;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="307" y="335.0" width="46" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="label4" value="&lt;b&gt;Research Associate&lt;/b&gt;&lt;br&gt;Runs research loops; you steer" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Kalam;fontSize=27;fontColor=#252A2D;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="8" width="475" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="label3" value="&lt;b&gt;Collaborator&lt;/b&gt;&lt;br&gt;Implements, tests and iterates" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Kalam;fontSize=27;fontColor=#252A2D;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="86" width="475" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="label2" value="&lt;b&gt;Typist&lt;/b&gt;&lt;br&gt;Drafts text and code" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Kalam;fontSize=27;fontColor=#252A2D;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="164" width="475" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="label1" value="&lt;b&gt;Consultant&lt;/b&gt;&lt;br&gt;Answers questions and suggests ideas" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Kalam;fontSize=27;fontColor=#252A2D;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="242" width="475" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="label0" value="&lt;b&gt;Classical&lt;/b&gt;&lt;br&gt;No AI assistance" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Kalam;fontSize=27;fontColor=#252A2D;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="320" width="475" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="guide4" style="endArrow=none;startArrow=none;strokeColor=#B8C8C5;strokeWidth=1.5;dashed=1;dashPattern=3 5;sketch=1;jiggle=0.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="402" y="46" as="sourcePoint" />
+            <mxPoint x="605" y="46" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="guide3" style="endArrow=none;startArrow=none;strokeColor=#B8C8C5;strokeWidth=1.5;dashed=1;dashPattern=3 5;sketch=1;jiggle=0.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="448" y="124" as="sourcePoint" />
+            <mxPoint x="605" y="124" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="guide2" style="endArrow=none;startArrow=none;strokeColor=#B8C8C5;strokeWidth=1.5;dashed=1;dashPattern=3 5;sketch=1;jiggle=0.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="494" y="202" as="sourcePoint" />
+            <mxPoint x="605" y="202" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="guide1" style="endArrow=none;startArrow=none;strokeColor=#B8C8C5;strokeWidth=1.5;dashed=1;dashPattern=3 5;sketch=1;jiggle=0.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="540" y="280" as="sourcePoint" />
+            <mxPoint x="605" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="guide0" style="endArrow=none;startArrow=none;strokeColor=#B8C8C5;strokeWidth=1.5;dashed=1;dashPattern=3 5;sketch=1;jiggle=0.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="586" y="358" as="sourcePoint" />
+            <mxPoint x="605" y="358" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="autonomy-arrow" style="endArrow=open;endSize=16;startArrow=none;strokeColor=#B16B24;strokeWidth=3;sketch=1;jiggle=1.2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="36" y="384" as="sourcePoint" />
+            <mxPoint x="36" y="24" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="autonomy-label" value="Increasing AI autonomy" style="text;html=0;strokeColor=none;fillColor=#FFFFFF;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Kalam;fontSize=25;fontColor=#B16B24;rotation=270;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="-150" y="184" width="320" height="34" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

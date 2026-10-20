@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Skills and agent files" id="skills-agent-files">
+    <mxGraphModel dx="1320" dy="470" grid="0" page="0" pageWidth="1320" pageHeight="470" background="#FFFFFF" extFonts="Kalam^https://fonts.googleapis.com/css?family=Kalam:400,700">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="shape=note;size=28;whiteSpace=wrap;html=0;sketch=1;comic=0;jiggle=1.2;strokeWidth=2;fillColor=#FFFFFF;strokeColor=#21736F;" vertex="1" parent="1">
+          <mxGeometry x="8" y="12" width="410" height="438" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=1;arcSize=7;sketch=1;comic=0;jiggle=0.7;strokeWidth=1;fillStyle=hachure;hachureGap=7;fillWeight=0.8;fillColor=#D2E6E2;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="24" y="29" width="355" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="literature_agent.md" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=1;fontColor=#21736F;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="35" y="32" width="344" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Used: literature role" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=25;fontStyle=0;fontColor=#626A70;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="35" y="95" width="360" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="" style="ellipse;fillColor=#21736F;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="37" y="171" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Read supplied papers&#10;and earlier manuscripts" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="56" y="144" width="338" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="" style="ellipse;fillColor=#21736F;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="37" y="244" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Extract theorems, conditions&#10;and page references" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="56" y="217" width="338" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="" style="ellipse;fillColor=#21736F;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="37" y="317" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Separate exact results&#10;from approximations" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="56" y="290" width="338" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="" style="ellipse;fillColor=#21736F;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="37" y="390" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Share references and&#10;unresolved questions" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="56" y="363" width="338" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="" style="shape=note;size=28;whiteSpace=wrap;html=0;sketch=1;comic=0;jiggle=1.2;strokeWidth=2;fillColor=#FFFFFF;strokeColor=#21736F;" vertex="1" parent="1">
+          <mxGeometry x="455" y="12" width="410" height="438" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="" style="rounded=1;arcSize=7;sketch=1;comic=0;jiggle=0.7;strokeWidth=1;fillStyle=hachure;hachureGap=7;fillWeight=0.8;fillColor=#D2E6E2;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="471" y="29" width="355" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="proof_agent.md" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=1;fontColor=#21736F;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="482" y="32" width="344" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Used: proof role" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=25;fontStyle=0;fontColor=#626A70;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="482" y="95" width="360" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" style="ellipse;fillColor=#21736F;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="484" y="171" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Keep prescribed intensity&#10;and geometric cutoffs" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="503" y="144" width="338" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="" style="ellipse;fillColor=#21736F;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="484" y="244" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Construct a stationary,&#10;simple point process" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="503" y="217" width="338" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="ellipse;fillColor=#21736F;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="484" y="317" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="Derive full densities&#10;at orders 2, 3 and 4" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="503" y="290" width="338" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="ellipse;fillColor=#21736F;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="484" y="390" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="Prove the exact laws&#10;or report a precise gap" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="503" y="363" width="338" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="shape=note;size=28;whiteSpace=wrap;html=0;sketch=1;comic=0;jiggle=1.2;strokeWidth=2;fillColor=#FFFFFF;strokeColor=#B16B24;" vertex="1" parent="1">
+          <mxGeometry x="902" y="12" width="410" height="438" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="" style="rounded=1;arcSize=7;sketch=1;comic=0;jiggle=0.7;strokeWidth=1;fillStyle=hachure;hachureGap=7;fillWeight=0.8;fillColor=#F1E3D2;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="918" y="29" width="355" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="SKILL.md" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=1;fontColor=#B16B24;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="929" y="32" width="344" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="Available: math-literature-check" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=25;fontStyle=0;fontColor=#626A70;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="929" y="95" width="360" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="ellipse;fillColor=#B16B24;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="931" y="171" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="Specify the claim&#10;and search scope" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="950" y="144" width="338" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="ellipse;fillColor=#B16B24;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="931" y="244" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="Read the source theorem&#10;and its assumptions" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="950" y="217" width="338" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="" style="ellipse;fillColor=#B16B24;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="931" y="317" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="Show the implication&#10;or identify the mismatch" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="950" y="290" width="338" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="" style="ellipse;fillColor=#B16B24;strokeColor=none;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="931" y="390" width="6" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="Record evidence; no match&#10;does not mean novelty" style="text;html=0;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Kalam;fontSize=27;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="950" y="363" width="338" height="64" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

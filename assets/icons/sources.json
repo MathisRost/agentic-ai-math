@@ -1,0 +1,32 @@
+{
+  "claude-code.png": {
+    "source": "https://code.claude.com/docs/_mintlify/favicons/claude-code/pLsy-mRpNksna2sx/_generated/favicon/android-chrome-192x192.png",
+    "description": "Official Claude Code documentation favicon; unchanged.",
+    "retrieved": "2026-10-18"
+  },
+  "openai-codex.svg": {
+    "source": "OpenAI Codex VS Code extension 26.1002.51308, resources/blossom-black.svg",
+    "description": "Official installed OpenAI Codex VS Code extension asset; unchanged black blossom mark.",
+    "retrieved": "2026-10-18"
+  },
+  "zotero.png": {
+    "source": "https://www.zotero.org/support/_media/logo/zotero_512x512x32.png",
+    "page": "https://www.zotero.org/support/brand",
+    "description": "Official Zotero brand icon; unchanged.",
+    "retrieved": "2026-10-19",
+    "sha256": "83668c039474e48dec9bbfbe5c6c45ce31538f33a8125a4554d36ac5bc434e99"
+  },
+  "undermind.svg": {
+    "source": "https://www.undermind.ai/_astro/logo.DfBVJw5j.svg",
+    "page": "https://www.undermind.ai/",
+    "description": "Official Undermind homepage logo; unchanged.",
+    "retrieved": "2026-10-19",
+    "sha256": "7bc0c1cafc0dfd89c9e8a68d463d4109f98d573df69d85b94a3b1b1e5b3fe368"
+  },
+  "lean.svg": {
+    "source": "https://lean-lang.org/",
+    "description": "Official Lean homepage navigation logo; unchanged inline SVG.",
+    "retrieved": "2026-10-19",
+    "sha256": "752c092170a0f56958bf249c2ee78587bfb793d1ec9e073a8e8114746b30a1eb"
+  }
+}

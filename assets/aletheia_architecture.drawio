@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="aletheia_architecture" id="aletheia_architecture">
+    <mxGraphModel grid="0" page="0" pageWidth="680" pageHeight="300" background="#FFFFFF" extFonts="Kalam^https://fonts.googleapis.com/css?family=Kalam:400,700">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" vertex="1" value="Generator&#10;LLM" style="rounded=1;arcSize=12;sketch=1;comic=0;jiggle=1.2;strokeWidth=2;fillStyle=hachure;hachureGap=7;fillWeight=0.8;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;strokeColor=#21736F;fillColor=#D2E6E2;fontFamily=Kalam;fontSize=29;fontColor=#252A2D;fontStyle=1;">
+          <mxGeometry x="10" y="85" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" vertex="1" value="Verifier&#10;LLM" style="rounded=1;arcSize=12;sketch=1;comic=0;jiggle=1.2;strokeWidth=2;fillStyle=hachure;hachureGap=7;fillWeight=0.8;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;strokeColor=#21736F;fillColor=#D2E6E2;fontFamily=Kalam;fontSize=29;fontColor=#252A2D;fontStyle=1;">
+          <mxGeometry x="290" y="85" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" vertex="1" value="Reviser&#10;LLM" style="rounded=1;arcSize=12;sketch=1;comic=0;jiggle=1.2;strokeWidth=2;fillStyle=hachure;hachureGap=7;fillWeight=0.8;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;strokeColor=#21736F;fillColor=#D2E6E2;fontFamily=Kalam;fontSize=29;fontColor=#252A2D;fontStyle=1;">
+          <mxGeometry x="290" y="225" width="180" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" vertex="1" value="Accepted&#10;solution" style="rounded=1;arcSize=12;sketch=1;comic=0;jiggle=1.2;strokeWidth=2;fillStyle=hachure;hachureGap=7;fillWeight=0.8;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=6;strokeColor=#626A70;fillColor=#FFFFFF;fontFamily=Kalam;fontSize=25;fontColor=#252A2D;fontStyle=1;">
+          <mxGeometry x="555" y="85" width="125" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" edge="1" style="edgeStyle=none;rounded=1;sketch=1;comic=0;jiggle=0.5;strokeWidth=2.5;strokeColor=#21736F;endArrow=open;endSize=12;endFill=0;dashed=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="197" y="125" as="sourcePoint" />
+            <mxPoint x="283" y="125" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7" parent="1" vertex="1" value="draft" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;strokeColor=none;fillColor=none;fontFamily=Kalam;fontSize=25;fontColor=#21736F;fontStyle=0;">
+          <mxGeometry x="195" y="87" width="88" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" edge="1" style="edgeStyle=none;rounded=1;sketch=1;comic=0;jiggle=0.5;strokeWidth=2.5;strokeColor=#21736F;endArrow=open;endSize=12;endFill=0;dashed=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="477" y="125" as="sourcePoint" />
+            <mxPoint x="548" y="125" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9" parent="1" vertex="1" value="accept" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;strokeColor=none;fillColor=none;fontFamily=Kalam;fontSize=23;fontColor=#21736F;fontStyle=0;">
+          <mxGeometry x="475" y="87" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" edge="1" style="edgeStyle=none;rounded=1;sketch=1;comic=0;jiggle=0.5;strokeWidth=2.5;strokeColor=#B16B24;endArrow=open;endSize=12;endFill=0;dashed=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="78" as="sourcePoint" />
+            <mxPoint x="100" y="78" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="380" y="32" />
+              <mxPoint x="100" y="32" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" parent="1" vertex="1" value="major flaws: retry" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;strokeColor=none;fillColor=none;fontFamily=Kalam;fontSize=25;fontColor=#B16B24;fontStyle=0;">
+          <mxGeometry x="120" y="0" width="245" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" edge="1" style="edgeStyle=none;rounded=1;sketch=1;comic=0;jiggle=0.5;strokeWidth=2.5;strokeColor=#B16B24;endArrow=open;endSize=12;endFill=0;dashed=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="172" as="sourcePoint" />
+            <mxPoint x="380" y="218" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" parent="1" vertex="1" value="minor fixes" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;strokeColor=none;fillColor=none;fontFamily=Kalam;fontSize=25;fontColor=#B16B24;fontStyle=0;">
+          <mxGeometry x="415" y="180" width="165" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="1" edge="1" style="edgeStyle=none;rounded=1;sketch=1;comic=0;jiggle=0.5;strokeWidth=2.5;strokeColor=#21736F;endArrow=open;endSize=12;endFill=0;dashed=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="283" y="262" as="sourcePoint" />
+            <mxPoint x="283" y="150" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="235" y="262" />
+              <mxPoint x="235" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" parent="1" vertex="1" value="revised&#10;draft" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;strokeColor=none;fillColor=none;fontFamily=Kalam;fontSize=24;fontColor=#21736F;fontStyle=0;">
+          <mxGeometry x="95" y="210" width="125" height="65" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

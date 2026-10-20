@@ -1,0 +1,60 @@
+{
+  "name": "Mathis turquoise and orange sketch",
+  "background": "#FFFFFF",
+  "palette": {
+    "ink": "#252A2D",
+    "turquoise": "#21736F",
+    "orange": "#B16B24",
+    "muted": "#626A70",
+    "guide": "#B8C8C5",
+    "hatch_tints": [
+      "#77B6B0",
+      "#8FC3BE",
+      "#A6CEC9",
+      "#BDDAD6",
+      "#D2E6E2"
+    ]
+  },
+  "font": {
+    "family": "Kalam",
+    "regular": 400,
+    "bold": 700,
+    "label_px": 27,
+    "number_px": 36
+  },
+  "shape": {
+    "sketch": 1,
+    "comic": 0,
+    "jiggle": 1.2,
+    "strokeWidth": 2,
+    "fillStyle": "hachure",
+    "hachureGap": 7,
+    "fillWeight": 0.8
+  },
+  "guide": {
+    "strokeWidth": 1.5,
+    "dashPattern": "3 5",
+    "jiggle": 0.5
+  },
+  "arrow": {
+    "strokeWidth": 3,
+    "endArrow": "open",
+    "endSize": 16
+  },
+  "layout": {
+    "reference_width_px": 1100,
+    "reference_height_px": 430,
+    "row_pitch_px": 78,
+    "shape_height_px": 68,
+    "export_border_px": 12
+  },
+  "font_source": "https://fonts.google.com/specimen/Kalam",
+  "font_license": "SIL Open Font License 1.1 (fonts/OFL.txt)",
+  "number_background": {
+    "shape": "ellipse",
+    "width": 46,
+    "height": 46,
+    "fillColor": "#FFFFFF",
+    "strokeColor": "none"
+  }
+}

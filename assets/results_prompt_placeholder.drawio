@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Results" id="results-prompt">
+    <mxGraphModel dx="1320" dy="565" grid="0" page="0" pageWidth="1320" pageHeight="565" background="#FFFFFF" extFonts="Kalam^https://fonts.googleapis.com/css?family=Kalam:400,700">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="shape=stencil(dVJRjoMgFLwKeRdwJdq0CXCGXgGVraQIFrC1t18WsCFk9wsYZubNe0DczFeBNF8Ehas1y+rRsA2DEoBeFE7tF6CZQt+HlbtVjJ7Ck1vJI8N5a+7iJScfOFLPwkoPjIxG68CURjvUMDLw8X6zZtMTIyv3MyOLeQq0U8BnQG8KwTvQlNQR7M+4QB8bn9De5ijvNuI7Ps44mRTyhFPoTvgfg+6SLVIlnJHCo83BarxLcN9VJf9mVyafIHWM3McR+JCnNnJ3tThLYwl8zGpUxonfTZPG3JST/zZWfPZSqfR2kV1eNfFDsB8=);sketch=1;comic=0;jiggle=1.2;strokeWidth=2;strokeColor=#21736F;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="8" y="8" width="610" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="rounded=1;arcSize=9;sketch=1;comic=0;jiggle=0.7;strokeColor=none;fillStyle=hachure;hachureGap=7;fillWeight=0.8;fillColor=#D2E6E2;" vertex="1" parent="1">
+          <mxGeometry x="31" y="27" width="551" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Launch prompt (shortened)" style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;align=left;fontFamily=Kalam;fontSize=29;fontStyle=1;fontColor=#21736F;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="48" y="31" width="530" height="43" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Run the configured workflow.&#10;Read instruction.md and agent.md." style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;align=left;fontFamily=Kalam;fontSize=28;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="42" y="96" width="552" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Use GPT-5.6 Sol with extra-high&#10;reasoning for every agent." style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;align=left;fontFamily=Kalam;fontSize=28;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="42" y="174" width="552" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Use one literature agent, five proof&#10;agents, the reviewer and the coder." style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;align=left;fontFamily=Kalam;fontSize=28;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="42" y="252" width="552" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Preserve the exact problem&#10;and separate agent contexts." style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;align=left;fontFamily=Kalam;fontSize=28;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="42" y="330" width="552" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Complete the reviews. Report results&#10;and remaining proof gaps." style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;align=left;fontFamily=Kalam;fontSize=28;fontStyle=0;fontColor=#252A2D;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="42" y="408" width="552" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="" style="rounded=1;arcSize=8;sketch=1;comic=0;jiggle=0.6;strokeWidth=2;strokeColor=#B16B24;fillColor=none;dashed=1;dashPattern=5 7;" vertex="1" parent="1">
+          <mxGeometry x="716" y="8" width="598" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Results to be added" style="text;html=0;whiteSpace=wrap;verticalAlign=middle;spacing=0;align=center;fontFamily=Kalam;fontSize=33;fontStyle=0;fontColor=#626A70;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="766" y="209" width="498" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

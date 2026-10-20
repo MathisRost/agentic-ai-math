@@ -1,0 +1,75 @@
+{
+  "slide": "Step 3: Writing the paper",
+  "updated": "2026-10-20",
+  "scope": "Complete task",
+  "source": "Owner-provided complete-task results in PDF review comment on 20 October 2026",
+  "tokens": {
+    "input": 131866681,
+    "cached_input_subset_of_input": 128329472,
+    "uncached_input": 3537209,
+    "output_including_reasoning": 666705,
+    "reasoning_subset_of_output": 286459,
+    "total": 132533386
+  },
+  "runtime": {
+    "task_turn": "3:47:06",
+    "research_coordinator": "3:36:43",
+    "additive": false
+  },
+  "api_equivalent_cost": {
+    "currency": "USD",
+    "total": 78.81,
+    "source": "Owner-provided result",
+    "interpretation": "API-equivalent cost, not a recorded subscription charge"
+  },
+  "superseded_report": {
+    "slide": "Results",
+    "updated": "2026-10-19",
+    "run_id": "20261019T081505Z_exact",
+    "statistics": {
+      "end_to_end_time": "1:22:39",
+      "delegated_agent_turns": 20,
+      "summed_delegated_time": "2:05:00",
+      "summed_time_is_reconstructed_and_includes_parallel_overlap": true,
+      "saved_output_words": 57819,
+      "coder_calls": 0,
+      "source": "Owner-provided figures, corroborated by agentic_research_setup/runs/20261019T081505Z_exact/agent_accounting.md"
+    },
+    "token_estimate": {
+      "source": "Owner-provided category estimates in this conversation; not recorded per-turn token telemetry",
+      "supersedes_earlier_total_estimate": 10500000,
+      "uncached_input": 3200000,
+      "cached_input": 4800000,
+      "total_processed_input": 8000000,
+      "output_including_reasoning": 1200000,
+      "total": 9200000
+    },
+    "pricing": {
+      "model": "gpt-5.6-sol",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "checked_on": "2026-10-19",
+      "currency": "USD",
+      "service_tier": "Standard",
+      "context_regime": "At most 272000 input tokens per request",
+      "per_million_tokens": {
+        "uncached_input": 4,
+        "cached_input": 0.4,
+        "output_including_reasoning": 20
+      },
+      "estimated_cost": {
+        "uncached_input": 12.8,
+        "cached_input": 1.92,
+        "total_processed_input": 14.72,
+        "output_including_reasoning": 24,
+        "total": 38.72
+      },
+      "interpretation": "API-equivalent estimate from supplied token estimates, not a recorded charge or subscription bill",
+      "exclusions": [
+        "Different service tiers",
+        "Long-context premiums",
+        "Cache-write premiums",
+        "Other tool fees"
+      ]
+    }
+  }
+}

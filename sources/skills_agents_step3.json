@@ -1,0 +1,46 @@
+{
+  "checked_on": "2026-10-19",
+  "slide": "Step 3: skills and agents",
+  "summary_inputs": [
+    "agentic_research_setup/instructions/literature_agent.md",
+    "agentic_research_setup/instructions/proof_agent.md",
+    "Local skill: math-literature-check/SKILL.md"
+  ],
+  "diagram": "talk/assets/skills_agent_files.drawio",
+  "filename_note": "Diagram headings use the actual Markdown role-instruction filenames, literature_agent.md and proof_agent.md, and the actual skill entrypoint SKILL.md. Native agent definitions remain TOML files referencing the role instructions.",
+  "run_evidence": {
+    "run_id": "20261019T081505Z_exact",
+    "sources": [
+      "agentic_research_setup/runs/20261019T081505Z_exact/run_manifest.json",
+      "agentic_research_setup/runs/20261019T081505Z_exact/manifests/literature_context_v01.sha256",
+      "agentic_research_setup/runs/20261019T081505Z_exact/shared_literature/dossier.md"
+    ],
+    "model_selection_recorded": "gpt-5.6-sol, xhigh",
+    "literature_coverage_recorded": "Six supplied published PDFs, two local manuscript source trees and frozen notes. The dossier reports no internet search or citation-tree expansion in this run.",
+    "skill_loading": "Not explicitly confirmed by the inspected role configuration and frozen context records. The skill is shown as available, not asserted to have been loaded.",
+    "configuration_mutations": "None; this update revises the presentation only."
+  },
+  "primary_reference": {
+    "authors": "Han Zhou, Xingchen Wan, Ruoxi Sun, Hamid Palangi, Shariq Iqbal, Ivan Vulic, Anna Korhonen, Sercan O. Arik",
+    "title": "Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies",
+    "venue": "ICLR 2026",
+    "arxiv": "2502.02533v2",
+    "version_date": "2026-01-31",
+    "url": "https://arxiv.org/html/2502.02533v2#S2.SS1",
+    "locations": [
+      "Section 2.1",
+      "Figure 2"
+    ],
+    "supports": "Optimising agent prompts, including instructions and a one-shot exemplar, can improve mathematical benchmark performance and inference-token efficiency on MATH with Gemini 1.5 Pro.",
+    "limits": "Does not evaluate these local agent files, a Markdown filename convention, GPT-5.6 Sol, or correctness of open-ended mathematical research proofs."
+  },
+  "additional_checked_reference": {
+    "authors": "Chengrun Yang et al.",
+    "title": "Large Language Models as Optimizers",
+    "venue": "ICLR 2024",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/3339f19c5fcee3ad74502947a32be9e6-Paper-Conference.pdf",
+    "location": "Table 1",
+    "result": "Pretrained PaLM 2-L GSM8K zero-shot test accuracy: 71.8% for the step-by-step baseline, 80.2% for the listed OPRO-optimised instruction.",
+    "used_on_slide": false
+  }
+}

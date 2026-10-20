@@ -1,0 +1,15 @@
+# Publish the presentation and its editable assets only.
+/*
+!/.gitignore
+!/README.md
+!/agentic_ai_math_talk.tex
+!/agentic_ai_math_talk.pdf
+!/assets/
+!/scripts/
+!/sources/
+!/style/
+!/experiments/
+
+**/.DS_Store
+**/__pycache__/
+**/*.pyc

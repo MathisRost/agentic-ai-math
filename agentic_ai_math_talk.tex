@@ -1,0 +1,1499 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\graphicspath{{talk/assets/}{assets/}}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Modern minimal: white background, charcoal text and restrained teal accents.
+\definecolor{charcoal}{HTML}{252A2D}
+\definecolor{teal}{HTML}{21736F}
+\definecolor{muted}{HTML}{626A70}
+\definecolor{chartorange}{HTML}{B16B24}
+\definecolor{chartblue}{HTML}{4267A0}
+\definecolor{chartpurple}{HTML}{8B5A8B}
+\setbeamercolor{normal text}{fg=charcoal,bg=white}
+\setbeamercolor{structure}{fg=teal}
+\setbeamercolor{frametitle}{fg=charcoal,bg=white}
+\setbeamercolor{title}{fg=charcoal}
+\setbeamercolor{page number in head/foot}{fg=muted}
+\setbeamerfont{normal text}{size=\normalsize}
+\setbeamerfont{frametitle}{size=\LARGE,series=\bfseries}
+\setbeamerfont{title}{size=\fontsize{26}{31}\selectfont,series=\bfseries}
+\setbeamerfont{page number in head/foot}{size=\scriptsize}
+\setbeamersize{text margin left=11mm,text margin right=11mm}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{itemize item}{\raisebox{0.15ex}{\scriptsize\textbullet}}
+\setbeamertemplate{frametitle}{%
+  \vspace{5mm}%
+  \usebeamerfont{frametitle}\insertframetitle\par
+  \vspace{2mm}%
+}
+\setbeamertemplate{footline}{%
+  \hfill\usebeamerfont{page number in head/foot}%
+  \usebeamercolor[fg]{page number in head/foot}%
+  \insertframenumber\hspace{11mm}\vspace{4mm}%
+}
+
+\title{Agentic AI in\\mathematical research}
+% Add author, affiliation and event details when they are settled.
+\author{}
+\date{}
+
+% Editable data charts. Provenance and the source snapshot are in talk/sources/.
+\pgfplotsset{intro chart/.style={
+  width=\linewidth,height=40mm,
+  scaled ticks=false,
+  tick label style={font=\fontsize{7}{8.5}\selectfont},
+  axis lines=left,axis line style={muted!45},
+  tick style={muted!45},tick align=outside,
+  ymajorgrids=true,grid style={muted!15},
+  clip=false,
+  legend style={draw=none,fill=none,font=\fontsize{7}{8.5}\selectfont,
+    at={(0,-0.23)},anchor=north west,cells={anchor=west},
+    row sep=1pt,inner sep=0pt},
+}}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \vspace{10mm}
+  {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+\end{frame}
+
+\begin{frame}[t]{A brief disclaimer}
+  I am not an expert in this field. I have been exploring it out of curiosity
+  and to stay up to date.
+
+  \vspace{3mm}
+  This talk neither advocates nor argues against using AI to write papers.
+
+  \vspace{3mm}
+  \begin{itemize}
+    \setlength{\itemsep}{3.5mm}
+    \item A brief history and overview of mathematical research with LLMs,
+      focusing on agentic approaches.
+    \item What the literature tells us about successful approaches
+      and their limitations.
+    \item A case study where I build an AI research team to write a paper.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{AI use and mathematical output}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      {\small\bfseries AI disclosures on arXiv\par}
+      {\fontsize{7.5}{9}\selectfont\color{muted}%
+        Share of math-related submissions, 2026\par}
+      \vspace{2mm}
+      \begin{tikzpicture}
+        \begin{axis}[intro chart,
+          xmin=2.8,xmax=8.6,ymin=0,ymax=30,
+          xtick={3,4,5,6,7,8},xticklabels={Mar,Apr,May,Jun,Jul,Aug*},
+          ytick={0,10,20,30},yticklabel={\pgfmathprintnumber{\tick}\%},
+          legend columns=1,
+        ]
+          % Numerators and denominators are from Jin, Ke and Sui, Table 1.
+          \addplot[teal,line width=1pt,mark=*,mark size=1.25pt] coordinates
+            {(3,4.74833808)(4,5.51304689)(5,7.78280543)(6,9.33508025)(7,14.86695545)(8,24.13639403)}
+            node[pos=1,anchor=west,font=\fontsize{7.5}{9}\selectfont,text=teal] {24.1\%};
+          \addlegendentry{Any disclosed AI use}
+          \addplot[chartorange,dashed,line width=1pt,mark=square*,mark size=1.2pt] coordinates
+            {(3,1.38651472)(4,2.15813223)(5,3.14932127)(6,4.14346544)(7,7.27103960)(8,14.08513483)}
+            node[pos=1,anchor=west,font=\fontsize{7.5}{9}\selectfont,text=chartorange] {14.1\%};
+          \addlegendentry{Substantive mathematical use}
+        \end{axis}
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\small\bfseries Submissions by field\par}
+      {\fontsize{7.5}{9}\selectfont\color{muted}%
+        New preprints, January--August each year\par}
+      \vspace{2mm}
+      \begin{tikzpicture}
+        \begin{axis}[intro chart,
+          xmin=2017.7,xmax=2027.4,ymin=0,ymax=6000,
+          xtick={2018,2020,2022,2024,2026},ytick={0,2000,4000,6000},
+          xticklabel style={/pgf/number format/1000 sep={}},
+          yticklabel style={/pgf/number format/1000 sep={\,}},
+          legend columns=2,column sep=3pt,
+        ]
+          \addplot[teal,line width=1pt,mark=*,mark size=1pt] coordinates
+            {(2018,548)(2019,673)(2020,696)(2021,699)(2022,636)(2023,621)(2024,741)(2025,851)(2026,1564)}
+            node[pos=1,anchor=west,font=\fontsize{6.5}{8}\selectfont,text=teal] {1,564};
+          \addlegendentry{Statistics Theory}
+          \addplot[chartorange,dashed,line width=1pt,mark=square*,mark size=1pt] coordinates
+            {(2018,1524)(2019,1622)(2020,1709)(2021,1699)(2022,1639)(2023,1564)(2024,1686)(2025,2052)(2026,3402)}
+            node[pos=1,anchor=west,font=\fontsize{6.5}{8}\selectfont,text=chartorange] {3,402};
+          \addlegendentry{Probability}
+          \addplot[chartblue,line width=1pt,mark=triangle*,mark size=1.4pt] coordinates
+            {(2018,1937)(2019,1955)(2020,2131)(2021,2263)(2022,2238)(2023,2312)(2024,2749)(2025,3049)(2026,5654)}
+            node[pos=1,anchor=west,font=\fontsize{6.5}{8}\selectfont,text=chartblue] {5,654};
+          \addlegendentry{Combinatorics}
+          \addplot[chartpurple,densely dotted,line width=1pt,mark=diamond*,mark size=1.4pt] coordinates
+            {(2018,253)(2019,240)(2020,243)(2021,282)(2022,270)(2023,230)(2024,241)(2025,301)(2026,556)}
+            node[pos=1,anchor=west,font=\fontsize{6.5}{8}\selectfont,text=chartpurple] {556};
+          \addlegendentry{Metric Geometry}
+        \end{axis}
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+  \vspace{2mm}
+  {\fontsize{7}{8.5}\selectfont\color{muted}%
+    Left: 3,575 of 32,944 preprints disclosed AI use. *August covers 1--20.\par
+    Right: primary-category counts. Growth alone does not identify an AI effect.\par
+    \vspace{1mm}
+    \href{https://arxiv.org/html/2608.24961v1}{\color{teal}Jin, Ke \& Sui (2026), Table 1}
+    \quad
+    \href{https://rosie-0525.github.io/arxiv-statistics/}{\color{teal}\textbf{Explore arXiv Math Pulse}}
+    \quad\href{https://github.com/rosie-0525/arxiv-statistics}{\color{teal}GitHub source}.\par}
+  \note{The disclosure study includes primary or secondary Mathematics categories.
+    The authors classify disclosures with an LLM and report ongoing manual validation.
+    The counts do not measure undisclosed use or independently validate mathematical contributions.
+    The category chart uses the dashboard's primary-category daily counts, generated
+    20 September 2026, aggregated over January--August in each year. Statistics Theory
+    is math.ST (including the stat.TH alias), not the whole statistics archive.
+    This dashboard differs from the separate older first-half-year tracker used in
+    the outline. The slide consistently uses only this dashboard for category counts.
+    Substantive use is a subset of any disclosed AI use, based on the study's
+    classification of author statements, not independent mathematical verification.
+    The category lines show absolute counts on a common vertical scale.
+    The increases are descriptive and do not establish exponential growth or causation.}
+\end{frame}
+
+\begin{frame}[t]{How have you used AI in research?}
+  \noindent{\color{teal}\large Which is the highest level you have used?\par}
+  \vspace{2mm}
+  \noindent\makebox[\textwidth][c]{\includegraphics[clip,width=0.90\textwidth]{ai_usage_levels.pdf}}
+
+  \vspace{2mm}
+  {\fontsize{8}{10}\selectfont\color{muted}%
+    Different tasks in one project may use different levels.\par
+    \vspace{1mm}
+    Adapted from \href{https://arxiv.org/html/2603.15914v1\#S2}{%
+      \color{teal}Zimmer et al. (2026), \emph{The Agentic Researcher}, Section 2}.\par}
+  \note{Audience poll: ask for a show of hands at each level, or invite participants
+    to show 0--4 fingers for the highest level they have actually used in research.
+    The levels describe increasing AI autonomy. At level 2 the researcher directs
+    and reviews text or code; AI does not execute it. At level 3 the agent implements,
+    tests and iterates within a task, while the researcher assigns the next task.
+    At level 4 the agent runs a research loop under human steering and periodic review.
+    Optional follow-up: What is the most useful task you have delegated, and what
+    did you still need to check yourself? Take one or two short responses.
+    The editable source is assets/ai_usage_levels.drawio. The SVG embeds the Kalam
+    web font, and the PDF was exported from draw.io with the sketch style.}
+\end{frame}
+
+\section{A short history}
+\begin{frame}[t]{A short history of math research with LLMs}
+  \vspace{12mm}
+  \noindent{\color{teal}\LARGE From language models to research agents\par}
+  \vspace{5mm}
+  {\large A brief history, with a focus on mathematics.\par}
+  \note{Section introduction to the following paper recaps on mathematical
+    research with LLMs: FunSearch, AlphaProof and Aletheia.}
+\end{frame}
+
+% Paper recaps place the short author-year citation in the title and the
+% paper's full title directly underneath; use the same format for later recaps.
+\begin{frame}[t]{FunSearch\quad{\fontsize{14}{17}\selectfont\mdseries%
+  \href{https://doi.org/10.1038/s41586-023-06924-6}{\color{teal}Romera-Paredes et al., \emph{Nature} (2024)}}}
+  \fontsize{9}{10.5}\selectfont
+  \noindent{\fontsize{9}{11}\selectfont\color{muted}%
+    Paper recap: \emph{Mathematical discoveries from program search with large language models}\par}
+  \vspace{1mm}
+  \noindent\makebox[\textwidth][c]{%
+    \includegraphics[clip,width=\textwidth,height=27mm,keepaspectratio]{funsearch_workflow.pdf}}\par
+  \vspace{-2mm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      {\fontsize{10}{12}\selectfont\bfseries\color{teal}Larger cap sets\par}
+      \centering
+      \includegraphics[clip,width=\linewidth,height=14mm,keepaspectratio]{funsearch_cap_set.pdf}\par
+      \raggedright\fontsize{8.5}{10.5}\selectfont
+      No three distinct points on a line in $\mathbb{F}_3^n$.\par
+      A new construction, not a proof of maximality.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\fontsize{10}{12}\selectfont\bfseries\color{teal}Better bin-packing heuristics\par}
+      \centering
+      \includegraphics[clip,width=\linewidth,height=14mm,keepaspectratio]{funsearch_bin_packing.pdf}\par
+      \raggedright\fontsize{8.5}{10.5}\selectfont
+      Pack arriving items into as few fixed-capacity bins as possible.
+    \end{column}
+  \end{columns}
+  \vspace{1mm}
+  {\fontsize{6.8}{8}\selectfont\color{muted}%
+    Workflow adapted from Fig.~1; results: Fig.~4 and Table~1.
+    \href{https://doi.org/10.1038/s41586-023-06924-6}{\color{teal}Romera-Paredes et al., \emph{Nature} \textbf{625}, 468--475 (2024).}\par}
+  \note{FunSearch uses a frozen pretrained Codey model: learning occurs in the
+    population of programs and the examples selected for prompts, not through
+    updating model weights. Code changes means generating a new version of the
+    function being evolved, rather than necessarily emitting a patch.
+    Diagram colours distinguish orange human specification, turquoise LLM code
+    proposals, grey fixed evaluation code and its results, and purple stored
+    programs reused as examples. The evaluator is a computer program, not an LLM.
+    The human supplies the evaluation function, an initial
+    program, and usually a skeleton whose critical function is evolved.
+    Invalid candidates are rejected; valid programs and their scores enter a
+    diverse population database. The output is the best program found so far.
+    This editable workflow is a simplified redrawing of Figure 1 of the paper.
+    The cap-set illustration selects four points in the two-dimensional finite
+    affine plane over F3; it explains the constraint but is not the discovered
+    eight-dimensional 512-point construction. Lines are interpreted over F3,
+    including wrap-around, and only distinct triples are forbidden.
+    The neighbouring forbidden example selects the three points of one row,
+    a full affine line in F3 squared; a red diagonal strike-through marks its
+    violation of the cap-set condition. Pale grey points are not selected.
+    The 512-point construction improved the previously known size of 496.
+    It does not establish that 512 is maximal or solve the general cap-set problem.
+    The paper also improves asymptotic lower bounds through admissible sets.
+    The packing illustration uses four items of sizes .4, .4, .6, .6 and bins
+    of capacity one. First fit in that order uses three bins; a suitable packing
+    uses two. This is an explanatory example, not a recorded FunSearch output.
+    Actual reported bin-packing results compare evolved online heuristics with
+    first fit and best fit on OR-Library and Weibull benchmarks (Table 1).
+    Empirical improvements do not establish universal superiority or optimality.
+    Sources and reading notes: references/history_papers/.
+    Editable diagrams: assets/funsearch_workflow.drawio,
+    assets/funsearch_cap_set.drawio, assets/funsearch_bin_packing.drawio.}
+\end{frame}
+
+\begin{frame}[t]{AlphaProof\quad{\fontsize{14}{17}\selectfont\mdseries%
+  \href{https://doi.org/10.1038/s41586-025-09833-y}{\color{teal}Hubert et al., \emph{Nature} (2026)}}}
+  \fontsize{9}{11}\selectfont
+  \noindent{\color{muted}Paper recap: \emph{Olympiad-level formal mathematical reasoning with reinforcement learning}\par}
+  \vspace{0mm}
+  \noindent\makebox[\textwidth][c]{%
+    \includegraphics[clip,width=\textwidth,height=36mm,keepaspectratio]{alphaproof_architecture.pdf}}\par
+  \vspace{1mm}
+  \noindent\textbf{Search:} the LLM proposes tactics; Lean returns new proof states.\par
+  \vspace{1mm}
+  \noindent\textbf{Learning:} RL updates the network. Hard targets get further training on related variants.\par
+  \vspace{1.5mm}
+  \noindent{\color{teal}\textbf{IMO 2024: silver-medal level --- 28/42 points with AlphaGeometry 2.}}\par
+  \noindent AlphaProof solved 3 problems; AlphaGeometry 2 solved 1.\par
+  \vspace{0mm}
+  {\fontsize{7}{8.5}\selectfont\color{muted}%
+    Adapted from Figs.~1--2 and the AlphaProof section.
+    \href{https://doi.org/10.1038/s41586-025-09833-y}{\color{teal}\emph{Nature} \textbf{651}, 607--613 (2026).}\par}
+  \note{Architecture recap, not a claim that a general chat model simply calls Lean.
+    The proof network is a specialized three-billion-parameter encoder-decoder
+    transformer. It predicts a policy over tactics and a value estimating proof
+    difficulty. An AND--OR tree search explores tactic sequences and handles
+    decomposition into subgoals. Lean executes tactics, updates hypotheses and
+    goals, and its kernel checks completed proof terms.
+    Orange denotes the formalized task, turquoise the neural model and its
+    proposals/updates, grey programmed search and Lean execution, and purple
+    feedback or recorded experience. The lower loop summarizes RL training;
+    it is not a weight update after every tactic during ordinary inference.
+    Training includes pretraining, supervised learning from Mathlib proofs,
+    then reinforcement learning on a large auto-formalized curriculum.
+    The simplified diagram shows successful, formally verified outcomes feeding
+    training; the full method also handles failed and timed-out search attempts.
+    At inference, larger tree-search budgets explore more possibilities. For hard
+    targets, test-time RL trains on generated related variants before renewed
+    proof attempts. Ordinary search and test-time RL are distinct mechanisms.
+    Lean checks the formal proposition; humans must ensure it represents the
+    intended mathematical question. IMO 2024 statements were formalized by experts.
+    AlphaProof solved P1, P2 and P6, including the hardest problem, P6, solved
+    by only five human contestants. AlphaGeometry 2 solved P4. Their combined
+    score was 28/42, equivalent to silver-medal level, not an official medal.
+    The comparison is by score: AlphaProof used 2--3 days of test-time RL per
+    solved problem, exceeding the human competition time limits. See Fig.~5
+    and the IMO 2024 evaluation section of the paper.
+    Citation uses the published journal volume year, 2026; online publication was
+    12 November 2025, and the IMO demonstration was in July 2024.
+    Source PDF: references/history_papers/alphaproof_2025.pdf, pp. 2--3.
+    Editable illustration: assets/alphaproof_architecture.drawio.}
+\end{frame}
+
+\begin{frame}[t]{Aletheia\quad{\fontsize{14}{17}\selectfont\mdseries%
+  \href{https://arxiv.org/abs/2602.10177}{\color{teal}Feng et al., arXiv (2026)}}}
+  \noindent{\fontsize{9}{11}\selectfont\color{muted}%
+    Paper recap: \emph{Towards Autonomous Mathematics Research}\par}
+  \vspace{0mm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      {\color{teal}\fontsize{10}{12}\selectfont\bfseries Gemini Deep Think agents}\par
+      \vspace{1mm}
+      \includegraphics[clip,width=\linewidth,height=29mm,keepaspectratio]{aletheia_architecture.pdf}\par
+      {\fontsize{7.5}{9}\selectfont\color{muted}%
+        LLM judgment; no formal guarantee (Fig.~1).\par}
+      \vspace{2mm}
+      {\fontsize{9}{11}\selectfont
+        {\color{teal}\bfseries Reported mathematical results}\par
+        \vspace{1mm}
+        \textbullet\ Derived new formulas for eigenweights.\par
+        \vspace{1mm}
+        \textbullet\ Erd\H{o}s: 2 full + 2 partial new solutions from 700 problems, assessed by experts.\par}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \fontsize{8.3}{9.5}\selectfont
+      {\color{teal}\fontsize{10}{12}\selectfont\bfseries Other LLM research systems}\par
+      \vspace{1.5mm}
+      \textbf{The AI Scientist}\quad
+      \href{https://doi.org/10.1038/s41586-026-10265-5}{\color{teal}\emph{Nature} (2026)}\par
+      Ran ML experiments and wrote a paper that passed a workshop's first review round.\par
+      \vspace{1.5mm}
+      \textbf{Google Co-Scientist}\quad
+      \href{https://doi.org/10.1038/s41586-026-10644-y}{\color{teal}\emph{Nature} (2026)}\par
+      Agents proposed and refined leukaemia drug combinations, validated in laboratory experiments.\par
+      \vspace{1.5mm}
+      \textbf{Virtual Lab}\quad
+      \href{https://doi.org/10.1038/s41586-025-09442-9}{\color{teal}\emph{Nature} (2025)}\par
+      LLM agents designed SARS-CoV-2 nanobodies with binding confirmed in laboratory tests.\par
+      \vspace{1.5mm}
+      \textbf{OpenAI: Navier--Stokes}\quad
+      \href{https://openai.com/index/navier-stokes-solution/}{\color{teal}report (2026)}\par
+      Reported blow-up under smooth forcing, formalized in Lean.
+      Parallel agent groups explored different approaches; researchers redirected
+      effort and shared promising intermediate results.\par
+    \end{column}
+  \end{columns}
+  \note{Aletheia: Feng et al., Towards Autonomous Mathematics Research,
+    arXiv:2602.10177v3, Figure 1 and Sections 2--3.
+    Three Gemini Deep Think roles generate, judge and revise natural-language
+    solutions. Major flaws return to the generator; smaller flaws go to the
+    reviser. The process stops on verifier approval or an attempt limit.
+    LLM approval is fallible and does not provide Lean-style formal certification.
+    The authors report autonomously generated mathematical content for the
+    eigenweights work; final papers were written by human authors.
+    The Erd\H{o}s evaluation distinguishes full resolutions of 652 and 1051 from
+    partial solutions to 654 and 1040. Novelty is the authors' assessment, subject
+    to further literature checking. Most candidate solutions were unsuccessful.
+    The right-hand examples are prominent illustrative systems, not a ranking.
+    The AI Scientist: Lu et al., Towards end-to-end automation of AI research,
+    Nature 651, 914--919 (2026), DOI 10.1038/s41586-026-10265-5.
+    The reported workshop had a 70 percent acceptance rate; this is not a
+    main-conference acceptance or evidence of general autonomous research ability.
+    Co-Scientist: Gottweis et al., Accelerating scientific discovery with
+    Co-Scientist, Nature 655, 487--496 (2026), DOI 10.1038/s41586-026-10644-y.
+    Gemini agents generate, critique, rank and refine hypotheses. Acute myeloid
+    leukaemia drug-repurposing and combination candidates were tested in vitro
+    by experimental collaborators; clinical efficacy was not established.
+    Virtual Lab: Swanson et al., The Virtual Lab of AI agents designs new
+    SARS-CoV-2 nanobodies, Nature 646, 716--723 (2025),
+    DOI 10.1038/s41586-025-09442-9. A principal-investigator LLM guides specialist
+    LLM agents with human feedback; their pipeline uses ESM, AlphaFold-Multimer
+    and Rosetta. Humans performed the binding experiments.
+    Navier--Stokes: OpenAI, On the Navier--Stokes Millennium Prize Problem,
+    8 September 2026, https://openai.com/index/navier-stokes-solution/.
+    This is a reported result with a released manuscript and Lean formalization,
+    not a Nature research article. It concerns smooth external forcing, the
+    C/D alternatives; it does not settle unforced global regularity.
+    The report's ``How we found the proof'' section describes multiple agent
+    groups exploring diverse approaches, with around 10,000 concurrent agents
+    in the successful group. After the Euler result, researchers shifted agents
+    away from other Millennium Problems to Navier--Stokes and supplied that
+    result as context. They later used Codex to consolidate useful insights
+    from different groups into follow-up prompts. This supports parallel
+    generation, selection of useful results and resource reallocation. The
+    report does not specify a formal evolutionary algorithm or an automated
+    rule that eliminates agents according to the success of their approaches;
+    the slide therefore does not assert such a mechanism.
+    This example is separate from DeepMind's 2025 numerical fluid-singularity
+    work, which used specialized neural networks rather than an LLM agent system.
+    Editable diagram: assets/aletheia_architecture.drawio.}
+\end{frame}
+
+\section{Agentic systems}
+\begin{frame}[t]{Agentic systems}
+  \vspace{12mm}
+  \noindent{\color{teal}\LARGE From LLMs to research teams\par}
+\end{frame}
+
+\begin{frame}[t]{Environment, context, tools and agents}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.18\textwidth}
+      \centering
+      \vspace{3mm}
+      \includegraphics[clip,width=\linewidth,height=48mm,keepaspectratio]{llm_alone.pdf}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \centering
+      \includegraphics[clip,width=0.98\linewidth,height=54mm,keepaspectratio]{agent_components.pdf}
+    \end{column}
+    \begin{column}{0.38\textwidth}
+      \fontsize{9}{10.5}\selectfont
+      {\color{teal}\bfseries Environment}\par
+      The workspace an agent can access:\par
+      files, data, code and external services.\par
+      \vspace{1.5mm}
+
+      {\color{teal}\bfseries Context}\par
+      The information given to the LLM now:\par
+      instructions, messages and tool results.\par
+      \vspace{1.5mm}
+
+      {\color{teal}\bfseries Tool}\par
+      An interface to observe or change the
+      environment, e.g. search or Python.\par
+      \vspace{1.5mm}
+
+      {\color{teal}\bfseries Agent}\par
+      An LLM-based system that uses tools
+      and chooses its next step from results.\par
+    \end{column}
+  \end{columns}
+  \vspace{1mm}
+  {\fontsize{7}{8.5}\selectfont\color{muted}%
+    Based on
+    \href{https://developers.openai.com/api/docs/guides/agents-api/architecture}{\color{teal}OpenAI's Codex harness documentation}
+    and \href{https://code.claude.com/docs/en/how-claude-code-works}{\color{teal}Claude Code's agentic loop}.\par}
+  \note{Working definitions for this talk. The agent is the overall system:
+    a model, instructions, context management, tools and a control loop.
+    A tool is the interface through which it observes or changes its environment.
+    For example, a Python execution tool runs code in a workspace and returns
+    output; a file-reading tool returns selected file contents.
+    The model sees the context supplied to it, not automatically every file
+    in the environment. Tool results can be selected or summarised before entering
+    context. Here environment is used broadly, including external services;
+    the Agents API also uses environment in the narrower sense of a compute sandbox.
+    Claude Code and OpenAI Codex are examples of systems around language models,
+    not names for the four abstract components. Icons are official product assets:
+    Claude Code documentation favicon and the installed OpenAI Codex extension's
+    black blossom. Sources and asset provenance are in assets/icons/sources.json.
+    The standalone LLM produces a response from supplied context. The same LLM
+    can be used inside an agent loop: the surrounding program executes tool calls,
+    adds results to context, and invokes the model again.
+    Editable diagrams: assets/agent_components.drawio and assets/llm_alone.drawio.}
+\end{frame}
+
+\begin{frame}[t]{Skills, agent files and the harness}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[clip,width=\linewidth,height=51mm,keepaspectratio]{skills_and_harness.pdf}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \fontsize{9}{11}\selectfont
+      {\color{teal}\bfseries Skill}\quad $S=(M,I,R)$\par
+      $M$ --- \textbf{metadata}: name and task relevance.\par
+      $I$ --- \textbf{instructions}: method, decision rules,
+      checks and expected output.\par
+      $R$ --- \textbf{resources}: optional documents,
+      code, examples and templates.\par
+      \vspace{2mm}
+      {\color{teal}\bfseries Agent instruction file}\quad $A=(D,I_A)$\par
+      $D$: scope; $I_A$: standing instructions.\par
+      E.g.\ \texttt{AGENTS.md}: project guidance
+      loaded into the context within its scope.\par
+      \vspace{2mm}
+      {\color{teal}\bfseries Harness}\quad $H$\par
+      Orchestration software. A configuration file
+      sets roles, models, tools, skills and routing.\par
+    \end{column}
+  \end{columns}
+  \vspace{1mm}
+  {\fontsize{7}{8.5}\selectfont\color{muted}%
+    Working abstractions for this talk. Implementation:
+    \href{https://learn.chatgpt.com/docs/build-skills}{\color{teal}skills},
+    \href{https://learn.chatgpt.com/docs/agent-configuration/agents-md}{\color{teal}\texttt{AGENTS.md}},
+    \href{https://developers.openai.com/api/docs/guides/agents-api/architecture}{\color{teal}Codex harness} (OpenAI Docs).\par
+    Foundations:
+    \href{https://arxiv.org/abs/2210.03629}{\color{teal}ReAct --- Yao et al. (2022)},
+    \href{https://arxiv.org/abs/2305.16291}{\color{teal}Voyager --- Wang et al. (2023)},
+    \href{https://arxiv.org/abs/2405.15793}{\color{teal}SWE-agent --- Yang et al. (2024)}.\par}
+  \note{The tuples are useful abstractions introduced for this talk, not
+    mathematical definitions attributed to the cited papers or a universal
+    software standard. M denotes metadata, not the model. R may be empty.
+    A skill packages a reusable task procedure: its metadata supports discovery;
+    selected instructions are added to context; resources remain in the accessible
+    environment until read or executed via tools. In Codex, the model initially
+    sees skill names and descriptions and loads the full instructions when a
+    skill is selected, either explicitly by the user or through task matching.
+    The agent file here means a scoped instruction file such as AGENTS.md, not
+    an executable agent or a subagent configuration. D abstracts its applicable
+    project or directory scope; I_A contains standing guidance such as notation,
+    project conventions, checking requirements and commands. The actual file
+    need not encode D explicitly: location and runtime rules can determine it.
+    The configuration file specifies how the harness is set up: agent roles,
+    models, available tools and skills, context policies and communication rules.
+    Its concrete format and supported settings depend on the framework; it is
+    not itself the runtime. Some orchestration can instead be configured in code.
+    These settings determine how agents are initialised and how they may exchange
+    information. Agent instruction files and selected skill instructions provide
+    content for context; they do not replace the orchestration implementation.
+    The harness is the executable orchestration layer around the LLM. The dashed
+    boundary groups the loop it manages, not model parameters. It assembles context,
+    invokes the model, dispatches permitted tool calls, captures their results and
+    decides when to continue or stop. The LLM can select actions or skills within
+    this machinery. Model plus configured harness forms the agent system.
+    Instructions guide behaviour; they do not themselves implement tool execution
+    or constitute an access-control mechanism.
+    Example: AGENTS.md specifies the project's notation and checking conventions;
+    a simulation skill gives a method, validation checks and a Python template;
+    the harness loads relevant instructions, runs code through a tool and feeds
+    errors or numerical output back into context.
+    The papers support related foundational ideas, not the SKILL.md or AGENTS.md
+    file formats: Yao et al., ReAct: Synergizing Reasoning and Acting in Language
+    Models, arXiv 2022 / ICLR 2023, interleaves reasoning and environmental actions.
+    Wang et al., Voyager: An Open-Ended Embodied Agent with Large Language Models,
+    arXiv 2023, uses a reusable library of executable skills and environment feedback;
+    these are code skills, not the modern instruction-package format above.
+    Yang et al., SWE-agent: Agent-Computer Interfaces Enable Automated Software
+    Engineering, 2024, studies how interfaces for editing, navigation and execution
+    affect software agents. Dates on the slide use first arXiv publication.
+    Editable diagram: assets/skills_and_harness.drawio.}
+\end{frame}
+
+\begin{frame}[t]{Multi-agent systems: who sees what?}
+  \noindent{\color{teal}\fontsize{11}{13}\selectfont
+    Context management --- the ``holy grail'': the right context for each task.\par}
+  \vspace{2mm}
+  \noindent\makebox[\textwidth][c]{%
+    \includegraphics[clip,width=0.98\textwidth,height=42mm,keepaspectratio]{multi_agent_contexts.pdf}}
+  \vspace{1mm}
+  {\fontsize{8.5}{10}\selectfont
+    $H_n$ is the software coordinating $n$ agents, their contexts and communication.\par
+    A configuration file sets roles/models/tools; skills and agent files supply instructions.\par}
+  \vspace{1mm}
+  {\fontsize{7}{8.5}\selectfont\color{muted}%
+    Same or different models. Sources:
+    \href{https://arxiv.org/abs/2308.08155}{\color{teal}AutoGen (Wu et al., 2023)};
+    \href{https://developers.openai.com/api/docs/guides/agents-api/configuration}{\color{teal}OpenAI agent configuration}.\par}
+  \note{H_n is our notation for the harness of a system of n agents, not
+    a universally standard symbol and not the harness of only the nth agent.
+    The diagram shows one centralised orchestration design. Other systems use
+    decentralised or hybrid communication. H_n manages task assignment, model
+    selection, context construction, agent lifecycle and message delivery.
+    Each agent retains its own context C_i and may have its own model/tool loop.
+    The executable harness is implemented in application or framework code.
+    Its configuration can specify model choice, available tools, roles, context
+    policies, permissions, message routing and stopping. Agent instruction files
+    and skills provide guidance used to assemble context; the files alone do not
+    implement tool execution, process isolation or communication transport.
+    Some authors use harness broadly for this entire configured stack. Here we
+    distinguish its software mechanics from the settings and instructions it loads.
+    Initial context includes the task and applicable instructions; selected skills,
+    tool results and messages can also enter later as the run proceeds.
+    Different contexts do not require different model weights: two instances
+    of the same model may serve as writer and reviewer. The model allocation
+    illustrated here is a design example, not a measured optimum.
+    Orange arrows carry selected task information, including any peer findings
+    that H_n chooses to forward. Teal arrows return findings and messages.
+    Communication is not an automatic broadcast of every agent's history.
+    For example, a retriever returns sources to H_n, which selects what to send
+    to the writer; the draft then goes to the reviewer, while the writer's
+    drafting conversation is withheld. Review findings can later be sent back.
+    The reviewer still needs the actual proof, assumptions, evidence and criteria.
+    Context separation is not a reason to conceal material evidence.
+    A subtask can use a separate context and return a compact, sourced result,
+    reducing the coordinator's need to carry its full intermediate history.
+    Context management as the holy grail is the speaker's organising perspective,
+    not an empirical claim that context is the only determinant of research quality.
+    AutoGen: Wu et al., AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent
+    Conversation, arXiv:2308.08155 (2023), illustrates configurable agents and
+    conversation patterns. It does not define our H_n notation.
+    Editable illustration: assets/multi_agent_contexts.drawio.}
+\end{frame}
+
+\begin{frame}[t]{Why manage context and communication?}
+  \noindent\begin{minipage}{\textwidth}
+  \raggedright\fontsize{9.5}{11}\selectfont
+  {\color{teal}\bfseries 1. Keep context focused}\quad
+  {\fontsize{7}{8}\selectfont
+    \href{https://aclanthology.org/2024.tacl-1.9/}{\color{muted}Liu et al. (2024)};
+    \href{https://arxiv.org/html/2502.05167v3}{\color{muted}Modarressi et al. (2025)}}\par
+  Give each agent the information it needs. Long conversations can make
+  relevant details harder to find and use.\par
+  \vspace{1.1mm}
+
+  {\color{teal}\bfseries 2. Give review a fresh context}\quad
+  {\fontsize{7}{8}\selectfont
+    \href{https://arxiv.org/html/2310.13548v4}{\color{muted}Sharma et al. (2023)};
+    \href{https://arxiv.org/html/2309.11495v2}{\color{muted}Dhuliawala et al. (2023)}}\par
+  Review the draft and criteria without the writer's history.
+  Framing can bias feedback; independent verification can help.\par
+  \vspace{1.1mm}
+
+  {\color{teal}\bfseries 3. Match the model to the task}\quad
+  {\fontsize{7}{8}\selectfont
+    \href{https://arxiv.org/abs/2406.18665}{\color{muted}Ong et al., \emph{RouteLLM} (2024)}}\par
+  Routing between stronger and cheaper models can improve the balance of cost and quality.\par
+  \vspace{1.1mm}
+
+  {\color{teal}\bfseries 4. Coordinate selectively}\quad
+  {\fontsize{7}{8}\selectfont
+    \href{https://arxiv.org/abs/2305.14325}{\color{muted}Du et al. (2023)};
+    \href{https://aclanthology.org/2025.acl-long.1170/}{\color{muted}Wang et al. (2025)}}\par
+  Let agents share useful findings. Removing agents or messages that repeat
+  the same work can save time and improve results.\par
+  \vspace{1.1mm}
+
+  {\color{teal}\bfseries 5. Explore alternative proofs in parallel}\quad
+  {\fontsize{7}{8}\selectfont
+    \href{https://arxiv.org/html/2408.08152v1}{\color{muted}Xin et al., \emph{DeepSeek-Prover-V1.5} (2024)}}\par
+  Agents with different contexts can sample and check alternative proofs simultaneously.
+  More attempts may find a solution, at greater total compute cost.\par
+  \end{minipage}
+  \vspace{1.1mm}
+
+  {\fontsize{7}{8.5}\selectfont\color{muted}%
+    Effects depend on the task and models. Fresh-context review is a design inference from bias and verification studies.\par}
+  \note{Evidence and scope:
+    1. Liu et al., Lost in the Middle: How Language Models Use Long Contexts,
+    TACL 2024 (arXiv 2023), varies the position of relevant information in
+    multi-document QA and key-value retrieval; relevant information in the middle
+    can be used less reliably. Modarressi et al., NoLiMa: Long-Context Evaluation
+    Beyond Literal Matching, 2025, tests associative retrieval with limited lexical
+    overlap. Version 3 reports 11 of 13 models at half or less of short-context
+    baseline at 32K tokens (Section 4.2). The baseline uses the short lengths
+    250, 500 and 1K. This is a benchmark result, not a universal 32K limit or a
+    claim that useful additional information always hurts. Delegation and
+    summarisation are practical responses; neither paper proves all multi-agent
+    decompositions improve mathematical research.
+    2. Sharma et al., Towards Understanding Sycophancy in Language Models,
+    arXiv 2023 / ICLR 2024, Section 3.1 shows feedback changes with user statements
+    about liking or authoring a passage, including mathematical solutions.
+    Dhuliawala et al., Chain-of-Verification Reduces Hallucination in Large Language
+    Models, arXiv 2023 / ACL Findings 2024, finds that conditioning on earlier
+    hallucinations can repeat them; factored verification excludes the initial
+    response when answering independent verification questions. This supports
+    controlling reviewer inputs. It is not a direct trial of mathematical peer
+    review with versus without a writer's full chat history. The reviewer should
+    receive the manuscript, necessary assumptions, evidence and review criteria;
+    withholding drafting history is a design choice, not a guarantee of unbiased
+    or correct review. A subsequent clarification exchange can still be useful.
+    3. Ong et al., RouteLLM: Learning to Route LLMs with Preference Data,
+    arXiv 2024 / ICLR 2025, studies query routing between stronger and weaker
+    models using preference data. It reports improved cost-quality trade-offs
+    on its evaluation benchmarks. It supports model allocation, not a claim
+    that retrieval is always easy or that cheaper models are safe for every
+    routine-looking task. Check quality on the actual research workflow.
+    4. Du et al., Improving Factuality and Reasoning in Language Models through
+    Multiagent Debate, arXiv 2023 / ICML 2024, reports gains on mathematical,
+    strategic and factual tasks from agents exchanging and critiquing answers.
+    Wang et al., AgentDropout: Dynamic Agent Elimination for Token-Efficient and
+    High-Performance LLM-Based Multi-Agent Collaboration, ACL 2025, prunes
+    redundant agents and communication edges. It reports improved task performance
+    with reduced token use against its tested baselines. Because both agents and
+    edges change, do not attribute every gain solely to fewer messages or claim a
+    universal optimal number of exchanges. H_n should control recipients, content,
+    timing and stopping, balancing independent work with useful cooperation.
+    5. Xin et al., DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback
+    for Reinforcement Learning and Monte-Carlo Tree Search, arXiv:2408.08152
+    (2024), Sections 3.1 and 3.4: workers generate and Lean-check proof paths
+    concurrently, conditioning on different partial proofs and tactic states.
+    Section 4.2 and Table 3 compare sampling budgets and guiding prompts;
+    CoT and non-CoT modes solve complementary problems. This supports parallel
+    exploration and spending more inference compute on alternative attempts.
+    Using separately contextualised research agents is a design application,
+    not a direct experiment comparing arbitrary agent context assignments.
+    More trials increase total work; parallelism can reduce elapsed time when
+    sufficient resources are available. Gains are not guaranteed, and sampled
+    candidates still require verification.}
+\end{frame}
+
+\begin{frame}[t]{Five heuristics for agentic research}
+  \noindent{\fontsize{9}{10.7}\selectfont
+  \setlength{\tabcolsep}{0pt}
+  \renewcommand{\arraystretch}{1}
+  \begin{tabular}{@{}p{0.42\textwidth}@{\hspace{4mm}}p{0.54\textwidth}@{}}
+    {\color{teal}\bfseries Heuristic} & {\color{chartorange}\bfseries Intuition} \\
+    \midrule
+    \raggedright\textbf{Ask for a proof or a counterexample.} {\color{teal}[1]}
+      & \raggedright Let the agent show that the claim is false; do not let it silently change the problem to obtain a proof.\tabularnewline[1.6mm]
+    \raggedright\textbf{Delegate precise mathematical obligations.} {\color{teal}[2]}
+      & \raggedright Explicit assumptions and dependencies make partial progress and remaining gaps visible.\tabularnewline[1.6mm]
+    \raggedright\textbf{Explore distinct approaches independently.} {\color{teal}[3]}
+      & \raggedright Different starting points can reveal approaches that others miss.\tabularnewline[1.6mm]
+    \raggedright\textbf{Preserve each claim's status and evidence.} {\color{teal}[4]}
+      & \raggedright Reuse must not turn a conjecture or rejected argument into an ``established lemma''.\tabularnewline[1.6mm]
+    \raggedright\textbf{Fix identified errors; stop if no progress is made.} {\color{teal}[5]}
+      & \raggedright Check that each error was repaired. Repeated approval is not evidence of a correct proof.\tabularnewline
+    \bottomrule
+  \end{tabular}\par}
+  \vspace{1mm}
+  {\fontsize{7}{8.3}\selectfont\color{muted}
+    Evidence-informed design heuristics: support ranges from benchmark experiments
+    to research-system case studies.\par}
+  \vspace{1mm}
+  {\fontsize{6.8}{8}\selectfont\color{teal}
+    \href{https://arxiv.org/html/2510.04721v1}{[1] Petrov et al. (2025)};\quad
+    \href{https://arxiv.org/html/2605.22875v1}{[2] Zhao et al. (2026)};\quad
+    \href{https://aclanthology.org/2026.findings-acl.1694/}{[3] Zhu et al. (2026)};\par
+    \href{https://arxiv.org/html/2610.04829v1}{[4] Xu et al. (2026)};\quad
+    \href{https://arxiv.org/html/2605.06651v1}{[5] Zheng et al. (2026)}.\par}
+  \note{These five heuristics complement the preceding slide's context and
+    communication principles. The slide follows the owner's supplied rule and
+    intuition format. They are evidence-informed design choices, not universally
+    established optimal policies. Primary sources and cited passages were checked
+    on 19 October 2026.
+
+    1. A fixed target prevents apparent success through changing the problem.
+    A demand for a proof can encourage defence of a false premise. Permit a
+    counterexample, and require any added hypothesis or weakened conclusion to
+    be reported explicitly. BrokenMath finds that prompting models to validate
+    a statement first reduces sycophancy, but some responses silently solve a
+    corrected problem. This motivates premise checking together with tracking
+    changes to the target.
+    Reference: Ivo Petrov, Jasper Dekoninck and Martin Vechev (2025),
+    \emph{BrokenMath: A Benchmark for Sycophancy in Theorem Proving with LLMs},
+    arXiv:2510.04721v1, Section 5.1.
+    \url{https://arxiv.org/html/2510.04721v1}.
+
+    2. Precise obligations make coordination and checking easier. Assigning a
+    bound under explicit hypotheses exposes what another agent may assume and
+    which later steps depend on the result. Let the decomposition evolve with
+    the mathematics. RMA's ablations support problem analysis, assumption
+    checking and structured knowledge within its workflow. Its evaluation uses
+    ten First Proof problems and expert comparisons between submissions. The
+    exact obligation-based task format is our implementation inference, not a
+    separately isolated experimental result.
+    Reference: Zelin Zhao, Bo Yuan, Jaemoo Choi and Yongxin Chen (2026),
+    \emph{RMA: an Agentic System for Research-Level Mathematical Problems},
+    arXiv:2605.22875v1, Table 3 and Section 4.3.
+    \url{https://arxiv.org/html/2605.22875v1}.
+
+    3. Early diversity protects against premature convergence. Agents that
+    immediately read the same proposed proof may inherit the same central idea
+    and error. Independent initial attempts preserve alternative constructions
+    or reductions before selecting a direction. Zhu et al. study diverse
+    candidate selection and calibrated confidence communication across six
+    reasoning-oriented question-answering benchmarks. Extending this to
+    independent research approaches is a plausible design inference, not a
+    directly established research-productivity result.
+    Reference: Xiaochen Zhu, Caiqi Zhang, Yizhou Chi, Tom Stafford, Nigel Collier
+    and Andreas Vlachos (2026), \emph{Demystifying Multi-Agent Debate: The Role
+    of Confidence and Diversity}, Findings of ACL 2026, pp. 33909--33930,
+    DOI: 10.18653/v1/2026.findings-acl.1694.
+    \url{https://aclanthology.org/2026.findings-acl.1694/}.
+
+    4. Memory can amplify discoveries and mistakes. A statement from a rejected
+    proof may depend on an assumption introduced for contradiction. Preserve
+    assumptions, dependencies, evidence, source context and verification status
+    when storing it. The Viva La Vida audit documents extracted critique claims
+    losing that refutational context. Its 26 percent figure is the share of
+    stored lemmas originating from critiques, not an error rate. The lesson is
+    to retain why a claim appeared and what established it, if anything.
+    Reference: Benji Xu, Ken Zheng and Noah Han (2026), \emph{Viva La Vida:
+    Verification and Accumulation Failures in Multi-Agent Proof Search},
+    arXiv:2610.04829v1, Section 5.
+    \url{https://arxiv.org/html/2610.04829v1}.
+
+    5. Review can optimise an argument for the reviewer without repairing it.
+    Require objections to identify exact steps and revisions to supply concrete
+    mathematical responses. If a loop produces no new evidence, change the
+    checking method or retain the unresolved gap. The AI co-mathematician paper
+    reports reviewer-pleasing false consensus and non-terminating review cycles.
+    These observed failures motivate the heuristic; they do not establish a
+    universally optimal number of rounds or stopping rule.
+    Reference: Daniel Zheng et al. (2026), \emph{AI Co-Mathematician:
+    Accelerating Mathematicians with Agentic AI}, arXiv:2605.06651v1, Section 7.
+    \url{https://arxiv.org/html/2605.06651v1}.}
+\end{frame}
+
+\section{A step-by-step research example}
+
+\begin{frame}[t]{Agentic research: a worked example}
+  \noindent{\color{teal}\large What do we need?\par}
+  \vspace{3mm}
+  \begin{itemize}
+    \setlength{\itemsep}{2.5mm}
+    \item An \textbf{agent system}: in my case, Codex.
+    \item A precise \textbf{mathematical problem statement}.
+    \item Relevant \textbf{related work}: definitions, known results and useful methods.
+    \item \texttt{instruction.md}: the task, constraints and expected output.
+    \item \texttt{skills.md}: an index of reusable methods and checks.
+    \item \texttt{AGENTS.md}: standing project instructions for the agents.
+  \end{itemize}
+  \vspace{3mm}
+  {\fontsize{8}{10}\selectfont\color{muted}
+    Here, \texttt{instruction.md} and \texttt{skills.md} are our project documents.\par
+    Each actual Codex skill has its own
+    \href{https://learn.chatgpt.com/docs/build-skills}{\color{teal}\texttt{SKILL.md}}.\par}
+  \note{This slide introduces materials for the example, not mandatory Codex
+    configuration files. instruction.md is a project brief and skills.md an
+    optional index; neither is automatically a built-in entry point. Explicitly
+    provide them to the agent or reference them from project guidance.
+    Codex skills use a directory containing SKILL.md with metadata and instructions,
+    plus optional resources. AGENTS.md supplies scoped standing instructions;
+    it is not executable orchestration software. We are not implementing a workflow
+    or initialising new agents in this step.}
+\end{frame}
+
+\begin{frame}[t]{Step 1: define the mathematical objects}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.67\textwidth}
+      \raggedright\fontsize{9}{11}\selectfont
+      \setlength{\abovedisplayskip}{3pt}\setlength{\belowdisplayskip}{3pt}
+      \setlength{\abovedisplayshortskip}{3pt}\setlength{\belowdisplayshortskip}{3pt}
+      A \textbf{simple point process} $X$ on $\mathbb R^d$ is a random set of distinct
+      points, finite in bounded regions. Its \textbf{count} in $B$ is\par
+      \par\vspace{1mm}\noindent\makebox[\linewidth][c]{$\displaystyle X(B)=\#(X\cap B).$}\par\vspace{1mm}
+      The \textbf{factorial moment measure} counts distinct, ordered $n$-tuples:\par
+      \par\vspace{1mm}\noindent\makebox[\linewidth][c]{$\displaystyle \alpha^{(n)}(B_1\times\cdots\times B_n)
+        =\mathbb E\!\sum_{(x_1,\ldots,x_n)\in X^n_{\ne}}
+          \prod_{i=1}^{n}\mathbf 1_{B_i}(x_i).$}\par\vspace{1mm}
+      At order two,\par
+      \par\vspace{1mm}\noindent\makebox[\linewidth][c]{$\begin{aligned}\alpha^{(2)}(B_1\times B_2)
+          &=\mathbb E[X(B_1)X(B_2)]\\[-1mm]
+          &\quad-\mathbb E[X(B_1\cap B_2)].\end{aligned}$}\par\vspace{1mm}
+      \vspace{1mm}
+      {\color{teal}\bfseries Interpretation:} the expected number of ordered pairs
+      of distinct points, with the first in $B_1$ and the second in $B_2$.\par
+      A point is never paired with itself.
+    \end{column}
+    \begin{column}{0.30\textwidth}
+      \centering
+      \includegraphics[clip,width=\linewidth,height=50mm,keepaspectratio]{point_process_patterns.pdf}\par
+      {\fontsize{7}{8}\selectfont\color{muted}Schematic point patterns.\par}
+    \end{column}
+  \end{columns}
+  \vspace{1mm}
+  {\fontsize{7}{8}\selectfont\color{muted}
+    \href{https://spatstat.org/Aalborg2022/notes/lecturesRW.pdf}{\color{teal}Waagepetersen (2022), slides 7--13};
+    \href{https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf}{\color{teal}Last and Penrose, Section 4.4}.\par}
+  \note{We identify a simple point process with its random locally finite support
+    and write X(B) for the associated counting measure. All B_i are bounded Borel
+    sets. X^n_{ne} denotes ordered n-tuples of distinct points, so no factor 1/n!
+    is needed. Factorial expectation measures are defined as nonnegative measures.
+    The interpretation is an ensemble average of the number of ordered pairs
+    with first point in B_1 and second point in B_2, excluding self-pairs.
+    The diagonal correction is essential if the sets overlap. In particular,
+    alpha^(2)(B x B)=E[X(B)(X(B)-1)]. For disjoint B_1,B_2, the intersection term
+    vanishes, giving exactly E[X(B_1)X(B_2)]. A homogeneous Poisson process gives
+    equality with the product of means. Clustering or repulsion can yield excess
+    or fewer joint counts nearby, but the sign depends on model, regions and scale.
+    Both sketches have 24 points in equally sized windows. They are designed
+    illustrations, not fitted simulations or statistical estimates: three compact
+    groups versus a separated pattern. They illustrate close-pair frequency;
+    one cannot infer a process law or covariance from one such configuration.
+    Editable source: assets/point_process_patterns.drawio.
+    This establishes vocabulary for the upcoming mathematical problem without
+    asserting an additional research conjecture.}
+\end{frame}
+
+\begin{frame}[t]{Product densities and correlations}
+  \noindent\begin{minipage}{\textwidth}
+  \raggedright\fontsize{9}{10.5}\selectfont
+  \setlength{\abovedisplayskip}{4pt}\setlength{\belowdisplayskip}{4pt}
+  \setlength{\abovedisplayshortskip}{4pt}\setlength{\belowdisplayshortskip}{4pt}
+  When $\alpha^{(n)}$ has a locally integrable density, the \textbf{product density} is defined by\par
+  \vspace{0.5mm}\noindent\makebox[\linewidth][c]{$\displaystyle
+    \alpha^{(n)}(A)=\int_A\rho^{(n)}(x_1,\ldots,x_n)\,\mathrm dx_1\cdots\mathrm dx_n.$}\par\vspace{0.5mm}
+  At first order, $\rho^{(1)}$ is the density (derivative) of the \textbf{mean count}
+  $\alpha^{(1)}(B)=\mathbb E[X(B)]$:\par
+  \vspace{0.5mm}\noindent\makebox[\linewidth][c]{$\displaystyle
+    \rho^{(1)}(x)=\frac{\mathrm d\alpha^{(1)}}{\mathrm dx}(x),\qquad
+    \rho^{(2)}(x,y)=\frac{\mathbb E[X(\mathrm dx)X(\mathrm dy)]}{\mathrm dx\,\mathrm dy}\quad(x\ne y).$}\par\vspace{0.5mm}
+  With positive intensity densities $\rho^{(1)}(x_i)$, define the \textbf{$n$-point correlation function}:\par
+  \par\vspace{0.5mm}\noindent\makebox[\linewidth][c]{$\displaystyle g_n(x_1,\ldots,x_n)
+       =\frac{\rho^{(n)}(x_1,\ldots,x_n)}{\prod\nolimits_{i=1}^{n}\rho^{(1)}(x_i)}.$}\par\vspace{0.5mm}
+  \textbf{Stationarity:} shifting all points leaves their joint law unchanged:
+  $X+t\overset{d}{=}X$ for every $t\in\mathbb R^d$.\par
+  Then $\rho^{(1)}(x)=\lambda$ is constant and $g_n=\rho^{(n)}/\lambda^n$ (assume $0<\lambda<\infty$).\par
+  \vspace{1mm}
+  Relative to Poisson with the same intensity:\par
+  \vspace{0.5mm}
+  \textbf{$g_n>1$: more such tuples.\qquad $g_n<1$: fewer such tuples.}\par
+  \end{minipage}
+  \vspace{0.8mm}
+  {\fontsize{7}{8.5}\selectfont\color{muted}
+    For pairs: clustering or repulsion at the specified locations and scale.
+    $g_2=1$ alone does not imply Poisson.\par
+    \href{https://spatstat.org/Aalborg2022/notes/lecturesRW.pdf}{\color{teal}Waagepetersen (2022), slides 9--13};
+    \href{https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf}{\color{teal}Last and Penrose, Section 4.4}.\par}
+  \note{rho^(n) denotes order n, not the nth power of a scalar rho. It is a
+    Radon--Nikodym derivative, defined Lebesgue almost everywhere; local finiteness
+    and absolute continuity are sufficient conditions here. The infinitesimal
+    formula is notation, not division of ordinary random variables by infinitesimals.
+    Precisely, for disjoint B_1,B_2, E[X(B_1)X(B_2)] is the integral of rho^(2)
+    over B_1 x B_2. For shrinking disjoint neighbourhoods of distinct x,y, the
+    quotient by their volumes converges to rho^(2)(x,y) at suitable differentiation
+    points; continuity is a simple sufficient condition. On the diagonal, the
+    ordinary second moment measure has the contribution of counting the same
+    point twice, which explains the restriction x differs from y.
+    Normalisation gives the full product density divided by the product of
+    intensity densities, not a factorial cumulant or Pearson coefficient.
+    The mean measure alpha^(1)(B)=E[X(B)] is already introduced by the
+    factorial moment notation. Its Radon--Nikodym
+    derivative with respect to Lebesgue measure is rho^(1); this is the
+    measure-theoretic meaning of derivative of the mean function here.
+    Stationarity means invariance of the entire point-process law under every
+    translation, not merely constancy of the mean. With positive finite intensity,
+    alpha^(1)(B)=lambda |B|, so rho^(1)=lambda almost everywhere and
+    g_n=rho^(n)/lambda^n. Constant intensity alone does not imply stationarity.
+    The higher product densities are invariant under simultaneous translation
+    of all their arguments, almost everywhere; they need not be constant in
+    the relative positions. The displayed rho^(2) formula is infinitesimal shorthand.
+    A Poisson process has factorial moment measures equal to the product of
+    its intensity measure, giving g_n=1. Values above or below one compare local
+    tuple densities; the comparison need not hold at every scale.
+    Higher-order full correlations include lower-order contributions and differ
+    from connected correlations. The local manuscript uses m_n for rho^(n),
+    rho for lambda, and the same g_n normalisation.}
+\end{frame}
+
+\begin{frame}[t]{Step 1: the precise problem}
+  \noindent\begin{minipage}{\textwidth}
+  \raggedright\fontsize{9.5}{11}\selectfont
+  Fix $M,\lambda_0>0$ and choose
+  $0<h_3<\frac{\sqrt{3}}{2}M$, $0<h_4<\sqrt{\frac{2}{3}}M$.\par
+  Find \textbf{one stationary, simple} point process $X$ on $\mathbb R^3$ with intensity
+  $\lambda_0$, finite local moments through order four and product densities.\par
+  \vspace{1mm}
+  \noindent\makebox[\textwidth][c]{%
+    \includegraphics[clip,width=0.31\textwidth,height=19mm,keepaspectratio]{simplex_segment.pdf}\hfill
+    \includegraphics[clip,width=0.31\textwidth,height=19mm,keepaspectratio]{simplex_triangle.pdf}\hfill
+    \includegraphics[clip,width=0.31\textwidth,height=19mm,keepaspectratio]{simplex_tetrahedron.pdf}}\par
+  \vspace{1mm}
+  For some constants $C_2,C_3,C_4>0$, require \textbf{simultaneously}:\par
+  \vspace{1mm}
+  \noindent\makebox[\linewidth][c]{$\displaystyle
+    g_2(x_1,x_2)=\frac{C_2}{D},
+    \qquad
+    g_3(x_1,x_2,x_3)=\frac{C_3}{A},
+    \qquad
+    g_4(x_1,x_2,x_3,x_4)=\frac{C_4}{V}.
+  $}\par
+  \vspace{1mm}
+  Almost everywhere on nondegenerate configurations of diameter $\le M$,
+  with every triangle altitude $\ge h_3$ and every tetrahedron altitude $\ge h_4$.\par
+  \end{minipage}
+  \vspace{1mm}
+  {\fontsize{7}{8.5}\selectfont\color{muted}
+    $C_2,C_3,C_4$ are chosen jointly with the process, not prescribed independently.\par
+    Current construction: sufficiently small $\lambda_0$; arbitrary prescribed intensity remains open.\par}
+  \note{At the speaker's request, this slide states exact reciprocal identities on
+    the finite domains used in Section 2 of the local manuscript,
+    papers/reciprocal-simplex/sections/02_preliminaries.tex. This strengthens
+    that manuscript's approximate target; its approximation theorem alone does
+    not establish these exact identities. This is a problem statement, not a
+    claim of a proved solution. It is motivated by Kagan's reciprocal laws and
+    Daley--Vere-Jones, Exercise 12.6.11, not a quotation of an exact historically
+    quantified conjecture and not a claim of fitting earthquake observations.
+    Given M,h_3,h_4,lambda_0>0, seek a stationary simple
+    locally finite point process with positive intensity lambda_0, finite local
+    count moments through order four and absolutely continuous factorial moment
+    measures through order four. Stationarity means translation invariance in law.
+    The full normalised densities are g_k=rho^(k)/lambda_0^k.
+    D=||x_2-x_1||, A=|| (x_2-x_1) cross (x_3-x_1) ||/2, and
+    V=|det(x_2-x_1,x_3-x_1,x_4-x_1)|/6. All volumes and areas are unsigned.
+    The pair domain is 0<D<=M. The triangle domain has diameter<=M and minimum
+    vertex-to-opposite-line distance at least h_3. The tetrahedron domain has
+    diameter<=M and minimum vertex-to-opposite-plane distance at least h_4.
+    Each domain applies only to its respective identity; no triangle-altitude
+    restriction is additionally imposed on the tetrahedron faces. Distances are
+    to affine lines and planes, including their extensions. Choose thresholds
+    yielding domains of positive Lebesgue measure for a nonvacuous question:
+    0<h_3<sqrt(3)M/2 and 0<h_4<sqrt(2/3)M.
+    The latest local final review, dated 19 October 2026,
+    agentic_research_setup/runs/20261019T114252Z_cox_rerun/review_report.md,
+    distinguishes the general target from its strongest reviewed result:
+    exact full identities at every prescribed intensity in a certified interval
+    (0,lambda_cert(M,h_4)]. Larger intensities remain unresolved, not disproved.
+    This is a report of the local construction's reviewed scope, not an
+    independently published theorem or a new proof audit performed for this slide.
+    On each domain, the displayed reciprocal identity must hold exactly almost
+    everywhere. Densities are defined almost everywhere; a pointwise
+    assertion additionally specifies a version. One process and one triple of
+    positive constants must satisfy every order across all stated scales and
+    shapes. The constants are outputs, with units length, area and volume;
+    they are not prescribed independently beforehand.
+    The altitude thresholds avoid unrestricted near-degenerate flattening.
+    Finite range refers to the domain of the identities, not finite-range
+    dependence. Empirical calibration and finite-catalogue accuracy remain
+    separate tasks. The sketches show configurations only, not simulated data.
+    Orange dashed segments show one representative triangle altitude and one
+    vertex-to-opposite-plane tetrahedron altitude, labelled at least h_3 and
+    h_4. These are lower thresholds, not the exact lengths of the depicted
+    segments. The right-angle marker in the tetrahedron is shown in projection.
+    The condition still applies to every altitude of the respective simplex.
+    Editable diagrams: assets/simplex_segment.drawio,
+    assets/simplex_triangle.drawio and assets/simplex_tetrahedron.drawio.}
+\end{frame}
+
+\begin{frame}[t]{\fontsize{18}{22}\selectfont Configuration file, agent files and execution}
+  \vspace{1mm}
+  \begin{columns}[c,onlytextwidth]
+    \begin{column}{0.30\textwidth}
+      {\fontsize{11}{13}\selectfont\bfseries Research approaches\par}
+      \vspace{3mm}
+      {\fontsize{10}{12}\selectfont
+      \setbeamercolor{enumerate item}{fg=chartpurple}
+      \begin{enumerate}
+        \setlength{\itemsep}{4mm}
+        \item Poisson cluster process
+        \item Cox process
+        \item Hawkes process
+        \item An approach of the agent's choice
+        \item Prove non-existence
+      \end{enumerate}}
+    \end{column}
+    \begin{column}{0.68\textwidth}
+      \centering
+      \includegraphics[clip,width=\linewidth,height=59mm,keepaspectratio]{research_agent_configuration.pdf}
+    \end{column}
+  \end{columns}
+  \note{This is the proposed configuration for the example, adapted from the
+    architecture in RESEARCH_PLAN.md. One literature agent prepares a common
+    collection of verified references. Five independent proof agents receive
+    common problem and literature files, plus their own task instructions and
+    selected files. The purple approach documents and matching list numbers identify human
+    assignments without repeated labels; the common
+    files explicitly contain the precise mathematical problem statement and
+    verified literature. The reviewer also reads these common files, as shown
+    by the grey context arrow, to judge each submission against the actual
+    problem. The five assigned approaches are: Poisson cluster,
+    Cox, Hawkes, an approach chosen by the agent, and a proof of
+    non-existence. These are attempts at the exact finite-domain problem, not
+    assertions that each process class can realize the target. Agents 3 and 4
+    are omitted visually, as indicated by the
+    ellipsis. The common context means shared input material loaded into each
+    agent's separate context window, not a single live context window shared by
+    all model calls. Private working histories remain individual. The harness
+    reads the configuration and routes tasks, files, and messages. The reviewer
+    receives each submission and its relevant criteria separately; the separate
+    feedback arrows do not authorize passing one proof agent's work to another.
+    The critical reviewer writes an extensive report documenting the findings,
+    gaps, requested repairs, and conclusions. The coding agent performs
+    requested numerical checks and returns results. The Undermind and Zotero
+    logos identify the literature agent's tools. The Agent.md and skill.md
+    document symbols represent role-specific instructions and skill instructions
+    loaded for the relevant agent; they are not additional agents.
+    Configuration is declarative input to the harness; the slide does not
+    imply that a configuration file itself executes a workflow. This slide
+    illustrates the planned workflow and does not modify the research plan or
+    launch agents. Editable source: assets/research_agent_configuration.drawio.}
+\end{frame}
+
+% Slide 16 retained in source, hidden at the owner's request.
+% \begin{frame}[t]{Step 3: skills and agents}
+%   \noindent{\fontsize{10}{12}\selectfont
+%     All agents use \textbf{GPT-5.6 Sol} with \textbf{extra-high} reasoning.\par}
+%   \vspace{1mm}
+%   \noindent\includegraphics[clip,width=\linewidth,height=49mm,keepaspectratio]{skills_agent_files.pdf}\par
+%   \vspace{-1mm}
+%   {\fontsize{8}{10}\selectfont
+%     \textbf{Instructions matter:} optimising agent prompts can improve
+%     mathematical benchmark performance.\par}
+%   \vspace{0.8mm}
+%   {\fontsize{7}{8.5}\selectfont\color{muted}
+%     \href{https://arxiv.org/html/2502.02533v2\#S2.SS1}{\color{teal}Zhou et al. (ICLR 2026), MASS, Section 2.1 and Figure 2: MATH benchmark.}\par}
+%   \note{The three file-shaped sketches summarise the supplied literature-agent
+%     and proof-agent instructions and Mathis's installed math-literature-check
+%     skill. They show short excerpts, not complete executable configurations.
+%     The first two headings now use the actual role-instruction filenames:
+%     literature_agent.md and proof_agent.md. Native roles are .codex/agents/literature.toml and
+%     .codex/agents/proof_1.toml through proof_5.toml, which explicitly reference
+%     instructions/literature_agent.md and instructions/proof_agent.md.
+%     The third sketch uses the skill's actual SKILL.md entrypoint name.
+%     That skill preserves the exact target, retrieves candidates, inspects full
+%     source statements and assumptions, classifies the relationship to the claim,
+%     and records inspectable evidence and unresolved gaps. Its outcome codes
+%     distinguish explicit, equivalent, derived, partial, not located and unresolved
+%     support; non-discovery does not certify novelty. Undermind is a possible
+%     retrieval tool through the skill's adapter, not the skill itself.
+%     The frozen run 20261019T081505Z_exact records these role instructions,
+%     shared source material and individual approach files. Its literature dossier
+%     reports primary-source inspection of the six supplied published PDFs and
+%     two local manuscript source trees, with no internet search or citation-tree
+%     expansion in that run. The role instructions and frozen context manifest
+%     do not explicitly record loading math-literature-check. Its A--F outcome
+%     codes appear in the dossier, but that does not by itself prove the skill
+%     entrypoint was loaded. Accordingly the skill is labelled available, rather
+%     than claimed as confirmed runtime use. This slide does not change a running
+%     research workflow or tool access. Historical research outside this run did
+%     include external literature searches; the statement here is run-specific.
+%     The proof role retains the exact mathematical claim, its own approach,
+%     justified steps and the full product-density hierarchy through order four.
+%     All role model settings in the saved setup are GPT-5.6 Sol, xhigh.
+%     Citation: Han Zhou et al., Multi-Agent Design: Optimizing Agents with Better
+%     Prompts and Topologies, ICLR 2026; arXiv:2502.02533v2, revised 31 January 2026.
+%     Section 2.1 and Figure 2 study prompt optimisation on MATH with Gemini 1.5 Pro,
+%     comparing inference-token efficiency with self-consistency, self-refinement
+%     and multi-agent debate. The optimiser changes instructions and a one-shot
+%     exemplar. This is evidence for optimising agent prompts, not a test of these
+%     filenames, these particular instructions, or open-ended research proofs.
+%     Editable source: assets/skills_agent_files.drawio.}
+% \end{frame}
+
+\begin{frame}[t]{Step 3: Writing the paper}
+  \vspace{-1mm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.47\textwidth}
+      \centering
+      \includegraphics[clip,width=\linewidth,height=39mm,keepaspectratio]{writing_workflow.pdf}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \setlength{\aboverulesep}{0.4pt}
+      \setlength{\belowrulesep}{0.4pt}
+      {\fontsize{8}{9}\selectfont\bfseries Complete-task statistics\par}
+      \vspace{0.5mm}
+      {\fontsize{7.2}{8.5}\selectfont
+      \setlength{\tabcolsep}{2pt}
+      \renewcommand{\arraystretch}{1.05}
+      \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+        \toprule
+        Measure & Complete task \\
+        \midrule
+        Input tokens & 131,866,681 \\
+        Cached input (included above) & 128,329,472 \\
+        Uncached input & 3,537,209 \\
+        Output (includes reasoning) & 666,705 \\
+        Reasoning (subset of output) & 286,459 \\
+        \textbf{Total tokens} & \textbf{132,533,386} \\
+        \midrule
+        Task-turn runtime & \textbf{3:47:06} \\
+        Research coordinator runtime & \textbf{3:36:43} \\
+        API-equivalent cost & \textcolor{teal}{\textbf{\$78.81}} \\
+        \bottomrule
+      \end{tabular*}\par}
+    \end{column}
+  \end{columns}
+  \vspace{0.5mm}
+  {\fontsize{8}{9}\selectfont\bfseries Writing stage: token use and cost\par}
+  \vspace{0.3mm}
+  {\fontsize{7.2}{8.2}\selectfont
+    \setlength{\tabcolsep}{3pt}
+    \setlength{\aboverulesep}{0.6pt}
+    \setlength{\belowrulesep}{0.6pt}
+    \renewcommand{\arraystretch}{1}
+    \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}rrr@{\hspace{4mm}}r@{}}
+      \toprule
+      Participant & Uncached input & Cached input & Output/reasoning & Cost \\
+      \midrule
+      Coordinating writer & 0.30M & 3.5M & 0.15M & \$5.60 \\
+      Simulation specialist & 0.15M & 1.4M & 0.10M & \$3.16 \\
+      Fresh reader & 0.06M & 0.1M & 0.02M & \$0.68 \\
+      \midrule
+      \textbf{Total} & \textbf{0.51M} & \textbf{5.0M} & \textbf{0.27M}
+        & \textcolor{teal}{\textbf{\$9.44}} \\
+      \bottomrule
+    \end{tabular*}\par}
+  \note{This slide combines the former Results and Writing slides.
+    Complete-task statistics are supplied by the owner on 20 October 2026
+    and replace the earlier research-run figures and rough token estimates.
+    Input is 131,866,681 tokens: 128,329,472 cached plus 3,537,209 uncached.
+    Output is 666,705 tokens, including 286,459 reasoning tokens.
+    Total tokens are input plus output: 132,533,386. Cached input and reasoning
+    are subsets and must not be added again. Task-turn runtime is 3:47:06;
+    research coordinator runtime is 3:36:43. These runtime measures are not
+    additive. The owner reports an API-equivalent cost of 78.81 USD.
+    This is an API-equivalent cost, not a recorded subscription charge.
+    Source record: sources/results_run_metrics.json. The writing-stage
+    breakdown below is retained separately; it is not added to these totals.
+    The diagram explicitly assigns responsibilities. The owner reads the
+    research report and sets the paper structure and intended audience. The
+    writer owns drafting, organisation, citation integration, coordination and
+    the final revision. Verified mathematical results and checked citations
+    from the preceding research stage are input material, not another drafting
+    agent. The reader starts in a fresh context and reports concrete reading
+    difficulties. The same writer assesses that feedback, revises coherently,
+    checks mathematical changes and compiles. Missing citation support triggers
+    a focused literature check coordinated by the writer; changed mathematics
+    or a suspected proof defect triggers the appropriate targeted proof check.
+    Those specialist roles are conditional rather than mandatory extra stages.
+    This allocation follows paper_writing_sandbox/ARCHITECTURE.md and AGENTS.md.
+    Each agent is drawn exactly once. The writer box includes drafting and
+    revision: it sends a draft to the reader, which returns feedback to that
+    same writer. At the owner's request, a Tools used row inside that same
+    writer box identifies Zotero and Undermind with their official logos.
+    Zotero supports the reference library and citation workflow; Undermind
+    supports literature searches and source inspection. This depicts the
+    owner's writing workflow, not a claim that both tools run on every draft
+    or that the reader has the writer's tool history. Logo provenance is saved
+    in assets/icons/sources.json. The two arrows are different handoffs within one review cycle,
+    not a requirement for repeated review rounds. Purple denotes the owner's
+    decisions, teal the agents and draft handoff, and orange the verified
+    research inputs and returning feedback.
+    The workflow follows mathis-writer/references/EFFICIENT_WRITING.md:
+    one coherent draft, a fresh focused reading, and an integrated revision by
+    the same writer. A fresh reader receives the manuscript, intended audience,
+    neutral review scope and needed definitions, without the writer's private
+    drafting conversation or suggested defects. The reader identifies specific
+    difficulties in the text, rather than rewriting it in a different voice.
+    After revision, mathematical changes require appropriate checking of claims,
+    hypotheses, quantifiers, notation and dependencies; compiling checks the
+    document, not mathematical truth. This slide illustrates the writing stage
+    and does not launch agents. It makes no model-version claim about this stage.
+    Editable illustration: assets/writing_workflow.drawio.
+    The bottom table records the owner's supplied participant-level figures:
+    coordinating writer 0.30M uncached input, 3.5M cached input, 0.15M
+    output/reasoning, 5.60 USD; simulation specialist 0.15M, 1.4M, 0.10M,
+    3.16 USD; fresh reader 0.06M, 0.1M, 0.02M, 0.68 USD. Column sums are
+    0.51M uncached input, 5.0M cached input, 0.27M output/reasoning and
+    9.44 USD. M denotes million tokens. At the owner's request, these figures
+    are presented as exact. The simulation specialist is
+    included in the accounting; the diagram focuses on the writing interaction.
+    Local writing evidence: papers/finite-cluster-reciprocal-laws/PAPER_OUTLINE.md
+    and WRITING_STATE.md.}
+\end{frame}
+
+
+\begin{frame}[t]{Results and personal feedback}
+  \vspace{-3mm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.45\textwidth}
+      {\fontsize{11}{13}\selectfont\bfseries\color{teal}Poisson cluster model\par}
+      \vspace{2mm}
+      {\raggedright\fontsize{9}{10.5}\selectfont
+      Homogeneous Poisson parents $\Pi$ each generate \textbf{0--3 children},
+      with jointly chosen offsets $C_z$:\par
+      \vspace{0.5mm}
+      \noindent\makebox[\linewidth][c]{$\textstyle
+        X=\bigcup\nolimits_{z\in\Pi}\bigl(\{z\}\cup(z+C_z)\bigr).$}\par
+      \vspace{0.5mm}
+      $C_z$ contains only child offsets. \textbf{The parent is retained},
+      giving 1--4 points per cluster.\par
+      \vspace{0.5mm}
+      \textbf{Construction.} Subtract tuples from different parents from the
+      target counts. Then build four-point clusters, fill missing triple and
+      pair counts with smaller clusters, and add singletons to set intensity.\par
+      \vspace{0.5mm}
+      \textbf{Why small intensity?} Different-parent contributions shrink
+      faster than the target densities. Their subtraction can then leave
+      \textbf{nonnegative cluster densities}.\par}
+    \end{column}
+    \begin{column}{0.50\textwidth}
+      {\fontsize{11}{13}\selectfont\bfseries\color{chartorange}Personal feedback\par}
+      \vspace{2mm}
+      {\fontsize{8.5}{10}\selectfont
+      \setlength{\tabcolsep}{0pt}
+      \renewcommand{\arraystretch}{1}
+      \begin{tabular}{@{}p{0.69\linewidth}@{\hspace{3mm}}p{0.25\linewidth}@{}}
+        \textbf{Aspect} & \textbf{Feedback} \\
+        \midrule
+        \raggedright Mathematical correctness
+          & \textcolor{teal}{\textbf{Positive}}\tabularnewline[0.8mm]
+        \raggedright Research and process documentation
+          & \textcolor{teal}{\textbf{Positive}}\tabularnewline[0.8mm]
+        \raggedright Text writing
+          & \textcolor{chartorange}{\textbf{Medium}}\tabularnewline[0.8mm]
+        \raggedright Paper structuring
+          & \textcolor[HTML]{B04E43}{\textbf{Negative}}\tabularnewline[0.8mm]
+        \raggedright Mathematical explanation
+          & \textcolor{chartorange}{\textbf{Medium}}\tabularnewline
+        \bottomrule
+      \end{tabular}\par}
+      \vspace{2mm}
+      \includegraphics[clip,width=\linewidth,height=29mm,keepaspectratio]{final_poisson_cluster.pdf}\par
+    \end{column}
+  \end{columns}
+  \note{Source: papers/finite-cluster-reciprocal-laws/sections/construction.tex,
+    Theorem ``Exact reciprocal laws on compatible domains'' and the following
+    cluster Gibbs representation. This slide describes that paper's Poisson
+    cluster construction, not the later dependent-cluster rerun construction.
+    The four independent homogeneous parent streams merge into a marked Poisson
+    process of rate kappa=lambda_1+Z_2/2!+Z_3/3!+Z_4/4!.
+    Each parent emits a rooted cluster of size j in 1,2,3,4, including its own
+    location. For j>=2, offsets have joint density F_j(0,.)/Z_j, and the type
+    has probability (Z_j/j!)/kappa. Singleton probability is lambda_1/kappa.
+    Marks are independent across parents; points within a mark are generally
+    dependent. Root identity and cluster assignment are latent, rather than
+    the root being a separate, unobserved point outside X.
+    In this slide's revised notation, C_z contains only the 0--3 child offsets;
+    the full rooted cluster is {z} union (z+C_z). This differs from the earlier
+    slide notation, where C_z included zero and had 1--4 elements. It is the
+    same process. Marks are independent across parents.
+    Orange dots are retained parent points; teal dots are additional children.
+    Each parent is drawn once, without a second overlaid point. The rectangular
+    point pattern contains irregularly placed clusters of 1--4 total points.
+    One pair, one triangle and one tetrahedron are highlighted by their edges;
+    the tetrahedron is a planar projection with its rear edge dashed. The
+    lines are geometric guides only, not interactions in the model. Other
+    clusters have no connecting lines. This is a schematic view, not a sample
+    from the manuscript's joint cluster densities or a fitted earthquake map.
+    All coloured points belong to X; the colours reveal latent roles for
+    illustration, not observable parent-child labels. Diagram titles, size
+    labels, legend and caption were removed at the owner's request.
+    The construction first subtracts all different-parent contributions from
+    target full densities to obtain same-parent kernels q_2,q_3,q_4. It then
+    corrects for subtuples within larger clusters: F_4=q_4,
+    F_3=q_3-M q_4, F_2=q_2-M q_3+(M squared q_4)/2, with M denoting integration
+    over a missing point. Small amplitude and geometric bounds ensure genuine
+    nonnegative integrable cluster densities. Singleton rate sets the total
+    intensity. Independence alone is not sufficient to obtain the target laws.
+    The small-intensity explanation refers to the paper's joint scaling:
+    a_2=a, a_3=a/(4B), a_4=a/(16BC), and rho=aI. Target full densities
+    scale linearly in a, whereas different-parent terms have at least two
+    factors of that scale. The relative subtraction bounds E_2,E_3,E_4
+    therefore tend to zero with a. Geometric marginal bounds and the chosen
+    ratios between a_2,a_3,a_4 separately control the subtuple corrections
+    needed for F_2 and F_3. Small intensity is sufficient for this construction;
+    failure of these bounds at larger intensity is not a general impossibility
+    theorem. Parent inclusion is a feature of this rooted construction, not
+    part of the definition of every Poisson cluster process.
+    The paper's explicit witness has a positive lower pair-distance cutoff,
+    upper range bounds and altitude restrictions, and chooses intensity and
+    amplitudes together. It does not solve the preceding slide's target for
+    every prescribed intensity or every positive pair distance. The result
+    summary was removed from the visible slide at the owner's request.
+    Editable illustration: assets/final_poisson_cluster.drawio.
+    The ratings are the owner's personal assessment: mathematical
+    correctness positive; research and process documentation positive;
+    text writing medium and paper structuring negative, grouped together;
+    mathematical explanation medium.
+    They are personal feedback on this experience, not a benchmark evaluation.}
+\end{frame}
+
+\begin{frame}[t]{Future of agentic research}
+  \vspace{-1mm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.45\textwidth}
+      {\fontsize{10.5}{12}\selectfont\bfseries\color{teal}
+        What I expect to change\par}
+      \vspace{2mm}
+      {\raggedright\fontsize{9}{10.8}\selectfont
+        Stronger models can take on more of the planning, divide the work
+        into tasks, use tools and delegate to subagents.\par
+        \vspace{2mm}
+        For a precise mathematical problem, \textbf{one initial prompt may
+        increasingly suffice}. It can still start substantial autonomous work,
+        and success is not guaranteed.\par
+        \vspace{2mm}
+        As more harness functions become standard in platforms, we will have
+        \textbf{less to build ourselves}.\par}
+    \end{column}
+    \begin{column}{0.51\textwidth}
+      {\fontsize{10.5}{12}\selectfont\bfseries\color{chartorange}
+        Where a custom harness still helps\par}
+      \vspace{2mm}
+      {\fontsize{8.8}{10.5}\selectfont
+      \begin{itemize}
+        \setlength{\itemsep}{0.5mm}
+        \item Keep the exact target, hypotheses and criteria for success fixed.
+        \item Specify acceptable methods and the evidence required.
+        \item Require separate review and formal verification.
+        \item Keep human checkpoints for direction and interpretation.
+        \item Record results, failed approaches, sources and dependencies.
+        \item Set compute budgets, stopping rules and model choice.
+      \end{itemize}}
+    \end{column}
+  \end{columns}
+  \vspace{2mm}
+  {\color{muted!35}\hrule height 0.4pt}
+  \vspace{1.5mm}
+  {\fontsize{7.5}{9}\selectfont
+    \textbf{A reported example.} For its October release, OpenAI says almost all
+    results came from one prompt to one agent. Some may have needed retries;
+    the full workflow has not been independently reproduced.\par}
+  \vspace{0.6mm}
+  {\fontsize{6.5}{7.5}\selectfont\color{muted}
+    \href{https://www.scientificamerican.com/article/openai-unleashes-hundreds-more-math-results-upon-a-field-already-in-shock/}{\color{teal}Scientific American, October 2026};
+    \href{https://github.com/openai/math\#how-the-results-were-produced}{\color{teal}OpenAI release details}.\par}
+  \note{This outlook is the owner's expectation, not an established scaling
+    law or a claim that every model now performs these tasks reliably.
+    Stronger models increasingly take over planning, task decomposition,
+    tool use and subagent delegation. Platform support can reduce the amount
+    of workflow code individual researchers need to build. A single initial
+    prompt can initiate a long autonomous process, with tool calls, internal
+    steps and possibly delegation; it does not mean a single inference call,
+    little compute, or guaranteed success. This general outlook should not be
+    confused with the specific single-agent claim about the October release.
+    Custom harnesses still help preserve the exact mathematical target,
+    hypotheses and acceptance criteria; specify acceptable methods and
+    evidence; require separate review and formal verification; retain human
+    checkpoints; maintain results, failures, sources and dependencies; and
+    control compute, stopping and model selection. These are possible roles
+    for a harness, not a claim that every task needs all of them.
+    The reported example is attributed to an OpenAI spokesperson in the
+    Scientific American article supplied by the owner. Almost every result
+    reportedly followed a single prompt to a single agent; some may have
+    required multiple attempts. The single-agent workflow is not treated as
+    independently reproduced. Formal checking of an output is distinct from
+    reproducing the workflow that generated it.
+    Source check on 20 October 2026: the linked Scientific American page was
+    inaccessible to the browser tool. Its specific claim is retained as the
+    owner's supplied attribution, not represented as directly verified here.
+    The accessible primary release and openai/math README separately confirm
+    an unreleased internal model, a common procedure for the vast majority of
+    results, approximately 4000 attempted problems and average compute per
+    result equivalent to roughly three hours of ChatGPT Pro thinking. They do
+    not by themselves verify the single-prompt/single-agent detail or every
+    step of the workflow. Source record: sources/future_agentic_research.json.}
+\end{frame}
+
+\begin{frame}[t]{Personal take}
+  \vspace{-1mm}
+  {\fontsize{10}{12}\selectfont
+    I find this exciting: an elegant solution, with reasoning that feels human.\par
+    Still, something is missing when I do not discover the ideas myself.\par}
+  \vspace{1.5mm}
+  {\fontsize{9.5}{11}\selectfont\bfseries\color{teal}
+    Faster proofs let me explore more. Research was never a straight line.\par}
+  \vspace{0.5mm}
+  \noindent\makebox[\textwidth][c]{%
+    \includegraphics[clip,width=\textwidth,height=31mm,keepaspectratio]{personal_research_paths.pdf}}\par
+  \vspace{0.5mm}
+  {\fontsize{10}{12}\selectfont\bfseries
+    Reaching B only helps me if I understand the mathematics.\par}
+  \vspace{2mm}
+  {\fontsize{9}{11}\selectfont
+    \textcolor{chartorange}{\textbf{My concern as a PhD student:}}
+    outsourcing too much may bypass the learning.\par
+    A PhD is still an education. Producing results and developing understanding
+    can come apart.\par}
+  \vspace{1.5mm}
+  {\fontsize{6.8}{8}\selectfont\color{muted}
+    Related: \href{https://mathandai.org/}{\color{teal}\textit{A Severe Misalignment of AI in Mathematics}}
+    (joint declaration, 11 September 2026).\par}
+  \note{These are the owner's personal reflections on this case study.
+    The construction is elegant, and its presented line of reasoning feels
+    human-like to the owner. This describes an impression of the exposition,
+    not evidence that the model has human cognition or that its account reveals
+    its actual internal computation. There is nevertheless something missing
+    when the owner has not discovered these ideas personally.
+    The owner also finds this way of working exciting. Reaching B, a proof,
+    faster creates room to explore C, including discovering what C should be,
+    and to continue to further questions D. C and D are deliberately generic
+    possibilities, not additional results claimed for this case study.
+    Different starting conditions and approaches can reveal multiple paths
+    from A to B. A quick answer can also prompt a return to A: was the original
+    problem actually formulated as intended? Research has always involved such
+    branches and revisions, rather than a straight line from question to proof.
+    The diagram's paths are conceptual, not a transcript of any model run.
+    Understanding remains essential: receiving B alone is not the same as
+    learning the mathematics or being able to use and extend it independently.
+    The owner's concern is specifically about doctoral education: outsourcing
+    too much of the mathematical work may also outsource the practice through
+    which a PhD student develops judgement and mathematical understanding.
+    This is a personal concern, not an empirical finding about PhD students.
+    Related source: the joint declaration A Severe Misalignment of AI in
+    Mathematics, published 11 September 2026, https://mathandai.org/,
+    DOI 10.5281/zenodo.22737750. Its paragraphs on student problems and training
+    distinguish obtaining answers from cultivating skills, understanding and
+    the ability to formulate new questions. The declaration also acknowledges
+    AI's potential to accelerate mathematical study and understanding. It is
+    a position statement, not a controlled education study. This slide cites
+    that distinction without claiming agreement with every part of the letter.
+    Editable illustration: assets/personal_research_paths.drawio.}
+\end{frame}
+
+\begin{frame}[plain]
+  \vspace{9mm}
+  \begin{columns}[c,onlytextwidth]
+    \begin{column}{0.62\textwidth}
+      {\fontsize{30}{35}\selectfont\bfseries Thank you!\par}
+      \vspace{5mm}
+      {\fontsize{14}{17}\selectfont\color{teal}Questions and discussion\par}
+      \vspace{9mm}
+      {\fontsize{10}{12}\selectfont
+        Slides and, later, the experiments:\par}
+      \vspace{2mm}
+      {\fontsize{9}{11}\selectfont
+        \href{https://github.com/MathisRost/agentic-ai-math}{\color{teal}github.com/MathisRost/agentic-ai-math}\par}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \centering
+      \href{https://github.com/MathisRost/agentic-ai-math}{%
+        \includegraphics[width=39mm]{repository_qr.pdf}}\par
+    \end{column}
+  \end{columns}
+  \note{Closing slide. The QR code and clickable link both point to
+    https://github.com/MathisRost/agentic-ai-math.
+    The initial repository contains the presentation and editable sources.
+    Experiments are planned for a later addition.}
+\end{frame}
+
+\end{document}

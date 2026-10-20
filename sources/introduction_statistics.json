@@ -1,0 +1,124 @@
+{
+  "accessed": "2026-10-18",
+  "disclosure": {
+    "source": "https://arxiv.org/html/2608.24961v1",
+    "authors": "Jiashun Jin, Zheng Tracy Ke and Bingcheng Sui",
+    "table": 1,
+    "coverage": "2026-03-01 to 2026-08-20",
+    "scope": "All submissions with a primary or secondary Mathematics category. Author disclosures classified by an LLM; manual validation ongoing in v1.",
+    "total": 32944,
+    "disclosed": 3575,
+    "substantive": 1712,
+    "months": [
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August 1-20"
+    ],
+    "monthly_total": [
+      5265,
+      5097,
+      5525,
+      6106,
+      6464,
+      4487
+    ],
+    "monthly_disclosed": [
+      250,
+      281,
+      430,
+      570,
+      961,
+      1083
+    ],
+    "monthly_substantive": [
+      73,
+      110,
+      174,
+      253,
+      470,
+      632
+    ]
+  },
+  "trends": {
+    "dashboard": "https://rosie-0525.github.io/arxiv-statistics/",
+    "repository": "https://github.com/rosie-0525/arxiv-statistics",
+    "commit": "7c42a7ecbe0a117b510fdcbcdb84e8fbc271c614",
+    "source": "https://github.com/rosie-0525/arxiv-statistics/blob/7c42a7ecbe0a117b510fdcbcdb84e8fbc271c614/data.json",
+    "generated": "2026-09-20",
+    "start": "2018-01-01",
+    "end": "2026-09-17",
+    "counting": "primary categories only; January 1 through August 31 in every year; math.ST merges stat.TH as in the source dashboard",
+    "selected": [
+      {
+        "code": "math.ST",
+        "name": "Statistics Theory",
+        "jan_aug": {
+          "2018": 548,
+          "2019": 673,
+          "2020": 696,
+          "2021": 699,
+          "2022": 636,
+          "2023": 621,
+          "2024": 741,
+          "2025": 851,
+          "2026": 1564
+        },
+        "yoy_2026_percent": 83.78378378378379
+      },
+      {
+        "code": "math.PR",
+        "name": "Probability",
+        "jan_aug": {
+          "2018": 1524,
+          "2019": 1622,
+          "2020": 1709,
+          "2021": 1699,
+          "2022": 1639,
+          "2023": 1564,
+          "2024": 1686,
+          "2025": 2052,
+          "2026": 3402
+        },
+        "yoy_2026_percent": 65.78947368421053
+      },
+      {
+        "code": "math.CO",
+        "name": "Combinatorics",
+        "jan_aug": {
+          "2018": 1937,
+          "2019": 1955,
+          "2020": 2131,
+          "2021": 2263,
+          "2022": 2238,
+          "2023": 2312,
+          "2024": 2749,
+          "2025": 3049,
+          "2026": 5654
+        },
+        "yoy_2026_percent": 85.4378484749098
+      },
+      {
+        "code": "math.MG",
+        "name": "Metric Geometry",
+        "jan_aug": {
+          "2018": 253,
+          "2019": 240,
+          "2020": 243,
+          "2021": 282,
+          "2022": 270,
+          "2023": 230,
+          "2024": 241,
+          "2025": 301,
+          "2026": 556
+        },
+        "yoy_2026_percent": 84.71760797342193
+      }
+    ],
+    "selection": "Probability and Statistics Theory requested by the user; Combinatorics and Metric Geometry show two of the strongest observed recent increases.",
+    "interpretation": "Descriptive rapid growth, not a fitted exponential model or an estimate of an AI effect.",
+    "consistency": "Do not combine these counts with the separate guyu168/arxiv-math-trends frozen H1 dataset, whose counts differ."
+  }
+}
