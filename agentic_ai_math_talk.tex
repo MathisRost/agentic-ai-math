@@ -581,7 +581,7 @@
 
 \begin{frame}[t]{Multi-agent systems: who sees what?}
   \noindent{\color{teal}\fontsize{11}{13}\selectfont
-    Context management --- the ``holy grail'': the right context for each task.\par}
+    Recall $Y=f_{\theta}(p,c;\xi)$: context matters for every agent.\par}
   \vspace{2mm}
   \noindent\makebox[\textwidth][c]{%
     \includegraphics[clip,width=0.98\textwidth,height=42mm,keepaspectratio]{multi_agent_contexts.pdf}}
@@ -622,8 +622,11 @@
     Context separation is not a reason to conceal material evidence.
     A subtask can use a separate context and return a compact, sourced result,
     reducing the coordinator's need to carry its full intermediate history.
-    Context management as the holy grail is the speaker's organising perspective,
-    not an empirical claim that context is the only determinant of research quality.
+    The opening recalls slide 10: p is the prompt, c is context, theta denotes
+    the fixed model parameters and xi is sampling randomness. Changing context
+    can change the output distribution even when the model and prompt are fixed.
+    This motivates giving each agent the right context for its task; context
+    is not the only determinant of research quality.
     AutoGen: Wu et al., AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent
     Conversation, arXiv:2308.08155 (2023), illustrates configurable agents and
     conversation patterns. It does not define our H_n notation.
