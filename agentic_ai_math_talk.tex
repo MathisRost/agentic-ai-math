@@ -220,18 +220,30 @@
   \noindent{Another way to verify and evaluate mathematics is through formal verification in Lean.\par}
   \vspace{0mm}
   \noindent\makebox[\textwidth][c]{%
-    \includegraphics[clip,width=\textwidth,height=36mm,keepaspectratio]{alphaproof_architecture.pdf}}\par
+    \includegraphics[clip,width=\textwidth,height=30mm,keepaspectratio]{alphaproof_architecture.pdf}}\par
   \vspace{1mm}
-  \noindent\textbf{Search:} the LLM proposes tactics and Lean returns new proof states.\par
+  \noindent\textbf{Model:} a 3-billion-parameter encoder--decoder transformer, pretrained on code and mathematics,
+    then fine-tuned on human Lean proofs from Mathlib.\par
   \vspace{1mm}
-  \noindent\textbf{Learning:} The model learns from proof attempts..\par
+  \noindent\textbf{Search:} the model reads Lean goals and hypotheses, proposes Lean tactics, and Lean returns new proof states.\par
+  \vspace{1mm}
+  \noindent\textbf{Learning:} the model learns from proof attempts through reinforcement learning.\par
   \vspace{1.5mm}
-  \noindent{IMO 2024: silver-medal level --- 28/42 points with AlphaGeometry 2.}\par
-  \noindent AlphaProof solved 3 problems; AlphaGeometry 2 solved 1.\par
+  \noindent{IMO 2024: 28/42 points, silver-medal level (AlphaProof: 3 problems; AlphaGeometry 2: 1).}\par
   \vspace{0mm}
   {\fontsize{7}{8.5}\selectfont%
-    Adapted from Figs.~1--2 and the AlphaProof section.
+    Figs.~1--2; AlphaProof and Training sections.
     \href{https://doi.org/10.1038/s41586-025-09833-y}{\emph{Nature} 651, 607--613 (2026).}\par}
+  \note{The proof network generates Lean tactic code directly from the current
+    proof state. Its policy proposes tactics and its value head estimates the
+    remaining proof length; both guide tree search.
+    Pretraining used about 300 billion tokens of code and mathematical text,
+    followed by supervised fine-tuning on about 300,000 state--tactic pairs
+    from human-written Mathlib proofs, then reinforcement learning.
+    A separate fine-tuned Gemini 1.5 Pro model translated natural-language
+    statements into Lean to create the training curriculum.
+    Source: Hubert et al., \url{https://doi.org/10.1038/s41586-025-09833-y},
+    Prover agent, Training, and Auto-formalization sections.}
 \end{frame}
 
 \begin{frame}[t]{Aletheia\quad{\fontsize{14}{17}\selectfont\mdseries%
@@ -429,76 +441,84 @@
 \begin{frame}[t]{Step 1: Defining the problem}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.65\textwidth}
-      \raggedright\fontsize{9.5}{11.5}\selectfont
+      \raggedright\fontsize{9.5}{11}\selectfont
       A \textbf{simple point process} $X$ is a random set of distinct
       points in $\mathbb R^d$, finite in bounded regions.\par
       \vspace{1mm}
-      Its count in a region $B$ is $X(B)=\#(X\cap B)$.\par
-      \vspace{3mm}
+      Its count in a bounded Borel region $B$ is $X(B)=\#(X\cap B)$.\par
+      \vspace{2mm}
       {\bfseries Stationarity} means that
       shifting all points leaves the distribution unchanged:\par
       \vspace{1mm}
       \noindent\makebox[\linewidth][c]{$\displaystyle X+t\overset{d}{=}X
         \quad\text{for every }t\in\mathbb R^d.$}\par
-      \vspace{3mm}
+      \vspace{2mm}
       {\bfseries Homogeneous Poisson process, intensity $\lambda>0$}\par
       \begin{itemize}
-          \item We demand that
-          \noindent\makebox[\linewidth][c]{$X(B)\sim\operatorname{Poisson}(\lambda|B|),\qquad
-        \mathbb E[X(B)]=\lambda|B|.$}
-        \item  Counts in disjoint regions are independent
-        \item Therefore $\mathbb E[X(B_1)X(B_2)] = \mathbb E[X(B_1)]\mathbb E[X(B_2)]$ for $B_1 \cap B_2 = \emptyset$.
+        \setlength{\itemsep}{1mm}
+        \item We demand that\par
+          \noindent\makebox[\linewidth][c]{$X(B)\sim\operatorname{Poisson}(\lambda|B|),\quad
+            \mathbb E[X(B)]=\lambda|B|.$}\par
+        \item Counts in disjoint regions are independent.
+        \item Therefore, for $B_1\cap B_2=\emptyset$,\par
+          \noindent\makebox[\linewidth][c]{$\mathbb E[X(B_1)X(B_2)]
+            =\mathbb E[X(B_1)]\mathbb E[X(B_2)].$}\par
       \end{itemize}
     \end{column}
     \begin{column}{0.31\textwidth}
       \centering
-      \includegraphics[clip,width=\linewidth,height=48mm,keepaspectratio]{poisson_teaching.pdf}\par
-      {\fontsize{7.5}{9}\selectfont\color{muted}
-        Unit-area windows; $\lambda=20$.\par
-        On average 20 points per window.\par}
+      \includegraphics[clip,width=\linewidth,height=56mm,keepaspectratio]{poisson_teaching.pdf}\par
     \end{column}
   \end{columns}
   \vspace{1.5mm}
   {\fontsize{7}{8}\selectfont\color{muted}
     \href{https://leman.stat.vt.edu/VTCourses/BaddeleyPointProcesses.pdf}{Baddeley, Sections 1.4--1.6}.
-    Pictures show independent simulated realisations in two dimensions.\par}
+    Pictures show simulated Poisson realisations in two dimensions.\par}
 \end{frame}
 
-\begin{frame}[t]{Product densities: counting pairs}
+\begin{frame}[t]{Step 1: Defining the problem}
+  \noindent\begin{minipage}{\textwidth}
   \raggedright\fontsize{9.5}{11}\selectfont
-  This independents of counts is in general not the case. We might be for example interested in 
-  \noindent\makebox[\textwidth][c]{$\displaystyle \frac{\mathbb E[X(B_1)X(B_2)]}{\mathbb E[X(B_1)] \mathbb E[X(B_2)]}$} for more general processes \par
-  Therefore for $n\geq 1$, the \textbf{factorial moment measure} is defined by\par
-  \vspace{1mm}
-  \noindent\makebox[\textwidth][c]{$\displaystyle
-    \alpha^{(n)}(A):=\mathbb E \left [
-      \sum\nolimits_{(x_1,\ldots,x_n)\in X^n_{\ne}}
-      \mathbf 1_A(x_1,\ldots,x_n) \right ],
-    \quad A\subseteq(\mathbb R^d)^n\text{ Borel}.$}\par
-  \vspace{1.5mm}
-  Here $X^n_{\ne}$ consists of all ordered tuples of distinct points of $X$.\par
-  If $A = B_1 \times B_2 \times \cdots \times B_n$ with $B_1,\ldots, B_n$ disjoin then 
-  \noindent\makebox[\textwidth][c]{$\displaystyle
-    \alpha^{(n)}(A):=\mathbb E \left [X(B_1) \cdots X(B_n) \right ]$}\par
-  \vspace{1mm}
-  Under certain conditions $\alpha^{(n)}$ has a density, the so called \textbf{product density} $\rho^{(n)}$ satisfies\par
-  \vspace{0.5mm}
-  \noindent\makebox[\textwidth][c]{$\displaystyle
-    \alpha^{(n)}(A)=\int_A\rho^{(n)}(x_1,\ldots,x_n)\,\mathrm dx_1\cdots\mathrm dx_n.$}\par
-  \vspace{1mm}
-  For small regions around $x_1,x_2$, where the density varies little:\par
-  \vspace{0.5mm}
-  \noindent\makebox[\textwidth][c]{$\displaystyle
-    \mathbb E[X(B_1)X(B_2)]
-    \;\approx\;
-    \rho^{(2)}(x_1,x_2)\,|B_1|\,|B_2|.$}\par
+  \begin{enumerate}
+    \setlength{\itemsep}{1.5mm}
+    \setlength{\parskip}{0pt}
+    \item \textbf{Count distinct tuples.} For $n\geq1$, define the \textbf{factorial moment measure}\par
+      \noindent\makebox[\linewidth][c]{$\displaystyle
+        \alpha^{(n)}(A):=\mathbb E\bigl[
+          \sum\nolimits_{(x_1,\ldots,x_n)\in X^n_{\ne}}
+          \mathbf 1_A(x_1,\ldots,x_n)\bigr],
+        \quad A\subseteq(\mathbb R^d)^n\text{ Borel}.$}\par
+      Here $X^n_{\ne}$ contains all ordered $n$-tuples of distinct points of $X$.
+
+    \item \textbf{Use disjoint regions.} For pairwise disjoint $B_1,\ldots,B_n$,\par
+      \noindent\makebox[\linewidth][c]{$\displaystyle
+        \alpha^{(n)}(B_1\times\cdots\times B_n)
+        =\mathbb E[X(B_1)\cdots X(B_n)].$}\par
+      One point from each region gives distinct points. No independence is needed.
+
+    \item \textbf{Introduce a density.} When it exists, the \textbf{product density} $\rho^{(n)}$ satisfies\par
+      \noindent\makebox[\linewidth][c]{$\displaystyle
+        \alpha^{(n)}(A)=\int_A\rho^{(n)}(x_1,\ldots,x_n)\,\mathrm dx_1\cdots\mathrm dx_n.$}\par
+
+    \item \textbf{Read it locally.} For small disjoint regions around $x_1,x_2$,\par
+      \noindent\makebox[\linewidth][c]{$\displaystyle
+        \mathbb E[X(B_1)X(B_2)]
+        \;\approx\;\rho^{(2)}(x_1,x_2)\,|B_1|\,|B_2|,$}\par
+      provided $\rho^{(2)}$ varies little across $B_1\times B_2$.
+  \end{enumerate}
   \vspace{1mm}
   {\fontsize{7}{8.5}\selectfont\color{muted}
+    Assume bounded Borel windows and finite local moments.\par
     \href{https://leman.stat.vt.edu/VTCourses/BaddeleyPointProcesses.pdf}{Baddeley, Section 2.3};
     \href{https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf}{Last and Penrose, Section 4.4}.\par}
+  \end{minipage}
+  \note{For general processes, counts in disjoint regions may be dependent.
+    One motivation is to compare $\mathbb E[X(B_1)X(B_2)]$ with
+    $\mathbb E[X(B_1)]\mathbb E[X(B_2)]$ when both expected counts are positive.
+    The next slide introduces the corresponding local comparison through product densities.}
 \end{frame}
 
-\begin{frame}[t]{Product densities: comparison with Poisson}
+\begin{frame}[t]{Step 1: Defining the Problem}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.67\textwidth}
       \raggedright\fontsize{9.5}{11}\selectfont
@@ -508,7 +528,7 @@
         \rho^{(2)}(x_1,x_2)=\lambda^2,\qquad
         \rho^{(n)}(x_1,\ldots,x_n)=\lambda^n.$}\par
       \vspace{1.5mm}
-      For a stationary process with intensity $\rho^1 = \lambda>0$,
+      For a stationary process with intensity $\rho^{(1)}=\lambda>0$,
       compare its product density with this reference:\par
       \vspace{1.5mm}
       \noindent\makebox[\linewidth][c]{$\displaystyle
@@ -529,9 +549,24 @@
   \end{columns}
   \vspace{0.5mm}
   {\fontsize{7}{8.5}\selectfont\color{muted}
-    Poisson simulated; other patterns schematic. Comparisons are local; $g_2=1$ alone does not imply Poisson.\par
+    Simulated stationary processes, all with $\lambda=20$; $r=\|x_1-x_2\|$, $a=0.10$, $h=0.11$.\par
+    Comparisons are local; $g_2=1$ alone does not imply Poisson.
     \href{https://leman.stat.vt.edu/VTCourses/BaddeleyPointProcesses.pdf}{Baddeley, Section 2.3};
-    \href{https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf}{Last and Penrose, Section 4.4}.\par}
+    \href{https://search.r-project.org/CRAN/refmans/spatstat.random/html/rMaternII.html}{spatstat documentation}.\par}
+  \note{The cluster process has Poisson parents of intensity $\kappa=4$.
+    Each parent has an independent Poisson number of offspring with mean $\mu=5$,
+    independently and uniformly distributed in its disc of radius $a=0.10$.
+    Only offspring are retained, so $\lambda=\kappa\mu=20$.
+    If $A_a(r)$ is the overlap area of two radius-$a$ discs with centres distance $r$ apart,
+    then $g_2(r)=1+A_a(r)/(\kappa(\pi a^2)^2)>1$ for $0<r<2a$;
+    $g_2(r)=1$ for $r\geq2a$. See Baddeley, Example 2.12.
+    For Mat\'ern II, start with Poisson proposals of intensity
+    $\tau=-\log(1-20\pi h^2)/(\pi h^2)$, $h=0.11$, and independent uniform marks.
+    Keep a proposal exactly when no proposal within distance $h$ has a smaller mark.
+    The resulting intensity is $(1-e^{-\tau\pi h^2})/(\pi h^2)=20$.
+    No two retained points are less than $h$ apart, hence $g_2(r)=0$ for $0<r<h$.
+    No assertion that $g_2<1$ at all distances is intended.
+    Both simulations use an outer buffer to give an exact restriction of the stationary process.}
 \end{frame}
 
 \begin{frame}[t]{Step 1: the precise problem}

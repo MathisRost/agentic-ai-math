@@ -2,6 +2,7 @@
 from pathlib import Path
 import math
 import random
+import json
 import xml.etree.ElementTree as E
 
 ASSETS = Path(__file__).resolve().parents[1] / "assets"
@@ -33,16 +34,17 @@ class Diagram:
         E.SubElement(cell, "mxGeometry", x=str(x), y=str(y),
                      width=str(width), height=str(height), **{"as": "geometry"})
 
-    def text(self, value, x, y, width, height, size=29, color=INK, bold=False):
+    def text(self, value, x, y, width, height, size=29, color=INK, bold=False, html=False):
         self.vertex(value, x, y, width, height,
-                    "text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;"
+                    f"text;html={int(html)};whiteSpace=wrap;align=center;verticalAlign=middle;"
                     f"fontFamily=Kalam;fontSize={size};fontColor={color};"
                     f"fontStyle={int(bold)};strokeColor=none;fillColor=none;spacing=0;")
 
-    def box(self, x, y, width, height, color=TEAL):
+    def box(self, x, y, width, height, color=TEAL, fill="#FFFFFF", hatch=False):
         self.vertex("", x, y, width, height,
                     "rounded=1;arcSize=5;sketch=1;comic=0;jiggle=1.2;"
-                    f"strokeWidth=2;strokeColor={color};fillColor=#FFFFFF;")
+                    f"strokeWidth=2;strokeColor={color};fillColor={fill};"
+                    + ("fillStyle=hachure;hachureGap=7;fillWeight=0.8;" if hatch else ""))
 
     def dot(self, x, y, color=TEAL, radius=5):
         self.vertex("", x-radius, y-radius, 2*radius, 2*radius,
@@ -66,38 +68,63 @@ class Diagram:
             ASSETS / f"{self.name}.drawio", encoding="utf-8", xml_declaration=True)
 
 
-# Simulate Poisson counts, then iid uniform locations in equal unit-area windows.
-# No rejection or minimum spacing: accidental close pairs are allowed.
-rng = random.Random(20261020)
-poisson = Diagram("poisson_teaching", 390, 720)
-for index, top in enumerate((0, 350), start=1):
+def poisson_count(rng, mean):
     product, count = 1.0, -1
-    while product > math.exp(-20):
+    while product > math.exp(-mean):
         product *= rng.random()
         count += 1
-    poisson.text(f"Realisation {index}", 30, top, 330, 40, 31, TEAL, True)
-    poisson.box(65, top + 50, 260, 260)
-    for _ in range(count):
-        poisson.dot(65 + 260*rng.random(), top + 50 + 260*rng.random(), radius=4)
-    poisson.text(f"{count} points", 30, top + 315, 330, 32, 28, ORANGE)
-poisson.save()
+    return count
 
-# These are illustrative counts, not a simulated Poisson sample.
-pairs = Diagram("product_density_pairs", 1030, 300)
-pairs.box(25, 50, 300, 185)
-pairs.box(705, 50, 300, 185, ORANGE)
-pairs.text("B1", 25, 0, 300, 42, 34, TEAL, True)
-pairs.text("B2", 705, 0, 300, 42, 34, ORANGE, True)
-left = [(100, 90), (240, 145), (115, 205)]
-right = [(785, 100), (925, 190)]
-for a in left:
-    for b in right:
-        pairs.line(a, b)
-for a in left:
-    pairs.dot(*a, radius=8)
-for b in right:
-    pairs.dot(*b, color=ORANGE, radius=8)
-pairs.text("3 points", 25, 250, 300, 40, 31, TEAL)
-pairs.text("3 x 2 = 6 pairs", 350, 250, 330, 40, 34, INK, True)
-pairs.text("2 points", 705, 250, 300, 40, 31, ORANGE)
-pairs.save()
+
+def poisson_rectangle(rng, intensity, bounds):
+    x0, x1, y0, y1 = bounds
+    count = poisson_count(rng, intensity * (x1-x0) * (y1-y0))
+    return [(rng.uniform(x0, x1), rng.uniform(y0, y1)) for _ in range(count)]
+
+
+def contains(bounds, point):
+    x0, x1, y0, y1 = bounds
+    x, y = point
+    return x0 <= x < x1 and y0 <= y < y1
+
+
+def main():
+    # Retain the two original independent Poisson realisations.
+    rng = random.Random(20261020)
+    samples = [poisson_rectangle(rng, 20, (0, 1, 0, 1)) for _ in range(2)]
+    d = Diagram("poisson_teaching", 620, 680)
+    for i, (left, points) in enumerate(zip((15, 335), samples), start=1):
+        d.text(f"Realisation {i}", left, 0, 270, 46, 36, TEAL, True)
+        d.box(left+10, 57, 250, 250)
+        for x, y in points:
+            d.dot(left+10+250*x, 57+250*y, radius=4.5)
+        d.text(f"{len(points)} points", left, 315, 270, 40, 33, ORANGE)
+    bounds = (0, 1.6, 0, 0.65)
+    b1, b2 = (0.10, 0.68, 0.10, 0.55), (0.92, 1.50, 0.10, 0.55)
+    points = poisson_rectangle(random.Random(20261025), 20, bounds)
+    left, top, scale = 20, 390, 360
+    d.box(left, top, 1.6*scale, 0.65*scale)
+    for box, color, fill in [(b1, TEAL, "#D2E6E2"), (b2, ORANGE, "#F1E3D2")]:
+        x0, x1, y0, y1 = box
+        d.box(left+x0*scale, top+y0*scale, (x1-x0)*scale,
+              (y1-y0)*scale, color, fill, True)
+    for x, y in points:
+        color = TEAL if contains(b1, (x, y)) else ORANGE if contains(b2, (x, y)) else "#626A70"
+        d.dot(left+x*scale, top+y*scale, color=color, radius=5)
+    counts = [sum(contains(b, p) for p in points) for b in (b1, b2)]
+    for i, (x, color, count) in enumerate(zip((15, 335), (TEAL, ORANGE), counts), start=1):
+        d.text(f"X(B<sub>{i}</sub>) = {count}", x, 632, 270, 42,
+               35, color, True, html=True)
+    d.save()
+    (ASSETS / "poisson_teaching_samples.json").write_text(json.dumps({
+        "intensity": 20, "top_seed": 20261020,
+        "top_window": [0, 1, 0, 1], "top_samples": samples,
+        "counting_seed": 20261025, "counting_window": bounds,
+        "counting_points": points, "subwindows": [b1, b2], "counts": counts,
+        "method": "Poisson count, then independent uniform locations; no conditioning on the count",
+    }, indent=2)+"\n")
+    print(f"Poisson examples: {[len(p) for p in samples]}; subwindow counts: {counts}")
+
+
+if __name__ == "__main__":
+    main()
