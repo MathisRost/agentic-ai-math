@@ -34,14 +34,14 @@ import json
 rng=random.Random(62)
 poisson_rng=random.Random(20261021)
 product,count=1.0,-1
-while product>math.exp(-24):
+while product>math.exp(-32):
  product*=poisson_rng.random()
  count+=1
-# Poisson(24) count followed by iid uniform positions in the unit square.
+# Poisson(32) count followed by iid uniform positions in the unit square.
 # Do not condition on the count or reject close points.
 poisson_points=[(poisson_rng.random(),poisson_rng.random()) for _ in range(count)]
 (ASSETS/'point_process_poisson_sample.json').write_text(json.dumps({
- 'seed':20261021,'intensity':24,'window':[0,1,0,1],'count':count,
+ 'seed':20261021,'intensity':32,'window':[0,1,0,1],'count':count,
  'method':'Poisson count (product of uniforms), then iid uniform positions',
  'points':poisson_points,
 },indent=2)+'\n')
