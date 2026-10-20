@@ -618,6 +618,9 @@
 \begin{frame}[t]{Why manage context and communication?}
   \noindent\begin{minipage}{\textwidth}
   \raggedright\fontsize{9.5}{11}\selectfont
+  Very simply, an LLM produces random text $f(\text{context})$, whose
+  distribution \textbf{depends strongly on the context}.\par
+  \vspace{2mm}
   {\color{teal}\bfseries 1. Keep context focused}\quad
   {\fontsize{7}{8}\selectfont
     \href{https://aclanthology.org/2024.tacl-1.9/}{\color{muted}Liu et al. (2024)};
@@ -648,19 +651,18 @@
     \href{https://aclanthology.org/2025.acl-long.1170/}{\color{muted}Wang et al. (2025)}}\par
   Let agents share useful findings. Removing agents or messages that repeat
   the same work can save time and improve results.\par
-  \vspace{1.1mm}
-
-  {\color{teal}\bfseries 5. Explore alternative proofs in parallel}\quad
-  {\fontsize{7}{8}\selectfont
-    \href{https://arxiv.org/html/2408.08152v1}{\color{muted}Xin et al., \emph{DeepSeek-Prover-V1.5} (2024)}}\par
-  Agents with different contexts can sample and check alternative proofs simultaneously.
-  More attempts may find a solution, at greater total compute cost.\par
   \end{minipage}
   \vspace{1.1mm}
 
   {\fontsize{7}{8.5}\selectfont\color{muted}%
     Effects depend on the task and models. Fresh-context review is a design inference from bias and verification studies.\par}
-  \note{The problem labels are descriptive terms requested by the owner,
+  \note{The opening uses f(context) as shorthand for a random text-valued
+    output, with the model and sampling settings held fixed. More explicitly,
+    f(context,U) includes the sampling randomness U. Its conditional
+    distribution depends on the context; deterministic decoding is a
+    degenerate special case. This is an intuition for context management,
+    not a claim that context is the only factor affecting model output.
+    The problem labels are descriptive terms requested by the owner,
     not a taxonomy attributed to the papers cited beside each heading.
     Here, distraction refers to irrelevant material obscuring useful details;
     clash refers to conflicting assumptions or instructions. Poisoning refers
@@ -705,19 +707,7 @@
     with reduced token use against its tested baselines. Because both agents and
     edges change, do not attribute every gain solely to fewer messages or claim a
     universal optimal number of exchanges. H_n should control recipients, content,
-    timing and stopping, balancing independent work with useful cooperation.
-    5. Xin et al., DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback
-    for Reinforcement Learning and Monte-Carlo Tree Search, arXiv:2408.08152
-    (2024), Sections 3.1 and 3.4: workers generate and Lean-check proof paths
-    concurrently, conditioning on different partial proofs and tactic states.
-    Section 4.2 and Table 3 compare sampling budgets and guiding prompts;
-    CoT and non-CoT modes solve complementary problems. This supports parallel
-    exploration and spending more inference compute on alternative attempts.
-    Using separately contextualised research agents is a design application,
-    not a direct experiment comparing arbitrary agent context assignments.
-    More trials increase total work; parallelism can reduce elapsed time when
-    sufficient resources are available. Gains are not guaranteed, and sampled
-    candidates still require verification.}
+    timing and stopping, balancing independent work with useful cooperation.}
 \end{frame}
 
 \begin{frame}[t]{Heuristics for agentic research}
@@ -964,8 +954,7 @@
 \begin{frame}[t]{Step 1: the precise problem}
   \noindent\begin{minipage}{\textwidth}
   \raggedright\fontsize{9.5}{11}\selectfont
-  Fix $M,\lambda_0>0$ and choose
-  $0<h_3<\frac{\sqrt{3}}{2}M$, $0<h_4<\sqrt{\frac{2}{3}}M$.\par
+  Fix $M,\lambda_0,h_3,h_4>0$.\par
   Find \textbf{one stationary, simple} point process $X$ on $\mathbb R^3$ with intensity
   $\lambda_0$, finite local moments through order four and product densities.\par
   \vspace{1mm}
@@ -1014,6 +1003,8 @@
     to affine lines and planes, including their extensions. Choose thresholds
     yielding domains of positive Lebesgue measure for a nonvacuous question:
     0<h_3<sqrt(3)M/2 and 0<h_4<sqrt(2/3)M.
+    At the speaker's request, the slide displays positivity only;
+    these geometric upper bounds will be explained orally.
     The latest local final review, dated 19 October 2026,
     agentic_research_setup/runs/20261019T114252Z_cox_rerun/review_report.md,
     distinguishes the general target from its strongest reviewed result:
