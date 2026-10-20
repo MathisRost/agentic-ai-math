@@ -997,13 +997,12 @@
     \end{column}
     \begin{column}{0.30\textwidth}
       \centering
-      \includegraphics[clip,width=\linewidth,height=48mm,keepaspectratio]{point_process_patterns.pdf}\par
-      {\fontsize{7}{8}\selectfont\color{muted}Schematic point patterns.\par}
+      \includegraphics[clip,width=\linewidth,height=54mm,keepaspectratio]{point_process_patterns.pdf}\par
     \end{column}
   \end{columns}
-  \vspace{1mm}
+  \vspace{0.5mm}
   {\fontsize{7}{8.5}\selectfont\color{muted}
-    Comparisons concern the specified locations and scale. $g_2=1$ alone does not imply Poisson.\par
+    Poisson simulated; other patterns schematic. Comparisons are local; $g_2=1$ alone does not imply Poisson.\par
     \href{https://leman.stat.vt.edu/VTCourses/BaddeleyPointProcesses.pdf}{\color{teal}Baddeley, Section 2.3};
     \href{https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf}{\color{teal}Last and Penrose, Section 4.4}.\par}
   \note{rho^(n) denotes order n, not a scalar power. Product densities are
@@ -1025,9 +1024,14 @@
     correlations or Pearson coefficients, and higher-order full correlations
     include lower-order contributions. The local manuscript uses m_n for
     rho^(n), rho for lambda, and the same g_n normalisation.
-    Both schematic patterns contain 24 points in equal windows: three compact
-    groups versus a separated pattern. They are designed illustrations, not
-    fitted simulations or statistical estimates. One cannot infer a process
+    The clustered and repulsive patterns each contain 24 points in equal
+    windows: three compact groups versus a separated pattern. They are designed
+    illustrations, not fitted simulations or statistical estimates. The middle
+    panel is an actual homogeneous Poisson simulation on a unit-area window
+    with intensity 24, seed 20261021: a Poisson(24) count, then iid uniform
+    locations, without conditioning on the count or rejecting close points.
+    The realised count and coordinates are saved in
+    assets/point_process_poisson_sample.json. One cannot infer a process
     law from one such pattern. The comparison is local in the specified
     positions and scale. Editable source: assets/point_process_patterns.drawio.}
 \end{frame}

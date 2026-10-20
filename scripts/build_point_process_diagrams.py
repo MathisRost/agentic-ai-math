@@ -1,4 +1,4 @@
-"""Build schematic clustered and repulsive point patterns in the talk style."""
+"""Compare schematic clustered/repulsive patterns with a simulated Poisson sample."""
 from pathlib import Path
 import xml.etree.ElementTree as E
 import base64
@@ -29,9 +29,26 @@ class Diagram:
   E.indent(self.doc);E.ElementTree(self.doc).write(ASSETS/(self.name+'.drawio'),encoding='utf-8',xml_declaration=True)
 
 import random
+import math
+import json
 rng=random.Random(62)
-d=Diagram('point_process_patterns',460,590)
-for top,title,caption in [(0,'Clustered','many close pairs'),(295,'Repulsive','few close pairs')]:
+poisson_rng=random.Random(20261021)
+product,count=1.0,-1
+while product>math.exp(-24):
+ product*=poisson_rng.random()
+ count+=1
+# Poisson(24) count followed by iid uniform positions in the unit square.
+# Do not condition on the count or reject close points.
+poisson_points=[(poisson_rng.random(),poisson_rng.random()) for _ in range(count)]
+(ASSETS/'point_process_poisson_sample.json').write_text(json.dumps({
+ 'seed':20261021,'intensity':24,'window':[0,1,0,1],'count':count,
+ 'method':'Poisson count (product of uniforms), then iid uniform positions',
+ 'points':poisson_points,
+},indent=2)+'\n')
+d=Diagram('point_process_patterns',460,885)
+for top,title,caption in [(0,'Clustered','many close pairs'),
+                          (295,'Poisson','simulated realisation'),
+                          (590,'Repulsive','few close pairs')]:
  d.text(title,10,top,440,38,31,True,TEAL)
  d.vertex('',20,top+47,420,195,'rounded=1;arcSize=8;fillColor=#FFFFFF;strokeColor='+TEAL+';strokeWidth=2;sketch=1;comic=0;jiggle=1.2;')
  d.text(caption,20,top+249,420,32,25,color=ORANGE)
@@ -39,10 +56,11 @@ for top,title,caption in [(0,'Clustered','many close pairs'),(295,'Repulsive','f
   points=[]
   for cx,cy in [(98,104),(222,186),(354,112)]:
    for angle in range(8):
-    import math
     theta=angle*math.pi/4+rng.uniform(-.18,.18)
     radius=rng.uniform(17,36)
     points.append((cx+radius*math.cos(theta),cy+radius*math.sin(theta)))
+ elif title=='Poisson':
+  points=[(20+420*x,47+195*y) for x,y in poisson_points]
  else:
   points=[]
   while len(points)<24:
