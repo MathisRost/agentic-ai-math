@@ -39,7 +39,7 @@ class Drawing:
         ET.ElementTree(self.doc).write(ASSETS/(self.name+'.drawio'),encoding='utf-8',xml_declaration=True)
 
 d=Drawing('funsearch_workflow',1120,280)
-d.box('Human supplies\nevaluator +\ninitial program',10,38,205,110,ORANGE,'#F1E3D2',size=27)
+d.box('Human supplies\ninitial program',10,38,205,110,ORANGE,'#F1E3D2',size=27)
 d.box('LLM\nproposes code\nchanges',310,38,200,110,size=27)
 d.box('Evaluator\nfixed program\nruns + scores',620,38,200,110,MUTED,'#E7EAEC',size=26)
 d.box('Best program\nfound so far',925,38,185,110,MUTED,'#FFFFFF',shape='shape=note;size=18;',size=27)
