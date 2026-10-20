@@ -1,0 +1,38 @@
+{
+  "run_id": "20261019T114252Z_cox_rerun",
+  "stage": "complete",
+  "updated_at_utc": "2026-10-19T15:19:35Z",
+  "literature": {
+    "state": "frozen",
+    "artifacts": [
+      "shared_literature/dossier.md",
+      "shared_literature/references.bib",
+      "shared_literature/open_questions.md",
+      "literature_sha256.txt"
+    ]
+  },
+  "approaches": {
+    "1": {"state": "reviewed_v02_final_restricted_result", "submissions": ["tracks/approach_1/submissions/v01.md", "tracks/approach_1/submissions/v02.md"], "reviews": ["reviews/approach_1/review_v01.md", "reviews/approach_1/review_v02.md"]},
+    "2": {"state": "reviewed_v02_final_scoped_obstructions", "submissions": ["tracks/approach_2/submissions/v01.md", "tracks/approach_2/submissions/v02.md"], "reviews": ["reviews/approach_2/review_v01.md", "reviews/approach_2/review_v02.md"]},
+    "3": {"state": "reviewed_v02_final_scoped_obstruction", "submissions": ["tracks/approach_3/submissions/v01.md", "tracks/approach_3/submissions/v02.md"], "reviews": ["reviews/approach_3/review_v01.md", "reviews/approach_3/review_v02.md"]},
+    "4": {"state": "reviewed_v02_final_restricted_result", "submissions": ["tracks/approach_4/submissions/v01.md", "tracks/approach_4/submissions/v02.md"], "reviews": ["reviews/approach_4/review_v01.md", "reviews/approach_4/review_v02.md"]},
+    "5": {"state": "reviewed_v02_final_restricted_result", "submissions": ["tracks/approach_5/submissions/v01.md", "tracks/approach_5/submissions/v02.md"], "reviews": ["reviews/approach_5/review_v01.md", "reviews/approach_5/review_v02.md"]}
+  },
+  "coding_requests": [],
+  "final_synthesis": {
+    "state": "complete",
+    "artifact": "review_report.md",
+    "sha256": "61272d17668e44987293a7e17625247190a9339190e9fca782487448669c4140"
+  },
+  "exact_target": {
+    "state": "unresolved",
+    "reason": "The reviewed construction is exact only on a nonempty geometry-dependent low-intensity interval; no reviewed construction or general obstruction settles all larger prescribed intensities.",
+    "restricted_positive_result": "proved_and_reviewed",
+    "general_nonexistence": "not_proved"
+  },
+  "integrity": {
+    "all_listed_hashes_verified": true,
+    "structured_reasoning_and_decision_sections_verified": true,
+    "exact_runtime_token_fields_exposed": false
+  }
+}

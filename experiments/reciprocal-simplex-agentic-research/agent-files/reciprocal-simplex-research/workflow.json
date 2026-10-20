@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "kind": "coordinator_interpreted_manifest",
+  "created": "2026-10-19",
+  "status": "prepared_not_started",
+  "native_execution_note": "This JSON is a project protocol, not an automatically executable Codex config. The coordinator interprets it after an explicit launch request.",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "xhigh",
+  "allow_model_fallback": false,
+  "max_concurrent_subagents": 3,
+  "coordinator": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "xhigh",
+    "instruction_file": "instructions/coordinator.md",
+    "delegation_allowed_after_explicit_launch": true
+  },
+  "target": {
+    "file": "common/problem_statement.md",
+    "mode": "exact",
+    "prescribed_intensity": true,
+    "orders": [
+      2,
+      3,
+      4
+    ],
+    "full_product_densities": true,
+    "isotropy_required": false,
+    "empirical_fit_required": false,
+    "approximation_is_success": false
+  },
+  "shared_baseline": "common/",
+  "source_manifest": "common/source_manifest.json",
+  "run_root": "runs/",
+  "context_policy": {
+    "common_material": "Versioned files loaded separately by each agent, not one shared live context window.",
+    "history_fork": "none",
+    "proof_tracks_may_read_each_other": false,
+    "reviewer_receives_author_conversation": false,
+    "filesystem_scopes_are_security_boundaries": false,
+    "common_files_are_frozen_per_run": true
+  },
+  "variables": {
+    "$RUN": "Resolved path to a new run directory.",
+    "$N": "Assigned approach number, 1 through 5.",
+    "$REQUEST_ID": "Assigned unique coding request ID.",
+    "$SUBMISSION": "Exact frozen submission file for this invocation.",
+    "$REQUEST": "Exact written coding request.",
+    "$RELEVANT_COMMON_FILES": "Explicit selection from the frozen common snapshot.",
+    "$RELEVANT_CODING_RESULT": "Explicit request/result paths for this review.",
+    "$ASSIGNED_REVIEW_INPUTS": "Only issue list for delta review; frozen reviews/submissions for final synthesis.",
+    "$AUTHOR_CONVERSATION": "Private author message history; never in a review packet.",
+    "$OTHER_TRACKS": "Every other approach track directory.",
+    "$OTHER_REVIEWS": "Every other approach review directory.",
+    "$OTHER_CODING_RESULTS": "Coding outputs from other approaches.",
+    "$OTHER_AGENT_CONVERSATIONS": "Private histories of other agents.",
+    "$UNASSIGNED_TRACK_OUTPUTS": "All track outputs not explicitly included in the request."
+  },
+  "roles": {
+    "literature": {
+      "description": "One shared literature agent: verify sources for all five approaches to the exact reciprocal-simplex problem.",
+      "instruction_file": "instructions/literature_agent.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/literature_agent.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/prior_work/README.md",
+        "common/papers/INDEX.md",
+        "common/source_notes/definition_audit_2026_10_18.json",
+        "approaches/01_poisson_cluster.md",
+        "approaches/02_cox.md",
+        "approaches/03_hawkes.md",
+        "approaches/04_agent_choice.md",
+        "approaches/05_nonexistence.md"
+      ],
+      "output_paths": [
+        "$RUN/literature/"
+      ],
+      "additional_read_paths": [
+        "$RUN/common/**"
+      ],
+      "forbidden_read_paths": [
+        "$RUN/tracks/**",
+        "$RUN/reviews/**"
+      ],
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "native_agent_file": ".codex/agents/literature.toml"
+    },
+    "reviewer": {
+      "description": "Critical mathematical reviewer of frozen exact-problem submissions; produces extensive reports.",
+      "instruction_file": "instructions/reviewer.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/reviewer.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/prior_work/README.md",
+        "common/papers/INDEX.md",
+        "common/source_notes/definition_audit_2026_10_18.json",
+        "templates/review_report.md",
+        "templates/coding_request.md"
+      ],
+      "output_paths": [
+        "$RUN/reviews/approach_$N/",
+        "$RUN/review_report.md"
+      ],
+      "additional_read_paths": [
+        "$RUN/common/**",
+        "$RUN/shared_literature/**",
+        "$SUBMISSION",
+        "$RELEVANT_CODING_RESULT",
+        "$ASSIGNED_REVIEW_INPUTS"
+      ],
+      "forbidden_read_paths": [
+        "$RUN/tracks/*/work/**",
+        "$AUTHOR_CONVERSATION"
+      ],
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "native_agent_file": ".codex/agents/reviewer.toml"
+    },
+    "coder": {
+      "description": "Implement specific reviewer-requested mathematical checks with reproducible code and honest uncertainty.",
+      "instruction_file": "instructions/coder.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/coder.md",
+        "common/problem_statement.md",
+        "templates/coding_request.md"
+      ],
+      "output_paths": [
+        "$RUN/coding/$REQUEST_ID/"
+      ],
+      "additional_read_paths": [
+        "$REQUEST",
+        "$SUBMISSION",
+        "$RELEVANT_COMMON_FILES"
+      ],
+      "forbidden_read_paths": [
+        "$RUN/tracks/*/work/**",
+        "$UNASSIGNED_TRACK_OUTPUTS"
+      ],
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "native_agent_file": ".codex/agents/coder.toml"
+    },
+    "proof_1": {
+      "description": "Independent proof agent for approach 1: Poisson clusters.",
+      "instruction_file": "instructions/proof_agent.md",
+      "approach_file": "approaches/01_poisson_cluster.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/proof_agent.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/prior_work/README.md",
+        "common/papers/INDEX.md",
+        "common/source_notes/definition_audit_2026_10_18.json",
+        "approaches/01_poisson_cluster.md",
+        "templates/submission.md"
+      ],
+      "output_paths": [
+        "$RUN/tracks/approach_1/work/",
+        "$RUN/tracks/approach_1/submissions/"
+      ],
+      "additional_read_paths": [
+        "$RUN/common/**",
+        "$RUN/shared_literature/**",
+        "$RUN/tracks/approach_1/**",
+        "$RUN/reviews/approach_1/**"
+      ],
+      "forbidden_read_paths": [
+        "$OTHER_TRACKS",
+        "$OTHER_REVIEWS",
+        "$OTHER_CODING_RESULTS",
+        "$OTHER_AGENT_CONVERSATIONS"
+      ],
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "native_agent_file": ".codex/agents/proof_1.toml"
+    },
+    "proof_2": {
+      "description": "Independent proof agent for approach 2: Cox processes.",
+      "instruction_file": "instructions/proof_agent.md",
+      "approach_file": "approaches/02_cox.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/proof_agent.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/prior_work/README.md",
+        "common/papers/INDEX.md",
+        "common/source_notes/definition_audit_2026_10_18.json",
+        "approaches/02_cox.md",
+        "templates/submission.md"
+      ],
+      "output_paths": [
+        "$RUN/tracks/approach_2/work/",
+        "$RUN/tracks/approach_2/submissions/"
+      ],
+      "additional_read_paths": [
+        "$RUN/common/**",
+        "$RUN/shared_literature/**",
+        "$RUN/tracks/approach_2/**",
+        "$RUN/reviews/approach_2/**"
+      ],
+      "forbidden_read_paths": [
+        "$OTHER_TRACKS",
+        "$OTHER_REVIEWS",
+        "$OTHER_CODING_RESULTS",
+        "$OTHER_AGENT_CONVERSATIONS"
+      ],
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "native_agent_file": ".codex/agents/proof_2.toml"
+    },
+    "proof_3": {
+      "description": "Independent proof agent for approach 3: Hawkes processes.",
+      "instruction_file": "instructions/proof_agent.md",
+      "approach_file": "approaches/03_hawkes.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/proof_agent.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/prior_work/README.md",
+        "common/papers/INDEX.md",
+        "common/source_notes/definition_audit_2026_10_18.json",
+        "approaches/03_hawkes.md",
+        "templates/submission.md"
+      ],
+      "output_paths": [
+        "$RUN/tracks/approach_3/work/",
+        "$RUN/tracks/approach_3/submissions/"
+      ],
+      "additional_read_paths": [
+        "$RUN/common/**",
+        "$RUN/shared_literature/**",
+        "$RUN/tracks/approach_3/**",
+        "$RUN/reviews/approach_3/**"
+      ],
+      "forbidden_read_paths": [
+        "$OTHER_TRACKS",
+        "$OTHER_REVIEWS",
+        "$OTHER_CODING_RESULTS",
+        "$OTHER_AGENT_CONVERSATIONS"
+      ],
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "native_agent_file": ".codex/agents/proof_3.toml"
+    },
+    "proof_4": {
+      "description": "Independent proof agent for approach 4: agent-selected construction.",
+      "instruction_file": "instructions/proof_agent.md",
+      "approach_file": "approaches/04_agent_choice.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/proof_agent.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/prior_work/README.md",
+        "common/papers/INDEX.md",
+        "common/source_notes/definition_audit_2026_10_18.json",
+        "approaches/04_agent_choice.md",
+        "templates/submission.md"
+      ],
+      "output_paths": [
+        "$RUN/tracks/approach_4/work/",
+        "$RUN/tracks/approach_4/submissions/"
+      ],
+      "additional_read_paths": [
+        "$RUN/common/**",
+        "$RUN/shared_literature/**",
+        "$RUN/tracks/approach_4/**",
+        "$RUN/reviews/approach_4/**"
+      ],
+      "forbidden_read_paths": [
+        "$OTHER_TRACKS",
+        "$OTHER_REVIEWS",
+        "$OTHER_CODING_RESULTS",
+        "$OTHER_AGENT_CONVERSATIONS"
+      ],
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "native_agent_file": ".codex/agents/proof_4.toml"
+    },
+    "proof_5": {
+      "description": "Independent proof agent for approach 5: non-existence and necessary conditions.",
+      "instruction_file": "instructions/proof_agent.md",
+      "approach_file": "approaches/05_nonexistence.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/proof_agent.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/prior_work/README.md",
+        "common/papers/INDEX.md",
+        "common/source_notes/definition_audit_2026_10_18.json",
+        "approaches/05_nonexistence.md",
+        "templates/submission.md"
+      ],
+      "output_paths": [
+        "$RUN/tracks/approach_5/work/",
+        "$RUN/tracks/approach_5/submissions/"
+      ],
+      "additional_read_paths": [
+        "$RUN/common/**",
+        "$RUN/shared_literature/**",
+        "$RUN/tracks/approach_5/**",
+        "$RUN/reviews/approach_5/**"
+      ],
+      "forbidden_read_paths": [
+        "$OTHER_TRACKS",
+        "$OTHER_REVIEWS",
+        "$OTHER_CODING_RESULTS",
+        "$OTHER_AGENT_CONVERSATIONS"
+      ],
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "native_agent_file": ".codex/agents/proof_5.toml"
+    }
+  },
+  "stages": [
+    {
+      "id": "initialize",
+      "owner": "coordinator",
+      "actions": [
+        "Validate setup and actual model selection",
+        "Create new run directory",
+        "Freeze common baseline and hashes"
+      ]
+    },
+    {
+      "id": "literature",
+      "roles": [
+        "literature"
+      ],
+      "depends_on": [
+        "initialize"
+      ],
+      "deliverables": [
+        "$RUN/literature/dossier.md",
+        "$RUN/literature/references.bib",
+        "$RUN/literature/open_questions.md"
+      ]
+    },
+    {
+      "id": "freeze_literature",
+      "owner": "coordinator",
+      "depends_on": [
+        "literature"
+      ],
+      "actions": [
+        "Freeze literature dossier and context manifest"
+      ]
+    },
+    {
+      "id": "independent_proofs",
+      "roles": [
+        "proof_1",
+        "proof_2",
+        "proof_3",
+        "proof_4",
+        "proof_5"
+      ],
+      "depends_on": [
+        "freeze_literature"
+      ],
+      "schedule": "Independent contexts, batches of at most three; no cross-track communication"
+    },
+    {
+      "id": "individual_review",
+      "roles": [
+        "reviewer"
+      ],
+      "depends_on": [
+        "independent_proofs"
+      ],
+      "per_approach": true,
+      "fresh_context_each_approach": true,
+      "optional_check_role": "coder",
+      "max_repair_rounds": 2,
+      "deliverables": [
+        "$RUN/reviews/approach_$N/review_vNN.md"
+      ]
+    },
+    {
+      "id": "final_synthesis",
+      "roles": [
+        "reviewer"
+      ],
+      "depends_on": [
+        "individual_review"
+      ],
+      "deliverables": [
+        "$RUN/review_report.md"
+      ]
+    }
+  ],
+  "communication": [
+    {
+      "from": "literature",
+      "to": "common_context",
+      "payload": "Frozen source dossier through coordinator"
+    },
+    {
+      "from": "common_context",
+      "to": "proof_1..proof_5",
+      "payload": "Exact problem and shared sources"
+    },
+    {
+      "from": "common_context",
+      "to": "reviewer",
+      "payload": "Same exact problem and shared sources"
+    },
+    {
+      "from": "approach_files",
+      "to": "proof_1..proof_5",
+      "payload": "Only the matching individual approach"
+    },
+    {
+      "from": "proof_1..proof_5",
+      "to": "reviewer",
+      "payload": "Frozen submissions through coordinator"
+    },
+    {
+      "from": "reviewer",
+      "to": "proof_1..proof_5",
+      "payload": "Separate findings/repair requests; no cross-track ideas"
+    },
+    {
+      "from": "reviewer",
+      "to": "coder",
+      "payload": "Written specific check through coordinator"
+    },
+    {
+      "from": "coder",
+      "to": "reviewer",
+      "payload": "Code/results/uncertainty through coordinator"
+    },
+    {
+      "from": "reviewer",
+      "to": "owner",
+      "payload": "Extensive final report through coordinator"
+    }
+  ]
+}

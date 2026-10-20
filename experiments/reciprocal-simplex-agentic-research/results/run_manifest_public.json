@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "run_id": "20261019T114252Z_cox_rerun",
+  "status": "complete",
+  "started_at_utc": "2026-10-19T11:42:52Z",
+  "completed_at_utc": "2026-10-19T15:19:35Z",
+  "coordinator": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "xhigh",
+    "selection_basis": "Explicit owner dispatch and role configuration; no fallback used",
+    "runtime_version": "NR"
+  },
+  "validation": {
+    "command": "python3 scripts/validate_setup.py",
+    "python": "3.12.14",
+    "result": "PASS",
+    "native_subagent_definitions": 8,
+    "copied_files_hash_verified": 102
+  },
+  "target": {
+    "problem_path": "common/problem_statement.md",
+    "problem_sha256": "4c7a8b0ec361395179d7c6131e53b61bd312e028e552baa1a98fe6dc16eea84a",
+    "mode": "exact full product densities g2, g3, g4",
+    "prescribed_intensity": true
+  },
+  "setup": {
+    "workflow_sha256": "4c9ccd950d9695356b1b02c91a193bf7500e796835ca8d89ae6f94764002ef78",
+    "cox_approach_sha256": "b2561d98955313ef4d416443fcdb7ff6f010bbb5ee14c88d5e7a0db0fb56e2ad",
+    "common_manifest": "common_sha256.txt",
+    "setup_manifest": "setup_sha256.txt"
+  },
+  "context_policy": {
+    "history_fork": "none",
+    "proof_tracks_may_read_each_other": false,
+    "reviewer_receives_author_conversation": false,
+    "common_files_frozen_per_run": true,
+    "maximum_concurrent_subagents": 3,
+    "observed_host_limit": 1
+  },
+  "pricing_snapshot": {
+    "status": "official public API pricing captured; not evidence of actual Codex account charges",
+    "retrieved_at_utc": "2026-10-19T11:45:00Z",
+    "source": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+    "rates": {
+      "currency": "USD",
+      "unit": "per 1,000,000 tokens",
+      "input": 4.00,
+      "cached_input": 0.40,
+      "output": 20.00,
+      "note": "Promotional pricing reported available at least through 2026-11-21; requests above 272K input have published multipliers. No estimate is computable when runtime token fields are NR."
+    },
+    "actual_account_charge": "NR"
+  },
+  "execution_summary": {
+    "literature_agents": 1,
+    "proof_approaches": 5,
+    "initial_reviews": 5,
+    "completed_repair_rounds_after_v01": 1,
+    "second_repair_rounds_needed": 0,
+    "coder_requests": 0,
+    "final_synthesis": "complete",
+    "model_fallback_used": false,
+    "fresh_context_policy_honored": true
+  },
+  "outcome": {
+    "exact_every_prescribed_intensity_target": "unresolved",
+    "strongest_positive_result": "Exact full g2, g3 and g4 identities on the complete domains, with no positive pair cutoff, for every prescribed intensity in a nonempty geometry-dependent interval starting at zero.",
+    "high_intensity_status": "Neither general existence nor general non-existence established.",
+    "final_report": "review_report.md",
+    "final_report_sha256": "61272d17668e44987293a7e17625247190a9339190e9fca782487448669c4140"
+  },
+  "hash_manifests": [
+    "common_sha256.txt",
+    "setup_sha256.txt",
+    "literature_sha256.txt",
+    "submissions_sha256.txt",
+    "reviews_sha256.txt",
+    "context_packets_sha256.txt",
+    "final_sha256.txt"
+  ],
+  "usage_reporting": {
+    "input_tokens_exposed": false,
+    "cached_input_tokens_exposed": false,
+    "output_tokens_exposed": false,
+    "reasoning_tokens_exposed": false,
+    "total_tokens_exposed": false,
+    "recorded_value_when_unavailable": "NR",
+    "model_cost_estimate": "NR; no exact runtime token fields were exposed",
+    "actual_account_charge": "NR"
+  },
+  "public_release": {
+    "status": "sanitized_copy",
+    "note": "The machine-specific Python executable path was replaced by python3. Mathematical fields and run outcomes are unchanged."
+  }
+}

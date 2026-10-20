@@ -20,8 +20,21 @@ in the slides and source notes.
 - `style/sketch/` — diagram style references and Kalam fonts with their licence.
 - `experiments/` — reserved for experiments to be added later.
 
-The experiments, research-run logs and manuscript sources are not included yet.
-Some speaker notes refer to those local materials.
+## Published research experiment
+
+The [`experiments/reciprocal-simplex-agentic-research/`](experiments/reciprocal-simplex-agentic-research/README.md)
+folder contains the complete public-facing architecture and audit bundle for a
+multi-agent mathematical research run: reusable agent files, role instructions,
+workflow configuration, the exact problem and approach assignments, frozen
+proof submissions and reviews, a literature dossier, the final review report,
+and a PDF of the saved reasoning summaries with per-agent runtime and token
+accounting.
+
+The bundle publishes structured reasoning summaries and decision records, not
+raw private chain-of-thought or copied third-party source PDFs.
+
+Other research-run logs and manuscript sources are not included. Some speaker
+notes refer to additional local materials.
 
 ## Build the slides
 
