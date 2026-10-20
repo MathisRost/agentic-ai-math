@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 
 ASSETS = Path(__file__).resolve().parents[1] / "assets"
 INK, TEAL, ORANGE, PURPLE = "#252A2D", "#21736F", "#B16B24", "#8B5A8B"
-WIDTH, HEIGHT = 760, 650
+WIDTH, HEIGHT = 1080, 650
 doc = ET.Element("mxfile", host="app.diagrams.net")
 diagram = ET.SubElement(doc, "diagram", name="Writing the paper", id="writing-workflow")
 model = ET.SubElement(
@@ -70,7 +70,7 @@ def icon(filename, x, y, size=43):
          f"shape=image;imageAspect=1;aspect=fixed;image=data:image/{mime},{data};")
 
 
-# Inputs feed one persistent writer. The two agents exchange different artifacts.
+# Inputs feed one persistent writer, who coordinates a reader and coder.
 box("", 12, 10, 452, 124, PURPLE, "#EEE4EF")
 text("Me", 28, 13, 420, 39, 35, True, PURPLE, "center")
 text("Read report;\nchoose structure + audience", 28, 53, 420, 73, 30, align="center")
@@ -87,6 +87,15 @@ icon("zotero.png", 248, 365)
 text("Zotero", 301, 365, 104, 43, 28)
 icon("undermind.svg", 425, 365)
 text("Undermind", 478, 365, 178, 43, 28)
+
+# The writer requests coding work and receives code and results.
+box("", 810, 230, 250, 180)
+text("Coder", 825, 241, 220, 49, 41, True, TEAL, "center")
+text("Code + tests\nFigures", 825, 300, 220, 85, 31, align="center")
+arrow([(688, 290), (800, 290)], TEAL)
+text("task", 691, 246, 107, 40, 30, color=TEAL, align="center")
+arrow([(800, 355), (688, 355)], ORANGE)
+text("code +\nresults", 691, 365, 107, 70, 28, color=ORANGE, align="center")
 
 # Draft and feedback go in opposite directions between the same two boxes.
 arrow([(225, 438), (225, 489)], TEAL)
