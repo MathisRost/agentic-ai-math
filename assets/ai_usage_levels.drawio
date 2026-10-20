@@ -38,7 +38,7 @@
         <mxCell id="label4" value="&lt;b&gt;Research Associate&lt;/b&gt;&lt;br&gt;Runs research loops; you steer" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Kalam;fontSize=27;fontColor=#252A2D;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="630" y="8" width="475" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="label3" value="&lt;b&gt;Collaborator&lt;/b&gt;&lt;br&gt;Implements, tests and iterates" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Kalam;fontSize=27;fontColor=#252A2D;spacing=0;" vertex="1" parent="1">
+        <mxCell id="label3" value="&lt;b&gt;Collaborator&lt;/b&gt;&lt;br&gt;Develops and checks proofs" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Kalam;fontSize=27;fontColor=#252A2D;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="630" y="86" width="475" height="76" as="geometry" />
         </mxCell>
         <mxCell id="label2" value="&lt;b&gt;Typist&lt;/b&gt;&lt;br&gt;Drafts text and code" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Kalam;fontSize=27;fontColor=#252A2D;spacing=0;" vertex="1" parent="1">

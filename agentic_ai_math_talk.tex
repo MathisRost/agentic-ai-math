@@ -180,8 +180,9 @@
   \note{Audience poll: ask for a show of hands at each level, or invite participants
     to show 0--4 fingers for the highest level they have actually used in research.
     The levels describe increasing AI autonomy. At level 2 the researcher directs
-    and reviews text or code; AI does not execute it. At level 3 the agent implements,
-    tests and iterates within a task, while the researcher assigns the next task.
+    and reviews text or code; AI does not execute it. At level 3 the agent develops
+    and checks proofs within an assigned mathematical task, while the researcher
+    assigns the next task. These checks do not guarantee correctness.
     At level 4 the agent runs a research loop under human steering and periodic review.
     Optional follow-up: What is the most useful task you have delegated, and what
     did you still need to check yourself? Take one or two short responses.
@@ -500,145 +501,67 @@
     Editable diagrams: assets/agent_components.drawio and assets/llm_alone.drawio.}
 \end{frame}
 
-\begin{frame}[t]{Skills, agent files and the harness}
+\begin{frame}[t]{Instructions and multi-agent systems}
   \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.37\textwidth}
+      {\color{teal}\fontsize{11}{13}\selectfont\bfseries One agent\par}
+      \vspace{1.5mm}
       \centering
-      \includegraphics[clip,width=\linewidth,height=51mm,keepaspectratio]{skills_and_harness.pdf}
+      \includegraphics[clip,width=\linewidth,height=46mm,keepaspectratio]{skills_and_harness.pdf}
     \end{column}
-    \begin{column}{0.49\textwidth}
-      \fontsize{9}{10.2}\selectfont
-      {\color{teal}\bfseries Agent instruction file}\quad $A=(D,I_A)$\par
-      $D$: scope; $I_A$: standing instructions.\par
-      E.g.\ \texttt{AGENTS.md}: project guidance
-      loaded into the context within its scope.\par
-      \vspace{2mm}
-      {\color{teal}\bfseries Skill}\quad $S=(M,I,R)$\par
-      $M$ --- \textbf{metadata}: name, what the skill does,
-      and when to use it.\par
-      $I$ --- \textbf{instructions}: method, decision rules,
-      checks and expected output.\par
-      $R$ --- \textbf{resources}: optional documents,
-      code, examples and templates.\par
-      \vspace{2mm}
-      {\color{teal}\bfseries Harness}\quad $H$\par
-      Orchestration software. A configuration file
-      sets roles, models, tools, skills and routing.\par
+    \begin{column}{0.60\textwidth}
+      {\color{teal}\fontsize{11}{13}\selectfont\bfseries Several agents\par}
+      \vspace{1.5mm}
+      \centering
+      \includegraphics[clip,width=\linewidth,height=46mm,keepaspectratio]{multi_agent_contexts.pdf}
     \end{column}
   \end{columns}
-  \vspace{1mm}
-  {\fontsize{7}{8.5}\selectfont\color{muted}%
-    Working abstractions for this talk. Implementation:
-    \href{https://learn.chatgpt.com/docs/build-skills}{\color{teal}skills},
-    \href{https://learn.chatgpt.com/docs/agent-configuration/agents-md}{\color{teal}\texttt{AGENTS.md}},
-    \href{https://developers.openai.com/api/docs/guides/agents-api/architecture}{\color{teal}Codex harness} (OpenAI Docs).\par
-    Foundations:
-    \href{https://arxiv.org/abs/2210.03629}{\color{teal}ReAct --- Yao et al. (2022)},
-    \href{https://arxiv.org/abs/2305.16291}{\color{teal}Voyager --- Wang et al. (2023)},
-    \href{https://arxiv.org/abs/2405.15793}{\color{teal}SWE-agent --- Yang et al. (2024)}.\par}
-  \note{The tuples are useful abstractions introduced for this talk, not
-    mathematical definitions attributed to the cited papers or a universal
-    software standard. M denotes metadata, not the model. R may be empty.
-    A skill packages a reusable task procedure: its metadata supports discovery;
-    selected instructions are added to context; resources remain in the accessible
-    environment until read or executed via tools. In Codex, the model initially
-    sees skill names and descriptions and loads the full instructions when a
-    skill is selected, either explicitly by the user or through task matching.
-    The agent file here means a scoped instruction file such as AGENTS.md, not
-    an executable agent or a subagent configuration. D abstracts its applicable
-    project or directory scope; I_A contains standing guidance such as notation,
-    project conventions, checking requirements and commands. The actual file
-    need not encode D explicitly: location and runtime rules can determine it.
-    The configuration file specifies how the harness is set up: agent roles,
-    models, available tools and skills, context policies and communication rules.
-    Its concrete format and supported settings depend on the framework; it is
-    not itself the runtime. Some orchestration can instead be configured in code.
-    These settings determine how agents are initialised and how they may exchange
-    information. Agent instruction files and selected skill instructions provide
-    content for context; they do not replace the orchestration implementation.
-    The harness is the executable orchestration layer around the LLM. The dashed
-    boundary groups the loop it manages, not model parameters. It assembles context,
-    invokes the model, dispatches permitted tool calls, captures their results and
-    decides when to continue or stop. The LLM can select actions or skills within
-    this machinery. Model plus configured harness forms the agent system.
-    Instructions guide behaviour; they do not themselves implement tool execution
-    or constitute an access-control mechanism.
-    Example: AGENTS.md specifies the project's notation and checking conventions;
-    a simulation skill gives a method, validation checks and a Python template;
-    the harness loads relevant instructions, runs code through a tool and feeds
-    errors or numerical output back into context.
-    The papers support related foundational ideas, not the SKILL.md or AGENTS.md
-    file formats: Yao et al., ReAct: Synergizing Reasoning and Acting in Language
-    Models, arXiv 2022 / ICLR 2023, interleaves reasoning and environmental actions.
-    Wang et al., Voyager: An Open-Ended Embodied Agent with Large Language Models,
-    arXiv 2023, uses a reusable library of executable skills and environment feedback;
-    these are code skills, not the modern instruction-package format above.
-    Yang et al., SWE-agent: Agent-Computer Interfaces Enable Automated Software
-    Engineering, 2024, studies how interfaces for editing, navigation and execution
-    affect software agents. Dates on the slide use first arXiv publication.
-    Editable diagram: assets/skills_and_harness.drawio.}
-\end{frame}
-
-\begin{frame}[t]{Multi-agent systems: who sees what?}
-  \noindent{\color{teal}\fontsize{11}{13}\selectfont
-    Recall $Y=f_{\theta}(p,c;\xi)$. So context engineering is very important.\par}
-  \vspace{2mm}
-  \noindent\makebox[\textwidth][c]{%
-    \includegraphics[clip,width=0.98\textwidth,height=42mm,keepaspectratio]{multi_agent_contexts.pdf}}
-  \vspace{1mm}
-  {\fontsize{8.5}{10}\selectfont
-    $H_n$ is the software coordinating $n$ agents, their contexts and communication.\par
-    A configuration file sets roles/models/tools; skills and agent files supply instructions.\par}
+  \vspace{1.5mm}
+  {\fontsize{9}{10.5}\selectfont
+    Each agent has its own context. Instructions specify its task and how it should work.\par}
   \vspace{1mm}
   {\fontsize{7}{8.5}\selectfont\color{muted}%
     Same or different models. Sources:
-    \href{https://arxiv.org/abs/2308.08155}{\color{teal}AutoGen (Wu et al., 2023)};
-    \href{https://developers.openai.com/api/docs/guides/agents-api/configuration}{\color{teal}OpenAI agent configuration}.\par}
-  \note{H_n is our notation for the harness of a system of n agents, not
-    a universally standard symbol and not the harness of only the nth agent.
-    The diagram shows one centralised orchestration design. Other systems use
-    decentralised or hybrid communication. H_n manages task assignment, model
-    selection, context construction, agent lifecycle and message delivery.
-    Each agent retains its own context C_i and may have its own model/tool loop.
-    The executable harness is implemented in application or framework code.
-    Its configuration can specify model choice, available tools, roles, context
-    policies, permissions, message routing and stopping. Agent instruction files
-    and skills provide guidance used to assemble context; the files alone do not
-    implement tool execution, process isolation or communication transport.
-    Some authors use harness broadly for this entire configured stack. Here we
-    distinguish its software mechanics from the settings and instructions it loads.
-    Initial context includes the task and applicable instructions; selected skills,
-    tool results and messages can also enter later as the run proceeds.
-    Different contexts do not require different model weights: two instances
-    of the same model may serve as writer and reviewer. The model allocation
-    illustrated here is a design example, not a measured optimum.
-    Orange arrows carry selected task information, including any peer findings
-    that H_n chooses to forward. Teal arrows return findings and messages.
-    Communication is not an automatic broadcast of every agent's history.
-    For example, a retriever returns sources to H_n, which selects what to send
-    to the writer; the draft then goes to the reviewer, while the writer's
-    drafting conversation is withheld. Review findings can later be sent back.
-    The reviewer still needs the actual proof, assumptions, evidence and criteria.
-    Context separation is not a reason to conceal material evidence.
-    A subtask can use a separate context and return a compact, sourced result,
-    reducing the coordinator's need to carry its full intermediate history.
-    The opening recalls slide 10: p is the prompt, c is context, theta denotes
-    the fixed model parameters and xi is sampling randomness. Changing context
-    can change the output distribution even when the model and prompt are fixed.
-    This motivates giving each agent the right context for its task; context
-    is not the only determinant of research quality.
-    AutoGen: Wu et al., AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent
+    \href{https://arxiv.org/abs/2210.03629}{\color{teal}ReAct (Yao et al., 2022)};
+    \href{https://arxiv.org/abs/2308.08155}{\color{teal}AutoGen (Wu et al., 2023)}.\par}
+  \note{Instructions describe the task, relevant conventions, methods, checks
+    and expected output. They enter the context used by the model. Resources
+    such as papers, code and examples remain in the environment until a tool
+    reads or runs them. The model receives context, can call tools and receives
+    their results in subsequent context. Instructions guide behaviour; the
+    surrounding software executes tool calls and manages the loop.
+
+    The right diagram shows one centralised multi-agent design. The parenthetical
+    term system harness names the software that applies the instructions to
+    coordinate task assignment, context construction and message delivery.
+    Instructions alone do not implement communication or tool execution.
+    Each agent retains its own context and may have its own model/tool loop.
+    Different contexts do not require different model weights. The stronger
+    and cheaper models shown here illustrate a possible allocation, not a
+    measured optimum.
+
+    Orange arrows carry tasks and selected context. Teal arrows return findings
+    and messages. Communication does not automatically broadcast each agent's
+    whole history. For example, a retriever can return sources to the coordinator,
+    which passes selected sources to a writer. A reviewer can receive the proof,
+    assumptions, evidence and criteria without receiving the writing history.
+    Context separation must not hide evidence needed to check a claim.
+
+    ReAct: Yao et al., Synergizing Reasoning and Acting in Language Models,
+    arXiv:2210.03629 (2022), interleaves reasoning and environmental actions.
+    AutoGen: Wu et al., Enabling Next-Gen LLM Applications via Multi-Agent
     Conversation, arXiv:2308.08155 (2023), illustrates configurable agents and
-    conversation patterns. It does not define our H_n notation.
-    Editable illustration: assets/multi_agent_contexts.drawio.}
+    conversation patterns.
+    Editable diagrams: assets/skills_and_harness.drawio and
+    assets/multi_agent_contexts.drawio.}
 \end{frame}
 
 \begin{frame}[t]{Why manage context and communication?}
   \noindent\begin{minipage}{\textwidth}
-  \raggedright\fontsize{9.5}{11}\selectfont
-  Very simply, an LLM produces random text $Y=f_{\theta}(p,c;\xi)$, whose
-  distribution \textbf{depends strongly on the context}.\par
-  \vspace{2mm}
+  \raggedright\fontsize{9}{10.4}\selectfont
+  An LLM produces text $Y=f_{\theta}(p,c;\xi)$ whose distribution
+  \textbf{depends strongly on the context}.\par
+  \vspace{1.5mm}
   {\color{teal}\bfseries 1. Keep context focused}\quad
   {\fontsize{7}{8}\selectfont
     \href{https://aclanthology.org/2024.tacl-1.9/}{\color{muted}Liu et al. (2024)};
@@ -646,7 +569,7 @@
   {\fontsize{8.5}{10}\selectfont\color{chartorange}%
     \textbf{Problems:} context distraction and context clash.\par}
   Give each agent the information it needs; long histories can obscure relevant details.\par
-  \vspace{1.1mm}
+  \vspace{1mm}
 
   {\color{teal}\bfseries 2. Give review a fresh context}\quad
   {\fontsize{7}{8}\selectfont
@@ -655,22 +578,28 @@
   {\fontsize{8.5}{10}\selectfont\color{chartorange}%
     \textbf{Problems:} context poisoning and context confusion.\par}
   Review the draft and criteria without the writer's history; verify independently.\par
-  \vspace{1.1mm}
+  \vspace{1mm}
 
   {\color{teal}\bfseries 3. Match the model to the task}\quad
   {\fontsize{7}{8}\selectfont
     \href{https://arxiv.org/abs/2406.18665}{\color{muted}Ong et al., \emph{RouteLLM} (2024)}}\par
   Routing between stronger and cheaper models can improve the balance of cost and quality.\par
-  \vspace{1.1mm}
+  \vspace{1mm}
 
   {\color{teal}\bfseries 4. Share findings and avoid duplicate work}\quad
   {\fontsize{7}{8}\selectfont
     \href{https://arxiv.org/abs/2305.14325}{\color{muted}Du et al. (2023)};
     \href{https://aclanthology.org/2025.acl-long.1170/}{\color{muted}Wang et al. (2025)}}\par
-  Give each agent the results it needs. Redirect repeated work when it
-  adds no new information.\par
+  Share useful results and redirect work that adds no new information.\par
+  \vspace{1mm}
+
+  {\color{teal}\bfseries 5. Explore distinct approaches independently}\quad
+  {\fontsize{7}{8}\selectfont
+    \href{https://aclanthology.org/2026.findings-acl.1694/}{\color{muted}Zhu et al. (2026)}}\par
+  \textbf{Especially important for mathematics:} different starting points can reveal
+  new proof strategies.\par
   \end{minipage}
-  \vspace{1.1mm}
+  \vspace{1mm}
 
   {\fontsize{7}{8.5}\selectfont\color{muted}%
     Effects depend on the task and models. Fresh-context review is a design inference from bias and verification studies.\par}
@@ -724,107 +653,23 @@
     redundant agents and communication edges. It reports improved task performance
     with reduced token use against its tested baselines. Because both agents and
     edges change, do not attribute every gain solely to fewer messages or claim a
-    universal optimal number of exchanges. H_n should control recipients, content,
-    timing and stopping, balancing independent work with useful cooperation.}
-\end{frame}
-
-\begin{frame}[t]{Heuristics for agentic research}
-  \noindent{\fontsize{9}{10}\selectfont
-  \setlength{\tabcolsep}{0pt}
-  \renewcommand{\arraystretch}{1}
-  \begin{tabular}{@{}p{0.42\textwidth}@{\hspace{4mm}}p{0.54\textwidth}@{}}
-    {\color{teal}\bfseries Heuristic} & {\color{chartorange}\bfseries Intuition} \\
-    \midrule
-    \raggedright\textbf{Explore distinct approaches independently.} {\color{teal}[1]}
-      & \raggedright Different starting points can reveal approaches that others miss.\tabularnewline[0.5mm]
-    \raggedright\textbf{Fix identified errors; stop if no progress is made.} {\color{teal}[2]}
-      & \raggedright Check that each error was repaired. Repeated approval is not evidence of a correct proof.\tabularnewline[0.5mm]
-    \raggedright\textbf{Ask for a proof or a counterexample.} {\color{teal}[3]}
-      & \raggedright The statement you give the agent might be false. Explicitly allow it to disprove the statement instead of assuming a proof must exist.\tabularnewline[0.5mm]
-    \raggedright\textbf{Delegate precise mathematical obligations.} {\color{teal}[4]}
-      & \raggedright When splitting the work between agents, specify exactly what each agent needs to establish and under which assumptions.\tabularnewline[0.5mm]
-    \raggedright\textbf{Preserve each claim's status and evidence.} {\color{teal}[5]}
-      & \raggedright Reuse must not turn a conjecture or rejected argument into an ``established lemma''.\tabularnewline
-    \bottomrule
-  \end{tabular}\par}
-  \vspace{1mm}
-  {\fontsize{7}{8.3}\selectfont\color{muted}
-    Evidence-informed design heuristics: support ranges from benchmark experiments
-    to research-system case studies.\par}
-  \vspace{1mm}
-  {\fontsize{6.8}{8}\selectfont\color{teal}
-    \href{https://aclanthology.org/2026.findings-acl.1694/}{[1] Zhu et al. (2026)};\quad
-    \href{https://arxiv.org/html/2605.06651v1}{[2] Zheng et al. (2026)};\quad
-    \href{https://arxiv.org/html/2510.04721v1}{[3] Petrov et al. (2025)};\par
-    \href{https://arxiv.org/html/2605.22875v1}{[4] Zhao et al. (2026)};\quad
-    \href{https://arxiv.org/html/2610.04829v1}{[5] Xu et al. (2026)}.\par}
-  \note{These five heuristics complement the preceding slide's context and
-    communication principles. The slide follows the owner's supplied rule and
-    intuition format. They are evidence-informed design choices, not universally
-    established optimal policies. Primary sources and cited passages were checked
-    on 19 October 2026.
-
-    1. Early diversity protects against premature convergence. Agents that
+    universal optimal number of exchanges. The coordinating software should
+    control recipients, content, timing and stopping, balancing independent work
+    with useful cooperation.
+    5. Early diversity protects against premature convergence. Agents that
     immediately read the same proposed proof may inherit the same central idea
     and error. Independent initial attempts preserve alternative constructions
-    or reductions before selecting a direction. Zhu et al. study diverse
-    candidate selection and calibrated confidence communication across six
-    reasoning-oriented question-answering benchmarks. Extending this to
-    independent research approaches is a plausible design inference, not a
-    directly established research-productivity result.
+    or reductions before selecting a direction. This is especially relevant to
+    mathematics, where different starting points can lead to different proof
+    strategies. Zhu et al. study diverse candidate selection and calibrated
+    confidence communication across six reasoning-oriented question-answering
+    benchmarks. Extending this to independent mathematical research approaches
+    is a design inference, not a directly established productivity result.
     Reference: Xiaochen Zhu, Caiqi Zhang, Yizhou Chi, Tom Stafford, Nigel Collier
     and Andreas Vlachos (2026), \emph{Demystifying Multi-Agent Debate: The Role
     of Confidence and Diversity}, Findings of ACL 2026, pp. 33909--33930,
     DOI: 10.18653/v1/2026.findings-acl.1694.
-    \url{https://aclanthology.org/2026.findings-acl.1694/}.
-
-    2. Review can optimise an argument for the reviewer without repairing it.
-    Require objections to identify exact steps and revisions to supply concrete
-    mathematical responses. If a loop produces no new evidence, change the
-    checking method or retain the unresolved gap. The AI co-mathematician paper
-    reports reviewer-pleasing false consensus and non-terminating review cycles.
-    These observed failures motivate the heuristic; they do not establish a
-    universally optimal number of rounds or stopping rule.
-    Reference: Daniel Zheng et al. (2026), \emph{AI Co-Mathematician:
-    Accelerating Mathematicians with Agentic AI}, arXiv:2605.06651v1, Section 7.
-    \url{https://arxiv.org/html/2605.06651v1}.
-
-    3. A fixed target prevents apparent success through changing the problem.
-    A demand for a proof can encourage defence of a false premise. Permit a
-    counterexample, and require any added hypothesis or weakened conclusion to
-    be reported explicitly. BrokenMath finds that prompting models to validate
-    a statement first reduces sycophancy, but some responses silently solve a
-    corrected problem. This motivates premise checking together with tracking
-    changes to the target.
-    Reference: Ivo Petrov, Jasper Dekoninck and Martin Vechev (2025),
-    \emph{BrokenMath: A Benchmark for Sycophancy in Theorem Proving with LLMs},
-    arXiv:2510.04721v1, Section 5.1.
-    \url{https://arxiv.org/html/2510.04721v1}.
-
-    4. Precise obligations make coordination and checking easier. Assigning a
-    bound under explicit hypotheses exposes what another agent may assume and
-    which later steps depend on the result. Let the decomposition evolve with
-    the mathematics. RMA's ablations support problem analysis, assumption
-    checking and structured knowledge within its workflow. Its evaluation uses
-    ten First Proof problems and expert comparisons between submissions. The
-    exact obligation-based task format is our implementation inference, not a
-    separately isolated experimental result.
-    Reference: Zelin Zhao, Bo Yuan, Jaemoo Choi and Yongxin Chen (2026),
-    \emph{RMA: an Agentic System for Research-Level Mathematical Problems},
-    arXiv:2605.22875v1, Table 3 and Section 4.3.
-    \url{https://arxiv.org/html/2605.22875v1}.
-
-    5. Memory can amplify discoveries and mistakes. A statement from a rejected
-    proof may depend on an assumption introduced for contradiction. Preserve
-    assumptions, dependencies, evidence, source context and verification status
-    when storing it. The Viva La Vida audit documents extracted critique claims
-    losing that refutational context. Its 26 percent figure is the share of
-    stored lemmas originating from critiques, not an error rate. The lesson is
-    to retain why a claim appeared and what established it, if anything.
-    Reference: Benji Xu, Ken Zheng and Noah Han (2026), \emph{Viva La Vida:
-    Verification and Accumulation Failures in Multi-Agent Proof Search},
-    arXiv:2610.04829v1, Section 5.
-    \url{https://arxiv.org/html/2610.04829v1}.}
+    \url{https://aclanthology.org/2026.findings-acl.1694/}.}
 \end{frame}
 
 \section{A step-by-step research example}
