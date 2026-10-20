@@ -1,0 +1,90 @@
+{
+  "research_run": "20261020T164437Z_astra6",
+  "cost_source": "agentic_research_setup_astra6/runs/20261020T164437Z_astra6/followups/20261020_cost_estimate_v01/cost_estimate.json",
+  "cost_source_sha256": "5f6b4bc84e8f20aeaf153a4c834a54150ac5d864b4c47f2cee16b191669e2dbe",
+  "cost_snapshot_utc": "2026-10-20T19:46:54.126268+00:00",
+  "groups": [
+    {
+      "label": "Proofer",
+      "member_roles": [
+        "coordinator",
+        "nonexistence_1",
+        "nonexistence_2",
+        "proof_1",
+        "proof_2",
+        "proof_3",
+        "proof_4"
+      ],
+      "recorded_tokens": 69740488,
+      "display_tokens_millions": "69.74",
+      "standard_usd_unrounded": "121.040184",
+      "display_usd": "121.04"
+    },
+    {
+      "label": "Reviewer",
+      "member_roles": [
+        "review_nonexistence_1_v01",
+        "review_nonexistence_2_v01",
+        "review_nonexistence_1_v02",
+        "review_proof_2_v01",
+        "review_proof_1_v01",
+        "review_proof_3_v01",
+        "review_proof_4_v01",
+        "review_proof_1_v02",
+        "review_proof_4_v02",
+        "review_proof_3_v02",
+        "review_proof_1_v03",
+        "review_proof_3_v03",
+        "review_proof_4_v03",
+        "review_proof_3_v04",
+        "review_proof_1_v04",
+        "review_proof_4_v04",
+        "final_synthesis"
+      ],
+      "recorded_tokens": 25942234,
+      "display_tokens_millions": "25.94",
+      "standard_usd_unrounded": "54.466436",
+      "display_usd": "54.47"
+    },
+    {
+      "label": "Literature",
+      "member_roles": [
+        "literature"
+      ],
+      "recorded_tokens": 3395452,
+      "display_tokens_millions": "3.40",
+      "standard_usd_unrounded": "5.648264",
+      "display_usd": "5.65"
+    }
+  ],
+  "accounting_scope": "Raw recorded-role aggregates. Parent/child inclusion semantics are unreconciled. Coordinator final tail is excluded. USD values are historical standard API-equivalent estimates, not actual account charges. Costs are summed before rounding.",
+  "mathematical_sources": [
+    {
+      "path": "agentic_research_setup_astra6/runs/20261020T164437Z_astra6/statements/S1.md",
+      "sha256": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8"
+    },
+    {
+      "path": "agentic_research_setup_astra6/runs/20261020T164437Z_astra6/tracks/proof_4/submissions/v04.md",
+      "sha256": "e3f403b4c55b69845e83ea74d7348026a86cd9b36691b1a4cdc9a6983ac3df5f"
+    },
+    {
+      "path": "agentic_research_setup_astra6/runs/20261020T164437Z_astra6/reviews/proof_4_v04/review.md",
+      "sha256": "680b32c05642871d0207ffe59e4bc04d65d6a3bca26a06d61d96e60a2d031e7c"
+    },
+    {
+      "path": "agentic_research_setup_astra6/runs/20261020T164437Z_astra6/review_report.md",
+      "sha256": "68dfdad1db7e04203439ed15154f72294464165188577622ba620172dc1f33d2"
+    }
+  ],
+  "statement_scope": {
+    "parameters": "Every independently prescribed lambda_0>0 and M>0",
+    "process": "Stationary, simple, almost surely locally finite on R^3",
+    "densities": "Full globally absolutely continuous factorial expectation measures of orders 2-4, with finite-almost-everywhere densities",
+    "identities": "rho^(n)=a_n/Delta_n almost everywhere on all nondegenerate configurations of diameter <M",
+    "normalisation": "g_n=rho^(n)/lambda_0^n, C_n=a_n/lambda_0^n",
+    "additional_domain_restriction": "Finite diameter cap; not asserted uniquely necessary or minimal",
+    "lower_geometric_cutoffs": false,
+    "moments": "Finite local third moments; infinite fourth moment on every nonempty open ball",
+    "inspection_scope": "Compared slide assumptions with S1, the final theorem, and recorded independent reviews; not a new full proof audit."
+  }
+}

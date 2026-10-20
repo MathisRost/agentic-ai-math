@@ -55,21 +55,6 @@ def polygon(d,points,fill,angle,hachure_gap=6,fill_weight=1.2):
  encoded=base64.b64encode(compressor.compress(payload)+compressor.flush()).decode()
  d.vertex('',x0,y0,w,h,f'shape=stencil({encoded});fillColor={fill};strokeColor={TEAL};strokeWidth=2;sketch=1;comic=0;jiggle=0.7;fillStyle=hachure;hachureGap={hachure_gap};hachureAngle={angle};fillWeight={fill_weight};')
 
-def altitude(d,top,foot,index,label_position,plane_step):
- # A representative altitude; h_3 and h_4 bound every altitude from below.
- line(d,top,foot,True,ORANGE)
- # The tetrahedron marker is projected along with its base plane.
- dx=top[0]-foot[0];dy=top[1]-foot[1]
- length=(dx*dx+dy*dy)**0.5
- u=(14*dx/length,14*dy/length);v=plane_step
- a=(foot[0]+u[0],foot[1]+u[1])
- b=(a[0]+v[0],a[1]+v[1])
- c=(foot[0]+v[0],foot[1]+v[1])
- line(d,a,b,False,ORANGE);line(d,b,c,False,ORANGE)
- ident=d.text('≥ h<sub>'+str(index)+'</sub>',*label_position,78,34,27,True,ORANGE)
- cell=d.root.find("mxCell[@id='"+ident+"']")
- cell.set('style',cell.get('style').replace('html=0','html=1').replace('fillColor=none','fillColor=#FFFFFF'))
-
 for name in (sys.argv[1:] or ['segment','triangle','tetrahedron']):
  d=Diagram('simplex_'+name,380,260)
  # Invisible frame keeps all three exports aligned and equally scaled.
@@ -82,12 +67,10 @@ for name in (sys.argv[1:] or ['segment','triangle','tetrahedron']):
  elif name=='triangle':
   face(d)
   point(d,50,180,1,-7,5);point(d,330,180,2,7,5);point(d,190,20,3,30,-15)
-  altitude(d,(190,20),(190,180),3,(105,116),(14,0))
   d.text('A',230,112,40,40,33,True,ORANGE)
   caption='Area A'
  else:
-  # An oblique projection separates the vertical altitude from the front ridge.
-  # Its foot lies inside the projected base triangle, away from every edge.
+  # An oblique projection keeps the base and front ridge distinct.
   top=(225,25);left=(30,170);front=(325,205);right=(340,120)
   polygon(d,[top,left,front],'#C7E1DE',35,12,0.5)
   polygon(d,[top,front,right],'#DDEDEB',125,10,0.6)
@@ -95,7 +78,6 @@ for name in (sys.argv[1:] or ['segment','triangle','tetrahedron']):
   line(d,left,right,True)
   for a,b in [(top,left),(left,front),(front,right),(right,top),(top,front)]:
    line(d,a,b)
-  altitude(d,top,(225,167),4,(135,100),(14,-3))
   point(d,*left,1,-20,-2);point(d,*front,2,18,-3)
   point(d,*right,3,13,-10);point(d,*top,4,0,-28)
   caption='Volume V'

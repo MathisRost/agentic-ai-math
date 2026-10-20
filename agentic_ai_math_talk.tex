@@ -17,6 +17,7 @@
 \definecolor{chartorange}{HTML}{B16B24}
 \definecolor{chartblue}{HTML}{4267A0}
 \definecolor{chartpurple}{HTML}{8B5A8B}
+\definecolor{assumptionred}{HTML}{B04E43}
 \setbeamercolor{normal text}{fg=charcoal,bg=white}
 \setbeamercolor{structure}{fg=charcoal}
 \setbeamercolor{frametitle}{fg=charcoal,bg=white}
@@ -485,7 +486,7 @@
         \quad A\subseteq(\mathbb R^d)^n\text{ Borel}.$}\par
       Here $X^n_{\ne}$ contains all ordered $n$-tuples of distinct points of $X$.
 
-    \item \textbf Note that for pairwise disjoint $B_1,\ldots,B_n$,\par
+    \item \textbf{Note} that for pairwise disjoint $B_1,\ldots,B_n$,\par
       \noindent\makebox[\linewidth][c]{$\displaystyle
         \alpha^{(n)}(B_1\times\cdots\times B_n)
         =\mathbb E[X(B_1)\cdots X(B_n)].$}\par
@@ -503,7 +504,7 @@
   \end{itemize}
   \vspace{1mm}
   {\fontsize{7}{8.5}\selectfont\color{muted}
-    Assume bounded Borel windows and finite local moments.\par
+    Bounded Borel windows. Expectations and integrals may be infinite.\par
     \href{https://leman.stat.vt.edu/VTCourses/BaddeleyPointProcesses.pdf}{Baddeley, Section 2.3};
     \href{https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf}{Last and Penrose, Section 4.4}.\par}
   \end{minipage}
@@ -567,8 +568,9 @@
 \begin{frame}[t]{Step 1: the precise problem}
   \noindent\begin{minipage}{\textwidth}
   \raggedright\fontsize{9.5}{11}\selectfont
-  Find one stationary, simple point process $X$ on $\mathbb R^3$ with intensity
-  $\lambda_0$, finite local moments through order four and product densities.\par
+  For any prescribed intensity $\lambda_0>0$, find one stationary, simple,
+  locally finite point process $X$ on $\mathbb R^3$ with full product densities
+  through order four, finite almost everywhere.\par
   \vspace{1mm}
   \noindent\makebox[\textwidth][c]{%
     \includegraphics[clip,width=0.31\textwidth,height=19mm,keepaspectratio]{simplex_segment.pdf}\hfill
@@ -585,8 +587,12 @@
     g_4(x_1,x_2,x_3,x_4)=\frac{C_4}{V}.
   $}\par
   \vspace{1mm}
-  Almost everywhere on nondegenerate configurations of diameter $\le M$,
-  with every triangle altitude $\ge h_3$ and every tetrahedron altitude $\ge h_4$.\par
+  Almost everywhere on nondegenerate configurations.\par
+  \vspace{1mm}
+  {\color{assumptionred}\textbf{Additional assumption:}
+    require these identities only for diameter $<M$, for any prescribed $M>0$.\par}
+  \vspace{1mm}
+  No lower geometric cutoffs. Fourth moments may be infinite.\par
   \end{minipage}
   \vspace{1mm}
   {\fontsize{7}{8.5}\selectfont\color{muted}
@@ -595,6 +601,16 @@
     Kagan (1981):
     \href{https://doi.org/10.1111/j.1365-246X.1981.tb06948.x}{three-point}
     and \href{https://doi.org/10.1111/j.1365-246X.1981.tb06949.x}{four-point studies}.\par}
+  \note{Astra6 run 20261020T164437Z\_astra6, statement S1 and proof\_4 v04.
+    The construction covers every independently prescribed pair $(\lambda_0,M)>0$.
+    The full factorial measures have globally finite-almost-everywhere densities,
+    understood as extended nonnegative measures. There is no singular component.
+    The normalised identities use $C_n=a_n/\lambda_0^n$.
+    There are no positive lower distance, area, volume or altitude thresholds.
+    Finite fourth local moments would contradict the reciprocal-volume identity:
+    every nonempty ball has infinite fourth moment. Third local moments are finite.
+    Unrestricted identities are impossible. A finite diameter cap is the adopted
+    restriction, not a uniquely necessary or proved minimal choice.}
 \end{frame}
 
 \begin{frame}[t]{\fontsize{18}{22}\selectfont Step 2: configuration/agent files and execution}
@@ -644,27 +660,34 @@
       \includegraphics[clip,width=\linewidth,height=49mm,keepaspectratio]{writing_workflow.pdf}
     \end{column}
     \begin{column}{0.47\textwidth}
-      {\fontsize{10}{13}\selectfont
+      {\fontsize{9.5}{12}\selectfont
       \setlength{\tabcolsep}{0pt}
-      \renewcommand{\arraystretch}{1.6}
+      \renewcommand{\arraystretch}{1.7}
       \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}rr@{}}
         \toprule
-        & \textbf{Calculations} & \textbf{Writing} \\
+        \shortstack[l]{\textbf{Work}\\\strut} & \shortstack[r]{\textbf{Tokens}\\\textbf{(millions)}}
+                     & \shortstack[r]{\textbf{Est. cost}\\\textbf{(USD)}} \\
         \midrule
-        Tokens & 132.5M & 5.78M \\
-        Time & 3 h 47 min & \textemdash \\
-        \midrule
-        Price & {\fontsize{17}{21}\selectfont\textcolor{teal}{\$78.81}}
-              & {\fontsize{17}{21}\selectfont\textcolor{teal}{\$9.44}} \\
+        Proofer & 69.74 & \textcolor{teal}{\$121.04} \\
+        Reviewer & 25.94 & \textcolor{teal}{\$54.47} \\
+        Literature & 3.40 & \textcolor{teal}{\$5.65} \\
         \bottomrule
       \end{tabular*}\par}
-      \vspace{2mm}
-      {\fontsize{7.5}{9}\selectfont\color{muted}
-        M = million tokens, including cached input.\par
-        API-equivalent prices in USD.\par
-        Writing time unavailable in the saved summary.\par}
     \end{column}
   \end{columns}
+  \note{Research usage from the Astra6 run, snapshot 20 October 2026.
+    Proofer combines the coordinator, both non-existence investigators and all
+    four construction tracks. Reviewer combines all 16 submission reviews and
+    the final synthesis review. Literature is the literature-check session.
+    Exact grouped token counts are 69,740,488; 25,942,234; and 3,395,452.
+    Estimated costs sum unrounded source values before rounding to cents:
+    USD 121.040184; 54.466436; and 5.648264.
+    Counts include cached input. Cross-session inclusion semantics remain
+    unreconciled, and the coordinator snapshot omits its final tail.
+    These are recorded-role aggregates and standard API-equivalent estimates,
+    not actual account charges or a verified billing total.
+    Source: followups/20261020\_cost\_estimate\_v01/cost\_estimate.json
+    in run 20261020T164437Z\_astra6.}
 \end{frame}
 
 
@@ -672,7 +695,7 @@
   \vspace{-3mm}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.45\textwidth}
-      {\fontsize{11}{13}\selectfont\bfseries\color{teal}Poisson cluster model\par}
+      {\fontsize{11}{13}\selectfont\bfseries\color{teal}Earlier Poisson cluster model\par}
       \vspace{2mm}
       {\raggedright\fontsize{9}{10.5}\selectfont
       Homogeneous Poisson parents $\Pi$ each generate 0--3 children,
@@ -684,7 +707,7 @@
       $C_z$ contains only child offsets. The parent is retained,
       giving 1--4 points per cluster.\par
       \vspace{0.5mm}
-      \textbf{How many points?} The solution gives a probability distribution
+      \textbf{How many points?} This construction gives a probability distribution
       over cluster sizes $j=1,\ldots,4$.\par
       \vspace{0.5mm}
       \textbf{Where are they placed?} For $j\geq2$, the normalised density\par
@@ -722,6 +745,10 @@
       \includegraphics[clip,width=\linewidth,height=29mm,keepaspectratio]{final_poisson_cluster.pdf}\par
     \end{column}
   \end{columns}
+  \note{This slide illustrates the earlier finite-cluster construction, with its
+    geometric restrictions. It is not the Astra6 construction of statement S1.
+    The latter uses a whole-law mixture of a separated-sphere process and a
+    correction process, and has infinite fourth local moments.}
 \end{frame}
 
 \begin{frame}[t]{Future of agentic research}
