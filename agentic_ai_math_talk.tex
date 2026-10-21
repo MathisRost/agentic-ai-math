@@ -695,26 +695,21 @@
   \vspace{-3mm}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.45\textwidth}
-      {\fontsize{11}{13}\selectfont\bfseries\color{teal}Spheres and a cluster correction\par}
+      {\fontsize{11}{13}\selectfont\bfseries Spheres and a cluster correction\par}
       \vspace{2mm}
       {\raggedright\fontsize{9}{10.5}\selectfont
-      Toss one fair coin to choose the whole process:\par
+      Idea: I decide between 2 processes with probability $0.5$. Therefore $\rho^{(n)} = 0.5 \rho_A^{(n)} + 0.5 \rho_B^{(n)} $ \par
       \vspace{2mm}
-      \textbf{Process A.} Place Poisson points uniformly on random,
-      separated spherical surfaces. Four points determine a sphere,
-      giving the reciprocal-volume law.\par
+      \textbf{Process A.} Takes care of the $g_4 \propto V^{-1}$ by placing non interacting spheres with random radius. A homogeneous Poisson process on this sphere satisfies $g_4$. We also know $g_3, g_2$ here.  \par
       \vspace{2mm}
-      \textbf{Process B.} At separated centres, place a singleton,
-      a pair or a triangle, or no points. For $j=2,3$, sample the offsets
-      jointly with density\par
+      \textbf{Process B.} ensures that $g_4= 0$ for all configuration with at most $M$ pairwise distance. $g_2$ and $g_3$ are designed according to the error in process A via the cluster density  \par
       \vspace{1mm}
       \noindent\makebox[\linewidth][c]{$\displaystyle
-        \frac{F_j(0,y_2,\ldots,y_j)}{Z_j}.$}\par
+        \frac{F_j(0,y_2,\ldots,y_j)}{Z_j}, \quad j\in \{2,3\}.$},\par}
       \vspace{1mm}
-      These densities correct the pair and triangle laws.\par}
     \end{column}
     \begin{column}{0.50\textwidth}
-      {\fontsize{11}{13}\selectfont\bfseries\color{teal}Personal feedback\par}
+      {\fontsize{11}{13}\selectfont\bfseries Personal feedback\par}
       \vspace{1mm}
       {\fontsize{8.5}{10}\selectfont
       \setlength{\tabcolsep}{0pt}
