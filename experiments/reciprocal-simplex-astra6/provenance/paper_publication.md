@@ -8,6 +8,6 @@ The simulation code, full-precision results, all saved-coordinate and contributi
 
 The original research release manifest is preserved as `release_manifest_20261021_original.json`. Its current copy updates only the hash of the expanded Astra landing README; the research evidence and numerical accounting are unchanged. The paper export manifest records original/public hashes, and `paper_release_manifest.json` freezes the current manuscript publication. Historical embedded hashes remain original-source hashes.
 
-Validation: the Overleaf entry point compiles in two passes from the repository root without warnings; current navigation links resolve; all 11 NPZ archive payloads match their SHA256 hashes; original experiment and paper-release verification scripts pass. The paper itself is unchanged by this publication. GitHub and Overleaf synchronisation are checked separately from these local build results.
+Validation: the Overleaf entry point compiles in two passes from the repository root without warnings; current navigation links resolve; all 10 NPZ archive payloads match their SHA256 hashes; original experiment and paper-release verification scripts pass. The paper itself is unchanged by this publication. GitHub and Overleaf synchronisation are checked separately from these local build results.
 
 The writing token ledger remains its original frozen checkpoint, with its disclosed coordinator tail. Publication work is subsequent and excluded from that ledger.
