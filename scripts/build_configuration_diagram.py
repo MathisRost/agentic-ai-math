@@ -57,10 +57,14 @@ for y,idx in [(85,1),(295,2),(505,5)]:
  d.text('Approach '+str(idx),332,y-82,176,46,30,True,HUMAN)
  d.arrow([(420,y-16),(420,y-3)],GREY)
  agent('Agent '+str(idx),335,y)
- d.arrow([(220,370),(270,370),(270,y+39),(330,y+39)],GREY)
+ if idx != 5:
+  d.arrow([(220,370),(270,370),(270,y+39),(330,y+39)],GREY)
  d.arrow([(510,y+28),(565,y+28),(565,320),(669,320)],TEAL)
  d.arrow([(670,352),(620,352),(620,y+57),(511,y+57)],ORANGE,True)
 d.text('...',390,381,60,28,32,True,TEAL)
+# The non-existence agent can revise the shared problem statement.
+d.arrow([(330,552),(170,552),(170,505)],GREY)
+d.text('Can edit\nproblem\nstatement',178,477,150,66,20,True,GREY)
 agent('Critical\nreviewer',675,295,170)
 # The reviewer reads the same precise problem and verified sources.
 d.arrow([(100,510),(100,602),(650,602),(650,405),(710,405),(710,379)],GREY)

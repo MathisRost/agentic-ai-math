@@ -56,7 +56,7 @@ d.line([(594,215),(410,215),(410,155)],PURPLE)
 d.text('reuse promising examples',291,244,382,32,24,PURPLE)
 d.save()
 
-d=Drawing('funsearch_cap_set',700,165)
+d=Drawing('funsearch_cap_set',340,165)
 for offset,forbidden in [(0,False),(175,True)]:
     for i in range(3):
         d.line([(offset+16,15+53*i),(offset+122,15+53*i)],'#CAD7D4',False,True)
@@ -71,8 +71,6 @@ for offset,forbidden in [(0,False),(175,True)]:
     if forbidden:
         d.line([(offset+18,130),(offset+153,4)],'#C34343',False,width=5)
     d.text('Forbidden' if forbidden else 'Allowed',offset-3,139,145,28,25,MUTED)
-d.text('496 → 512',377,26,315,62,48,TEAL,True)
-d.text('points in 8 dimensions',370,92,330,37,26)
 d.save()
 
 d=Drawing('funsearch_bin_packing',500,165)

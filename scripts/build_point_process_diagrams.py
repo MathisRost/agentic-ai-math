@@ -61,9 +61,9 @@ def main():
                         /(math.pi*HARD_RADIUS**2), INTENSITY)
     d = Diagram('point_process_patterns', 540, 800)
     panels = [
-        ('g<sub>2</sub>(r) &gt; 1 for 0 &lt; r &lt; 2a', clustered),
-        ('g<sub>2</sub>(r) = 1', poisson),
-        ('g<sub>2</sub>(r) = 0 &lt; 1 for 0 &lt; r &lt; h', hardcore),
+        ('Clustering', clustered),
+        ('Poisson', poisson),
+        ('Repulsion', hardcore),
     ]
     for top, (formula, points) in zip((0, 270, 540), panels):
         # Plot with the same scale along both axes and the same window in all panels.

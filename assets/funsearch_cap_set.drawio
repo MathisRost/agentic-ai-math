@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <mxfile host="app.diagrams.net">
   <diagram name="funsearch_cap_set" id="funsearch_cap_set">
-    <mxGraphModel grid="0" page="0" pageWidth="700" pageHeight="165" background="#FFFFFF" extFonts="Kalam^https://fonts.googleapis.com/css?family=Kalam:400,700">
+    <mxGraphModel grid="0" page="0" pageWidth="340" pageHeight="165" background="#FFFFFF" extFonts="Kalam^https://fonts.googleapis.com/css?family=Kalam:400,700">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -148,12 +148,6 @@
         </mxCell>
         <mxCell id="35" parent="1" vertex="1" value="Forbidden" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;strokeColor=none;fillColor=none;fontFamily=Kalam;fontSize=25;fontColor=#626A70;fontStyle=0;">
           <mxGeometry x="172" y="139" width="145" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="36" parent="1" vertex="1" value="496 → 512" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;strokeColor=none;fillColor=none;fontFamily=Kalam;fontSize=48;fontColor=#21736F;fontStyle=1;">
-          <mxGeometry x="377" y="26" width="315" height="62" as="geometry" />
-        </mxCell>
-        <mxCell id="37" parent="1" vertex="1" value="points in 8 dimensions" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;strokeColor=none;fillColor=none;fontFamily=Kalam;fontSize=26;fontColor=#252A2D;fontStyle=0;">
-          <mxGeometry x="370" y="92" width="330" height="37" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

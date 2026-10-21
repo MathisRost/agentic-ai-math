@@ -104,7 +104,7 @@
         <mxCell id="34" value="" style="ellipse;fillColor=#21736F;strokeColor=#21736F;strokeWidth=1;" vertex="1" parent="1">
           <mxGeometry x="112.65188035749777" y="187.24565576263237" width="9.4" height="9.4" as="geometry" />
         </mxCell>
-        <mxCell id="35" value="g&lt;sub&gt;2&lt;/sub&gt;(r) &amp;gt; 1 for 0 &amp;lt; r &amp;lt; 2a" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Kalam;fontSize=35;fontColor=#B16B24;fontStyle=1;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+        <mxCell id="35" value="Clustering" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Kalam;fontSize=35;fontColor=#B16B24;fontStyle=1;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="0" y="215" width="540" height="42" as="geometry" />
         </mxCell>
         <mxCell id="36" value="" style="rounded=1;arcSize=5;sketch=1;comic=0;jiggle=1.2;strokeWidth=2;strokeColor=#21736F;fillColor=#FFFFFF;" vertex="1" parent="1">
@@ -191,7 +191,7 @@
         <mxCell id="63" value="" style="ellipse;fillColor=#21736F;strokeColor=#21736F;strokeWidth=1;" vertex="1" parent="1">
           <mxGeometry x="405.44823934716607" y="407.90071212251684" width="9.4" height="9.4" as="geometry" />
         </mxCell>
-        <mxCell id="64" value="g&lt;sub&gt;2&lt;/sub&gt;(r) = 1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Kalam;fontSize=35;fontColor=#B16B24;fontStyle=1;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+        <mxCell id="64" value="Poisson" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Kalam;fontSize=35;fontColor=#B16B24;fontStyle=1;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="0" y="485" width="540" height="42" as="geometry" />
         </mxCell>
         <mxCell id="65" value="" style="rounded=1;arcSize=5;sketch=1;comic=0;jiggle=1.2;strokeWidth=2;strokeColor=#21736F;fillColor=#FFFFFF;" vertex="1" parent="1">
@@ -275,7 +275,7 @@
         <mxCell id="91" value="" style="ellipse;fillColor=#21736F;strokeColor=#21736F;strokeWidth=1;" vertex="1" parent="1">
           <mxGeometry x="325.2999584133061" y="611.0343538082194" width="9.4" height="9.4" as="geometry" />
         </mxCell>
-        <mxCell id="92" value="g&lt;sub&gt;2&lt;/sub&gt;(r) = 0 &amp;lt; 1 for 0 &amp;lt; r &amp;lt; h" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Kalam;fontSize=35;fontColor=#B16B24;fontStyle=1;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
+        <mxCell id="92" value="Repulsion" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Kalam;fontSize=35;fontColor=#B16B24;fontStyle=1;strokeColor=none;fillColor=none;spacing=0;" vertex="1" parent="1">
           <mxGeometry x="0" y="755" width="540" height="42" as="geometry" />
         </mxCell>
       </root>
