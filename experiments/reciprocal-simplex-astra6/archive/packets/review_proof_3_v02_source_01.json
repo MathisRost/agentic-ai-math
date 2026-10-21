@@ -1,0 +1,15 @@
+{
+  "request_id": "proof_3_v02_source_01",
+  "created_at_utc": "2026-10-20T18:01:11.250785+00:00",
+  "base_packet_sha256": "4e18aa40d8527a4024ee60895b5742f4fd6da764e60506bc31d3709caf424a4c",
+  "purpose": "Exact Section 5 cited as a Gaussian determinant lead; no historical approval is evidence.",
+  "source": "$RUN/inputs/starting_information/proofs/coordinator_submission_v02.md",
+  "source_sha256": "932923bd0632cabe575e4eb826744dfdd5e7c6c367cb1dd853c63d4a54ceb384",
+  "inclusive_lines": [
+    232,
+    284
+  ],
+  "allowed_files": {
+    "$RUN/reviews/proof_3_v02/cited_seed_section_5.md": "33d1beb4f10940ad56067e341898fdb5ad5fd19b4bd11db8222f336de79a8432"
+  }
+}

@@ -1,0 +1,165 @@
+[
+  {
+    "role": "nonexistence_1",
+    "attempt": 1,
+    "target": "S0",
+    "status": "reviewed_general_obstruction_accepted",
+    "maximum": 4,
+    "count_reset": false
+  },
+  {
+    "role": "nonexistence_1",
+    "attempt": 2,
+    "target": "S0",
+    "status": "reviewed_general_obstruction_accepted",
+    "maximum": 4,
+    "count_reset": false
+  },
+  {
+    "role": "nonexistence_2",
+    "attempt": 1,
+    "target": "S0",
+    "status": "reviewed_general_obstruction_and_auxiliary_results_accepted",
+    "maximum": 4,
+    "count_reset": false
+  },
+  {
+    "role": "proof_1",
+    "attempt": 1,
+    "target": "S1",
+    "status": "reviewed_partial_progress_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "review_sha256": "eb172e54baba8bcca00c5eef04d1dc95b584e2448b8cdef3ddf1eb7b7fde69eb"
+  },
+  {
+    "role": "proof_2",
+    "attempt": 1,
+    "target": "S1",
+    "status": "reviewed_scoped_obstruction_accepted_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "review_sha256": "c9e8b575a3addff48eb5458a766ab1ec693d60d5a3feb87da71a866b655f8844",
+    "remaining_allowance": 3,
+    "early_closure": "owner_approved",
+    "track_status": "closed_early_at_1_of_4_not_exhausted"
+  },
+  {
+    "role": "proof_3",
+    "attempt": 1,
+    "target": "S1",
+    "status": "reviewed_scoped_obstruction_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "review_sha256": "83e0cd3e3888f6ed35d529d43041bf263269a633e2a499ebfc91b2b2f41de96e"
+  },
+  {
+    "role": "proof_4",
+    "attempt": 1,
+    "target": "S1",
+    "status": "reviewed_partial_progress_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "review_sha256": "5633bb2abd80704d05763a5e00272aa94349d229391987ca0b38ba3c3cfbf477"
+  },
+  {
+    "role": "proof_1",
+    "attempt": 2,
+    "target": "S1",
+    "status": "reviewed_partial_progress_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "review_sha256": "1e62c0f0b972b160bbdab4174bd4db02fe63929743a6a5fefdf86a19381dfce4"
+  },
+  {
+    "role": "proof_3",
+    "attempt": 2,
+    "target": "S1",
+    "status": "reviewed_partial_progress_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "review_sha256": "e7289137483958548ad8de1c82090b1dba8521751ac8012c56f49d12aaea6781"
+  },
+  {
+    "role": "proof_4",
+    "attempt": 2,
+    "target": "S1",
+    "status": "reviewed_partial_progress_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "review_sha256": "d08c9735cc498750b1b6f695a7f907369a07f005c71a995487921d44c7deb2d1"
+  },
+  {
+    "role": "proof_1",
+    "attempt": 3,
+    "target": "S1",
+    "status": "reviewed_partial_progress_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "submission_sha256": "33eb2d7a62132ed60f95833f244544f4bb9b9004c9eee76f194de47e5d81e8ec",
+    "review_packet_sha256": "a81fa30526b3b3932d34835fc8c67e723acc6794ccf9828290b8b29bd3afee70",
+    "review_sha256": "1edb13d78d05d43f1a104b0e6c046fcaff0203dbab168ea01b95023dba474a17"
+  },
+  {
+    "role": "proof_3",
+    "attempt": 3,
+    "target": "S1",
+    "status": "reviewed_partial_progress_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "submission_sha256": "c6608c347db222f9cf91f55c8763ff2215462c21c110826a327a3cca6e097c0c",
+    "review_packet_sha256": "1b51b943e5e4ac20c543847a0df43708abf8463a34b34ebb1fe1b9177e1b426e",
+    "review_sha256": "306b7027258d97ca8f9f85156896f018a87691e6f19fb71f4ba60433185a3256"
+  },
+  {
+    "role": "proof_4",
+    "attempt": 3,
+    "target": "S1",
+    "status": "reviewed_partial_progress_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "submission_sha256": "11cb3a169173b26dd8d9b8b0ef734bd375632adcd1468337c4c9b4612f26ad29",
+    "review_packet_sha256": "ffa33ddf5542fb5e27008300426f75cbb2578aa43de42766945eb8357996f868",
+    "review_sha256": "7d0623165338019c801af07251bd0d764f417ef31a8b9969fda34d72f97db9a5"
+  },
+  {
+    "role": "proof_1",
+    "attempt": 4,
+    "target": "S1",
+    "status": "reviewed_partial_progress_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "submission_sha256": "e4df045aeec78209ceaf15e5fb8fe4011da15d1555b97ee3946efb15de58ce31",
+    "review_packet_sha256": "10c68914eedd00f44cf025b86ba9efb49a2b7af6bbf6c9d08065bdd00f83519d",
+    "review_sha256": "bcf4c45a24ce6b99d7b9496426ea7aa4db53c7595c64b8ec63c0f859bd47871b",
+    "track_status": "unsuccessful_for_exact_S1_four_submissions_used"
+  },
+  {
+    "role": "proof_3",
+    "attempt": 4,
+    "target": "S1",
+    "status": "reviewed_partial_progress_exact_construction_unsuccessful",
+    "maximum": 4,
+    "count_reset": false,
+    "submission_sha256": "0cffc5a62fec3725f6cad6a839bb9cb2125b4ef8d9d6bfe89ca471635a4062db",
+    "review_packet_sha256": "822a6208eafc5116c2e02d05e26e74c483ac053f758a3458a17fa7bd64416668",
+    "review_sha256": "1627ad3a7af861f5c1bc2654736af073232dde123c6665d1130135cf05f9ef8f",
+    "track_status": "unsuccessful_for_exact_S1_four_submissions_used",
+    "editorial_corrections": "Two missing plus signs in display (26), corrected in frozen review formula R2; source preserved."
+  },
+  {
+    "role": "proof_4",
+    "attempt": 4,
+    "target": "S1",
+    "status": "reviewed_exact_S1_pass",
+    "maximum": 4,
+    "count_reset": false,
+    "pending_amendment_does_not_change_target": true,
+    "submission_sha256": "e3f403b4c55b69845e83ea74d7348026a86cd9b36691b1a4cdc9a6983ac3df5f",
+    "review_packet_sha256": "720a63509f322cdb8bf5d25d9bfd9b31a43849b22b0b0b3895914cc4a2e818d5",
+    "author_claim": "exact unchanged S1; unaccepted pending independent review",
+    "review_sha256": "680b32c05642871d0207ffe59e4bc04d65d6a3bca26a06d61d96e60a2d031e7c",
+    "exact_target_pass": true,
+    "track_status": "exact_S1_success_at_four_of_four"
+  }
+]

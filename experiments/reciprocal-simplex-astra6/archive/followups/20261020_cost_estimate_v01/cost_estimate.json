@@ -1,0 +1,1371 @@
+{
+  "created_at_utc": "2026-10-20T20:16:37.500023+00:00",
+  "model": "gpt-6-astra",
+  "currency": "USD",
+  "status": "owner_requested_API_equivalent_scenarios_not_an_invoice",
+  "historical_snapshot_utc": "2026-10-20T19:46:54.126268+00:00",
+  "source_ledger": "$RUN/agent_accounting.jsonl",
+  "source_ledger_sha256": "448426ee4090661d9582add4ff68af679be87cdff58adf9af6df4a04dd8fc37b",
+  "pricing_retrieval_date": "2026-10-20",
+  "pricing_evidence": "official_pricing_evidence.json",
+  "rates_usd_per_million": {
+    "standard_short": {
+      "uncached_input": 10,
+      "cached_input": 1,
+      "output_including_reasoning": 50,
+      "cache_write_30m": 12.5,
+      "cache_write_12h": 25
+    },
+    "fast_priority_short": {
+      "uncached_input": 20,
+      "cached_input": 2,
+      "output_including_reasoning": 100,
+      "cache_write_30m": 25,
+      "cache_write_12h": 50
+    }
+  },
+  "context_band": "short: all recorded call inputs <=272000",
+  "maximum_recorded_call_input": 237725,
+  "actual_billed_service_tier": null,
+  "assumptions_and_limits": [
+    "Prices retrieved after the run on the same calendar date; not a launch-time price freeze.",
+    "Standard and Fast/priority are alternative pricing scenarios, not established account charges.",
+    "Input minus cached input is treated as ordinary uncached input; reported cache writes are zero.",
+    "Reasoning is already included in output; cached input is already included in input.",
+    "Parent/child inclusion semantics remain unverified; all cross-session sums are unreconciled arithmetic sums.",
+    "Raw summed dollars apply only if session counters are disjoint; no deduplicated experiment bill is asserted.",
+    "The historical coordinator snapshot omits its final tail and all later discussion.",
+    "Excludes tool fees, third-party services, regional or FedRAMP uplifts, and taxes.",
+    "Subscription charges cannot be inferred from API-equivalent token pricing.",
+    "Original experiment records and final hash inventory are unchanged."
+  ],
+  "per_role": {
+    "coordinator": {
+      "measured_usage": {
+        "input_tokens": 48252029,
+        "cached_input_tokens": 47603712,
+        "cache_write_tokens": 0,
+        "output_tokens": 167301,
+        "reasoning_tokens": 60898,
+        "total_tokens": 48419330
+      },
+      "derived_uncached_input_tokens": 648317,
+      "standard_usd_unrounded": "62.451932",
+      "fast_priority_usd_unrounded": "124.903864",
+      "actual_charge_usd": null
+    },
+    "nonexistence_1": {
+      "measured_usage": {
+        "input_tokens": 1436832,
+        "cached_input_tokens": 1270784,
+        "cache_write_tokens": 0,
+        "output_tokens": 29038,
+        "reasoning_tokens": 9401,
+        "total_tokens": 1465870
+      },
+      "derived_uncached_input_tokens": 166048,
+      "standard_usd_unrounded": "4.383164",
+      "fast_priority_usd_unrounded": "8.766328",
+      "actual_charge_usd": null
+    },
+    "nonexistence_2": {
+      "measured_usage": {
+        "input_tokens": 714417,
+        "cached_input_tokens": 670976,
+        "cache_write_tokens": 0,
+        "output_tokens": 13316,
+        "reasoning_tokens": 3481,
+        "total_tokens": 727733
+      },
+      "derived_uncached_input_tokens": 43441,
+      "standard_usd_unrounded": "1.771186",
+      "fast_priority_usd_unrounded": "3.542372",
+      "actual_charge_usd": null
+    },
+    "review_nonexistence_1_v01": {
+      "measured_usage": {
+        "input_tokens": 755997,
+        "cached_input_tokens": 698368,
+        "cache_write_tokens": 0,
+        "output_tokens": 13303,
+        "reasoning_tokens": 2757,
+        "total_tokens": 769300
+      },
+      "derived_uncached_input_tokens": 57629,
+      "standard_usd_unrounded": "1.939808",
+      "fast_priority_usd_unrounded": "3.879616",
+      "actual_charge_usd": null
+    },
+    "review_nonexistence_2_v01": {
+      "measured_usage": {
+        "input_tokens": 632594,
+        "cached_input_tokens": 590464,
+        "cache_write_tokens": 0,
+        "output_tokens": 13437,
+        "reasoning_tokens": 3149,
+        "total_tokens": 646031
+      },
+      "derived_uncached_input_tokens": 42130,
+      "standard_usd_unrounded": "1.683614",
+      "fast_priority_usd_unrounded": "3.367228",
+      "actual_charge_usd": null
+    },
+    "review_nonexistence_1_v02": {
+      "measured_usage": {
+        "input_tokens": 826611,
+        "cached_input_tokens": 776704,
+        "cache_write_tokens": 0,
+        "output_tokens": 13942,
+        "reasoning_tokens": 2964,
+        "total_tokens": 840553
+      },
+      "derived_uncached_input_tokens": 49907,
+      "standard_usd_unrounded": "1.972874",
+      "fast_priority_usd_unrounded": "3.945748",
+      "actual_charge_usd": null
+    },
+    "proof_1": {
+      "measured_usage": {
+        "input_tokens": 4953497,
+        "cached_input_tokens": 4415232,
+        "cache_write_tokens": 0,
+        "output_tokens": 112387,
+        "reasoning_tokens": 61282,
+        "total_tokens": 5065884
+      },
+      "derived_uncached_input_tokens": 538265,
+      "standard_usd_unrounded": "15.417232",
+      "fast_priority_usd_unrounded": "30.834464",
+      "actual_charge_usd": null
+    },
+    "proof_2": {
+      "measured_usage": {
+        "input_tokens": 1430149,
+        "cached_input_tokens": 1339264,
+        "cache_write_tokens": 0,
+        "output_tokens": 18928,
+        "reasoning_tokens": 7543,
+        "total_tokens": 1449077
+      },
+      "derived_uncached_input_tokens": 90885,
+      "standard_usd_unrounded": "3.194514",
+      "fast_priority_usd_unrounded": "6.389028",
+      "actual_charge_usd": null
+    },
+    "proof_3": {
+      "measured_usage": {
+        "input_tokens": 5798102,
+        "cached_input_tokens": 5246080,
+        "cache_write_tokens": 0,
+        "output_tokens": 109965,
+        "reasoning_tokens": 58245,
+        "total_tokens": 5908067
+      },
+      "derived_uncached_input_tokens": 552022,
+      "standard_usd_unrounded": "16.26455",
+      "fast_priority_usd_unrounded": "32.52910",
+      "actual_charge_usd": null
+    },
+    "proof_4": {
+      "measured_usage": {
+        "input_tokens": 6563725,
+        "cached_input_tokens": 6124416,
+        "cache_write_tokens": 0,
+        "output_tokens": 140802,
+        "reasoning_tokens": 76686,
+        "total_tokens": 6704527
+      },
+      "derived_uncached_input_tokens": 439309,
+      "standard_usd_unrounded": "17.557606",
+      "fast_priority_usd_unrounded": "35.115212",
+      "actual_charge_usd": null
+    },
+    "review_proof_2_v01": {
+      "measured_usage": {
+        "input_tokens": 991018,
+        "cached_input_tokens": 921984,
+        "cache_write_tokens": 0,
+        "output_tokens": 16103,
+        "reasoning_tokens": 3604,
+        "total_tokens": 1007121
+      },
+      "derived_uncached_input_tokens": 69034,
+      "standard_usd_unrounded": "2.417474",
+      "fast_priority_usd_unrounded": "4.834948",
+      "actual_charge_usd": null
+    },
+    "review_proof_1_v01": {
+      "measured_usage": {
+        "input_tokens": 962759,
+        "cached_input_tokens": 907904,
+        "cache_write_tokens": 0,
+        "output_tokens": 15839,
+        "reasoning_tokens": 4242,
+        "total_tokens": 978598
+      },
+      "derived_uncached_input_tokens": 54855,
+      "standard_usd_unrounded": "2.248404",
+      "fast_priority_usd_unrounded": "4.496808",
+      "actual_charge_usd": null
+    },
+    "review_proof_3_v01": {
+      "measured_usage": {
+        "input_tokens": 1132796,
+        "cached_input_tokens": 1070976,
+        "cache_write_tokens": 0,
+        "output_tokens": 15188,
+        "reasoning_tokens": 3771,
+        "total_tokens": 1147984
+      },
+      "derived_uncached_input_tokens": 61820,
+      "standard_usd_unrounded": "2.448576",
+      "fast_priority_usd_unrounded": "4.897152",
+      "actual_charge_usd": null
+    },
+    "review_proof_4_v01": {
+      "measured_usage": {
+        "input_tokens": 644410,
+        "cached_input_tokens": 596864,
+        "cache_write_tokens": 0,
+        "output_tokens": 15173,
+        "reasoning_tokens": 4747,
+        "total_tokens": 659583
+      },
+      "derived_uncached_input_tokens": 47546,
+      "standard_usd_unrounded": "1.830974",
+      "fast_priority_usd_unrounded": "3.661948",
+      "actual_charge_usd": null
+    },
+    "review_proof_1_v02": {
+      "measured_usage": {
+        "input_tokens": 1238864,
+        "cached_input_tokens": 1156480,
+        "cache_write_tokens": 0,
+        "output_tokens": 18570,
+        "reasoning_tokens": 4491,
+        "total_tokens": 1257434
+      },
+      "derived_uncached_input_tokens": 82384,
+      "standard_usd_unrounded": "2.90882",
+      "fast_priority_usd_unrounded": "5.81764",
+      "actual_charge_usd": null
+    },
+    "review_proof_4_v02": {
+      "measured_usage": {
+        "input_tokens": 1193112,
+        "cached_input_tokens": 1120896,
+        "cache_write_tokens": 0,
+        "output_tokens": 16663,
+        "reasoning_tokens": 2520,
+        "total_tokens": 1209775
+      },
+      "derived_uncached_input_tokens": 72216,
+      "standard_usd_unrounded": "2.676206",
+      "fast_priority_usd_unrounded": "5.352412",
+      "actual_charge_usd": null
+    },
+    "review_proof_3_v02": {
+      "measured_usage": {
+        "input_tokens": 1173060,
+        "cached_input_tokens": 1096960,
+        "cache_write_tokens": 0,
+        "output_tokens": 16374,
+        "reasoning_tokens": 3488,
+        "total_tokens": 1189434
+      },
+      "derived_uncached_input_tokens": 76100,
+      "standard_usd_unrounded": "2.67666",
+      "fast_priority_usd_unrounded": "5.35332",
+      "actual_charge_usd": null
+    },
+    "review_proof_1_v03": {
+      "measured_usage": {
+        "input_tokens": 1362513,
+        "cached_input_tokens": 1275008,
+        "cache_write_tokens": 0,
+        "output_tokens": 18906,
+        "reasoning_tokens": 4263,
+        "total_tokens": 1381419
+      },
+      "derived_uncached_input_tokens": 87505,
+      "standard_usd_unrounded": "3.095358",
+      "fast_priority_usd_unrounded": "6.190716",
+      "actual_charge_usd": null
+    },
+    "review_proof_3_v03": {
+      "measured_usage": {
+        "input_tokens": 1748658,
+        "cached_input_tokens": 1660928,
+        "cache_write_tokens": 0,
+        "output_tokens": 17301,
+        "reasoning_tokens": 2986,
+        "total_tokens": 1765959
+      },
+      "derived_uncached_input_tokens": 87730,
+      "standard_usd_unrounded": "3.403278",
+      "fast_priority_usd_unrounded": "6.806556",
+      "actual_charge_usd": null
+    },
+    "review_proof_4_v03": {
+      "measured_usage": {
+        "input_tokens": 1178572,
+        "cached_input_tokens": 1102592,
+        "cache_write_tokens": 0,
+        "output_tokens": 16063,
+        "reasoning_tokens": 1293,
+        "total_tokens": 1194635
+      },
+      "derived_uncached_input_tokens": 75980,
+      "standard_usd_unrounded": "2.665542",
+      "fast_priority_usd_unrounded": "5.331084",
+      "actual_charge_usd": null
+    },
+    "literature": {
+      "measured_usage": {
+        "input_tokens": 3373806,
+        "cached_input_tokens": 3241344,
+        "cache_write_tokens": 0,
+        "output_tokens": 21646,
+        "reasoning_tokens": 3554,
+        "total_tokens": 3395452
+      },
+      "derived_uncached_input_tokens": 132462,
+      "standard_usd_unrounded": "5.648264",
+      "fast_priority_usd_unrounded": "11.296528",
+      "actual_charge_usd": null
+    },
+    "review_proof_3_v04": {
+      "measured_usage": {
+        "input_tokens": 2361509,
+        "cached_input_tokens": 2253952,
+        "cache_write_tokens": 0,
+        "output_tokens": 19456,
+        "reasoning_tokens": 2381,
+        "total_tokens": 2380965
+      },
+      "derived_uncached_input_tokens": 107557,
+      "standard_usd_unrounded": "4.302322",
+      "fast_priority_usd_unrounded": "8.604644",
+      "actual_charge_usd": null
+    },
+    "review_proof_1_v04": {
+      "measured_usage": {
+        "input_tokens": 1396668,
+        "cached_input_tokens": 1301760,
+        "cache_write_tokens": 0,
+        "output_tokens": 21021,
+        "reasoning_tokens": 4963,
+        "total_tokens": 1417689
+      },
+      "derived_uncached_input_tokens": 94908,
+      "standard_usd_unrounded": "3.30189",
+      "fast_priority_usd_unrounded": "6.60378",
+      "actual_charge_usd": null
+    },
+    "review_proof_4_v04": {
+      "measured_usage": {
+        "input_tokens": 1579252,
+        "cached_input_tokens": 1443968,
+        "cache_write_tokens": 0,
+        "output_tokens": 19897,
+        "reasoning_tokens": 4597,
+        "total_tokens": 1599149
+      },
+      "derived_uncached_input_tokens": 135284,
+      "standard_usd_unrounded": "3.791658",
+      "fast_priority_usd_unrounded": "7.583316",
+      "actual_charge_usd": null
+    },
+    "final_synthesis": {
+      "measured_usage": {
+        "input_tokens": 6460609,
+        "cached_input_tokens": 6144768,
+        "cache_write_tokens": 0,
+        "output_tokens": 35996,
+        "reasoning_tokens": 6500,
+        "total_tokens": 6496605
+      },
+      "derived_uncached_input_tokens": 315841,
+      "standard_usd_unrounded": "11.102978",
+      "fast_priority_usd_unrounded": "22.205956",
+      "actual_charge_usd": null
+    }
+  },
+  "per_turn": [
+    {
+      "role": "coordinator",
+      "session_id": "session-01",
+      "turn_id": "turn-01",
+      "measured_usage": {
+        "input_tokens": 48252029,
+        "cached_input_tokens": 47603712,
+        "cache_write_tokens": 0,
+        "output_tokens": 167301,
+        "reasoning_tokens": 60898,
+        "total_tokens": 48419330
+      },
+      "derived_uncached_input_tokens": 648317,
+      "standard_usd_unrounded": "62.451932",
+      "fast_priority_usd_unrounded": "124.903864",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "nonexistence_1",
+      "session_id": "session-02",
+      "turn_id": "turn-02",
+      "measured_usage": {
+        "input_tokens": 147813,
+        "cached_input_tokens": 107648,
+        "cache_write_tokens": 0,
+        "output_tokens": 1972,
+        "reasoning_tokens": 234,
+        "total_tokens": 149785
+      },
+      "derived_uncached_input_tokens": 40165,
+      "standard_usd_unrounded": "0.607898",
+      "fast_priority_usd_unrounded": "1.215796",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "nonexistence_1",
+      "session_id": "session-02",
+      "turn_id": "turn-03",
+      "measured_usage": {
+        "input_tokens": 622532,
+        "cached_input_tokens": 591872,
+        "cache_write_tokens": 0,
+        "output_tokens": 12823,
+        "reasoning_tokens": 4220,
+        "total_tokens": 635355
+      },
+      "derived_uncached_input_tokens": 30660,
+      "standard_usd_unrounded": "1.539622",
+      "fast_priority_usd_unrounded": "3.079244",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "nonexistence_1",
+      "session_id": "session-02",
+      "turn_id": "turn-04",
+      "measured_usage": {
+        "input_tokens": 666487,
+        "cached_input_tokens": 571264,
+        "cache_write_tokens": 0,
+        "output_tokens": 14243,
+        "reasoning_tokens": 4947,
+        "total_tokens": 680730
+      },
+      "derived_uncached_input_tokens": 95223,
+      "standard_usd_unrounded": "2.235644",
+      "fast_priority_usd_unrounded": "4.471288",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "nonexistence_2",
+      "session_id": "session-03",
+      "turn_id": "turn-05",
+      "measured_usage": {
+        "input_tokens": 147810,
+        "cached_input_tokens": 135680,
+        "cache_write_tokens": 0,
+        "output_tokens": 1370,
+        "reasoning_tokens": 24,
+        "total_tokens": 149180
+      },
+      "derived_uncached_input_tokens": 12130,
+      "standard_usd_unrounded": "0.32548",
+      "fast_priority_usd_unrounded": "0.65096",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "nonexistence_2",
+      "session_id": "session-03",
+      "turn_id": "turn-06",
+      "measured_usage": {
+        "input_tokens": 566607,
+        "cached_input_tokens": 535296,
+        "cache_write_tokens": 0,
+        "output_tokens": 11946,
+        "reasoning_tokens": 3457,
+        "total_tokens": 578553
+      },
+      "derived_uncached_input_tokens": 31311,
+      "standard_usd_unrounded": "1.445706",
+      "fast_priority_usd_unrounded": "2.891412",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_nonexistence_1_v01",
+      "session_id": "session-04",
+      "turn_id": "turn-07",
+      "measured_usage": {
+        "input_tokens": 755997,
+        "cached_input_tokens": 698368,
+        "cache_write_tokens": 0,
+        "output_tokens": 13303,
+        "reasoning_tokens": 2757,
+        "total_tokens": 769300
+      },
+      "derived_uncached_input_tokens": 57629,
+      "standard_usd_unrounded": "1.939808",
+      "fast_priority_usd_unrounded": "3.879616",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_nonexistence_2_v01",
+      "session_id": "session-05",
+      "turn_id": "turn-08",
+      "measured_usage": {
+        "input_tokens": 632594,
+        "cached_input_tokens": 590464,
+        "cache_write_tokens": 0,
+        "output_tokens": 13437,
+        "reasoning_tokens": 3149,
+        "total_tokens": 646031
+      },
+      "derived_uncached_input_tokens": 42130,
+      "standard_usd_unrounded": "1.683614",
+      "fast_priority_usd_unrounded": "3.367228",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_nonexistence_1_v02",
+      "session_id": "session-06",
+      "turn_id": "turn-09",
+      "measured_usage": {
+        "input_tokens": 826611,
+        "cached_input_tokens": 776704,
+        "cache_write_tokens": 0,
+        "output_tokens": 13942,
+        "reasoning_tokens": 2964,
+        "total_tokens": 840553
+      },
+      "derived_uncached_input_tokens": 49907,
+      "standard_usd_unrounded": "1.972874",
+      "fast_priority_usd_unrounded": "3.945748",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_1",
+      "session_id": "session-07",
+      "turn_id": "turn-10",
+      "measured_usage": {
+        "input_tokens": 1592849,
+        "cached_input_tokens": 1470592,
+        "cache_write_tokens": 0,
+        "output_tokens": 23961,
+        "reasoning_tokens": 10677,
+        "total_tokens": 1616810
+      },
+      "derived_uncached_input_tokens": 122257,
+      "standard_usd_unrounded": "3.891212",
+      "fast_priority_usd_unrounded": "7.782424",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_1",
+      "session_id": "session-07",
+      "turn_id": "turn-11",
+      "measured_usage": {
+        "input_tokens": 1262064,
+        "cached_input_tokens": 1132672,
+        "cache_write_tokens": 0,
+        "output_tokens": 24067,
+        "reasoning_tokens": 12024,
+        "total_tokens": 1286131
+      },
+      "derived_uncached_input_tokens": 129392,
+      "standard_usd_unrounded": "3.629942",
+      "fast_priority_usd_unrounded": "7.259884",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_1",
+      "session_id": "session-07",
+      "turn_id": "turn-12",
+      "measured_usage": {
+        "input_tokens": 1255566,
+        "cached_input_tokens": 1058432,
+        "cache_write_tokens": 0,
+        "output_tokens": 28287,
+        "reasoning_tokens": 15261,
+        "total_tokens": 1283853
+      },
+      "derived_uncached_input_tokens": 197134,
+      "standard_usd_unrounded": "4.444122",
+      "fast_priority_usd_unrounded": "8.888244",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_1",
+      "session_id": "session-07",
+      "turn_id": "turn-13",
+      "measured_usage": {
+        "input_tokens": 843018,
+        "cached_input_tokens": 753536,
+        "cache_write_tokens": 0,
+        "output_tokens": 36072,
+        "reasoning_tokens": 23320,
+        "total_tokens": 879090
+      },
+      "derived_uncached_input_tokens": 89482,
+      "standard_usd_unrounded": "3.451956",
+      "fast_priority_usd_unrounded": "6.903912",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_2",
+      "session_id": "session-08",
+      "turn_id": "turn-14",
+      "measured_usage": {
+        "input_tokens": 1430149,
+        "cached_input_tokens": 1339264,
+        "cache_write_tokens": 0,
+        "output_tokens": 18928,
+        "reasoning_tokens": 7543,
+        "total_tokens": 1449077
+      },
+      "derived_uncached_input_tokens": 90885,
+      "standard_usd_unrounded": "3.194514",
+      "fast_priority_usd_unrounded": "6.389028",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_3",
+      "session_id": "session-09",
+      "turn_id": "turn-15",
+      "measured_usage": {
+        "input_tokens": 1822445,
+        "cached_input_tokens": 1723264,
+        "cache_write_tokens": 0,
+        "output_tokens": 22488,
+        "reasoning_tokens": 8835,
+        "total_tokens": 1844933
+      },
+      "derived_uncached_input_tokens": 99181,
+      "standard_usd_unrounded": "3.839474",
+      "fast_priority_usd_unrounded": "7.678948",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_3",
+      "session_id": "session-09",
+      "turn_id": "turn-16",
+      "measured_usage": {
+        "input_tokens": 1970009,
+        "cached_input_tokens": 1825792,
+        "cache_write_tokens": 0,
+        "output_tokens": 32370,
+        "reasoning_tokens": 19483,
+        "total_tokens": 2002379
+      },
+      "derived_uncached_input_tokens": 144217,
+      "standard_usd_unrounded": "4.886462",
+      "fast_priority_usd_unrounded": "9.772924",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_3",
+      "session_id": "session-09",
+      "turn_id": "turn-17",
+      "measured_usage": {
+        "input_tokens": 1054235,
+        "cached_input_tokens": 846336,
+        "cache_write_tokens": 0,
+        "output_tokens": 28677,
+        "reasoning_tokens": 15342,
+        "total_tokens": 1082912
+      },
+      "derived_uncached_input_tokens": 207899,
+      "standard_usd_unrounded": "4.359176",
+      "fast_priority_usd_unrounded": "8.718352",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_3",
+      "session_id": "session-09",
+      "turn_id": "turn-18",
+      "measured_usage": {
+        "input_tokens": 951413,
+        "cached_input_tokens": 850688,
+        "cache_write_tokens": 0,
+        "output_tokens": 26430,
+        "reasoning_tokens": 14585,
+        "total_tokens": 977843
+      },
+      "derived_uncached_input_tokens": 100725,
+      "standard_usd_unrounded": "3.179438",
+      "fast_priority_usd_unrounded": "6.358876",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_4",
+      "session_id": "session-10",
+      "turn_id": "turn-19",
+      "measured_usage": {
+        "input_tokens": 1403102,
+        "cached_input_tokens": 1312384,
+        "cache_write_tokens": 0,
+        "output_tokens": 22925,
+        "reasoning_tokens": 10311,
+        "total_tokens": 1426027
+      },
+      "derived_uncached_input_tokens": 90718,
+      "standard_usd_unrounded": "3.365814",
+      "fast_priority_usd_unrounded": "6.731628",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_4",
+      "session_id": "session-10",
+      "turn_id": "turn-20",
+      "measured_usage": {
+        "input_tokens": 1520564,
+        "cached_input_tokens": 1477120,
+        "cache_write_tokens": 0,
+        "output_tokens": 28801,
+        "reasoning_tokens": 15437,
+        "total_tokens": 1549365
+      },
+      "derived_uncached_input_tokens": 43444,
+      "standard_usd_unrounded": "3.35161",
+      "fast_priority_usd_unrounded": "6.70322",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_4",
+      "session_id": "session-10",
+      "turn_id": "turn-21",
+      "measured_usage": {
+        "input_tokens": 1645090,
+        "cached_input_tokens": 1438464,
+        "cache_write_tokens": 0,
+        "output_tokens": 40268,
+        "reasoning_tokens": 23631,
+        "total_tokens": 1685358
+      },
+      "derived_uncached_input_tokens": 206626,
+      "standard_usd_unrounded": "5.518124",
+      "fast_priority_usd_unrounded": "11.036248",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "proof_4",
+      "session_id": "session-10",
+      "turn_id": "turn-22",
+      "measured_usage": {
+        "input_tokens": 1994969,
+        "cached_input_tokens": 1896448,
+        "cache_write_tokens": 0,
+        "output_tokens": 48808,
+        "reasoning_tokens": 27307,
+        "total_tokens": 2043777
+      },
+      "derived_uncached_input_tokens": 98521,
+      "standard_usd_unrounded": "5.322058",
+      "fast_priority_usd_unrounded": "10.644116",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_2_v01",
+      "session_id": "session-11",
+      "turn_id": "turn-23",
+      "measured_usage": {
+        "input_tokens": 991018,
+        "cached_input_tokens": 921984,
+        "cache_write_tokens": 0,
+        "output_tokens": 16103,
+        "reasoning_tokens": 3604,
+        "total_tokens": 1007121
+      },
+      "derived_uncached_input_tokens": 69034,
+      "standard_usd_unrounded": "2.417474",
+      "fast_priority_usd_unrounded": "4.834948",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_1_v01",
+      "session_id": "session-12",
+      "turn_id": "turn-24",
+      "measured_usage": {
+        "input_tokens": 962759,
+        "cached_input_tokens": 907904,
+        "cache_write_tokens": 0,
+        "output_tokens": 15839,
+        "reasoning_tokens": 4242,
+        "total_tokens": 978598
+      },
+      "derived_uncached_input_tokens": 54855,
+      "standard_usd_unrounded": "2.248404",
+      "fast_priority_usd_unrounded": "4.496808",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_3_v01",
+      "session_id": "session-13",
+      "turn_id": "turn-25",
+      "measured_usage": {
+        "input_tokens": 1132796,
+        "cached_input_tokens": 1070976,
+        "cache_write_tokens": 0,
+        "output_tokens": 15188,
+        "reasoning_tokens": 3771,
+        "total_tokens": 1147984
+      },
+      "derived_uncached_input_tokens": 61820,
+      "standard_usd_unrounded": "2.448576",
+      "fast_priority_usd_unrounded": "4.897152",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_4_v01",
+      "session_id": "session-14",
+      "turn_id": "turn-26",
+      "measured_usage": {
+        "input_tokens": 644410,
+        "cached_input_tokens": 596864,
+        "cache_write_tokens": 0,
+        "output_tokens": 15173,
+        "reasoning_tokens": 4747,
+        "total_tokens": 659583
+      },
+      "derived_uncached_input_tokens": 47546,
+      "standard_usd_unrounded": "1.830974",
+      "fast_priority_usd_unrounded": "3.661948",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_1_v02",
+      "session_id": "session-15",
+      "turn_id": "turn-27",
+      "measured_usage": {
+        "input_tokens": 1238864,
+        "cached_input_tokens": 1156480,
+        "cache_write_tokens": 0,
+        "output_tokens": 18570,
+        "reasoning_tokens": 4491,
+        "total_tokens": 1257434
+      },
+      "derived_uncached_input_tokens": 82384,
+      "standard_usd_unrounded": "2.90882",
+      "fast_priority_usd_unrounded": "5.81764",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_4_v02",
+      "session_id": "session-16",
+      "turn_id": "turn-28",
+      "measured_usage": {
+        "input_tokens": 1193112,
+        "cached_input_tokens": 1120896,
+        "cache_write_tokens": 0,
+        "output_tokens": 16663,
+        "reasoning_tokens": 2520,
+        "total_tokens": 1209775
+      },
+      "derived_uncached_input_tokens": 72216,
+      "standard_usd_unrounded": "2.676206",
+      "fast_priority_usd_unrounded": "5.352412",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_3_v02",
+      "session_id": "session-17",
+      "turn_id": "turn-29",
+      "measured_usage": {
+        "input_tokens": 1173060,
+        "cached_input_tokens": 1096960,
+        "cache_write_tokens": 0,
+        "output_tokens": 16374,
+        "reasoning_tokens": 3488,
+        "total_tokens": 1189434
+      },
+      "derived_uncached_input_tokens": 76100,
+      "standard_usd_unrounded": "2.67666",
+      "fast_priority_usd_unrounded": "5.35332",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_1_v03",
+      "session_id": "session-18",
+      "turn_id": "turn-30",
+      "measured_usage": {
+        "input_tokens": 1362513,
+        "cached_input_tokens": 1275008,
+        "cache_write_tokens": 0,
+        "output_tokens": 18906,
+        "reasoning_tokens": 4263,
+        "total_tokens": 1381419
+      },
+      "derived_uncached_input_tokens": 87505,
+      "standard_usd_unrounded": "3.095358",
+      "fast_priority_usd_unrounded": "6.190716",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_3_v03",
+      "session_id": "session-19",
+      "turn_id": "turn-31",
+      "measured_usage": {
+        "input_tokens": 1748658,
+        "cached_input_tokens": 1660928,
+        "cache_write_tokens": 0,
+        "output_tokens": 17301,
+        "reasoning_tokens": 2986,
+        "total_tokens": 1765959
+      },
+      "derived_uncached_input_tokens": 87730,
+      "standard_usd_unrounded": "3.403278",
+      "fast_priority_usd_unrounded": "6.806556",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_4_v03",
+      "session_id": "session-20",
+      "turn_id": "turn-32",
+      "measured_usage": {
+        "input_tokens": 1178572,
+        "cached_input_tokens": 1102592,
+        "cache_write_tokens": 0,
+        "output_tokens": 16063,
+        "reasoning_tokens": 1293,
+        "total_tokens": 1194635
+      },
+      "derived_uncached_input_tokens": 75980,
+      "standard_usd_unrounded": "2.665542",
+      "fast_priority_usd_unrounded": "5.331084",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "literature",
+      "session_id": "session-21",
+      "turn_id": "turn-33",
+      "measured_usage": {
+        "input_tokens": 3373806,
+        "cached_input_tokens": 3241344,
+        "cache_write_tokens": 0,
+        "output_tokens": 21646,
+        "reasoning_tokens": 3554,
+        "total_tokens": 3395452
+      },
+      "derived_uncached_input_tokens": 132462,
+      "standard_usd_unrounded": "5.648264",
+      "fast_priority_usd_unrounded": "11.296528",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_3_v04",
+      "session_id": "session-22",
+      "turn_id": "turn-34",
+      "measured_usage": {
+        "input_tokens": 2361509,
+        "cached_input_tokens": 2253952,
+        "cache_write_tokens": 0,
+        "output_tokens": 19456,
+        "reasoning_tokens": 2381,
+        "total_tokens": 2380965
+      },
+      "derived_uncached_input_tokens": 107557,
+      "standard_usd_unrounded": "4.302322",
+      "fast_priority_usd_unrounded": "8.604644",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_1_v04",
+      "session_id": "session-23",
+      "turn_id": "turn-35",
+      "measured_usage": {
+        "input_tokens": 1396668,
+        "cached_input_tokens": 1301760,
+        "cache_write_tokens": 0,
+        "output_tokens": 21021,
+        "reasoning_tokens": 4963,
+        "total_tokens": 1417689
+      },
+      "derived_uncached_input_tokens": 94908,
+      "standard_usd_unrounded": "3.30189",
+      "fast_priority_usd_unrounded": "6.60378",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "review_proof_4_v04",
+      "session_id": "session-24",
+      "turn_id": "turn-36",
+      "measured_usage": {
+        "input_tokens": 1579252,
+        "cached_input_tokens": 1443968,
+        "cache_write_tokens": 0,
+        "output_tokens": 19897,
+        "reasoning_tokens": 4597,
+        "total_tokens": 1599149
+      },
+      "derived_uncached_input_tokens": 135284,
+      "standard_usd_unrounded": "3.791658",
+      "fast_priority_usd_unrounded": "7.583316",
+      "actual_charge_usd": null
+    },
+    {
+      "role": "final_synthesis",
+      "session_id": "session-25",
+      "turn_id": "turn-37",
+      "measured_usage": {
+        "input_tokens": 6460609,
+        "cached_input_tokens": 6144768,
+        "cache_write_tokens": 0,
+        "output_tokens": 35996,
+        "reasoning_tokens": 6500,
+        "total_tokens": 6496605
+      },
+      "derived_uncached_input_tokens": 315841,
+      "standard_usd_unrounded": "11.102978",
+      "fast_priority_usd_unrounded": "22.205956",
+      "actual_charge_usd": null
+    }
+  ],
+  "grouped_table": [
+    {
+      "label": "Coordinator",
+      "member_roles": [
+        "coordinator"
+      ],
+      "measured_usage": {
+        "input_tokens": 48252029,
+        "cached_input_tokens": 47603712,
+        "cache_write_tokens": 0,
+        "output_tokens": 167301,
+        "reasoning_tokens": 60898,
+        "total_tokens": 48419330
+      },
+      "derived_uncached_input_tokens": 648317,
+      "standard_usd_unrounded": "62.451932",
+      "fast_priority_usd_unrounded": "124.903864",
+      "actual_charge_usd": null
+    },
+    {
+      "label": "Two non-existence investigators",
+      "member_roles": [
+        "nonexistence_1",
+        "nonexistence_2"
+      ],
+      "measured_usage": {
+        "input_tokens": 2151249,
+        "cached_input_tokens": 1941760,
+        "cache_write_tokens": 0,
+        "output_tokens": 42354,
+        "reasoning_tokens": 12882,
+        "total_tokens": 2193603
+      },
+      "derived_uncached_input_tokens": 209489,
+      "standard_usd_unrounded": "6.15435",
+      "fast_priority_usd_unrounded": "12.30870",
+      "actual_charge_usd": null
+    },
+    {
+      "label": "Poisson cluster construction",
+      "member_roles": [
+        "proof_1"
+      ],
+      "measured_usage": {
+        "input_tokens": 4953497,
+        "cached_input_tokens": 4415232,
+        "cache_write_tokens": 0,
+        "output_tokens": 112387,
+        "reasoning_tokens": 61282,
+        "total_tokens": 5065884
+      },
+      "derived_uncached_input_tokens": 538265,
+      "standard_usd_unrounded": "15.417232",
+      "fast_priority_usd_unrounded": "30.834464",
+      "actual_charge_usd": null
+    },
+    {
+      "label": "Cox construction",
+      "member_roles": [
+        "proof_2"
+      ],
+      "measured_usage": {
+        "input_tokens": 1430149,
+        "cached_input_tokens": 1339264,
+        "cache_write_tokens": 0,
+        "output_tokens": 18928,
+        "reasoning_tokens": 7543,
+        "total_tokens": 1449077
+      },
+      "derived_uncached_input_tokens": 90885,
+      "standard_usd_unrounded": "3.194514",
+      "fast_priority_usd_unrounded": "6.389028",
+      "actual_charge_usd": null
+    },
+    {
+      "label": "Branching/Hawkes construction",
+      "member_roles": [
+        "proof_3"
+      ],
+      "measured_usage": {
+        "input_tokens": 5798102,
+        "cached_input_tokens": 5246080,
+        "cache_write_tokens": 0,
+        "output_tokens": 109965,
+        "reasoning_tokens": 58245,
+        "total_tokens": 5908067
+      },
+      "derived_uncached_input_tokens": 552022,
+      "standard_usd_unrounded": "16.26455",
+      "fast_priority_usd_unrounded": "32.52910",
+      "actual_charge_usd": null
+    },
+    {
+      "label": "Winning construction",
+      "member_roles": [
+        "proof_4"
+      ],
+      "measured_usage": {
+        "input_tokens": 6563725,
+        "cached_input_tokens": 6124416,
+        "cache_write_tokens": 0,
+        "output_tokens": 140802,
+        "reasoning_tokens": 76686,
+        "total_tokens": 6704527
+      },
+      "derived_uncached_input_tokens": 439309,
+      "standard_usd_unrounded": "17.557606",
+      "fast_priority_usd_unrounded": "35.115212",
+      "actual_charge_usd": null
+    },
+    {
+      "label": "All 16 submission reviews",
+      "member_roles": [
+        "review_nonexistence_1_v01",
+        "review_nonexistence_2_v01",
+        "review_nonexistence_1_v02",
+        "review_proof_2_v01",
+        "review_proof_1_v01",
+        "review_proof_3_v01",
+        "review_proof_4_v01",
+        "review_proof_1_v02",
+        "review_proof_4_v02",
+        "review_proof_3_v02",
+        "review_proof_1_v03",
+        "review_proof_3_v03",
+        "review_proof_4_v03",
+        "review_proof_3_v04",
+        "review_proof_1_v04",
+        "review_proof_4_v04"
+      ],
+      "measured_usage": {
+        "input_tokens": 19178393,
+        "cached_input_tokens": 17975808,
+        "cache_write_tokens": 0,
+        "output_tokens": 267236,
+        "reasoning_tokens": 56216,
+        "total_tokens": 19445629
+      },
+      "derived_uncached_input_tokens": 1202585,
+      "standard_usd_unrounded": "43.363458",
+      "fast_priority_usd_unrounded": "86.726916",
+      "actual_charge_usd": null
+    },
+    {
+      "label": "Literature check",
+      "member_roles": [
+        "literature"
+      ],
+      "measured_usage": {
+        "input_tokens": 3373806,
+        "cached_input_tokens": 3241344,
+        "cache_write_tokens": 0,
+        "output_tokens": 21646,
+        "reasoning_tokens": 3554,
+        "total_tokens": 3395452
+      },
+      "derived_uncached_input_tokens": 132462,
+      "standard_usd_unrounded": "5.648264",
+      "fast_priority_usd_unrounded": "11.296528",
+      "actual_charge_usd": null
+    },
+    {
+      "label": "Final synthesis",
+      "member_roles": [
+        "final_synthesis"
+      ],
+      "measured_usage": {
+        "input_tokens": 6460609,
+        "cached_input_tokens": 6144768,
+        "cache_write_tokens": 0,
+        "output_tokens": 35996,
+        "reasoning_tokens": 6500,
+        "total_tokens": 6496605
+      },
+      "derived_uncached_input_tokens": 315841,
+      "standard_usd_unrounded": "11.102978",
+      "fast_priority_usd_unrounded": "22.205956",
+      "actual_charge_usd": null
+    }
+  ],
+  "raw_unreconciled_sum": {
+    "measured_usage": {
+      "input_tokens": 98161559,
+      "cached_input_tokens": 94032384,
+      "cache_write_tokens": 0,
+      "output_tokens": 916615,
+      "reasoning_tokens": 343806,
+      "total_tokens": 99078174
+    },
+    "derived_uncached_input_tokens": 4129175,
+    "standard_usd_unrounded": "181.154884",
+    "fast_priority_usd_unrounded": "362.309768",
+    "actual_charge_usd": null
+  },
+  "context_band_evidence": [
+    {
+      "role": "coordinator",
+      "path": "preflight/telemetry/coordinator_session-01.json",
+      "sha256": "4806982e6cc41f896c7fc1d876ac6f3d4bab3de3352d297ef61dd78c6319232b",
+      "max_recorded_call_input": 201122
+    },
+    {
+      "role": "final_synthesis",
+      "path": "preflight/telemetry/final_synthesis_session-25.json",
+      "sha256": "ceb0bde45ed66cef5d5b9bd9b5addefa9e813668cec36139631f180f0be93dc7",
+      "max_recorded_call_input": 237725
+    },
+    {
+      "role": "literature",
+      "path": "preflight/telemetry/literature_session-21.json",
+      "sha256": "ed72b8ddadd9ac0b730adaa56ef7adef13792e681f7b6c9f52237ca241dfae3b",
+      "max_recorded_call_input": 156305
+    },
+    {
+      "role": "nonexistence_1",
+      "path": "preflight/telemetry/nonexistence_1_session-02.json",
+      "sha256": "85534c6574ab94d0acbfe5461879c049649e445152473ae8ba579707db35600c",
+      "max_recorded_call_input": 94029
+    },
+    {
+      "role": "nonexistence_2",
+      "path": "preflight/telemetry/nonexistence_2_session-03.json",
+      "sha256": "6ec1735b025add0994b48f2289fd58da30688e32c7934bc9cd8ad896a00f2029",
+      "max_recorded_call_input": 70944
+    },
+    {
+      "role": "proof_1",
+      "path": "preflight/telemetry/proof_1_session-07.json",
+      "sha256": "f6fab2e7e5f4b67ec8d6add1836eb990978d4291fa73b8dd312985d03e106cb8",
+      "max_recorded_call_input": 183230
+    },
+    {
+      "role": "proof_2",
+      "path": "preflight/telemetry/proof_2_session-08.json",
+      "sha256": "a8cd2d904f7b62ad320c6a36a4b7a5b162f3cfd08da640048bc4de8266249150",
+      "max_recorded_call_input": 115935
+    },
+    {
+      "role": "proof_3",
+      "path": "preflight/telemetry/proof_3_session-09.json",
+      "sha256": "611ad1bfad6e4a9fc3748671966f6f0febbf00daf7af8960f70703217239ebc4",
+      "max_recorded_call_input": 176461
+    },
+    {
+      "role": "proof_4",
+      "path": "preflight/telemetry/proof_4_session-10.json",
+      "sha256": "b29e93bd5df2bc6bfc5abe83345ba2ca3553b66caf36db83fb42025481346d7a",
+      "max_recorded_call_input": 173017
+    },
+    {
+      "role": "review_nonexistence_1_v01",
+      "path": "preflight/telemetry/review_nonexistence_1_v01_session-04.json",
+      "sha256": "fa4691abe8c2bd159e83f2475363c19a6d476c3b4338b04ca717e5a0e21842fa",
+      "max_recorded_call_input": 83663
+    },
+    {
+      "role": "review_nonexistence_1_v02",
+      "path": "preflight/telemetry/review_nonexistence_1_v02_session-06.json",
+      "sha256": "e3afd3ce4928b5f21ae0b0c22d1f3b7b5af38b3425e97f7f34710524673a0075",
+      "max_recorded_call_input": 82016
+    },
+    {
+      "role": "review_nonexistence_2_v01",
+      "path": "preflight/telemetry/review_nonexistence_2_v01_session-05.json",
+      "sha256": "a36f56e1e93b9489ddcfb1afca3bbbbca36118a2e17744ff3655c8dc430a2c48",
+      "max_recorded_call_input": 74439
+    },
+    {
+      "role": "review_proof_1_v01",
+      "path": "preflight/telemetry/review_proof_1_v01_session-12.json",
+      "sha256": "e79aef910cfab1a08b191d684f5d0f3ad8913ffc8ec3eda3e7fa3d41dc24a1ab",
+      "max_recorded_call_input": 86859
+    },
+    {
+      "role": "review_proof_1_v02",
+      "path": "preflight/telemetry/review_proof_1_v02_session-15.json",
+      "sha256": "86353a6a915003ae49399a42b7d6de228e6861b1b5a71b5f66a3649a62dc6aeb",
+      "max_recorded_call_input": 107660
+    },
+    {
+      "role": "review_proof_1_v03",
+      "path": "preflight/telemetry/review_proof_1_v03_session-18.json",
+      "sha256": "573c0c014a65690e8d4610469c724d523195149317bb848fc4105798c110d39f",
+      "max_recorded_call_input": 112643
+    },
+    {
+      "role": "review_proof_1_v04",
+      "path": "preflight/telemetry/review_proof_1_v04_session-23.json",
+      "sha256": "dcbe6852283669514d5c1f5517635fa79e53646075bc10281bc6836383e07cc3",
+      "max_recorded_call_input": 124198
+    },
+    {
+      "role": "review_proof_2_v01",
+      "path": "preflight/telemetry/review_proof_2_v01_session-11.json",
+      "sha256": "b820a0badbebe46a902aaca6ecdaf18223424a6bb97c7b0a618d0e22bffc75a3",
+      "max_recorded_call_input": 94478
+    },
+    {
+      "role": "review_proof_3_v01",
+      "path": "preflight/telemetry/review_proof_3_v01_session-13.json",
+      "sha256": "db44c12c6efc8d56f77037b40819203cd54abd6548afd9626485bcd410e6ed1a",
+      "max_recorded_call_input": 96824
+    },
+    {
+      "role": "review_proof_3_v02",
+      "path": "preflight/telemetry/review_proof_3_v02_session-17.json",
+      "sha256": "fa1b2f8b59ca65478c14c6d31615032bed8c265f74413032c12792b7efd4d3dd",
+      "max_recorded_call_input": 107606
+    },
+    {
+      "role": "review_proof_3_v03",
+      "path": "preflight/telemetry/review_proof_3_v03_session-19.json",
+      "sha256": "d42e3295d08d6e0a93f817659315fae85a2504c983e5ba4c2070ed347e9d30f8",
+      "max_recorded_call_input": 118438
+    },
+    {
+      "role": "review_proof_3_v04",
+      "path": "preflight/telemetry/review_proof_3_v04_session-22.json",
+      "sha256": "9ee7c3b356e9ab1fffc4c0b40585c33db7ebc22040caf9877373ae332e287f1c",
+      "max_recorded_call_input": 133532
+    },
+    {
+      "role": "review_proof_4_v01",
+      "path": "preflight/telemetry/review_proof_4_v01_session-14.json",
+      "sha256": "f6b58e108e814fe3637a412915876011ea493e1bde94394e34bb004c521da39f",
+      "max_recorded_call_input": 80158
+    },
+    {
+      "role": "review_proof_4_v02",
+      "path": "preflight/telemetry/review_proof_4_v02_session-16.json",
+      "sha256": "7d5d4ef39725f17eae14df1789de7b4466364a900bf27811aa01a257e4ad7d59",
+      "max_recorded_call_input": 103973
+    },
+    {
+      "role": "review_proof_4_v03",
+      "path": "preflight/telemetry/review_proof_4_v03_session-20.json",
+      "sha256": "935faf3fd386bb2904477c11f5f0365b2a931eef2635ed1c52c062d5834629a2",
+      "max_recorded_call_input": 117995
+    },
+    {
+      "role": "review_proof_4_v04",
+      "path": "preflight/telemetry/review_proof_4_v04_session-24.json",
+      "sha256": "d3848d86d2165ad247c95c7910a5e2d1dac2641a804591c6989e37c718a640b5",
+      "max_recorded_call_input": 131788
+    }
+  ]
+}

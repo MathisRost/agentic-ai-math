@@ -1,0 +1,36 @@
+{
+  "phase": "complete",
+  "research_started": true,
+  "active_statement": "S1",
+  "model_gate": "PASS",
+  "accounting_gate": "PASS with documented aggregation/billing limits",
+  "offline_validation": "PASS",
+  "roles": {
+    "proof_1": "closed unsuccessful for exact S1 at 4/4; all stated partial theorems accepted",
+    "proof_2": "closed early at 1/4 by explicit owner approval; reviewed entire-Cox obstruction accepted",
+    "proof_3": "closed unsuccessful for exact S1 at 4/4; accepted partial theorem with explicit editorial corrections",
+    "proof_4": "exact S1 success at 4/4, accepted by individual and final independent reviews"
+  },
+  "construction_attempts_used": {
+    "proof_1": 4,
+    "proof_2": 1,
+    "proof_3": 4,
+    "proof_4": 4
+  },
+  "S0_verdict": "false; independently reviewed",
+  "target_change_adopted": true,
+  "S1_existence_status": "proved for every independently prescribed positive intensity and diameter cap",
+  "pending_owner_question": null,
+  "current_statement_ledger": "statements/ledger_v02.json",
+  "current_statement_ledger_sha256": "f537e64e209c54632a2d910c4464e33e584240dda2e2fc0a4735b0822296c037",
+  "final_synthesis_sha256": "68dfdad1db7e04203439ed15154f72294464165188577622ba620172dc1f33d2",
+  "final_evidence_inventory": "final_hashes.json",
+  "final_synthesis_status": "accepted; no blocking mathematical gap for exact S1",
+  "S2_status": "unapproved, unadopted, unnecessary to completed S1 proof",
+  "completed_at_utc": "2026-10-20T19:46:53.600642+00:00",
+  "completion_scope": "Authorised experiment complete; exact S0 impossibility and S1 existence reviewed, all construction allowances resolved, final synthesis and accounting limitations preserved.",
+  "accounting_sessions": 25,
+  "accounting_turns": 37,
+  "accounting_complete_noncoordinator_turns": 36,
+  "accounting_coordinator_final_tail": "NR after preceding live snapshot"
+}

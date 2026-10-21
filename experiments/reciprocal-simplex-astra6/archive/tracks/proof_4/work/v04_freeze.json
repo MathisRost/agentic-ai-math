@@ -1,0 +1,352 @@
+{
+  "role": "proof_4",
+  "attempt": 4,
+  "maximum_substantive_submissions": 4,
+  "target": "S1",
+  "target_sha256": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8",
+  "claim_status": "claimed exact S1 construction; awaits required independent review",
+  "self_audit_remaining_mathematical_obligations": [],
+  "unapproved_amendment_used": false,
+  "frozen_at_utc": "2026-10-20T19:14:22.106472+00:00",
+  "artifact": {
+    "path": "$RUN/tracks/proof_4/submissions/v04.md",
+    "sha256": "e3f403b4c55b69845e83ea74d7348026a86cd9b36691b1a4cdc9a6983ac3df5f",
+    "bytes": 36756,
+    "whitespace_word_count": 4748,
+    "lines": 599
+  },
+  "session_path": "[local path omitted]",
+  "session_meta": {
+    "line": 1,
+    "id": "session-10"
+  },
+  "current_turn_context": {
+    "line": 752,
+    "timestamp": "2026-10-20T19:10:13.892Z",
+    "turn_id": "turn-22",
+    "model": "gpt-6-astra",
+    "effort": "xhigh"
+  },
+  "latest_token_checkpoint": {
+    "line": 816,
+    "timestamp": "2026-10-20T19:13:25.277Z",
+    "info": {
+      "total_token_usage": {
+        "input_tokens": 6354318,
+        "cached_input_tokens": 5919616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 137862,
+        "reasoning_output_tokens": 75554,
+        "total_tokens": 6492180
+      },
+      "last_token_usage": {
+        "input_tokens": 66996,
+        "cached_input_tokens": 64512,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 525,
+        "reasoning_output_tokens": 16,
+        "total_tokens": 67521
+      },
+      "model_context_window": 258400
+    }
+  },
+  "usage_scope": "Own session metadata/token fields only. Cumulative prefix includes prior turns. Checkpoint is not completed-turn total; final response and subsequent tool activity are not covered. No cumulative snapshots summed and no reasoning/output double count. No children.",
+  "completed_current_turn_usage": null,
+  "parent_aggregation_semantics": null,
+  "actual_account_charge": null,
+  "estimates": null,
+  "input_integrity": [
+    {
+      "packet": "$RUN/packets/proof_4_v04.json",
+      "sha256": "e9c0153a92c6845c91f0cb0d1b81d770d637998629575eaddeb368f79d8082d7",
+      "allowed_file_count": 35,
+      "all_allowed_hashes_match": true,
+      "neutral_source_file_count": 7,
+      "all_neutral_hashes_match": true,
+      "files": [
+        {
+          "path": "$RUN/inputs/AGENTS.md",
+          "sha256": "8953c347f2338e89c3193a215088893b2c956707938b2fac76d6225fda500424"
+        },
+        {
+          "path": "$RUN/inputs/instructions/proof_agent.md",
+          "sha256": "3bfe19ae40e07c1ce42d256907cfc29af35ee9ef38a0d329723cb021000b958a"
+        },
+        {
+          "path": "$RUN/inputs/instructions/accounting.md",
+          "sha256": "0acf1391a2e7a345fc3661bf17fb27d2531534de95ac7f8cf0de6e2e8f011207"
+        },
+        {
+          "path": "$RUN/inputs/common/README.md",
+          "sha256": "a1c118f57f2811f4466ea335f5125939bc4cb849b5a6231940cf36006bf025f2"
+        },
+        {
+          "path": "$RUN/inputs/common/problem_statement.md",
+          "sha256": "3b5b5ad81bf56136bd79f0fde2d4aa39e3bed32aaf37511460007dfb0fc656f0"
+        },
+        {
+          "path": "$RUN/inputs/common/dvj_context.md",
+          "sha256": "ce16a2be5f95f15fb9779bb8e1acacea7d3c42e99c6233b00a6b63494bc55223"
+        },
+        {
+          "path": "$RUN/inputs/common/papers/INDEX.md",
+          "sha256": "d65bd9c36697b6a9ee5eee7c2f338397c092ab52e529b73817ea050287a6ebb8"
+        },
+        {
+          "path": "$RUN/inputs/approaches/04_agent_choice.md",
+          "sha256": "f7c3972a5649af6efb6da317ec3b3fa53b845c6223fbaed2256a3d632b32b609"
+        },
+        {
+          "path": "$RUN/inputs/starting_information/README.md",
+          "sha256": "bb32540152e8eecd4465a0179a0e885932488b4f9b18c3516b57663ce96c8da8"
+        },
+        {
+          "path": "$RUN/inputs/templates/submission.md",
+          "sha256": "e835428b8060bd3d2ad18d9883c13f830e6a611c23cf2c063d045d2f65f5b08b"
+        },
+        {
+          "path": "$RUN/inputs/workflow.json",
+          "sha256": "c354e6f731874d2811a8e6f436c6377ae793c325cfccdbd317d16e94eb1947f8"
+        },
+        {
+          "path": "$RUN/inputs/skills/mathis-prover/SKILL.md",
+          "sha256": "6f5c0de43416e4c552336661ac219709785fdc4076e07f460b612a68d79fb6b2"
+        },
+        {
+          "path": "$RUN/inputs/skills/mathis-prover/references/PROOF_STANDARD.md",
+          "sha256": "f45e6d23a111b833b0918b6af31dd9348e2885c09d6be956ed890f34f0ab57c4"
+        },
+        {
+          "path": "$RUN/inputs/skills/mathis-prover/references/WRITING_STYLE.md",
+          "sha256": "5590f16cbaf5f17f26378166bce1c69861cf237b977c845f3b5dde42218c0ebf"
+        },
+        {
+          "path": "$RUN/inputs/setup_audit/copied_sources.json",
+          "sha256": "1b82cf7dbe3d46c56ba0d3365df536ed7080239a37039cae723903e3e696bc7c"
+        },
+        {
+          "path": "$RUN/statements/S0.md",
+          "sha256": "3b5b5ad81bf56136bd79f0fde2d4aa39e3bed32aaf37511460007dfb0fc656f0"
+        },
+        {
+          "path": "$RUN/statements/S1.md",
+          "sha256": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8"
+        },
+        {
+          "path": "$RUN/statements/S0_to_S1.md",
+          "sha256": "b2534040520dfc63bf5c22ecc508257308e619a040a7c6c54ce44375742394de"
+        },
+        {
+          "path": "$RUN/target_broadcasts/S0.json",
+          "sha256": "bd867a3d438cdd4968c9ef3c89229742f4d55f331c01c61ed870b08adcecc4f2"
+        },
+        {
+          "path": "$RUN/target_broadcasts/S1.json",
+          "sha256": "2e9634ced877b47100ca34ed4fc84145244667f7371c1ae55110a7fcb4fedf08"
+        },
+        {
+          "path": "$RUN/packets/common_construction_seed.json",
+          "sha256": "0009c72e3e22e5d7bdc6d961a722a4f9889989c29633b5bc1bf47e346ea780dd"
+        },
+        {
+          "path": "$RUN/tracks/nonexistence_1/submissions/v02.md",
+          "sha256": "ad71fa86b829615c109ffaebd80b65c40298e12b59cb399b29a669096142754b"
+        },
+        {
+          "path": "$RUN/reviews/nonexistence_1_v02/review.md",
+          "sha256": "7b28a77655d5eb87796fcbe498b595f772200d3a977a151653f9237214712808"
+        },
+        {
+          "path": "$RUN/tracks/nonexistence_2/submissions/v01.md",
+          "sha256": "4b15463c7115c2f0e56424e7ab2b293c0c33a10bb3a68d1d67a7c13074a2c14f"
+        },
+        {
+          "path": "$RUN/reviews/nonexistence_2_v01/review.md",
+          "sha256": "f73d6f7a8ada2002a78d42e27b89af4475b2ea70ecf61cf404b9fd5f9059f7bf"
+        },
+        {
+          "path": "$RUN/inputs/starting_information/proofs/coordinator_submission_v02.md",
+          "sha256": "932923bd0632cabe575e4eb826744dfdd5e7c6c367cb1dd853c63d4a54ceb384"
+        },
+        {
+          "path": "$RUN/inputs/starting_information/proofs/flattening_domain_supplement_v02.md",
+          "sha256": "36f7589e9d463fce6ba8f60449bc09a08e544f6109b861e1e9294b6b71f4d411"
+        },
+        {
+          "path": "$RUN/inputs/starting_information/proofs/relative_shape_supplement_v01.md",
+          "sha256": "ddd190bc25762e9ea9f6a65942e3728b8a071ec22a25ae87e468708a05f2c132"
+        },
+        {
+          "path": "$RUN/tracks/proof_4/submissions/v01.md",
+          "sha256": "57b1c58f13fa055c76cfec22c131b989b32bef3b1414cd710992ad6f081158b5"
+        },
+        {
+          "path": "$RUN/reviews/proof_4_v01/review.md",
+          "sha256": "5633bb2abd80704d05763a5e00272aa94349d229391987ca0b38ba3c3cfbf477"
+        },
+        {
+          "path": "$RUN/tracks/proof_4/submissions/v02.md",
+          "sha256": "9a3befd21f85424fea521c9c817837f2d943a1a0862c0e1586541b93c5d559ac"
+        },
+        {
+          "path": "$RUN/reviews/proof_4_v02/review.md",
+          "sha256": "d08c9735cc498750b1b6f695a7f907369a07f005c71a995487921d44c7deb2d1"
+        },
+        {
+          "path": "$RUN/inputs/templates/statement_change.md",
+          "sha256": "47a287ce60c5168a32bc0309aa4a567946abb8e5bffc38596f8050a888ee48e8"
+        },
+        {
+          "path": "$RUN/tracks/proof_4/submissions/v03.md",
+          "sha256": "11cb3a169173b26dd8d9b8b0ef734bd375632adcd1468337c4c9b4612f26ad29"
+        },
+        {
+          "path": "$RUN/reviews/proof_4_v03/review.md",
+          "sha256": "7d0623165338019c801af07251bd0d764f417ef31a8b9969fda34d72f97db9a5"
+        }
+      ],
+      "neutral_sources": [
+        {
+          "path": "$RUN/inputs/common/papers/kagan_1982_fault_model.pdf",
+          "sha256": "2df2d969c6fe4e659dc257896ba5ab661437d76485984ea3c0fe5dc5ad28629e"
+        },
+        {
+          "path": "$RUN/inputs/common/papers/kagan_knopoff_1980_two_point.pdf",
+          "sha256": "51432497c5c9a3bf4160d08559f3870e93a7bdcade707f3c220bd7d80492a6f7"
+        },
+        {
+          "path": "$RUN/inputs/common/papers/INDEX.md",
+          "sha256": "d65bd9c36697b6a9ee5eee7c2f338397c092ab52e529b73817ea050287a6ebb8"
+        },
+        {
+          "path": "$RUN/inputs/common/papers/kagan_2014_earthquakes.pdf",
+          "sha256": "d2aa51c3ee1a75acf808e72a52eeda5a1675981af942948ab4c95dd87ba3f069"
+        },
+        {
+          "path": "$RUN/inputs/common/papers/daley_vere_jones_2008_volume_ii.pdf",
+          "sha256": "c1ea13a055b0da5379d774c55e530881ce5112ea747e7e1461d48994b37c5b62"
+        },
+        {
+          "path": "$RUN/inputs/common/papers/kagan_1981_four_point.pdf",
+          "sha256": "5e2f14c6b028f9b5c794e3cfe372decc783939214cdd906864fbb348d228ddbe"
+        },
+        {
+          "path": "$RUN/inputs/common/papers/kagan_1981_three_point.pdf",
+          "sha256": "4a57556b2efa78c47ef166643f8964a2d17a63ef7af22480468d662ce5ae9266"
+        }
+      ]
+    },
+    {
+      "packet": "$RUN/packets/proof_4_v04_literature_01.json",
+      "sha256": "a59477e6ae13edb8bf8a7c10d779ab65d2e104ed23ccd54bad605eb92cea2963",
+      "allowed_file_count": 25,
+      "all_allowed_hashes_match": true,
+      "neutral_source_file_count": 0,
+      "all_neutral_hashes_match": true,
+      "files": [
+        {
+          "path": "$RUN/literature/realisability_v01/dossier.md",
+          "sha256": "c785de92618fa8db7995be4dacb13219ecc58639c7db6f3139bd4453b3410d82"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/evidence.json",
+          "sha256": "1102915a0e2e81ecf4083a2e6415acc114a3b1517f6a7b9967b9ee105c55985d"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/evidence_summary.md",
+          "sha256": "d5499958d3182bb7437267027111d8d1e501bf883ffb10666f7ac608444cbad0"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/hypothesis_comparison.md",
+          "sha256": "9c2ab885f7ba60715541f55c79ad50bea4a4a9044607896223f16e700f0788f6"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/open_questions.md",
+          "sha256": "439198fecb7641ddcda2e95a89d636526a53c11425d076ea312fadbe638ba507"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/references.bib",
+          "sha256": "4468fce39ba15e9fcbf54caaf10ff8693a992f5abc1f959ac8aad407666eedef"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/request.md",
+          "sha256": "33196caad98ab485a82b6855c9315dcbfd7f5c2f1b6d36ddc56614cf372dbbfe"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/retrieval_log.json",
+          "sha256": "89414667afc0837ee6274b3010200922c3f186535ff3fb49b65c965e06b606ee"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/search_log.json",
+          "sha256": "56f8330652e2449a24dc5c2b277ce3d988b1946ca692e46c4a81481bf58e8d5a"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/source_manifest.json",
+          "sha256": "90490d37f91a133c51787effa42ea9a5f6123add8f4f0bf9786c5f9d5574d6a1"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/dvj2008_selected.txt",
+          "sha256": "8305b0e8e1d22863653790f3cc26621cb53b34af982d191f421e923e31c43bc6"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/extraction.json",
+          "sha256": "428d248f1f581c3ed19e61b8cebc3c5efdd672a333924ee473d1d403c7798b06"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/ik2019.pdf",
+          "sha256": "3ffa94b5b0d674eefc7d89adb82c6bcb5913e10e7213832e8ee6c432d2c6283d"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/ik2019.txt",
+          "sha256": "de8b21dfa6411bcb61bb73bc26c51f85438383bf49aa445493bac487b5617adf"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/ik2019_pidx16.png",
+          "sha256": "6027260e01e50ba1e5dfac156dac008c9ed27954317d9aeb1c4a3b32a0c67523"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/kls2007.pdf",
+          "sha256": "70631033fb8c4f78dc428b812aca31ef263319e9843d5cb785f3d42db0941d57"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/kls2007.txt",
+          "sha256": "adc823192e37d51b04cb81e635b0bbb62fcafdd40441e841e7c55f7cfeb7459e"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/kls2011.pdf",
+          "sha256": "c6b42b56989231bf1978727bada508970ef45975dfa9162d996c0d5941840b39"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/kls2011.txt",
+          "sha256": "5cf9b30264484aa1f3e9734efc1ae7ec60dd6765e6af74d3fcbd6b4f8cb65b1e"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/kls2011_pidx7.png",
+          "sha256": "d0ef20b8fb3d5b803e967ffa824a202ae2c78878cd617da09d447505749afbd1"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/lm2015.pdf",
+          "sha256": "ca5b8b2a3961dc70f573425cee7164fb3a7e4f0c9970c096e4f684d7dbf9ce67"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/lm2015.txt",
+          "sha256": "a309814def3cb5511889a8b41c4bddad21198971573417194d833c811235e025"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/sources/lm2015_pidx6.png",
+          "sha256": "223dd875875c878ca05aef793fcc7a9ee2177843e8a6960adbcec2a4093b23e6"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/target_statement_S1.md",
+          "sha256": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8"
+        },
+        {
+          "path": "$RUN/literature/realisability_v01/freeze_manifest.json",
+          "sha256": "61a720b06169c5ada15c70fbb38d6a1dd64923200454d9086310f78c707a5d05"
+        }
+      ],
+      "neutral_sources": []
+    }
+  ],
+  "no_fifth_submission_authorised": true
+}

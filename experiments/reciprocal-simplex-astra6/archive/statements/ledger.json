@@ -1,0 +1,20 @@
+[
+  {
+    "id": "S0",
+    "path": "statements/S0.md",
+    "sha256": "3b5b5ad81bf56136bd79f0fde2d4aa39e3bed32aaf37511460007dfb0fc656f0",
+    "authority": "owner_approved_initial_statement",
+    "created_at_utc": "2026-10-20T16:44:37.802103+00:00",
+    "status": "historical; false for every prescribed positive intensity by independently reviewed proofs"
+  },
+  {
+    "id": "S1",
+    "path": "statements/S1.md",
+    "sha256": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8",
+    "authority": "reviewed_general_obstruction",
+    "adopted_at_utc": "2026-10-20T17:16:19.553060+00:00",
+    "amendment": "statements/S0_to_S1.md",
+    "amendment_sha256": "b2534040520dfc63bf5c22ecc508257308e619a040a7c6c54ce44375742394de",
+    "status": "active; existence unresolved"
+  }
+]

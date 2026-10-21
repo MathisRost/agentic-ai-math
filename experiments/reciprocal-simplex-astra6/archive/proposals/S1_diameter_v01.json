@@ -1,0 +1,8 @@
+{
+  "status": "proposed_not_adopted",
+  "created_at_utc": "2026-10-20T17:04:28.578804+00:00",
+  "path": "proposals/S1_diameter_v01.md",
+  "sha256": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8",
+  "reason": "Precise common-diameter candidate for scope review after fourth-order obstruction submission. No mathematical research is dispatched against this candidate before adoption.",
+  "finite_density_a_e_note": "S0 full reciprocal formulas imply finite-a.e. densities globally. This candidate explicitly retains that property while leaving the values outside E_n(M) free."
+}

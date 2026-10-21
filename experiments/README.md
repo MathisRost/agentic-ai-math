@@ -9,3 +9,14 @@ accounting from the point-process research case study discussed in the talk.
 
 The release excludes copied third-party papers, private chain-of-thought,
 machine-specific paths and transient work notes.
+
+## GPT-6-Astra reciprocal-simplex experiment — 20 October 2026
+
+[`reciprocal-simplex-astra6/`](reciprocal-simplex-astra6/README.md) contains the
+separate Astra run: two independent obstruction investigators, four construction
+tracks, four submissions per approach, fresh individual reviews and a final
+synthesis. The unrestricted target was ruled out; the diameter-restricted exact
+target was accepted on the investigator-choice track's fourth submission.
+The folder includes a 16-page PDF, all frozen submissions and reviews, and
+per-agent/per-turn token and runtime records. This is a separate case study,
+not a controlled comparison with the earlier-model experiment.

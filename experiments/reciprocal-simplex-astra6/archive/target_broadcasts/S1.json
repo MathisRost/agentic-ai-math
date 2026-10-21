@@ -1,0 +1,53 @@
+{
+  "statement_id": "S1",
+  "path": "$RUN/statements/S1.md",
+  "sha256": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8",
+  "authority": "reviewed_general_obstruction",
+  "amendment_path": "$RUN/statements/S0_to_S1.md",
+  "amendment_sha256": "b2534040520dfc63bf5c22ecc508257308e619a040a7c6c54ce44375742394de",
+  "proof_review_evidence": {
+    "tracks/nonexistence_1/submissions/v02.md": "ad71fa86b829615c109ffaebd80b65c40298e12b59cb399b29a669096142754b",
+    "reviews/nonexistence_1_v02/review.md": "7b28a77655d5eb87796fcbe498b595f772200d3a977a151653f9237214712808",
+    "tracks/nonexistence_2/submissions/v01.md": "4b15463c7115c2f0e56424e7ab2b293c0c33a10bb3a68d1d67a7c13074a2c14f",
+    "reviews/nonexistence_2_v01/review.md": "f73d6f7a8ada2002a78d42e27b89af4475b2ea70ecf61cf404b9fd5f9059f7bf"
+  },
+  "adopted_at_utc": "2026-10-20T17:16:19.553060+00:00",
+  "roles": {
+    "nonexistence_1": {
+      "status": "queued_for_notification",
+      "attempts_used": 2
+    },
+    "nonexistence_2": {
+      "status": "queued_for_notification",
+      "attempts_used": 1
+    },
+    "proof_1": {
+      "status": "queued_for_first_dispatch",
+      "attempts_used": 0
+    },
+    "proof_2": {
+      "status": "queued_for_first_dispatch",
+      "attempts_used": 0
+    },
+    "proof_3": {
+      "status": "queued_for_first_dispatch",
+      "attempts_used": 0
+    },
+    "proof_4": {
+      "status": "queued_for_first_dispatch",
+      "attempts_used": 0
+    },
+    "reviewer": {
+      "status": "queued_for_notification",
+      "attempts_used": null
+    },
+    "literature": {
+      "status": "queued_for_first_dispatch",
+      "attempts_used": null
+    },
+    "coder": {
+      "status": "queued_for_first_dispatch",
+      "attempts_used": null
+    }
+  }
+}

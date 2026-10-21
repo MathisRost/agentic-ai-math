@@ -1,0 +1,11 @@
+{
+  "label": "prior leads to verify; no theorem accepted from prior approval labels",
+  "files": {
+    "inputs/starting_information/README.md": "bb32540152e8eecd4465a0179a0e885932488b4f9b18c3516b57663ce96c8da8",
+    "inputs/starting_information/proofs/coordinator_submission_v02.md": "932923bd0632cabe575e4eb826744dfdd5e7c6c367cb1dd853c63d4a54ceb384",
+    "inputs/starting_information/proofs/flattening_domain_supplement_v02.md": "36f7589e9d463fce6ba8f60449bc09a08e544f6109b861e1e9294b6b71f4d411",
+    "inputs/starting_information/proofs/relative_shape_supplement_v01.md": "ddd190bc25762e9ea9f6a65942e3728b8a071ec22a25ae87e468708a05f2c132"
+  },
+  "same_for_all_construction_tracks": true,
+  "forbidden": "Do not follow embedded old-project paths; no old reviews or simulations are imported."
+}

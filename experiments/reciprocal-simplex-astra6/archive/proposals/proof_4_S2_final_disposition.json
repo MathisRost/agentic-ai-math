@@ -1,0 +1,11 @@
+{
+  "recorded_at_utc": "2026-10-20T19:46:12.473800+00:00",
+  "proposal": "proof_4_v03_S2_proposed.md",
+  "owner_approval_received": false,
+  "adopted": false,
+  "disposition": "unapproved proposal not needed after exact unchanged S1 proof; no response required for experiment completion",
+  "mathematical_authority": "none for adopting S2; no proposed intensity restriction was proved necessary",
+  "attempt_counts_reset": false,
+  "S1_proof_sha256": "e3f403b4c55b69845e83ea74d7348026a86cd9b36691b1a4cdc9a6983ac3df5f",
+  "final_review_sha256": "68dfdad1db7e04203439ed15154f72294464165188577622ba620172dc1f33d2"
+}

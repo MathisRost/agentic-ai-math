@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "purpose": "Fresh focused exposition review of publication draft_v01; no proof certification",
+  "created_at_utc": "2026-10-21T06:30:14.208846+00:00",
+  "original_experiment_accounting_excluded": true,
+  "runtime_evidence": {
+    "source": "[local path omitted]",
+    "allowlisted_fields_only": true,
+    "message_or_reasoning_content_inspected_or_retained": false,
+    "turn_contexts": [
+      {
+        "timestamp": "2026-10-21T06:27:30.438Z",
+        "model": "gpt-6-astra",
+        "effort": "xhigh"
+      }
+    ],
+    "required_model": "gpt-6-astra",
+    "required_effort": "xhigh",
+    "verified_before_manuscript_read": true
+  },
+  "frozen_packet": {
+    "path": "$RUN/publication/20261021/documentation_review/packet.json",
+    "sha256": "9b6b16b95ded715d01b4f7686b17f35526a0955f750048f874e240305b338260",
+    "files": [
+      {
+        "path": "$RUN/publication/20261021/documentation_review/draft_v01.md",
+        "expected_sha256": "c8353ecd4e7fe299dcffa4650ee8a7dbe4ff391c7e87c7db1025489d5f54cc14",
+        "observed_sha256": "c8353ecd4e7fe299dcffa4650ee8a7dbe4ff391c7e87c7db1025489d5f54cc14",
+        "matches": true
+      },
+      {
+        "path": "$RUN/publication/20261021/documentation_review/FOCUSED_READER.md",
+        "expected_sha256": "6313b8aa6c523796903c7f72c12cb2ba9b9bd9baec67c307718f43c93b2ad1dd",
+        "observed_sha256": "6313b8aa6c523796903c7f72c12cb2ba9b9bd9baec67c307718f43c93b2ad1dd",
+        "matches": true
+      }
+    ]
+  },
+  "reading_scope": {
+    "complete_frozen_draft_read": true,
+    "guide_read": true,
+    "planned_figures_assessed_through_prose": true,
+    "rendered_visuals_assessed": false,
+    "earlier_reviews_read": false,
+    "external_research": false,
+    "delegation": false,
+    "manuscript_changed": false
+  },
+  "report": {
+    "path": "$RUN/publication/20261021/documentation_review/reader_report.md",
+    "sha256": "507a99259391646404c4a503c6bddff38c54983bad8660f940a5a8720cdc2a2d",
+    "word_count_whitespace": 652
+  },
+  "accounting": {
+    "separate_from_original_run": true,
+    "per_turn": [
+      {
+        "turn_index": 1,
+        "turn_context_timestamp": "2026-10-21T06:27:30.438Z",
+        "completion_timestamp": "NR",
+        "completed_turn_duration_ms": "NR",
+        "coverage": "Observed runtime token counters through the latest event below; final response and any later tool/model activity are not included.",
+        "numeric_token_events": [
+          {
+            "timestamp": "2026-10-21T06:27:38.065Z",
+            "total_token_usage": {
+              "input_tokens": 31207,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 199,
+              "reasoning_output_tokens": 43,
+              "total_tokens": 31406
+            },
+            "last_token_usage": {
+              "input_tokens": 31207,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 199,
+              "reasoning_output_tokens": 43,
+              "total_tokens": 31406
+            }
+          },
+          {
+            "timestamp": "2026-10-21T06:27:45.136Z",
+            "total_token_usage": {
+              "input_tokens": 63149,
+              "cached_input_tokens": 30976,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 361,
+              "reasoning_output_tokens": 69,
+              "total_tokens": 63510
+            },
+            "last_token_usage": {
+              "input_tokens": 31942,
+              "cached_input_tokens": 30976,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 162,
+              "reasoning_output_tokens": 26,
+              "total_tokens": 32104
+            }
+          },
+          {
+            "timestamp": "2026-10-21T06:28:05.795Z",
+            "total_token_usage": {
+              "input_tokens": 95794,
+              "cached_input_tokens": 62720,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1025,
+              "reasoning_output_tokens": 233,
+              "total_tokens": 96819
+            },
+            "last_token_usage": {
+              "input_tokens": 32645,
+              "cached_input_tokens": 31744,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 664,
+              "reasoning_output_tokens": 164,
+              "total_tokens": 33309
+            }
+          },
+          {
+            "timestamp": "2026-10-21T06:28:11.305Z",
+            "total_token_usage": {
+              "input_tokens": 129869,
+              "cached_input_tokens": 95232,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1110,
+              "reasoning_output_tokens": 233,
+              "total_tokens": 130979
+            },
+            "last_token_usage": {
+              "input_tokens": 34075,
+              "cached_input_tokens": 32512,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 85,
+              "reasoning_output_tokens": 0,
+              "total_tokens": 34160
+            }
+          },
+          {
+            "timestamp": "2026-10-21T06:28:19.287Z",
+            "total_token_usage": {
+              "input_tokens": 175535,
+              "cached_input_tokens": 129152,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1227,
+              "reasoning_output_tokens": 280,
+              "total_tokens": 176762
+            },
+            "last_token_usage": {
+              "input_tokens": 45666,
+              "cached_input_tokens": 33920,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 117,
+              "reasoning_output_tokens": 47,
+              "total_tokens": 45783
+            }
+          },
+          {
+            "timestamp": "2026-10-21T06:28:46.836Z",
+            "total_token_usage": {
+              "input_tokens": 223798,
+              "cached_input_tokens": 174592,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1879,
+              "reasoning_output_tokens": 796,
+              "total_tokens": 225677
+            },
+            "last_token_usage": {
+              "input_tokens": 48263,
+              "cached_input_tokens": 45440,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 652,
+              "reasoning_output_tokens": 516,
+              "total_tokens": 48915
+            }
+          },
+          {
+            "timestamp": "2026-10-21T06:29:42.707Z",
+            "total_token_usage": {
+              "input_tokens": 278749,
+              "cached_input_tokens": 222720,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 3425,
+              "reasoning_output_tokens": 1312,
+              "total_tokens": 282174
+            },
+            "last_token_usage": {
+              "input_tokens": 54951,
+              "cached_input_tokens": 48128,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 1546,
+              "reasoning_output_tokens": 516,
+              "total_tokens": 56497
+            }
+          }
+        ],
+        "observed_cumulative_usage": {
+          "input_tokens": 278749,
+          "cached_input_tokens": 222720,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3425,
+          "reasoning_output_tokens": 1312,
+          "total_tokens": 282174
+        },
+        "final_tail_tokens": "NR"
+      }
+    ],
+    "token_estimates": "NR",
+    "charges": "NR",
+    "currency": "NR",
+    "note": "Runtime counters are measured values; cached input is included in input and reasoning output is included in output. No price estimate, charge claim, or original-experiment aggregation is made."
+  }
+}

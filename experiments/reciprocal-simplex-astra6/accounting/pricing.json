@@ -1,0 +1,33 @@
+{
+  "pricing_retrieval_date": "2026-10-20",
+  "rates_usd_per_million": {
+    "standard_short": {
+      "uncached_input": 10,
+      "cached_input": 1,
+      "output_including_reasoning": 50,
+      "cache_write_30m": 12.5,
+      "cache_write_12h": 25
+    },
+    "fast_priority_short": {
+      "uncached_input": 20,
+      "cached_input": 2,
+      "output_including_reasoning": 100,
+      "cache_write_30m": 25,
+      "cache_write_12h": 50
+    }
+  },
+  "maximum_recorded_call_input": 237725,
+  "actual_billed_service_tier": null,
+  "assumptions_and_limits": [
+    "Prices retrieved after the run on the same calendar date; not a launch-time price freeze.",
+    "Standard and Fast/priority are alternative pricing scenarios, not established account charges.",
+    "Input minus cached input is treated as ordinary uncached input; reported cache writes are zero.",
+    "Reasoning is already included in output; cached input is already included in input.",
+    "Parent/child inclusion semantics remain unverified; all cross-session sums are unreconciled arithmetic sums.",
+    "Raw summed dollars apply only if session counters are disjoint; no deduplicated experiment bill is asserted.",
+    "The historical coordinator snapshot omits its final tail and all later discussion.",
+    "Excludes tool fees, third-party services, regional or FedRAMP uplifts, and taxes.",
+    "Subscription charges cannot be inferred from API-equivalent token pricing.",
+    "Original experiment records and final hash inventory are unchanged."
+  ]
+}

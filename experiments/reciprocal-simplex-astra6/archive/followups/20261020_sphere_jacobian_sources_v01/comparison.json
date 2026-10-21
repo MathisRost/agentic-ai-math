@@ -1,0 +1,95 @@
+{
+  "created_at_utc": "2026-10-20T20:37:31.233797+00:00",
+  "user_question_verbatim": "1. is this the distance between sphere centers?\n\n2 is for stationarity i get it\n\nthe argument with the 1/V proportional g_4 is this somewhere from the literature? you came up with this quite often",
+  "working_target": {
+    "geometric": "For noncoplanar ordered x_1,...,x_4 in R^3, justify the inverse-tetrahedron-volume factor when a measure on sphere centres, radii and four surface points is pushed to Cartesian point coordinates.",
+    "process": "Distinguish that identity from existence of a stationary simple locally finite process with all three exact full reciprocal-simplex factorial densities on E_n(M).",
+    "notation": "V=abs(det[x_2-x_1,x_3-x_1,x_4-x_1])/6; q=R^2; g4, if normalised, is rho4/lambda^4; measures are ordered and surface measure is unnormalised area."
+  },
+  "scope": {
+    "kind": "targeted public primary-source lookup plus frozen local provenance",
+    "query_batches": 2,
+    "query_count": 5,
+    "full_text_candidates_inspected": 2,
+    "cap": "two query batches, up to five serious full-text candidates",
+    "no_novelty_or_priority_certificate": true
+  },
+  "distances": {
+    "M": "upper diameter of configurations where the exact laws are required",
+    "b": "upper radius in selected band",
+    "distinct_nearest_lattice_centres": "P=4b+2M",
+    "same_centre_candidate_radial_spacing": "H=2M",
+    "different_centre_surface_gap_at_least": "P-2b=2b+2M>M",
+    "random_shift": "uniform shift in [0,P)^3 gives translation stationarity"
+  },
+  "sources": [
+    {
+      "id": "Chapron2018",
+      "author": "Aurelie Chapron",
+      "title": "A local Blaschke-Petkantschin formula in a Riemannian manifold",
+      "version": "arXiv:1807.07384v1, 19 July 2018; manuscript dated 20 July 2018",
+      "url": "https://arxiv.org/pdf/1807.07384",
+      "locator": "printed p. 1 (zero-based PDF page 0), Introduction, equation (1); references printed p.19 (PDF page18)",
+      "assertion_status": "equality of measures for Euclidean spherical coordinates, explicitly stated; attributed there to Miles1970 formula70",
+      "formula": "dx_1...dx_(n+1)=n! Delta_n(u_1,...,u_(n+1)) R^(n^2-1) dR dz product_i domega(u_i)",
+      "definitions": "x_i=z+R u_i, R>0, u_i on unit S^(n-1); Delta_n is ordinary simplex volume; domega is surface area, not probability measure. Unique circumsphere for almost every Euclidean tuple.",
+      "geometry_outcome": "A for explicitly stated forward identity; C for the inverse-volume density after the derivation below",
+      "full_process_outcome": "D: the geometric identity does not itself construct the requested point process or establish its other factorial densities",
+      "proof_inspection": "Inspected complete relevant statement, definitions and attribution. Did not independently audit the full Riemannian theorem or directly inspect Miles1970."
+    },
+    {
+      "id": "EdelsbrunnerNikitenko",
+      "authors": [
+        "Herbert Edelsbrunner",
+        "Anton Nikitenko"
+      ],
+      "title": "Random Inscribed Polytopes Have Similar Radius Functions as Poisson-Delaunay Mosaics",
+      "url": "https://pub.ista.ac.at/~edels/Papers/2018-J-02-PoissonSphere.pdf",
+      "locator": "Section2, Theorem3, equation(9), PDF page5 (printed6)",
+      "outcome": "D",
+      "mismatch": "The domain is tuples on a fixed ambient unit sphere S^n, with subsphere decomposition and a simplex-volume power. Related spherical integral geometry; not the direct Euclidean ambient R^3 identity needed here.",
+      "proof_inspection": "Inspected theorem, adjacent measure conventions and applicability; not a complete proof audit."
+    }
+  ],
+  "derivation": [
+    "Specialise Chapron equation(1) to n=3: dx^4 = 6 Delta_3(u) R^8 dz dR domega^4.",
+    "Since V(x)=R^3 Delta_3(u), this is dx^4=6 V(x) R^5 dz dR domega^4.",
+    "A sphere-family first intensity gamma(R) dz dR and Poisson surface intensity t(R) sigma_(z,R) give same-sphere ordered fourth measure with parameter weight gamma(R) t(R)^4 R^8 dz dR domega^4.",
+    "Dividing by the Cartesian Jacobian gives rho4_same(x)=gamma(R*) t(R*)^4 R*^3/[6 V(x)], evaluated at the unique circumradius R*.",
+    "In winning v04, t(R)=a(R)/(2R) and gamma(R)a(R)^4/(2R)=c; hence rho4_same=c/(48 V).",
+    "Equivalently, F_i(z,q)=|x_i-z|^2-q has four by four Jacobian determinant of absolute value 8|det[x2-x1,x3-x1,x4-x1]|=48V, by subtracting the first row from the other three.",
+    "Surface separation makes same-sphere equal to full rho4 on diameter<M. This equality needs the construction, not only the published coordinate formula.",
+    "Normalising by a constant intensity to obtain g4 changes only the multiplicative constant."
+  ],
+  "provenance": [
+    "The frozen common construction seed, coordinator_submission_v02 section5, already contains an affine Gaussian shot-noise calculation with determinant6V giving c4=pi^2/(6V), explicitly a fourth factorial cumulant, not the full fourth density.",
+    "proof_4 v01 explicitly acknowledges that shared determinant-integration lead and rederives the determinant.",
+    "proof_1 v04 and proof_4 v04 both give explicit spherical coarea calculations. The packet protocol permitted common starting material but prohibited transfer of new construction ideas between tracks.",
+    "The winning v04 proof provides the calculation internally and makes no literature novelty/priority claim. A derivation in the run is not evidence that the identity is new."
+  ],
+  "overall_outcome": "C for the sphere-based inverse-volume identity from a verified published formula, with the short derivation supplied; D for what those geometric sources establish about the full process. No publication of the exact full winning process was located within this small search; this is not a novelty claim.",
+  "frozen_local_inputs": [
+    {
+      "path": "inputs/starting_information/proofs/coordinator_submission_v02.md",
+      "sha256": "932923bd0632cabe575e4eb826744dfdd5e7c6c367cb1dd853c63d4a54ceb384"
+    },
+    {
+      "path": "tracks/proof_4/submissions/v01.md",
+      "sha256": "57b1c58f13fa055c76cfec22c131b989b32bef3b1414cd710992ad6f081158b5"
+    },
+    {
+      "path": "tracks/proof_4/submissions/v04.md",
+      "sha256": "e3f403b4c55b69845e83ea74d7348026a86cd9b36691b1a4cdc9a6983ac3df5f"
+    },
+    {
+      "path": "tracks/proof_1/submissions/v04.md",
+      "sha256": "e4df045aeec78209ceaf15e5fb8fe4011da15d1555b97ee3946efb15de58ce31"
+    }
+  ],
+  "source_evidence": "source_evidence.json",
+  "limitations": [
+    "Historical Miles1970 attribution was verified in Chapron, not in the original1970 article.",
+    "No exhaustive literature search, novelty statement or fresh audit of the accepted existence proof.",
+    "Original PDF bytes could not be downloaded through the shell; retrieved source text and locators are preserved."
+  ]
+}

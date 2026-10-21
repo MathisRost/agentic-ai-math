@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="507.27559055118115" height="288" preserveAspectRatio="xMinYMin meet" viewBox="0 0 507 288" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="507.27559055118115" height="288"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-288)" style="clip-path: url(#clip)">
+		<g transform="">
+			<g transform=" matrix(1,0,0,1,0,62)">
+				<rect x="134" y="182" width="240" height="39" rx="5" ry="5" style="stroke: rgb(83%,88%,88%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(92%,96%,95%); fill-rule: evenodd;"/>
+				<text x="223.829345703125" y="205" style="font-family: Strong; font-size: 9px;fill: rgb(9%,21%,24%); stroke:none;" transform="translate(0,410) scale(1,-1)">Coordinator</text>
+				<text x="188.6768798828125" y="192" style="font-family: Body; font-size: 7.1px;fill: rgb(35%,41%,43%); stroke:none;" transform="translate(0,384) scale(1,-1)">model + accounting gate / frozen S0</text>
+				<rect x="4" y="121" width="156" height="40" rx="5" ry="5" style="stroke: rgb(83%,88%,88%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(92%,96%,95%); fill-rule: evenodd;"/>
+				<text x="25.292968749999993" y="145" style="font-family: Strong; font-size: 9px;fill: rgb(9%,21%,24%); stroke:none;" transform="translate(0,290) scale(1,-1)">N1: global obstruction</text>
+				<text x="34.867163085937506" y="131" style="font-family: Body; font-size: 7.1px;fill: rgb(35%,41%,43%); stroke:none;" transform="translate(0,262) scale(1,-1)">independent fresh context</text>
+				<rect x="172" y="121" width="156" height="40" rx="5" ry="5" style="stroke: rgb(83%,88%,88%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(92%,96%,95%); fill-rule: evenodd;"/>
+				<text x="201.8798828125" y="145" style="font-family: Strong; font-size: 9px;fill: rgb(9%,21%,24%); stroke:none;" transform="translate(0,290) scale(1,-1)">N2: local geometry</text>
+				<text x="202.8671630859375" y="131" style="font-family: Body; font-size: 7.1px;fill: rgb(35%,41%,43%); stroke:none;" transform="translate(0,262) scale(1,-1)">independent fresh context</text>
+				<rect x="340" y="121" width="163" height="40" rx="5" ry="5" style="stroke: rgb(83%,88%,88%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(92%,96%,95%); fill-rule: evenodd;"/>
+				<text x="380.800048828125" y="145" style="font-family: Strong; font-size: 9px;fill: rgb(9%,21%,24%); stroke:none;" transform="translate(0,290) scale(1,-1)">Fresh reviewers</text>
+				<text x="372.7100341796875" y="131" style="font-family: Body; font-size: 7.1px;fill: rgb(35%,41%,43%); stroke:none;" transform="translate(0,262) scale(1,-1)">audit before target revision</text>
+				<path d="M 220,182 L 82,163 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="82 163, 86.67386 161.2238, 86.01995 165.9732" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+				<path d="M 277,182 L 250,163 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="250 163, 254.968 163.5648, 252.2089 167.4856" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+				<path d="M 82,121 L 82,111 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="82 111, 84.39713 115.3879, 79.60287 115.3879" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+				<path d="M 82,111 L 422,111 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="422 111, 417.6121 113.3971, 417.6121 108.6029" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+				<path d="M 422,111 L 422,121 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="422 121, 419.6029 116.6121, 424.3971 116.6121" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+				<path d="M 328,141 L 338,141 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="338 141, 333.6121 143.3971, 333.6121 138.6029" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+				<rect x="135" y="65" width="240" height="39" rx="5" ry="5" style="stroke: rgb(83%,88%,88%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(92%,96%,95%); fill-rule: evenodd;"/>
+				<text x="165.3076171875" y="88" style="font-family: Strong; font-size: 9px;fill: rgb(9%,21%,24%); stroke:none;" transform="translate(0,176) scale(1,-1)">S1: common upper diameter bound</text>
+				<text x="173.18359375" y="75" style="font-family: Body; font-size: 7.1px;fill: rgb(35%,41%,43%); stroke:none;" transform="translate(0,150) scale(1,-1)">broadcast target + evidence; no lower cutoffs</text>
+				<path d="M 422,121 L 422,85 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="422 85, 424.3971 89.38791, 419.6029 89.38791" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+				<path d="M 422,85 L 377,85 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="377 85, 381.3879 82.60287, 381.3879 87.39713" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+				<rect x="3" y="3" width="119" height="40" rx="5" ry="5" style="stroke: rgb(83%,88%,88%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(92%,96%,95%); fill-rule: evenodd;"/>
+				<text x="32.51171875" y="27" style="font-family: Strong; font-size: 9px;fill: rgb(9%,21%,24%); stroke:none;" transform="translate(0,54) scale(1,-1)">P1: clusters</text>
+				<text x="23.566137695312506" y="13" style="font-family: Body; font-size: 7.1px;fill: rgb(35%,41%,43%); stroke:none;" transform="translate(0,26) scale(1,-1)">≤ 4 submissions each</text>
+				<path d="M 254,65 L 62.5,45 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="62.5 45, 67.11317 43.07163, 66.61518 47.83995" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+				<rect x="130" y="3" width="119" height="40" rx="5" ry="5" style="stroke: rgb(83%,88%,88%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(92%,96%,95%); fill-rule: evenodd;"/>
+				<text x="170.407958984375" y="27" style="font-family: Strong; font-size: 9px;fill: rgb(9%,21%,24%); stroke:none;" transform="translate(0,54) scale(1,-1)">P2: Cox</text>
+				<text x="150.5661376953125" y="13" style="font-family: Body; font-size: 7.1px;fill: rgb(35%,41%,43%); stroke:none;" transform="translate(0,26) scale(1,-1)">≤ 4 submissions each</text>
+				<path d="M 254,65 L 189.5,45 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="189.5 45, 194.401 44.00997, 192.9811 48.58914" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+				<rect x="257" y="3" width="119" height="40" rx="5" ry="5" style="stroke: rgb(83%,88%,88%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(92%,96%,95%); fill-rule: evenodd;"/>
+				<text x="281.185546875" y="27" style="font-family: Strong; font-size: 9px;fill: rgb(9%,21%,24%); stroke:none;" transform="translate(0,54) scale(1,-1)">P3: branching</text>
+				<text x="277.5661376953125" y="13" style="font-family: Body; font-size: 7.1px;fill: rgb(35%,41%,43%); stroke:none;" transform="translate(0,26) scale(1,-1)">≤ 4 submissions each</text>
+				<path d="M 254,65 L 316.5,45 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="316.5 45, 313.0514 48.62041, 311.5903 44.05425" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+				<rect x="384" y="3" width="119" height="40" rx="5" ry="5" style="stroke: rgb(83%,88%,88%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(92%,96%,95%); fill-rule: evenodd;"/>
+				<text x="417.47998046875" y="27" style="font-family: Strong; font-size: 9px;fill: rgb(9%,21%,24%); stroke:none;" transform="translate(0,54) scale(1,-1)">P4: choice</text>
+				<text x="404.5661376953125" y="13" style="font-family: Body; font-size: 7.1px;fill: rgb(35%,41%,43%); stroke:none;" transform="translate(0,26) scale(1,-1)">≤ 4 submissions each</text>
+				<path d="M 254,65 L 443.5,45 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+				<polygon points="443.5 45, 439.3879 47.84443, 438.8847 43.07666" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+			</g>
+			<rect x="3" y="18" width="501.27559055118115" height="36" rx="5" ry="5" style="stroke: rgb(83%,88%,88%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(92%,96%,95%); fill-rule: evenodd;"/>
+			<text x="117.87754136934055" y="38" style="font-family: Strong; font-size: 9px;fill: rgb(9%,21%,24%); stroke:none;" transform="translate(0,76) scale(1,-1)">Per track: submission → fresh review → own feedback</text>
+			<text x="142.43161851777808" y="28" style="font-family: Body; font-size: 7.1px;fill: rgb(35%,41%,43%); stroke:none;" transform="translate(0,56) scale(1,-1)">Repeat within the original four-submission allowance; no reset</text>
+			<path d="M 62,65 L 62,56 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="62 56, 64.39713 60.38791, 59.60287 60.38791" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+			<path d="M 189,65 L 189,56 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="189 56, 191.3971 60.38791, 186.6029 60.38791" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+			<path d="M 316,65 L 316,56 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="316 56, 318.3971 60.38791, 313.6029 60.38791" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+			<path d="M 443,65 L 443,56 Z" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1.1;"/>
+			<polygon points="443 56, 445.3971 60.38791, 440.6029 60.38791" style="stroke: rgb(3%,49%,54%); stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,54%); fill-rule: evenodd;"/>
+			<text x="112.1855491818406" y="3" style="font-family: Body; font-size: 7.1px;fill: rgb(35%,41%,43%); stroke:none;" transform="translate(0,6) scale(1,-1)">Shared literature on request  •  Fresh final synthesis after all individual reviews</text>
+		</g>
+	</g>
+</svg>

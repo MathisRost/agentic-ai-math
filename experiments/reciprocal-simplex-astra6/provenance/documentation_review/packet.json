@@ -1,0 +1,10 @@
+{
+  "audience": "Mathematicians and researchers interested in an agentic research case study; basic probability, expectations and geometric intuition. The text defines factorial densities. Readers need not know the original conversation.",
+  "scope": "Read the complete frozen report in order as a focused exposition review, not a proof audit. No external lookup or earlier mathematical reviews.",
+  "allowed_files": {
+    "$RUN/publication/20261021/documentation_review/draft_v01.md": "c8353ecd4e7fe299dcffa4650ee8a7dbe4ff391c7e87c7db1025489d5f54cc14",
+    "$RUN/publication/20261021/documentation_review/FOCUSED_READER.md": "6313b8aa6c523796903c7f72c12cb2ba9b9bd9baec67c307718f43c93b2ad1dd"
+  },
+  "output_path": "$RUN/publication/20261021/documentation_review/reader_report.md",
+  "original_experiment_accounting_excluded": true
+}

@@ -1,0 +1,46 @@
+{
+  "statement_id": "S0",
+  "path": "statements/S0.md",
+  "sha256": "3b5b5ad81bf56136bd79f0fde2d4aa39e3bed32aaf37511460007dfb0fc656f0",
+  "authority": "owner-approved initial target in explicit START launch",
+  "roles": {
+    "nonexistence_1": {
+      "status": "delivered_in_hashed_dispatch",
+      "statement_id": "S0"
+    },
+    "nonexistence_2": {
+      "status": "delivered_in_hashed_dispatch",
+      "statement_id": "S0"
+    },
+    "proof_1": {
+      "status": "queued_for_role_launch",
+      "statement_id": "S0"
+    },
+    "proof_2": {
+      "status": "queued_for_role_launch",
+      "statement_id": "S0"
+    },
+    "proof_3": {
+      "status": "queued_for_role_launch",
+      "statement_id": "S0"
+    },
+    "proof_4": {
+      "status": "queued_for_role_launch",
+      "statement_id": "S0"
+    },
+    "reviewer": {
+      "status": "delivered_in_hashed_dispatch",
+      "statement_id": "S0"
+    },
+    "literature": {
+      "status": "queued_for_role_launch",
+      "statement_id": "S0"
+    },
+    "coder": {
+      "status": "queued_for_role_launch",
+      "statement_id": "S0"
+    }
+  },
+  "recorded_at_utc": "2026-10-20T17:09:59.607289+00:00",
+  "note": "Queued roles must receive this target history with their first dispatch; no queued delivery is claimed as a completed runtime read."
+}

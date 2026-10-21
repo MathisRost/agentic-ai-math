@@ -1,0 +1,14 @@
+{
+  "draft": "draft_v01.md",
+  "draft_original_sha256": "c8353ecd4e7fe299dcffa4650ee8a7dbe4ff391c7e87c7db1025489d5f54cc14",
+  "review_original_sha256": "507a99259391646404c4a503c6bddff38c54983bad8660f940a5a8720cdc2a2d",
+  "final_text": "../../report/report.md",
+  "final_text_sha256": "f4b125df8cbb41a6634bb7717a81553cf200b52be30c8e219eb82ecb08639527",
+  "changes": [
+    "Connect intensity and sphere-probability parameter choices before selecting L.",
+    "Explain anchored kernel normalisation and triple-to-pair multiplicity.",
+    "Define sphere centre, circumradius and unnormalised unit-sphere area.",
+    "Distinguish author freeze time from later administrative recording."
+  ],
+  "scope": "Exposition revision only; original proof, target and attempt counts unchanged."
+}

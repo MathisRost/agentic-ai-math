@@ -1,0 +1,9 @@
+# Project-only settings. Saving this file does not start a run or switch a live parent.
+model = "gpt-6-astra"
+model_reasoning_effort = "xhigh"
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+default_subagent_model = "gpt-6-astra"
+default_subagent_reasoning_effort = "xhigh"

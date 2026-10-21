@@ -1,0 +1,25 @@
+{
+  "run_id": "20261020T164437Z_astra6",
+  "role": "nonexistence_1",
+  "phase": "preflight_only",
+  "active_statement": {
+    "id": "S0",
+    "path": "$RUN/statements/S0.md",
+    "sha256": "3b5b5ad81bf56136bd79f0fde2d4aa39e3bed32aaf37511460007dfb0fc656f0"
+  },
+  "read_paths": [
+    "$RUN/inputs/AGENTS.md",
+    "$RUN/inputs/instructions/accounting.md"
+  ],
+  "write_paths": [
+    "$RUN/tracks/nonexistence_1/work"
+  ],
+  "forbidden": [
+    "starting_information",
+    "other tracks",
+    "other chats",
+    "old runs",
+    "private reasoning transcripts"
+  ],
+  "instruction": "Do not perform mathematical research or read S0 yet. Verify only your own session model/effort and exposed token_count metadata; return the exact identified session path and metadata evidence. Wait for coordinator release after this preflight-only turn. No delegation. Do not read any full private reasoning or other message content."
+}

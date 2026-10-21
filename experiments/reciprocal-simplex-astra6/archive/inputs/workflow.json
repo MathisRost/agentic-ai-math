@@ -1,0 +1,436 @@
+{
+  "schema_version": 2,
+  "kind": "coordinator_interpreted_manifest",
+  "created": "2026-10-20",
+  "status": "prepared_not_started",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "xhigh",
+  "allow_model_fallback": false,
+  "max_concurrent_subagents": 3,
+  "coordinator": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "xhigh",
+    "instruction_file": "instructions/coordinator.md",
+    "explicit_launch_required": true
+  },
+  "target": {
+    "file": "common/problem_statement.md",
+    "initial_id": "S0",
+    "mode": "exact",
+    "prescribed_intensity": true,
+    "orders": [
+      2,
+      3,
+      4
+    ],
+    "full_product_densities": true,
+    "initial_upper_diameter_bound": null,
+    "initial_lower_distance_cutoff": null,
+    "initial_triangle_altitude_cutoff": null,
+    "initial_tetrahedron_altitude_cutoff": null,
+    "finite_fourth_moment_required": false,
+    "finite_moment_subclass_separate": true,
+    "isotropy_required": false,
+    "mixing_required": false,
+    "approximation_is_success": false,
+    "restricted_result_is_success": false
+  },
+  "run_root": "runs/",
+  "source_manifest": "setup_audit/copied_sources.json",
+  "context_policy": {
+    "history_fork": "none",
+    "explicit_packet_hashes": true,
+    "proof_tracks_may_read_each_other": false,
+    "reviewer_receives_author_conversation": false,
+    "initial_obstruction_agents_may_read_starting_information": false,
+    "common_seed_for_all_construction_tracks": true,
+    "only_coordinator_dispatches": true,
+    "filesystem_scopes_are_security_boundaries": false
+  },
+  "accounting": {
+    "instruction_file": "instructions/accounting.md",
+    "preflight_required": true,
+    "unavailable_exact_usage": "disclose_before_research_and_request_owner_decision",
+    "unknown_json_value": null,
+    "unknown_display": "NR",
+    "private_chain_of_thought": false,
+    "structured_reasoning_summaries": true,
+    "per_agent_per_turn": true,
+    "distinguish_estimates_from_measurements": true
+  },
+  "revision_policy": {
+    "coordinator_authority": "reviewed_general_obstruction_within_its_scope",
+    "class_specific_failure_can_restrict_general_target": false,
+    "owner_amendment_after_attempt": 3,
+    "owner_approval_required": true,
+    "silence_is_approval": false,
+    "broadcast_to_all_roles": true,
+    "preserve_initial_target_verdict": true,
+    "automatic_attempt_reset": false,
+    "exactness_fullness_orders_intensity_changes_require_owner": true
+  },
+  "attempt_policy": {
+    "construction_max_submissions": 4,
+    "construction_initial_submissions": 1,
+    "construction_max_repairs": 3,
+    "optional_owner_checkpoint_after": 3,
+    "obstruction_max_submissions": 4,
+    "technical_retry_consumes_attempt": false,
+    "unsuccessful_approach_implies_nonexistence": false
+  },
+  "roles": {
+    "nonexistence_1": {
+      "description": "Independent global non-existence investigation.",
+      "phase": "obstruction",
+      "instruction_file": "instructions/nonexistence_agent.md",
+      "approach_file": "approaches/00_nonexistence_global.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/nonexistence_agent.md",
+        "instructions/accounting.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/dvj_context.md",
+        "common/papers/INDEX.md",
+        "approaches/00_nonexistence_global.md",
+        "templates/submission.md"
+      ],
+      "output_paths": [
+        "$RUN/tracks/nonexistence_1/work/",
+        "$RUN/tracks/nonexistence_1/submissions/"
+      ],
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "starting_information_allowed": false,
+      "native_agent_file": ".codex/agents/nonexistence_1.toml"
+    },
+    "nonexistence_2": {
+      "description": "Independent local geometry and moment-class investigation.",
+      "phase": "obstruction",
+      "instruction_file": "instructions/nonexistence_agent.md",
+      "approach_file": "approaches/00_nonexistence_local.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/nonexistence_agent.md",
+        "instructions/accounting.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/dvj_context.md",
+        "common/papers/INDEX.md",
+        "approaches/00_nonexistence_local.md",
+        "templates/submission.md"
+      ],
+      "output_paths": [
+        "$RUN/tracks/nonexistence_2/work/",
+        "$RUN/tracks/nonexistence_2/submissions/"
+      ],
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "starting_information_allowed": false,
+      "native_agent_file": ".codex/agents/nonexistence_2.toml"
+    },
+    "proof_1": {
+      "description": "Exact construction through Poisson clusters.",
+      "phase": "construction",
+      "instruction_file": "instructions/proof_agent.md",
+      "approach_file": "approaches/01_poisson_cluster.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/proof_agent.md",
+        "instructions/accounting.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/dvj_context.md",
+        "common/papers/INDEX.md",
+        "approaches/01_poisson_cluster.md",
+        "starting_information/README.md",
+        "templates/submission.md"
+      ],
+      "output_paths": [
+        "$RUN/tracks/proof_1/work/",
+        "$RUN/tracks/proof_1/submissions/"
+      ],
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "starting_information_allowed": "after_obstruction_gate",
+      "native_agent_file": ".codex/agents/proof_1.toml"
+    },
+    "proof_2": {
+      "description": "Exact construction through Cox processes.",
+      "phase": "construction",
+      "instruction_file": "instructions/proof_agent.md",
+      "approach_file": "approaches/02_cox.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/proof_agent.md",
+        "instructions/accounting.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/dvj_context.md",
+        "common/papers/INDEX.md",
+        "approaches/02_cox.md",
+        "starting_information/README.md",
+        "templates/submission.md"
+      ],
+      "output_paths": [
+        "$RUN/tracks/proof_2/work/",
+        "$RUN/tracks/proof_2/submissions/"
+      ],
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "starting_information_allowed": "after_obstruction_gate",
+      "native_agent_file": ".codex/agents/proof_2.toml"
+    },
+    "proof_3": {
+      "description": "Exact construction through Hawkes/branching processes.",
+      "phase": "construction",
+      "instruction_file": "instructions/proof_agent.md",
+      "approach_file": "approaches/03_hawkes.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/proof_agent.md",
+        "instructions/accounting.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/dvj_context.md",
+        "common/papers/INDEX.md",
+        "approaches/03_hawkes.md",
+        "starting_information/README.md",
+        "templates/submission.md"
+      ],
+      "output_paths": [
+        "$RUN/tracks/proof_3/work/",
+        "$RUN/tracks/proof_3/submissions/"
+      ],
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "starting_information_allowed": "after_obstruction_gate",
+      "native_agent_file": ".codex/agents/proof_3.toml"
+    },
+    "proof_4": {
+      "description": "Exact construction through an investigator-selected method.",
+      "phase": "construction",
+      "instruction_file": "instructions/proof_agent.md",
+      "approach_file": "approaches/04_agent_choice.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/proof_agent.md",
+        "instructions/accounting.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/dvj_context.md",
+        "common/papers/INDEX.md",
+        "approaches/04_agent_choice.md",
+        "starting_information/README.md",
+        "templates/submission.md"
+      ],
+      "output_paths": [
+        "$RUN/tracks/proof_4/work/",
+        "$RUN/tracks/proof_4/submissions/"
+      ],
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "starting_information_allowed": "after_obstruction_gate",
+      "native_agent_file": ".codex/agents/proof_4.toml"
+    },
+    "reviewer": {
+      "description": "Fresh-context extensive correctness audits and final synthesis.",
+      "phase": "review",
+      "instruction_file": "instructions/reviewer.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/reviewer.md",
+        "instructions/accounting.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/dvj_context.md",
+        "common/papers/INDEX.md",
+        "templates/review_report.md",
+        "templates/statement_change.md"
+      ],
+      "output_paths": [
+        "$RUN/reviews/$REQUEST_ID/"
+      ],
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "starting_information_allowed": "explicit_cited_passages_only",
+      "native_agent_file": ".codex/agents/reviewer.toml"
+    },
+    "literature": {
+      "description": "One shared primary-source verification role.",
+      "phase": "literature",
+      "instruction_file": "instructions/literature_agent.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/literature_agent.md",
+        "instructions/accounting.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/dvj_context.md",
+        "common/papers/INDEX.md"
+      ],
+      "output_paths": [
+        "$RUN/literature/"
+      ],
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "starting_information_allowed": false,
+      "native_agent_file": ".codex/agents/literature.toml"
+    },
+    "coder": {
+      "description": "Specific reviewer-requested reproducible mathematical checks.",
+      "phase": "coding",
+      "instruction_file": "instructions/coder.md",
+      "context_files": [
+        "AGENTS.md",
+        "instructions/coder.md",
+        "instructions/accounting.md",
+        "common/README.md",
+        "common/problem_statement.md",
+        "common/dvj_context.md",
+        "common/papers/INDEX.md",
+        "templates/coding_request.md"
+      ],
+      "output_paths": [
+        "$RUN/coding/$REQUEST_ID/"
+      ],
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "fresh_context": true,
+      "delegation_allowed": false,
+      "starting_information_allowed": false,
+      "native_agent_file": ".codex/agents/coder.toml"
+    }
+  },
+  "stages": [
+    {
+      "id": "preflight",
+      "owner": "coordinator",
+      "depends_on": [],
+      "gates": [
+        "model_selection_verified",
+        "accounting_available_or_owner_accepts_limitations",
+        "offline_setup_validation"
+      ]
+    },
+    {
+      "id": "freeze_inputs",
+      "owner": "coordinator",
+      "depends_on": [
+        "preflight"
+      ],
+      "outputs": [
+        "run_manifest.json",
+        "statements/S0.md",
+        "source_hashes.json",
+        "agent_accounting.jsonl"
+      ]
+    },
+    {
+      "id": "independent_obstructions",
+      "roles": [
+        "nonexistence_1",
+        "nonexistence_2"
+      ],
+      "depends_on": [
+        "freeze_inputs"
+      ],
+      "fresh_contexts": true,
+      "parallel": true
+    },
+    {
+      "id": "obstruction_review",
+      "roles": [
+        "reviewer"
+      ],
+      "depends_on": [
+        "independent_obstructions"
+      ],
+      "fresh_context_each_submission": true,
+      "optional_roles": [
+        "literature",
+        "coder"
+      ]
+    },
+    {
+      "id": "adopt_and_broadcast_target",
+      "owner": "coordinator",
+      "depends_on": [
+        "obstruction_review"
+      ],
+      "requires_reviewed_obstruction_for_coordinator_change": true
+    },
+    {
+      "id": "independent_constructions",
+      "roles": [
+        "proof_1",
+        "proof_2",
+        "proof_3",
+        "proof_4"
+      ],
+      "depends_on": [
+        "adopt_and_broadcast_target"
+      ],
+      "fresh_contexts": true,
+      "batch_limit": 3,
+      "optional_roles": [
+        "literature"
+      ]
+    },
+    {
+      "id": "construction_review_loop",
+      "roles": [
+        "reviewer"
+      ],
+      "depends_on": [
+        "independent_constructions"
+      ],
+      "max_submissions_per_track": 4,
+      "owner_request_after_unsuccessful_reviews": 3,
+      "optional_roles": [
+        "literature",
+        "coder"
+      ],
+      "fresh_initial_reviews": true
+    },
+    {
+      "id": "final_synthesis",
+      "roles": [
+        "reviewer"
+      ],
+      "depends_on": [
+        "construction_review_loop"
+      ],
+      "outputs": [
+        "review_report.md",
+        "reasoning_summary.md",
+        "target_history.md",
+        "usage_cost_summary.md"
+      ]
+    }
+  ],
+  "communication": {
+    "allowed_shared_new_work": "reviewed obstruction/target amendments and neutral source additions only",
+    "construction_track_cross_talk": false,
+    "review_feedback": "relevant author only",
+    "owner_amendment": "after attempt 3, explicit approval before enactment",
+    "all_adopted_targets": "broadcast to every logical role, including queued roles"
+  }
+}
+

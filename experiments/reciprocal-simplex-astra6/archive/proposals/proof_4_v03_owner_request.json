@@ -1,0 +1,22 @@
+{
+  "authority": "owner_request_pending",
+  "requested_at_utc": "2026-10-20T18:39:35.113864+00:00",
+  "track": "proof_4",
+  "reviewed_unsuccessful_submissions": 3,
+  "remaining_submissions": 1,
+  "current_target": "S1",
+  "proposed_target_file": "$RUN/proposals/proof_4_v03_S2_proposed.md",
+  "proposed_target_sha256": "21cf343bc5d702a17e6e41cd10c3bf6482e7e1fec541a20ff60bc5e58c29f62b",
+  "supporting_review_sha256": "7d0623165338019c801af07251bd0d764f417ef31a8b9969fda34d72f97db9a5",
+  "decision_options": [
+    "Keep S1 and use the final attempt (Recommended)",
+    "Approve the precise low-intensity S2 for all roles"
+  ],
+  "loss_of_scope": "Remove all parameter pairs lambda M^3 > tau; all other S1 requirements retained. Exact tau is defined in complete hashed statement.",
+  "necessity_proved": false,
+  "sufficient_range_proved": true,
+  "global_target_change_if_approved": true,
+  "automatic_counter_reset": false,
+  "owner_response": null,
+  "silence_is_approval": false
+}

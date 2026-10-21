@@ -1,0 +1,15 @@
+{
+  "request_id": "proof_4_v02_source_01",
+  "created_at_utc": "2026-10-20T18:00:33.651321+00:00",
+  "base_packet_sha256": "0662e1c5a6c683e557638b04a933e29514ccfd520a425a3d325cb82a10c5aece",
+  "purpose": "Exact cited seed Section 2, provenance only; new proof rederives its necessary residual bounds.",
+  "source": "$RUN/inputs/starting_information/proofs/coordinator_submission_v02.md",
+  "source_sha256": "932923bd0632cabe575e4eb826744dfdd5e7c6c367cb1dd853c63d4a54ceb384",
+  "inclusive_lines": [
+    151,
+    180
+  ],
+  "allowed_files": {
+    "$RUN/reviews/proof_4_v02/cited_seed_section_2.md": "3ffdfb4275aa3432569d79eef60e2bcce6559c766c468b78c190e75f2a2ad658"
+  }
+}

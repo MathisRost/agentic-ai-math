@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-10-20T17:43:34.072705+00:00",
+  "authority": "explicit_owner_approval",
+  "user_response": "End the Cox track at 1/4 (recommended)",
+  "request_path": "proposals/proof_2_early_track_decision_v01.json",
+  "request_sha256": "988268cb7ccaf73f8a6bc75d256930883fa9391705f453180354d50e27e525ea",
+  "track": "proof_2",
+  "decision": "close_early",
+  "submissions_used": 1,
+  "unused_allowance": 3,
+  "label": "early closure authorised by owner after reviewed entire-Cox obstruction; not exhausted",
+  "target_id": "S1",
+  "target_unchanged": true,
+  "attempt_count_reset": false,
+  "mathematical_scope": "Cox class excluded; general S1 unresolved"
+}

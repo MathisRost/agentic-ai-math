@@ -1,0 +1,9 @@
+{
+  "role": "proof_3",
+  "attempt": 4,
+  "target": "S1",
+  "kind": "own-review transcription note",
+  "allowed_files": {
+    "$RUN/reviews/proof_3_v03/coordinator_transcription_note.md": "5e2ae59ec5c26381f6ef6b843222f1fa2c83797064d8d183515cc71d23d40f8d"
+  }
+}

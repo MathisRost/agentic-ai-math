@@ -1,0 +1,20 @@
+{
+  "created_at_utc": "2026-10-20T17:37:21.710126+00:00",
+  "type": "approach_early_closure_or_redirection",
+  "authority": "coordinator protocol section 4 requires owner decision",
+  "status": "owner_response_pending",
+  "track": "proof_2",
+  "used": 1,
+  "remaining": 3,
+  "target": "S1",
+  "target_unchanged": true,
+  "proof_sha256": "4e2b6a17c32546ab2a6b4be629027e3b2618336753c805bf5bbf212f9cd89e7f",
+  "review_sha256": "c9e8b575a3addff48eb5458a766ab1ec693d60d5a3feb87da71a866b655f8844",
+  "reviewed_consequence": "No Cox process satisfies S1; no general S1 nonexistence conclusion.",
+  "options": [
+    "End track early at 1/4 with accepted Cox obstruction",
+    "Use remaining 3 submissions outside Cox"
+  ],
+  "not_target_amendment": true,
+  "no_reset": true
+}

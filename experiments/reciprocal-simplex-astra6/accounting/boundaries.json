@@ -1,0 +1,12 @@
+{
+  "research_start_utc": "2026-10-20T16:46:33.978053+00:00",
+  "completion_utc": "2026-10-20T19:46:53.600642+00:00",
+  "research_wall_seconds": 10819.622589,
+  "coordinator_session_start_utc": "2026-10-20T16:42:39.998Z",
+  "coordinator_last_token_event_utc": "2026-10-20T19:46:32.086Z",
+  "snapshot_utc": "2026-10-20T19:46:54.126268+00:00",
+  "completed_noncoordinator_turn_seconds": 22163.092,
+  "runtime_definition": "Elapsed task-turn wall time, including tool waits, not CPU/GPU time. Parallel durations overlap. Coordinator completion duration is NR.",
+  "billing_definition": "Raw arithmetic sums are not reconciled for parent/child inclusion. Standard and Fast prices are scenarios, not account charges.",
+  "documentation_work_included": false
+}

@@ -1,0 +1,11 @@
+{
+  "source_run": "20261020T164437Z_astra6",
+  "original_frozen_files_checked": 514,
+  "original_hash_mismatches": [],
+  "pdf_pages": 16,
+  "pdf_visual_review": "All pages inspected as rendered contact sheets; expanded inspection of architecture, mathematical construction, regularity and per-agent accounting. Final changed pages re-rendered. No clipping or missing glyphs found.",
+  "pdf_font_glyph_check": "Passed for every report character.",
+  "pdf_text_bounds_check": "Passed on all 16 pages.",
+  "exposition_review": "One fresh focused reader; four clarification requests addressed. Not a proof audit.",
+  "publication_scope": "New sibling experiment folder plus experiments index; older experiment unchanged."
+}

@@ -1,0 +1,10 @@
+{
+  "request_id": "proof_4_v03",
+  "kind": "frozen conditional proposal for scope audit only",
+  "authority": "owner_request_pending",
+  "instruction": "The proposed target is not active. Audit whether the claimed loss of scope and evidence are precise. No owner decision is authorised or inferred; third review must complete before an owner question. Evaluate submission only against S1.",
+  "allowed_files": {
+    "$RUN/proposals/proof_4_v03_conditional_statement_change.md": "2bcd9289fd84e2506dd7b682368bf5f6bb7e0bcb6d41816ae7055a3832ba81c9",
+    "$RUN/proposals/proof_4_v03_S2_proposed.md": "21cf343bc5d702a17e6e41cd10c3bf6482e7e1fec541a20ff60bc5e58c29f62b"
+  }
+}

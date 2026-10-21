@@ -1,0 +1,59 @@
+{
+  "request_id": "proof_4_v02",
+  "role": "reviewer",
+  "review_type": "fresh independent review of later submission and its dependencies",
+  "target_id": "S1",
+  "target_path": "$RUN/statements/S1.md",
+  "target_sha256": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8",
+  "submission_number": 2,
+  "proof_path": "$RUN/reviews/proof_4_v02/proof_snapshot.md",
+  "proof_sha256": "9a3befd21f85424fea521c9c817837f2d943a1a0862c0e1586541b93c5d559ac",
+  "allowed_files": {
+    "$RUN/inputs/AGENTS.md": "8953c347f2338e89c3193a215088893b2c956707938b2fac76d6225fda500424",
+    "$RUN/inputs/instructions/reviewer.md": "44b22e878953ee1475c2f7fccb9538c1c782c59083ed2754e380149888c4e542",
+    "$RUN/inputs/instructions/accounting.md": "0acf1391a2e7a345fc3661bf17fb27d2531534de95ac7f8cf0de6e2e8f011207",
+    "$RUN/inputs/common/README.md": "a1c118f57f2811f4466ea335f5125939bc4cb849b5a6231940cf36006bf025f2",
+    "$RUN/inputs/common/problem_statement.md": "3b5b5ad81bf56136bd79f0fde2d4aa39e3bed32aaf37511460007dfb0fc656f0",
+    "$RUN/inputs/common/dvj_context.md": "ce16a2be5f95f15fb9779bb8e1acacea7d3c42e99c6233b00a6b63494bc55223",
+    "$RUN/inputs/common/papers/INDEX.md": "d65bd9c36697b6a9ee5eee7c2f338397c092ab52e529b73817ea050287a6ebb8",
+    "$RUN/inputs/templates/review_report.md": "3a5e4db222a95db12677c00fbae2e33d45543c2eba11d49d7fdab9b1bbdb9ec5",
+    "$RUN/inputs/templates/statement_change.md": "47a287ce60c5168a32bc0309aa4a567946abb8e5bffc38596f8050a888ee48e8",
+    "$RUN/inputs/workflow.json": "c354e6f731874d2811a8e6f436c6377ae793c325cfccdbd317d16e94eb1947f8",
+    "$RUN/inputs/skills/mathis-proof-reviser/SKILL.md": "761e83f6b65d1b55e2c425ae40803a7e9c25ea48ba8369cf9bb8938ee62955a0",
+    "$RUN/inputs/skills/mathis-proof-reviser/references/PROOF_STANDARD.md": "f45e6d23a111b833b0918b6af31dd9348e2885c09d6be956ed890f34f0ab57c4",
+    "$RUN/inputs/skills/mathis-proof-reviser/references/WRITING_STYLE.md": "5590f16cbaf5f17f26378166bce1c69861cf237b977c845f3b5dde42218c0ebf",
+    "$RUN/statements/S0.md": "3b5b5ad81bf56136bd79f0fde2d4aa39e3bed32aaf37511460007dfb0fc656f0",
+    "$RUN/statements/S1.md": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8",
+    "$RUN/statements/S0_to_S1.md": "b2534040520dfc63bf5c22ecc508257308e619a040a7c6c54ce44375742394de",
+    "$RUN/reviews/proof_4_v01/cited_seed_section_5.md": "33d1beb4f10940ad56067e341898fdb5ad5fd19b4bd11db8222f336de79a8432",
+    "$RUN/reviews/proof_4_v01/cited_seed_provenance.json": "5e9017cd19d28947680730c5e7ddbee4e70311c83759e6670ac343b1088a2aa3",
+    "$RUN/reviews/proof_4_v02/proof_snapshot.md": "9a3befd21f85424fea521c9c817837f2d943a1a0862c0e1586541b93c5d559ac",
+    "$RUN/reviews/proof_4_v02/prior_dependency_v01.md": "57b1c58f13fa055c76cfec22c131b989b32bef3b1414cd710992ad6f081158b5",
+    "$RUN/reviews/proof_4_v02/previous_issue_list_v01.md": "42e491b8ba961496cacb8607d704bf2fd9c37a5f4070ed09048939eb6a9c33e5"
+  },
+  "neutral_source_directory": "$RUN/inputs/common/papers",
+  "output_directory": "$RUN/reviews/proof_4_v02",
+  "review_output": "$RUN/reviews/proof_4_v02/review.md",
+  "excluded": [
+    "author conversation and private work",
+    "other construction tracks and reviews",
+    "full prior review reports except supplied concrete issue tables",
+    "coordinator deliberations",
+    "unassigned starting information",
+    "other chats and old runs"
+  ],
+  "no_delegation": true,
+  "audit_request": "Audit the entire new submission and all consequential earlier dependencies. Use prior concrete issue lists to check repairs, not to infer correctness. No desired verdict. Distinguish exact S1 from partial progress, approximation or a scoped obstruction. Request missing exact sources through coordinator.",
+  "created_at_utc": "2026-10-20T18:00:33.562453+00:00",
+  "path_resolution": "Setup-relative role references resolve to identical frozen inputs.",
+  "prior_dependencies_and_issue_lists": [
+    {
+      "submission": 1,
+      "proof_path": "$RUN/reviews/proof_4_v02/prior_dependency_v01.md",
+      "proof_sha256": "57b1c58f13fa055c76cfec22c131b989b32bef3b1414cd710992ad6f081158b5",
+      "issue_list_path": "$RUN/reviews/proof_4_v02/previous_issue_list_v01.md",
+      "issue_list_sha256": "42e491b8ba961496cacb8607d704bf2fd9c37a5f4070ed09048939eb6a9c33e5",
+      "source_review_sha256": "5633bb2abd80704d05763a5e00272aa94349d229391987ca0b38ba3c3cfbf477"
+    }
+  ]
+}

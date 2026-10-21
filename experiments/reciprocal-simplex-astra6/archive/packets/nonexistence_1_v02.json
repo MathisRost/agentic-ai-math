@@ -1,0 +1,55 @@
+{
+  "run_id": "20261020T164437Z_astra6",
+  "role": "nonexistence_1",
+  "phase": "obstruction_extension_after_independent_review",
+  "attempt": 2,
+  "maximum_submissions": 4,
+  "statement_id": "S0",
+  "statement_path": "$RUN/statements/S0.md",
+  "statement_sha256": "3b5b5ad81bf56136bd79f0fde2d4aa39e3bed32aaf37511460007dfb0fc656f0",
+  "allowed_files": {
+    "$RUN/inputs/AGENTS.md": "8953c347f2338e89c3193a215088893b2c956707938b2fac76d6225fda500424",
+    "$RUN/inputs/instructions/nonexistence_agent.md": "1b03b90ff1777dcc8d1e8e84cfb9f4ccfa6cbb2af8898217e6a01163ea3d12a8",
+    "$RUN/inputs/instructions/accounting.md": "0acf1391a2e7a345fc3661bf17fb27d2531534de95ac7f8cf0de6e2e8f011207",
+    "$RUN/inputs/common/README.md": "a1c118f57f2811f4466ea335f5125939bc4cb849b5a6231940cf36006bf025f2",
+    "$RUN/inputs/common/problem_statement.md": "3b5b5ad81bf56136bd79f0fde2d4aa39e3bed32aaf37511460007dfb0fc656f0",
+    "$RUN/inputs/common/dvj_context.md": "ce16a2be5f95f15fb9779bb8e1acacea7d3c42e99c6233b00a6b63494bc55223",
+    "$RUN/inputs/common/papers/INDEX.md": "d65bd9c36697b6a9ee5eee7c2f338397c092ab52e529b73817ea050287a6ebb8",
+    "$RUN/inputs/approaches/00_nonexistence_global.md": "d32bfefd0f437a70a7d75da82995feb5aa67150af1e570e7b49e423985f6f475",
+    "$RUN/inputs/templates/submission.md": "e835428b8060bd3d2ad18d9883c13f830e6a611c23cf2c063d045d2f65f5b08b",
+    "$RUN/inputs/skills/mathis-prover/SKILL.md": "6f5c0de43416e4c552336661ac219709785fdc4076e07f460b612a68d79fb6b2",
+    "$RUN/inputs/skills/mathis-prover/references/PROOF_STANDARD.md": "f45e6d23a111b833b0918b6af31dd9348e2885c09d6be956ed890f34f0ab57c4",
+    "$RUN/inputs/skills/mathis-prover/references/WRITING_STYLE.md": "5590f16cbaf5f17f26378166bce1c69861cf237b977c845f3b5dde42218c0ebf",
+    "$RUN/inputs/workflow.json": "c354e6f731874d2811a8e6f436c6377ae793c325cfccdbd317d16e94eb1947f8",
+    "$RUN/tracks/nonexistence_1/submissions/v01.md": "15882b266ff83a90dacc1fd8cf19cab602bb0dde374b8d46451a16df40a24ec1",
+    "$RUN/reviews/nonexistence_1_v01/review.md": "d77bd8b4895ff97f132ee2db40902c4ccfec254d8b56be2d29b79c68003c91e8"
+  },
+  "neutral_source_directory": "$RUN/inputs/common/papers",
+  "neutral_source_hashes": {
+    "inputs/common/papers/kagan_1982_fault_model.pdf": "2df2d969c6fe4e659dc257896ba5ab661437d76485984ea3c0fe5dc5ad28629e",
+    "inputs/common/papers/kagan_knopoff_1980_two_point.pdf": "51432497c5c9a3bf4160d08559f3870e93a7bdcade707f3c220bd7d80492a6f7",
+    "inputs/common/papers/INDEX.md": "d65bd9c36697b6a9ee5eee7c2f338397c092ab52e529b73817ea050287a6ebb8",
+    "inputs/common/papers/kagan_2014_earthquakes.pdf": "d2aa51c3ee1a75acf808e72a52eeda5a1675981af942948ab4c95dd87ba3f069",
+    "inputs/common/papers/daley_vere_jones_2008_volume_ii.pdf": "c1ea13a055b0da5379d774c55e530881ce5112ea747e7e1461d48994b37c5b62",
+    "inputs/common/papers/kagan_1981_four_point.pdf": "5e2f14c6b028f9b5c794e3cfe372decc783939214cdd906864fbb348d228ddbe",
+    "inputs/common/papers/kagan_1981_three_point.pdf": "4a57556b2efa78c47ef166643f8964a2d17a63ef7af22480468d662ce5ae9266"
+  },
+  "owned_output_directories": [
+    "$RUN/tracks/nonexistence_1/work",
+    "$RUN/tracks/nonexistence_1/submissions"
+  ],
+  "submission_output": "$RUN/tracks/nonexistence_1/submissions/v02.md",
+  "forbidden_reads": [
+    "inputs/starting_information",
+    "starting_information",
+    "old runs",
+    "other tracks",
+    "other chats",
+    "coordinator private notes"
+  ],
+  "no_delegation": true,
+  "no_mathematical_suggestions_added": true,
+  "release_at_utc": "2026-10-20T17:00:55.728387+00:00",
+  "review_findings_source": "$RUN/reviews/nonexistence_1_v01/review.md",
+  "task": "Address the outstanding scope issue R1-07: does the unrestricted fourth-order reciprocal-volume identity ALONE, in the broad S0 stationary finite-positive-intensity locally finite class with no finite fourth-moment assumption, have a general global obstruction? The pair and triangle laws must not be assumed in such a theorem. Supply a self-contained theorem and proof, or a precise unresolved finding. Keep the v01 established results and original S0 verdict. Do not assume that the common fourth-order cap is necessary, sufficient, or justified; this is the question under investigation. No target change is adopted. This substantive extension uses submission 2 of 4, not a reset."
+}

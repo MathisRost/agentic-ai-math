@@ -1,0 +1,60 @@
+{
+  "snapshot_utc": "2026-10-21T06:35:34.259260+00:00",
+  "original_experiment_excluded": true,
+  "records": [
+    {
+      "role": "documentation_coordinator",
+      "turn_metadata": {
+        "first_context_utc": "2026-10-21T06:14:58.746Z",
+        "model": "gpt-6-astra",
+        "effort": "xhigh"
+      },
+      "numeric_usage": {
+        "usage": {
+          "input_tokens": 2392404,
+          "cached_input_tokens": 2278656,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 28952,
+          "reasoning_output_tokens": 4619,
+          "total_tokens": 2421356
+        },
+        "last_event_utc": "2026-10-21T06:34:18.695Z"
+      },
+      "completion_boundary": null,
+      "coverage": "partial latest documentation turn; final tail NR",
+      "source": "allowlisted numeric runtime metadata only",
+      "charges_usd": null,
+      "token_estimates": null,
+      "parent_child_inclusion_verified": false
+    },
+    {
+      "role": "documentation_reader",
+      "turn_metadata": {
+        "first_context_utc": "2026-10-21T06:27:30.438Z",
+        "model": "gpt-6-astra",
+        "effort": "xhigh"
+      },
+      "numeric_usage": {
+        "usage": {
+          "input_tokens": 393356,
+          "cached_input_tokens": 333824,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4863,
+          "reasoning_output_tokens": 1483,
+          "total_tokens": 398219
+        },
+        "last_event_utc": "2026-10-21T06:30:25.514Z"
+      },
+      "completion_boundary": {
+        "started_at": 1792564044,
+        "completed_at": 1792564225,
+        "duration_ms": 180758
+      },
+      "coverage": "completed turn",
+      "source": "allowlisted numeric runtime metadata only",
+      "charges_usd": null,
+      "token_estimates": null,
+      "parent_child_inclusion_verified": false
+    }
+  ]
+}

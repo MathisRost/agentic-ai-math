@@ -1,0 +1,7 @@
+{
+  "created_at_utc": "2026-10-20T18:03:57.091914+00:00",
+  "scope": "Administrative accounting schema, no mathematical source or cross-track material",
+  "allowed_files": {
+    "$RUN/inputs/templates/accounting_record.json": "05aa2e5ddb571c7f14704277aa654a9a1f4117cc1fedb0287728e828a86ed8ae"
+  }
+}

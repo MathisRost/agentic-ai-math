@@ -1,0 +1,10 @@
+{
+  "kind": "administrative_packet_addition",
+  "roles": [
+    "nonexistence_1",
+    "nonexistence_2"
+  ],
+  "allowed_file": "$RUN/inputs/workflow.json",
+  "sha256": "c354e6f731874d2811a8e6f436c6377ae793c325cfccdbd317d16e94eb1947f8",
+  "reason": "Role instructions refer to workflow.json; authorise the already-frozen workflow without changing the statement or mathematical packet."
+}
