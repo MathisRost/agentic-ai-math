@@ -223,7 +223,7 @@
   \noindent\makebox[\textwidth][c]{%
     \includegraphics[clip,width=\textwidth,height=30mm,keepaspectratio]{alphaproof_architecture.pdf}}\par
   \vspace{1mm}
-  \noindent\textbf{Function:} the model reads Lean goals and hypotheses. as output it proposes Lean tactics. Lean returns new proof states. This means it basically talks in Lean and gets Lean responses. \par
+  \noindent\textbf{Function:} the model reads Lean goals and hypotheses. As output it proposes Lean tactics. Lean returns new proof states. This means it basically talks in Lean and gets Lean responses. \par
   \vspace{1mm}
   \noindent\textbf{Additional Learning:} the model learns from proof attempts through reinforcement learning.\par
   \vspace{1.5mm}
@@ -319,7 +319,7 @@
 
       {\bfseries Context}\par
       The information given to the LLM.\par
-      This includesinstructions, messages and tool results.\par
+      This includes instructions, messages and tool results.\par
       \vspace{1.5mm}
 
       {\bfseries Tool}\par
@@ -377,7 +377,7 @@
     \href{https://arxiv.org/html/2502.05167v3}{\color{muted}Modarressi et al. (2025)}}\par
   {\fontsize{8.5}{10}\selectfont%
   Give each agent the information it needs; long histories can obscure relevant details.\par
-  \textbf{This is called:} context distraction and context clash.\par}
+  This helps reduce distraction from irrelevant context.\par}
   \vspace{1mm}
 
   {\bfseries 2. Give review a fresh context}\quad
@@ -386,13 +386,13 @@
     \href{https://arxiv.org/html/2309.11495v2}{\color{muted}Dhuliawala et al. (2023)}}\par
   {\fontsize{8.5}{10}\selectfont%
   Review the draft and criteria without the writer's history; verify independently.\par
-  \textbf{This is called:} context poisoning and context confusion.\par}
+  This helps avoid repeating errors from the draft.\par}
   \vspace{1mm}
 
   {\bfseries 3. Match the model to the task}\quad
   {\fontsize{7}{8}\selectfont
     \href{https://arxiv.org/abs/2406.18665}{\color{muted}Ong et al., \emph{RouteLLM} (2024)}}\par
-  changing between stronger and cheaper models can improve the balance of cost and quality.\par
+  Changing between stronger and cheaper models can improve the balance of cost and quality.\par
   \vspace{1mm}
 
   {\bfseries 4. Share findings and avoid duplicate work}\quad
@@ -406,7 +406,7 @@
   {\fontsize{7}{8}\selectfont
     \href{https://aclanthology.org/2026.findings-acl.1694/}{\color{muted}Zhu et al. (2026)}}\par
   Especially important for mathematics since different starting points can lead to
-  differnt proof strategies.\par
+  different proof strategies.\par
   \end{minipage}
 \end{frame}
 
@@ -475,14 +475,15 @@
              {\mathbb{E}[X(B_1)]\,\mathbb{E}[X(B_2)]}
         \longrightarrow g_2(x_1,x_2).$}\par
            \vspace{1.5mm}
-      or more general for disjoint sets $B_1,B_2,\ldots , B_n$ shrinking to $x_1,..., x_n$ we have that  \par
+      More generally, for disjoint sets $B_1,\ldots,B_n$ shrinking to $x_1,\ldots,x_n$,\par
       \vspace{1mm}
       \noindent\makebox[\linewidth][c]{$\displaystyle
         \frac{\mathbb{E}[X(B_1)X(B_2)\cdots X(B_n)]}
              {\mathbb{E}[X(B_1)]\,\mathbb{E}[X(B_2)]\cdots \mathbb{E}[X(B_n)]}
         \longrightarrow g_n(x_1,x_2, \ldots , x_n).$}\par
       \vspace{1.5mm}
-      This is the \textbf{$n$-point correlation function}.\par
+      This is the \textbf{$n$-point correlation function}: $g_n=\rho^{(n)}/\lambda^n$,\par
+      where $\rho^{(n)}$ is the density of expected ordered distinct tuples.\par
       \vspace{1mm}
       Compared with Poisson at the same intensity:\par
       \vspace{1mm}
@@ -600,38 +601,60 @@
 % \end{frame}
 
 \begin{frame}[t]{Step 3: Writing the paper}
-  \vspace{1mm}
-  \begin{columns}[c,onlytextwidth]
+  \vspace{0mm}
+  \begin{columns}[T,onlytextwidth]
     \begin{column}{0.50\textwidth}
       \centering
-      \includegraphics[clip,width=\linewidth,height=44mm,keepaspectratio]{writing_workflow.pdf}
-    \end{column}
-    \begin{column}{0.47\textwidth}
-      {\fontsize{9.5}{12}\selectfont
-      \setlength{\tabcolsep}{0pt}
-      \renewcommand{\arraystretch}{1.3}
-      \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}rr@{}}
-        \toprule
-        \shortstack[l]{\textbf{Work}\\\strut} & \shortstack[r]{\textbf{Tokens}\\\textbf{(millions)}}
-                     & \shortstack[r]{\textbf{Est. cost}\\\textbf{(USD)}} \\
-        \midrule
-        Proofer & 69.74 & \textcolor{teal}{\$121.04} \\
-        Reviewer & 25.94 & \textcolor{teal}{\$54.47} \\
-        Literature & 3.40 & \textcolor{teal}{\$5.65} \\
-        \midrule
-        \textbf{Total} & \textbf{99.08} & \textcolor{teal}{\textbf{\$181.15}} \\
-        \bottomrule
-      \end{tabular*}\par}
-    \end{column}
-  \end{columns}
+      \includegraphics[clip,width=\linewidth,height=37mm,keepaspectratio]{writing_workflow.pdf}\par
   \vspace{2mm}
-  {\fontsize{10}{12}\selectfont
+  {\raggedright\fontsize{8.5}{10}\selectfont
     \begin{itemize}
-      \setlength{\itemsep}{1.5mm}
+      \setlength{\itemsep}{1mm}
       \item The paper's appendix also discusses the other approaches.
         They led to interesting ideas, even when they did not work.
       \item The writer gets access to Zotero and Undermind for citations and novelty checks.
     \end{itemize}}
+
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      {\fontsize{8.5}{10}\selectfont\bfseries Research phase: recorded usage\par}
+      \vspace{0.5mm}
+      {\fontsize{8.5}{10}\selectfont\color{black}
+      \setlength{\tabcolsep}{0pt}
+      \renewcommand{\arraystretch}{1.05}
+      \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}rr@{}}
+        \toprule
+        \textbf{Work} & \textbf{Tokens (millions)} & \textbf{Est. USD} \\
+        \midrule
+        Proofer & 69.74 & \$121.04 \\
+        Reviewer & 25.94 & \$54.47 \\
+        Literature & 3.40 & \$5.65 \\
+        \midrule
+        \textbf{Total} & \textbf{99.08} & \textbf{\$181.15} \\
+        \bottomrule
+      \end{tabular*}\par}
+      \vspace{1.5mm}
+      {\fontsize{8.5}{10}\selectfont\bfseries Writing phase: paper, simulations and review\par}
+      \vspace{0.5mm}
+      {\fontsize{8}{9.5}\selectfont\color{black}
+      \setlength{\tabcolsep}{0pt}
+      \renewcommand{\arraystretch}{1.05}
+      \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}rr@{}}
+        \toprule
+        \textbf{Token category} & \textbf{Tokens} & \textbf{Est. USD} \\
+        \midrule
+        Uncached input & 545,555 & \$5.46 \\
+        Cached input & 16,615,424 & \$16.62 \\
+        Output (incl. reasoning) & 116,258 & \$5.81 \\
+        \midrule
+        \textbf{Total} & \textbf{17,277,237} & \textbf{\$27.88} \\
+        \bottomrule
+      \end{tabular*}\par}
+      \vspace{0.5mm}
+      {\fontsize{6.5}{7.5}\selectfont
+        \href{https://developers.openai.com/api/docs/models/gpt-6-astra}{Standard GPT-6-Astra API pricing}.\par}
+    \end{column}
+  \end{columns}
   \note{Research usage from the Astra6 run, snapshot 20 October 2026.
     Proofer combines the coordinator, both non-existence investigators and all
     four construction tracks. Reviewer combines all 16 submission reviews and
@@ -646,28 +669,42 @@
     These are recorded-role aggregates and standard API-equivalent estimates,
     not actual account charges or a verified billing total.
     Source: followups/20261020\_cost\_estimate\_v01/cost\_estimate.json
-    in run 20261020T164437Z\_astra6.}
+    in run 20261020T164437Z\_astra6.
+    Writing-phase usage supplied by the owner: 545,555 uncached input tokens,
+    16,615,424 cached input tokens, and 116,258 output tokens including reasoning;
+    total 17,277,237 tokens. At standard GPT-6-Astra short-context rates of
+    USD 10, 1 and 50 per million tokens respectively, the costs are
+    USD 5.455550, 16.615424 and 5.812900, totalling USD 27.883874.
+    Displayed line items and the total are rounded independently to cents.
+    This is an API-equivalent estimate for writing, simulations and review.
+    Pricing checked 21 October 2026:
+    \url{https://developers.openai.com/api/docs/models/gpt-6-astra}.}
 \end{frame}
 
 
 \begin{frame}[t]{Results and personal feedback}
-  \vspace{-3mm}
+  \vspace{-3.5mm}
   \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.45\textwidth}
+    \begin{column}{0.51\textwidth}
       {\fontsize{11}{13}\selectfont\bfseries Spheres and a cluster correction\par}
-      \vspace{2mm}
-      {\raggedright\fontsize{9}{10.5}\selectfont
-      Idea: I decide between 2 processes with probability $0.5$. Therefore $\rho^{(n)} = 0.5 \rho_A^{(n)} + 0.5 \rho_B^{(n)} $ \par
-      \vspace{2mm}
-      \textbf{Process A.} Takes care of the $g_4 \propto V^{-1}$ by placing non interacting spheres with random radius. A homogeneous Poisson process on this sphere satisfies $g_4$. We also know $g_3, g_2$ here.  \par
-      \vspace{2mm}
-      \textbf{Process B.} ensures that $g_4= 0$ for all configuration with at most $M$ pairwise distance. $g_2$ and $g_3$ are designed according to the error in process A via the cluster density  \par
       \vspace{1mm}
+      {\raggedright\fontsize{8.5}{10}\selectfont
+      Idea: I decide between 2 processes with probability $0.5$. Therefore\par
       \noindent\makebox[\linewidth][c]{$\displaystyle
-        \frac{F_j(0,y_2,\ldots,y_j)}{Z_j}, \quad j\in \{2,3\}.$},\par}
+        g_n=\frac{\lambda_A^n g_{n,A}+\lambda_B^n g_{n,B}}{2\lambda_0^n},
+        \quad \lambda_0=\frac{\lambda_A+\lambda_B}{2}.$}\par
+      \vspace{0.5mm}
+      \textbf{Process A.} Takes care of the $g_4 \propto V^{-1}$ by placing non interacting spheres with random radius. A homogeneous Poisson process on this random sphere satisfies $g_4$. We also know $g_3, g_2$ here.  \par
+      \vspace{0.5mm}
+      \textbf{Process B.} Ensures that $g_{4,B}=0$ for diameter below $M$, using clusters of at most 3 points separated by more than $M$. $g_{2,B}$ and $g_{3,B}$ are designed according to the error in process A via the cluster kernels\par
+      \vspace{0.5mm}
+      \noindent\makebox[\linewidth][c]{$\displaystyle
+        F_3=q_3,\qquad F_2=q_2-\int q_3(\cdot,\cdot,z)\,dz.$}\par
+      \vspace{0.5mm}
+      Here $q_2,q_3$ are the required product-density corrections.\par}
       \vspace{1mm}
     \end{column}
-    \begin{column}{0.50\textwidth}
+    \begin{column}{0.46\textwidth}
       {\fontsize{11}{13}\selectfont\bfseries Personal feedback\par}
       \vspace{1mm}
       {\fontsize{8.5}{10}\selectfont
@@ -708,6 +745,10 @@
     Size marks are 0, 1, 2 or 3; nonempty clusters contain their centre.
     Their diameter is below M and different clusters are more than M apart.
     F3=q3 and F2=q2 minus the one-vertex marginal of q3.
+    In the slide's notation, $q_n=2\lambda_0^n g_n-\lambda_A^n g_{n,A}$
+    on the target domain and zero outside, for $n=2,3$.
+    The kernels $F_j(0,y_2,\ldots,y_j)$ are divided by their anchored
+    integrals $Z_j$ to give the cluster offset densities.
     Thus the correction has local full densities q2, q3 and zero at order four.
     Mixing the two laws gives all three exact reciprocal identities on S1.
     The process has finite third and infinite fourth local moments.}
@@ -755,8 +796,8 @@
   {\color{muted!35}\hrule height 0.4pt}
   \vspace{0.8mm}
   {\fontsize{7.5}{9}\selectfont
-    \textbf{A reported example.} For its October release, OpenAI says almost all
-    results came from one prompt to one agent. Some may have needed retries;
+    \textbf{A reported example.} Scientific American reports that almost all results in OpenAI's October release
+    came from one prompt to one agent. Some may have needed retries;
     the full workflow has not been independently reproduced.\par}
   \vspace{0.6mm}
   {\fontsize{6.5}{7.5}\selectfont\color{muted}
@@ -807,7 +848,7 @@
       {\fontsize{14}{17}\selectfont Questions and discussion\par}
       \vspace{9mm}
       {\fontsize{10}{12}\selectfont
-        Slides and, experiment, documentation and the paper:\par}
+        Slides, experiments, documentation and the paper:\par}
       \vspace{2mm}
       {\fontsize{9}{11}\selectfont
         \href{https://github.com/MathisRost/agentic-ai-math}{github.com/MathisRost/agentic-ai-math}\par}
