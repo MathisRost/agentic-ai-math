@@ -1,0 +1,15 @@
+{
+  "phase": "completed",
+  "writer": "completed",
+  "coder": "completed",
+  "reader": "completed",
+  "integrated_revision": "completed",
+  "independent_readings": 1,
+  "final_pdf_pages": 23,
+  "target": "S1",
+  "source_approach": "4 v04",
+  "unresolved_reader_repairs": [],
+  "build": "two-pass pdflatex, no warnings",
+  "simulation": "executed; weighted estimates and ordinary windows separately reported",
+  "accounting": "measured checkpoints; final coordinator tail not observable before completion"
+}

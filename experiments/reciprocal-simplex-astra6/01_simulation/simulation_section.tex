@@ -1,0 +1,216 @@
+\providecommand{\simulationdir}{coder}
+\section{Simulation of the construction}
+\label{sec:simulation}
+
+We now test the local correlation calculation by sampling point coordinates
+from the construction. We use $M=1$ and $\lambda=6\times10^{-6}$, with the
+explicit parameter choices in the proof. These give
+$\lambda_C=\lambda_Y=\lambda$, $L=1$,
+$K\simeq1.75519\times10^{-8}$ and $c\simeq9.82728\times10^{-10}$.
+The small intensity makes direct sampling instructive, but inefficient.
+In five million independent realisations restricted to the ball $B(0,0.45)$,
+we observed seven points, each in a different realisation. Four came from
+the sphere alternative and three from the correction alternative. The
+expected total point count is $11.4511$. Thus no pair, triangle or tetrahedron
+was observed in these ordinary windows. We keep these data separate from
+the importance-sampled experiment below.
+
+\paragraph{Exact simulation in a small ball.}
+The separation in the construction means that a ball of diameter less than
+$M$ meets at most one retained sphere and receives points from at most one
+correction cluster. Its restricted law is therefore determined by the
+first measure of the possible intersecting object. For the sphere component,
+this measure is $\gamma(R)\,dz\,dR$, restricted to spheres meeting the ball.
+If the ball has radius $r$, we dominate its centre domain by $B(0,R+r)$.
+The total dominating mass is
+\[
+ p_* = \frac{8\pi F}{3L^4}
+        \int_0^\infty R(R+r)^3 e^{-4R^2/L^2}\,dR.
+\]
+For $r=0.45$ and our parameters, $p_*\simeq9.04762\times10^{-5}<1$.
+With probability $p_*$ we draw $R$ from the normalised integrand and a
+centre uniformly from $B(0,R+r)$; otherwise the window is empty. Expanding
+$R(R+r)^3$ gives a four-component mixture in which $R^2$ has a gamma
+distribution, so no radius tail needs to be truncated. We reject a sphere
+that does not meet the ball. For an intersecting sphere we draw the
+Poisson count with mean $a(R)/(2R)$ times its intersection area, followed
+by independent uniform points on that spherical cap or whole sphere.
+
+The correction component admits the same single-object method, using
+centres in $B(0,r+1)$, their intensity $\kappa$, and the actual cluster
+mark law. The auxiliary rejection construction described below samples its
+marks without evaluating the marginal $\mathcal Mq_3$ numerically.
+We flip the fair whole-law coin once for each independent window. This
+algorithm produces exact restrictions of the stated process, up to
+floating-point implementation; it does not construct several coupled
+windows from one whole-space realisation. For a general window one can
+instead sample the sphere band, shifts and finitely many relevant candidate
+spheres directly. The correction alternative can be sampled from Poisson
+parents on the window enlarged by $4M$, testing the $3M$ exclusion condition
+for parents within distance $M$ of the window.
+
+\paragraph{The measured correlations.}
+Write $g_n=\rho^{(n)}/\lambda^n$. We anchor the first vertex at zero and
+let $H_{nj}$ indicate a simplex-size bin, together with the condition that
+all pair distances are below 1. At order four we also require the unique
+circumsphere radius to be at most 2. Each reported bin has a positive lower
+edge. Our estimand is
+\begin{equation}
+ \overline g_{nj}=
+ \frac{\int H_{nj}(y)\rho^{(n)}(0,y)\,dy}
+      {\lambda^n\int H_{nj}(y)\,dy}.
+ \label{eq:simulation-estimand}
+\end{equation}
+These restrictions make finite observables; they do not change the process
+or the domains of the theorem. The theoretical comparison is the bin average
+of $a_n/(\lambda^n\Delta_n)$, not its value at a bin midpoint. Anchored
+relative coordinates avoid window boundary loss: by stationarity, the
+numerator is the expected number of such ordered tuples whose first point
+lies in a unit-volume observation set, with the remaining points unrestricted.
+We use the prescribed $\lambda$ throughout, since a spatial intensity
+estimate from one nonergodic realisation need not estimate this mixture mean.
+
+\paragraph{Importance-sampled sphere tuples.}
+Let $b(R)=a(R)/(2R)$ and $S(R)=\pi\min(1,4R^2)$, the area of the cap of a
+sphere through zero lying in $B(0,1)$. Integrating the first point's surface
+measure over its possible centres gives
+\begin{equation}
+ \int H_{nj}r_n
+ =\int_0^\infty 4\pi R^2\gamma(R)b(R)^n S(R)^{n-1}
+       E\{H_{nj}(0,X_2,\ldots,X_n)\mid R\}\,dR.
+ \label{eq:simulation-sphere-sampling}
+\end{equation}
+Here the centre is $Re$, where $e$ is uniform on the unit sphere, and the
+remaining points are independent uniform points in the cap. This identity
+comes directly from the conditional Poisson factorial measure, before its
+geometric density is evaluated. It integrates out the Poisson count using
+$E(N)_n=m^n$. The sampled rows are factorial tuples, rather than ordinary
+Poisson realisations; unused background points are not generated.
+
+We sample $R$ with density
+\[
+ h_2(R)=\frac{4R}{L^2}e^{-2R^2/L^2},\qquad
+ h_3(R)=\frac{2}{L\sqrt\pi}e^{-R^2/L^2}.
+\]
+The corresponding importance weights in
+\eqref{eq:simulation-sphere-sampling} are $2A_2S(R)$ and
+$4\pi A_3S(R)^2$. Both proposals retain the complete positive radius range.
+For four points the generating sphere is the tuple's unique circumsphere,
+so the observable's guard permits $0<R\leq2$. With
+$Z=1/6+\log4$, we use $h_4(R)=S(R)^3/(\pi^3ZR)$ on this interval.
+Its weight is the constant $\pi^4cZ/2$. All these weights follow from the
+generative intensity $\gamma$ and surface intensity $b$; the reciprocal
+simplex formula is not inserted into the empirical numerator. Distances,
+areas and volumes are calculated from the sampled Cartesian coordinates.
+
+\paragraph{Correction-cluster marks.}
+We sample actual two- and three-point cluster marks by rejection, avoiding
+a numerical approximation to $F_2=q_2-\mathcal Mq_3$. For $M=1$, put
+$\varepsilon=1/(2L)$ and $J=2\varepsilon-\varepsilon^2$. Write
+$u=de$ and $v=te+r(\cos\phi\,e_1+\sin\phi\,e_2)$ in a tangent basis.
+The integrable envelope
+\[
+ E(0,u,v)=\frac{2A_3}{dr}\min(1,\varepsilon^2/r^2)
+      \mathbf1_{\{0<d<1,\ |t|<1,\ 0<r<1\}}
+\]
+dominates $q_3$, and its mass is $T=16\pi^2A_3J$.
+It is sampled by independent draws of $d$ with density $2d$, uniform $e$,
+$t$ and $\phi$, and $r$ with density
+$\min(1,\varepsilon^2/r^2)/J$. Acceptance with probability $q_3/E$
+produces the exact three-point mark law. Each accepted row contributes
+$TH_{3j}$ to the third integral; its contribution to the second integral
+is $T/3$ times the sum of the three edge-bin indicators. Symmetry and
+re-rooting give the latter identity, and the three edge contributions are
+kept together when calculating variances.
+
+For a pair, draw $u$ from $q_2/Q_2$ by radial rejection, then draw an auxiliary
+$v$ from the cylindrical conditional proposal $h(v\mid u)$ above. Accept
+the pair with probability
+\[
+ 1-\frac{q_3(0,u,v)}{q_2(0,u)h(v\mid u)}.
+\]
+The subtracted quantity is at most $JL/2\leq1/2$. Integrating over $v$ gives
+the unnormalised accepted density $F_2/Q_2$; thus an accepted row contributes
+$Q_2H_{2j}$. The auxiliary vertex is not an emitted cluster point.
+The retained-parent intensity and the cluster size probabilities cancel
+the ordered-selection factors exactly as in the proof. We therefore need
+only sample marks for this local factorial experiment; we do not replace
+the dependent retained parents by independent ones.
+
+For the ordinary-window implementation, one can avoid $Q_3$ even in the
+mark probabilities. At a retained centre, use candidate masses
+$(\lambda_C-Q_2)/\kappa$, $Q_2/(2\kappa)$, $T/(6\kappa)$ and
+$T/(2\kappa)$. These respectively propose a singleton, an accepted pair,
+an accepted triple, or an accepted triple proposal that emits only its
+centre. Rejections emit nothing. Their sum is at most one because
+$T\leq Q_2/2$ and $\lambda_C\leq\kappa$; their accepted masses are exactly
+the prescribed singleton, pair and triple mark probabilities.
+
+\paragraph{Results and uncertainty.}
+For each order we generated $524\,288$ independent sphere proposals. We also
+generated $524\,288$ pair proposals and $524\,288$ triple proposals,
+accepting $497\,387$ pair marks and $90\,470$ triple marks. Independent
+reference streams used $2\,097\,152$ uniform relative configurations per
+order to integrate bin volumes and reciprocal simplex sizes. These
+reference samples are numerical integration data, separately labelled from
+the process samples. The full factorial integral estimates are
+one half the sphere estimate plus one half the relevant correction estimate,
+implementing the whole-law mixture without cross-component tuples.
+
+All process contributions in this experiment are bounded, as are the
+reference integrands on the reported bins. Ordinary independent-sample
+standard errors therefore apply to these weighted observations, despite
+the original infinite fourth count moment. We propagate both the process
+sampling error and the independent reference integration error, retaining
+the covariance of the reference numerator and denominator. Error bars are
+$1.96$ estimated Monte Carlo standard errors; they are approximate
+pointwise intervals, not finite-sample coverage guarantees.
+
+The ratios of estimated to theoretical bin averages range from $0.9767$
+to $1.0043$. Their standard errors range from $0.0019$ to $0.0253$;
+every reported deviation is below two standard errors. The correction
+contributes approximately $45$--$64\%$ of the pair integrals and
+$17$--$51\%$ of the triangle integrals in these bins. Its fourth contribution
+is zero by construction. Figure~\ref{fig:simulation-correlations} and
+Table~\ref{tab:simulation-results} report the normalised correlations;
+the supplement contains all bins, full precision and separate reference
+integration errors. This agreement checks the sampled construction and
+the local measure calculation in the stated domains. It does not establish
+the exact identities, global regularity, or infinite fourth moment, which
+are consequences of the proof.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\linewidth]{\simulationdir/figures/correlations.pdf}
+ \caption{Bin-averaged $g_2,g_3,g_4$ from sampled factorial tuples and
+ correction-cluster marks, with independent numerical integration of the
+ theoretical bin averages. All bins have diameter below 1; order four
+ additionally has $R_{\rm circ}\leq2$. The lower panels show the ratio to
+ theory. Error bars include sampling and reference integration error and
+ equal $1.96$ Monte Carlo standard errors.}
+ \label{fig:simulation-correlations}
+\end{figure}
+
+\input{\simulationdir/results_table.tex}
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\linewidth]{\simulationdir/figures/sampled_configurations.pdf}
+ \caption{Saved point coordinates from three distinct kinds of sample.
+ Left: the seven points from five million ordinary independent small-ball
+ realisations are overlaid; they belong to seven different realisations.
+ Centre: a separate conditional Poisson illustration, given a sphere of
+ radius 2 centred at $(0,0,2)$ and at least four points in $B(0,0.45)$.
+ Right: one accepted three-point correction-cluster mark, before translation
+ by its parent. The latter two illustrations are not ordinary draws from
+ the whole-law mixture and are not added to the ordinary-window counts.}
+ \label{fig:simulation-configurations}
+\end{figure}
+
+The reproducible supplement contains the code, random seeds, every process
+tuple and its contribution, all ordinary-window counts and nonempty point
+clouds, and the reference sufficient statistics. A feasibility pilot was
+kept separate; it led us to end the reported fourth-order bins at volume
+$0.075$, since larger volumes were rare under the proposal. The simulation
+does not truncate the theorem's domain, claim ergodicity, or compare the
+construction with earthquake catalogues.

@@ -1,0 +1,1322 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{lmodern,microtype}
+\usepackage[margin=29mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,graphicx}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\E}{\mathbb E}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\Law}{\mathcal L}
+\newcommand{\Mop}{\mathcal M}
+\DeclareMathOperator{\adj}{adj}
+\title{Exact reciprocal-simplex product densities\newline below a prescribed spatial scale}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Spatial earthquake statistics motivate point-process models whose second,
+third and fourth product densities are proportional to the reciprocals of
+pair distance, triangle area and tetrahedron volume. Exact identities of this
+kind cannot hold at every scale for a stationary process of positive
+intensity. We show that they can hold simultaneously on every nondegenerate
+configuration below any prescribed diameter, at any independently prescribed
+positive intensity. The construction chooses between two whole-space laws:
+a process on separated random spheres and a process of separated clusters
+containing at most three points. Sphere geometry supplies the exact fourth
+product density, while the small clusters correct the two lower densities.
+All factorial expectation measures through order four are absolutely
+continuous on the whole configuration space, with densities finite almost
+everywhere. The process is locally finite and has finite third count moments,
+although its fourth count moment is infinite in every nonempty open ball.
+The construction is nonergodic.
+\end{abstract}
+
+\section{Introduction}
+
+Earthquake hypocentres form spatial patterns concentrated around faults and
+fault systems. A point-process description asks how these patterns appear in
+the frequencies of pairs, triples and larger collections of events. The
+work of Kagan and Knopoff on the two-point correlation function
+\cite{KaganKnopoff1980}, followed by Kagan's studies of the three-point and
+four-point moment functions \cite{Kagan1981Three,Kagan1981Four}, connects
+these frequencies with the geometry of the simplex determined by the
+selected events. Their empirical comparisons suggest approximate reciprocal
+distance, area and volume relations. In the three-point study, the
+comparison is with a Poisson catalogue having matched boundaries and depth
+distribution. The four-point study explicitly discusses a divergent
+height integral and a lower-height regularisation near the base plane
+\cite[p.~730]{Kagan1981Four}. These observations motivate a compatibility
+question; they do not assert the exact identities that we study below.
+
+Daley and Vere-Jones \cite[Exercise 12.6.11]{DVJ2008} discuss these forms in
+a question about their compatibility with a stationary point process.
+Their formulation uses proportional or asymptotic notation; it does not
+supply the global equality assumptions considered here. We make the domain
+and the meaning of the densities explicit. We ask for exact identities for
+the \emph{full} ordered product densities, and we distinguish identities at
+all distances from identities below a fixed spatial scale. This distinction
+is necessary: a reciprocal-distance second product density at every
+distance already contradicts the growth of the mean count in large balls.
+
+Fix a positive intensity $\lambda$ and a positive diameter $M$. Our main
+result constructs a stationary simple point process on $\R^3$ for which
+\[
+ \rho^{(2)}(x_1,x_2)=\frac{a_2}{D(x_1,x_2)},\qquad
+ \rho^{(3)}(x_1,x_2,x_3)=\frac{a_3}{A(x_1,x_2,x_3)},\qquad
+ \rho^{(4)}(x_1,x_2,x_3,x_4)=\frac{a_4}{V(x_1,x_2,x_3,x_4)}
+\]
+whenever the corresponding configuration is nondegenerate and has diameter
+less than $M$, apart from Lebesgue-null sets. Here $D$, $A$ and $V$ are
+ordinary distance, area and volume. The positive constants $a_2,a_3,a_4$
+are supplied by the construction. They are not independently prescribed.
+There is no lower distance, area, volume or altitude bound, so very thin
+triangles and almost coplanar tetrahedra remain in the required domain.
+
+The fourth formula has a consequence that is easy to miss. If a fourth
+vertex approaches the plane of a fixed noncollinear triangle, its
+reciprocal tetrahedron volume grows as the reciprocal of the normal
+distance to that plane. Integration in that normal direction diverges.
+Thus any process satisfying the local fourth identity must have infinite
+fourth count moments on open balls. This does not prevent a count from
+being finite almost surely. We use factorial expectation measures as
+extended nonnegative measures, and prove separately that their densities
+are finite almost everywhere.
+
+The construction begins with a surprisingly simple description. Toss one
+fair coin and use its outcome to choose the entire point-process law.
+The first law places Poisson points on a stationary family of spheres
+whose surfaces are separated by more than $M$. Four nearby points must
+then lie on one sphere. Four affinely independent points determine a
+unique circumsphere, and the Jacobian of that change of coordinates is
+proportional to their tetrahedron volume. A suitable distribution of sphere
+radii cancels the remaining factor, giving the exact fourth identity.
+
+The same calculation gives the first three product densities of the
+sphere process. The second and third have reciprocal-simplex factors
+multiplied by Gaussian attenuation terms. An internal length parameter
+makes their deficits small in the integrals needed for a correction,
+without changing the intensity or the leading coefficients. The second
+law uses clusters of at most three points to supply those deficits. Its
+fourth product density vanishes on configurations of diameter below $M$.
+A choice between whole laws then adds the desired product densities with
+no mixed tuples between the two alternatives.
+
+The spherical change of variables is an instance of the Euclidean
+Blaschke--Petkantschin formula stated in Chapron
+\cite[equation (1)]{Chapron2018}. We give the required specialisation and
+the lower-order calculations. That geometric identity by itself does not
+establish the existence of the process: the probability budget, the
+correction kernels and the global regularity arguments are separate parts
+of the proof. We make no novelty or priority claim for the geometric
+identity or for the resulting construction.
+
+The example is a realisability result for these exact local product
+densities. It is nonergodic, and we do not claim that it gives a statistical
+model fitted to earthquake catalogues. Its purpose is to separate the
+compatibility question from additional requirements such as ergodicity,
+finite fourth moments or an empirical fit.
+
+\section{Factorial expectation measures and product densities}
+\label{sec:preliminaries}
+
+Let $X$ be a point process on $\R^3$, regarded as a random counting measure.
+We write $X(B)$ for the number of points in a Borel set $B$. The process is
+\emph{locally finite} if $X(B)<\infty$ almost surely for every bounded $B$,
+and \emph{simple} if its points have multiplicity one. It is
+\emph{stationary} if translating every point by any fixed vector leaves
+its law unchanged. A stationary process has intensity $\lambda$ when
+\begin{equation}
+ \E X(B)=\lambda |B|
+ \label{eq:intensity-def}
+\end{equation}
+for every bounded Borel set $B$, where $|B|$ is three-dimensional Lebesgue
+measure. In this paper $0<\lambda<\infty$.
+
+\subsection{Counting ordered tuples}
+
+For $n\geq1$, the $n$th factorial expectation measure $\alpha_X^{(n)}$ is
+defined by
+\begin{equation}
+ \int h\dd\alpha_X^{(n)}
+ =\E\sum_{x_1,\ldots,x_n\in X}^{\ne} h(x_1,\ldots,x_n),
+ \qquad h\geq0\text{ measurable}.
+ \label{eq:factorial}
+\end{equation}
+The superscript $\ne$ means that the selected points are pairwise distinct,
+and the tuples are ordered. For disjoint sets $B_1,\ldots,B_n$, this
+measure gives $\E\prod_i X(B_i)$ on $B_1\times\cdots\times B_n$.
+For a single set $B$, it gives
+\begin{equation}
+ \alpha_X^{(n)}(B^n)=\E\bigl(X(B)\bigr)_n,
+ \qquad (m)_n=m(m-1)\cdots(m-n+1).
+ \label{eq:falling}
+\end{equation}
+Both sides may be infinite. These are the factorial moment measures in
+the terminology of \cite[Chapter 9]{DVJ2008}; ``expectation measure''
+here emphasises that local finiteness of the measure is not assumed.
+
+If there is a measurable $\rho_X^{(n)}\geq0$ such that
+\begin{equation}
+ \alpha_X^{(n)}(\dd x_1\cdots\dd x_n)
+ =\rho_X^{(n)}(x_1,\ldots,x_n)\dd x_1\cdots\dd x_n,
+ \label{eq:product-density}
+\end{equation}
+we call $\rho_X^{(n)}$ a \emph{product density} or \emph{factorial density}.
+The equality is an identity of full extended measures. It includes all
+ordered tuples and leaves no singular measure on collinear, coplanar or
+other exceptional configurations. We require the density to be finite
+Lebesgue-almost everywhere, but its integral over a bounded set may be
+infinite. A finite-almost-everywhere function need not be locally
+integrable.
+
+At intensity $\lambda$, the normalised functions are
+\begin{equation}
+ g_n(x_1,\ldots,x_n)
+ =\frac{\rho_X^{(n)}(x_1,\ldots,x_n)}{\lambda^n}.
+ \label{eq:gn}
+\end{equation}
+A homogeneous Poisson process has $\rho^{(n)}=\lambda^n$ and $g_n=1$.
+Normalisation changes only the coefficients in the reciprocal-simplex
+identities. It does not turn a full product density into a cumulant or a
+connected correlation function. We use full product densities throughout.
+
+\subsection{Two elementary constructions}
+\label{subsec:two-constructions}
+
+We will use a Poisson process with a random intensity measure. If $\Lambda$
+is a random locally finite nonatomic measure and, conditionally on
+$\Lambda$, $Y$ is a Poisson process with intensity measure $\Lambda$, then
+\begin{equation}
+ \alpha_Y^{(n)}=\E\Lambda^{\otimes n}.
+ \label{eq:cox-identity}
+\end{equation}
+To see this, first use the Poisson factorial identity for products of
+pairwise disjoint sets, condition on $\Lambda$, and then extend to
+nonnegative measurable functions by simple functions and monotone
+convergence. The nonatomic assumption makes all product diagonals null.
+Such a process is called a Cox process. Its directing measure may be
+singular with respect to volume; in our example it is supported on sphere
+surfaces. Identity \eqref{eq:cox-identity} is still valid.
+
+A different operation is a mixture of laws. If a coin chooses $Y$ with
+probability $\theta$ and $C$ with probability $1-\theta$, defining the whole
+process $X$, then conditioning on that coin gives
+\begin{equation}
+ \alpha_X^{(n)}
+ =\theta\alpha_Y^{(n)}+(1-\theta)\alpha_C^{(n)}.
+ \label{eq:mixture-measure}
+\end{equation}
+This follows directly from \eqref{eq:factorial}, also when expectations
+are infinite. A realisation contains points from the selected law only.
+This differs from superposing two independent processes, whose full
+product densities also contain tuples using points from both processes.
+
+\section{The diameter-capped problem}
+\label{sec:problem}
+
+For points in $\R^3$, put
+\begin{align}
+ D(x_1,x_2)&=|x_2-x_1|,\nonumber\\
+ A(x_1,x_2,x_3)&=\frac12|(x_2-x_1)\times(x_3-x_1)|,\label{eq:simplex}\\
+ V(x_1,x_2,x_3,x_4)&=\frac16
+ \left|\det[x_2-x_1,x_3-x_1,x_4-x_1]\right|.\nonumber
+\end{align}
+Write $(\Delta_2,\Delta_3,\Delta_4)=(D,A,V)$ and define
+\begin{equation}
+ E_n(M)=\{(x_1,\ldots,x_n):\diam\{x_1,\ldots,x_n\}<M,
+                       \ \Delta_n(x_1,\ldots,x_n)>0\}.
+ \label{eq:domains}
+\end{equation}
+The strict diameter bound does not bound the simplex away from degeneracy.
+For example, triangles in $E_3(M)$ can have arbitrarily large circumradius.
+
+\begin{theorem}\label{thm:main}
+For every independently prescribed pair $\lambda>0$ and $M>0$, there is a
+stationary, simple, locally finite point process $X$ on $\R^3$ with intensity
+$\lambda$, and finite positive constants $a_2,a_3,a_4$, such that the full
+factorial expectation measures of orders $2,3,4$ have globally defined
+Lebesgue densities finite almost everywhere and
+\begin{equation}
+ \rho_X^{(n)}(\mathbf x)=\frac{a_n}{\Delta_n(\mathbf x)}
+ \quad\text{for almost every }\mathbf x\in E_n(M),\qquad n=2,3,4.
+ \label{eq:target}
+\end{equation}
+The constants and the process may depend on $(\lambda,M)$.
+The process has finite third count moments on every bounded set and
+infinite fourth count moments in every nonempty open ball. It is
+nonergodic under translations.
+\end{theorem}
+
+There is no claim that a prescribed triple $(a_2,a_3,a_4)$ can be realised.
+Outside the sets $E_n(M)$ the densities are unconstrained, subject to the
+global measure and finiteness requirements of the theorem. Values of a
+density on a Lebesgue-null set may be chosen arbitrarily; this permission
+does not permit a singular component of its measure.
+
+For clarity, let us distinguish this problem, denoted S1, from the
+unrestricted version S0, in which the three equalities are required on all
+nondegenerate configurations without a diameter cap. S0 is false.
+
+\begin{proposition}\label{prop:global-obstruction}
+No stationary point process of finite positive intensity has full second
+factorial density $a_2/|x_2-x_1|$ almost everywhere on distinct pairs in
+$\R^3$, with $0<a_2<\infty$ and no other part of the second factorial
+measure.
+\end{proposition}
+\begin{proof}
+Let $B_R$ be a ball of radius $R$ and set $N_R=X(B_R)$. The assumed density
+is integrable on $B_R^2$, since
+\[
+ \int_{B_R}\int_{B_R}\frac{\dd y\dd x}{|x-y|}
+ \leq |B_R|\int_{B(0,2R)}\frac{\dd u}{|u|}
+ =8\pi R^2|B_R|.
+\]
+Thus $N_R$ has finite second moment, and nonnegativity of its variance gives
+\[
+ \lambda^2|B_R|^2
+ \leq \E N_R^2
+ =\lambda|B_R|+\E(N_R)_2
+ \leq \lambda|B_R|+8\pi a_2R^2|B_R|.
+\]
+After dividing by $|B_R|^2=\bigl(4\pi R^3/3\bigr)^2$, we obtain
+$\lambda^2\leq3\lambda/(4\pi R^3)+6a_2/R$, which is impossible as
+$R\to\infty$.
+\end{proof}
+
+This obstruction uses no fourth-moment assumption. It requires a change
+to the unrestricted tail of the second density, but it does not uniquely
+determine a replacement problem. The common diameter cap in S1 is the
+particular domain considered in Theorem~\ref{thm:main}.
+
+\section{Existence by a mixture of two processes}
+\label{sec:construction}
+
+We begin with the final random choice, since it explains the job of each
+component. Let $Y$ be a process on separated spheres, and let $C$ be a
+process of separated clusters containing at most three points. The process
+we seek has law
+\begin{equation}
+ \Law(X)=\frac12\Law(Y)+\frac12\Law(C).
+ \label{eq:fair-coin}
+\end{equation}
+The coin is tossed once for the whole of $\R^3$. Our task is therefore to
+construct two actual laws whose intensities average to $\lambda$ and whose
+full product densities average to \eqref{eq:target}.
+
+The correction process has a bounded intensity capacity because its
+clusters are separated. We allow the sphere process to supply the rest.
+Set
+\begin{equation}
+ \kappa=\frac1{36e\pi M^3},\qquad
+ \lambda_C=\min\{\lambda,\kappa/2\},\qquad
+ \lambda_Y=2\lambda-\lambda_C.
+ \label{eq:component-intensities}
+\end{equation}
+Both intensities are strictly positive and their average is $\lambda$.
+The construction below works for arbitrarily large $\lambda_Y$, while the
+correction uses $\lambda_C\leq\kappa/2$.
+
+\subsection{Process 1: Poisson points on separated spheres}
+\label{subsec:spheres}
+
+Let
+\begin{equation}
+ C_0=\frac{\pi^{3/2}}{3\sqrt3}.
+ \label{eq:C0}
+\end{equation}
+Choose a finite $K>0$ sufficiently large that, with
+\begin{equation}
+ c=\sqrt{\frac{C_0K^3}{\lambda_Y}},\qquad
+ F=\frac{K^4}{c^3}
+  =\frac{\lambda_Y^{3/2}}{C_0^{3/2}\sqrt K},
+ \qquad FM\leq10^{-4}.
+ \label{eq:Kc}
+\end{equation}
+For example, $K=10^8M^2\lambda_Y^3/C_0^3$ satisfies the last inequality
+with equality. The parameter $L\geq M$ is left free for now. Define
+\begin{equation}
+ f(q)=\frac KL e^{-q/L^2},\qquad
+ a(R)=\frac{c}{f(R^2)},\qquad
+ \gamma(R)=\frac{2R f(R^2)^4}{c^3}
+          =\frac{2FR}{L^4}e^{-4R^2/L^2}.
+ \label{eq:sphere-weights}
+\end{equation}
+We will construct a stationary random family of spheres whose first
+intensity on centre--radius space is $\gamma(R)\dd z\dd R$. On a sphere
+with centre $z$ and radius $R$, the Poisson surface intensity will be
+$a(R)/(2R)$. These choices make the fourth-order weight constant after
+putting $q=R^2$; the calculation appears in
+Section~\ref{subsec:sphere-densities}.
+
+The required spheres cannot be chosen independently, because nearby
+points would then also come from different spheres. Instead, choose a
+single radius band and arrange its surfaces far enough apart. Put
+\begin{equation}
+ H=2M,\qquad b_k=2^kM,\qquad P_k=4b_k+2M,\qquad k=0,1,\ldots,
+ \label{eq:band-parameters}
+\end{equation}
+and partition the positive radii into
+\[
+ I_0=(0,M],\qquad I_k=(b_k/2,b_k]\quad(k\geq1).
+\]
+Define the band probabilities by
+\begin{equation}
+ p_k=HP_k^3\sup_{R\in I_k}\gamma(R).
+ \label{eq:band-probabilities}
+\end{equation}
+They obey $\sum_kp_k<0.9$ for every $L\geq M$, as we verify in
+Lemma~\ref{lem:budget}. With probability $p_k$, select band $k$; with the
+remaining probability, select an empty sphere family.
+
+Conditionally on selecting band $k$, perform the following steps.
+Choose $Z$ uniformly on $[0,P_k)^3$ and use the centres
+$Z+P_km$, $m\in\mathbb Z^3$. Independently choose $U$ uniformly on
+$[0,H)$ and, at each centre, use the candidate radii
+$R=U+jH\in I_k$, $j\in\mathbb Z$. Retain each candidate sphere,
+independently conditionally on $(k,Z,U)$, with probability
+\begin{equation}
+ \theta_k(R)=\frac{\gamma(R)HP_k^3}{p_k}\in[0,1].
+ \label{eq:sphere-retention}
+\end{equation}
+Each realised band contains only finitely many candidate radial indices
+at each centre. A radius zero, which has phase probability zero, is
+omitted. Independent marks on the countable set of centre and radius
+indices specify this random family.
+
+\begin{lemma}[Probability budget]\label{lem:budget}
+The probabilities in \eqref{eq:band-probabilities} satisfy
+\[
+ \sum_{k\geq0}p_k<9000FM\leq0.9
+\]
+uniformly over $L\geq M$.
+\end{lemma}
+\begin{proof}
+Since $P_k\leq6b_k$, the first band satisfies
+\[
+ p_0\leq864FM(M/L)^4\leq864FM.
+\]
+For $k\geq1$, use $R\leq b_k$ and $R>b_k/2$ in
+\eqref{eq:sphere-weights}. With $t_k=b_k/L$, this gives
+\[
+ p_k\leq864FM\,t_k^4e^{-t_k^2}.
+\]
+The $t_k$ form a dyadic sequence. For the terms $t_k\leq1$, the sum of
+$t_k^4$ is at most $16/15$. For $t>1$, the bound
+$e^{t^2}\geq t^6/6$ gives $t^4e^{-t^2}\leq6/t^2$; the sum over the
+remaining dyadic terms is at most $8$. Therefore
+\[
+ \sum_kp_k\leq864FM\left(1+\frac{16}{15}+8\right)
+ =\frac{130464}{15}FM<9000FM.
+\]
+The bound contains no further dependence on $L$.
+\end{proof}
+
+\begin{lemma}[Sphere family]\label{lem:sphere-family}
+The retained sphere family is stationary, its surfaces are pairwise
+separated by more than $M$, and, for every nonnegative measurable $h$,
+\begin{equation}
+ \E\sum_{(z,R)\text{ retained}}h(z,R)
+ =\int_{\R^3}\int_0^\infty h(z,R)\gamma(R)\dd R\dd z.
+ \label{eq:sphere-first-intensity}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Uniform translation of the lattice gives, for nonnegative $g$,
+\[
+ \E_Z\sum_{m\in\mathbb Z^3}g(Z+P_km)=P_k^{-3}\int_{\R^3}g(z)\dd z.
+\]
+Uniform radial phase similarly gives
+\[
+ \E_U\sum_{j:\,U+jH\in I_k}g(U+jH)
+ =H^{-1}\int_{I_k}g(R)\dd R.
+\]
+Multiplying these identities by $p_k\theta_k(R)$, and summing over the
+bands, proves \eqref{eq:sphere-first-intensity}. Only the first intensity
+is asserted; the sphere parameters are dependent.
+
+At a common centre the surfaces of two candidate spheres have distance
+at least $H=2M$. At different centres in band $k$, their distance is at
+least
+\begin{equation}
+ P_k-2b_k=2b_k+2M>M.
+ \label{eq:surface-gap}
+\end{equation}
+These bounds survive retention. Finally, translating space changes $Z$
+modulo $P_k\mathbb Z^3$ and relabels the centre indices. The conditional
+retention law is unchanged by that relabelling, while the law of $Z$ is
+uniform. This proves stationarity within each band and for their mixture.
+\end{proof}
+
+Write $S(z,R)$ for the sphere and $\sigma_{z,R}$ for its unnormalised
+surface area measure. Given the retained family, place independent Poisson
+processes on its spheres, with intensity measures
+\begin{equation}
+ \frac{a(R)}{2R}\sigma_{z,R}.
+ \label{eq:surface-intensity}
+\end{equation}
+Equivalently, sample a Poisson number with mean $2\pi a(R)R$ on each
+retained sphere and sample its directions independently and uniformly on
+$S^2$. Their union is the process $Y$. Its directing measure is
+\begin{equation}
+ \Lambda=\sum_{(z,R)\text{ retained}}
+                   \frac{a(R)}{2R}\sigma_{z,R}.
+ \label{eq:Lambda}
+\end{equation}
+
+The construction already gives an actual stationary, simple and locally
+finite process. To check local finiteness, condition on the selected band.
+Only centres within distance $b_k$ of a bounded observation set can affect
+it, and there are finitely many such centres and candidate radii. Each
+sphere carries a finite Poisson count. The surface measures have no atoms,
+and different surfaces are disjoint, so the union is simple. Countable
+exhaustion by balls makes these statements simultaneous over the whole
+space. The spatially invariant Poisson draws preserve stationarity.
+
+We will compute the local product densities first. The fact that these
+are globally well-defined densities requires attention to tuples lying
+on several spheres, even though such tuples do not occur in $E_n(M)$.
+The full proof is in Appendix~\ref{app:regularity}. It establishes the
+following facts, which will also be used at the end of the construction.
+
+\begin{proposition}\label{prop:sphere-regularity}
+For the process $Y$, the full factorial expectation measures through
+order four are absolutely continuous on the whole configuration space
+and have densities finite almost everywhere. Moreover,
+$\E Y(B)^3<\infty$ for every bounded Borel set $B$.
+\end{proposition}
+
+\subsection{Sphere geometry and the first four densities}
+\label{subsec:sphere-densities}
+
+Four noncoplanar points determine a unique sphere. The corresponding
+change of coordinates is particularly useful here. Let $\omega_i\in S^2$
+and $x_i=z+R\omega_i$, $i=1,\ldots,4$. The Euclidean spherical formula
+stated in \cite[equation (1)]{Chapron2018}, specialised to dimension three,
+is
+\begin{equation}
+ \dd x_1\cdots\dd x_4
+ =6\Delta_3(\omega_1,\ldots,\omega_4)R^8
+       \dd z\dd R\prod_{i=1}^4\dd\omega_i,
+ \label{eq:chapron}
+\end{equation}
+where $\dd\omega$ is surface area measure on the unit sphere and
+$\Delta_3$ is ordinary tetrahedron volume. Since
+$V(x_1,\ldots,x_4)=R^3\Delta_3(\omega_1,\ldots,\omega_4)$, the Jacobian
+is $6VR^5$. Chapron attributes the Euclidean identity to Miles; we use
+the displayed formula in Chapron, without making a separate attribution
+claim based on the original Miles paper.
+
+A family with first intensity $\gamma(R)\dd z\dd R$, carrying Poisson
+surface intensity $t(R)\sigma_{z,R}$, therefore has same-sphere fourth
+density
+\begin{equation}
+ \frac{\gamma(R_*)t(R_*)^4R_*^3}{6V},
+ \label{eq:generic-fourth}
+\end{equation}
+evaluated at the unique circumradius $R_*$. This follows by dividing
+the parameter weight $\gamma t^4R^8$ by the Jacobian $6VR^5$.
+The formula is ordered: no division by $4!$ is present.
+
+For our process, separation makes this same-sphere contribution the full
+local fourth density. We also need the lower orders, for which the set of
+possible sphere centres has positive dimension. The next lemma records
+all four calculations in a common convention.
+
+\begin{lemma}[Sphere integrals]\label{lem:sphere-integrals}
+Let $w_n:(0,\infty)\to[0,\infty]$ be measurable. Consider the measure
+obtained by integrating
+\[
+ w_n(q)\prod_{i=1}^n\frac{\sigma_{z,\sqrt q}(\dd x_i)}{2\sqrt q}
+\]
+over $z\in\R^3$ and $q>0$. On nondegenerate configurations its density is
+\begin{align}
+ r_1&=2\pi\int_0^\infty\sqrt q\,w_1(q)\dd q,\label{eq:sphere-lemma1}\\
+ r_2(x_1,x_2)&=\frac{\pi}{2D}
+                 \int_{D^2/4}^\infty w_2(q)\dd q,\label{eq:sphere-lemma2}\\
+ r_3(x_1,x_2,x_3)&=\frac1{8A}
+                 \int_{\R}w_3(R_\triangle^2+h^2)\dd h,\label{eq:sphere-lemma3}\\
+ r_4(x_1,x_2,x_3,x_4)&=\frac{w_4(R_*^2)}{48V}.\label{eq:sphere-lemma4}
+\end{align}
+Here $R_\triangle$ is the triangle circumradius and $R_*$ is the
+tetrahedron circumradius. The formulas hold as nonnegative measure
+identities; local integrability is not assumed.
+\end{lemma}
+\begin{proof}
+The one-dimensional radial coarea formula identifies
+\[
+ \frac{\sigma_{z,\sqrt q}(\dd x)}{2\sqrt q}
+ =\delta(|x-z|^2-q)\dd x.
+\]
+We use the right-hand side only as notation for the measure on the left.
+Thus the density is obtained by integrating
+\begin{equation}
+ w_n(q)\prod_{i=1}^n\delta(|x_i-z|^2-q)
+ \label{eq:incidence}
+\end{equation}
+over $(z,q)$. We justify this representation after computing the
+constraint Jacobians.
+
+For one point, translating $x_1$ to zero and using polar coordinates in
+$z$ gives
+$\int_{\R^3}\delta(|z|^2-q)\dd z=2\pi\sqrt q$.
+For two points, write $x_1=0$ and $x_2=de$, with $|e|=1$. Subtracting the
+first constraint from the second gives $d^2-2d(z\cdot e)=0$.
+It fixes $z\cdot e=d/2$ with Jacobian $2d$. The first constraint fixes
+$q=d^2/4+|z_\perp|^2$ with Jacobian one. Integrating the remaining two
+centre coordinates in polar form gives
+\[
+ \frac1{2d}\int_{\R^2}w_2(d^2/4+|v|^2)\dd v
+ =\frac\pi{2d}\int_{d^2/4}^\infty w_2(q)\dd q.
+\]
+
+For three points, translate the first to zero and write the others as
+$u,v$. The two subtracted constraints fix the projection of the centre
+onto the triangle plane at its circumcentre. Their Jacobian in orthonormal
+plane coordinates is $4|u\times v|=8A$. If $h$ is the remaining normal
+coordinate, the first constraint fixes $q=R_\triangle^2+h^2$.
+This gives \eqref{eq:sphere-lemma3}.
+
+For four noncoplanar points, the four constraints determine $(z,q)$
+uniquely, with $q=R_*^2>0$. Subtracting the first row from the other three
+in the derivative with respect to $(z,q)$ gives absolute determinant
+\begin{equation}
+ 8\left|\det[x_2-x_1,x_3-x_1,x_4-x_1]\right|=48V.
+ \label{eq:48V}
+\end{equation}
+This proves \eqref{eq:sphere-lemma4}, consistently with
+\eqref{eq:chapron} after the change $q=R^2$.
+
+For completeness, these calculations can be read as ordinary changes of
+variables on the incidence set $|x_i-z|^2=q$. Work first in a compact
+regular coordinate chart, with $q$ bounded away from zero and with a
+continuous test function. Replace each displayed $\delta$ by a smooth
+one-dimensional approximate identity. Integrating first in the radial
+coordinate of each $x_i$ gives the surface measure divided by $2\sqrt q$.
+Alternatively, keep the $x_i$ fixed and use $q$ and $n-1$ centre coordinates
+as the constraint coordinates. The nonzero determinants just computed
+give \eqref{eq:sphere-lemma1}--\eqref{eq:sphere-lemma4} in the limit. The
+approximate-identity passage is the usual one-dimensional substitution
+on these regular charts, with compact support and continuous Jacobians.
+A countable chart decomposition proves equality of the resulting Borel
+measures, and nonnegative exhaustion extends it to arbitrary measurable
+weights and tests. All subsequent integrations use Tonelli's theorem.
+No product of unspecified distributions, or finite fourth moment, is
+needed.
+\end{proof}
+
+For $Y$, every tuple of diameter below $M$ lies on a single retained
+sphere. By \eqref{eq:cox-identity} and
+\eqref{eq:sphere-first-intensity}, its full local factorial measure is
+therefore
+\begin{equation}
+ \int_{\R^3}\int_0^\infty
+ \gamma(R)\left(\frac{a(R)}{2R}\right)^n
+       \sigma_{z,R}^{\otimes n}(\dd\mathbf x)\dd R\dd z.
+ \label{eq:local-sphere-measure}
+\end{equation}
+For $n=1$ the same expression gives the full first measure everywhere.
+Putting $q=R^2$, the weight in Lemma~\ref{lem:sphere-integrals} becomes
+\begin{equation}
+ w_n(q)=\frac{\gamma(\sqrt q)a(\sqrt q)^n}{2\sqrt q},
+ \qquad (w_1,w_2,w_3,w_4)=\left(\frac{f^3}{c^2},\frac{f^2}{c},f,c\right).
+ \label{eq:wn}
+\end{equation}
+Define
+\begin{equation}
+ A_2=\frac{\pi K^2}{4c},\qquad A_3=\frac{K\sqrt\pi}{8}.
+ \label{eq:A2A3}
+\end{equation}
+The four densities are
+\begin{align}
+ \rho_Y^{(1)}&=\frac{2\pi}{c^2}\int_0^\infty\sqrt q\,f(q)^3\dd q
+              =\frac{C_0K^3}{c^2}=\lambda_Y,
+              \label{eq:Y1}\\
+ \rho_Y^{(2)}&=\frac{A_2}{D}e^{-D^2/(2L^2)}
+                         &&\text{on }E_2(M),\label{eq:Y2}\\
+ \rho_Y^{(3)}&=\frac{A_3}{A}e^{-R_\triangle^2/L^2}
+                         &&\text{on }E_3(M),\label{eq:Y3}\\
+ \rho_Y^{(4)}&=\frac{c}{48V}
+                         &&\text{on }E_4(M).\label{eq:Y4}
+\end{align}
+For the first line,
+$\int_0^\infty q^{1/2}e^{-3q/L^2}\dd q
+=L^3\sqrt\pi/(6\sqrt3)$. The pair integral uses
+$\int_{D^2/4}^\infty e^{-2q/L^2}\dd q
+=(L^2/2)e^{-D^2/(2L^2)}$, and the triangle integral uses
+$\int_\R e^{-h^2/L^2}\dd h=L\sqrt\pi$.
+Thus $\lambda_Y,A_2,A_3,c$ are independent of the still-free scale $L$.
+
+The fourth density is already exactly of the desired form. After the
+fair coin it will have coefficient $c/96$. The lower two densities fall
+short of the reciprocal forms because of their exponential factors.
+Their pointwise deficits are nonnegative. We need more than pointwise
+smallness: the triangle deficit contributes pairs when realised by
+three-point clusters, so its pair marginal must be controlled uniformly,
+including for thin triangles. That is the next step.
+
+\subsection{The two deficits and their marginal bound}
+\label{subsec:deficits}
+
+For a translation-invariant kernel $h$ of $j$ points, write
+\[
+ (\Mop h)(x_1,\ldots,x_{j-1})
+ =\int_{\R^3}h(x_1,\ldots,x_j)\dd x_j.
+\]
+Its \emph{anchored integral} is the integral with the first point fixed at
+zero and the other points integrated over $\R^3$. Fixing one point removes
+the infinite factor arising from translation invariance.
+Set $K_2=\ind_{E_2(M)}/D$, with value zero on degenerate pairs, and put
+\begin{equation}
+ B_L=\frac{8\pi A_3M^3}{L},\qquad \delta=2B_L.
+ \label{eq:BL}
+\end{equation}
+Define the desired correction densities
+\begin{align}
+ q_3&=\frac{A_3\ind_{E_3(M)}}{A}
+                \left(1-e^{-R_\triangle^2/L^2}\right),\label{eq:q3}\\
+ q_2&=\frac{\ind_{E_2(M)}}{D}
+                \left[\delta+A_2\left(1-e^{-D^2/(2L^2)}\right)\right].
+                \label{eq:q2}
+\end{align}
+Both kernels are symmetric, translation invariant and nonnegative, and
+we set them to zero on degenerate configurations. The extra term
+$\delta/D$ in the pair correction allows for pairs that must accompany a
+three-point cluster. It changes the eventual coefficient $a_2$, which the
+problem leaves free.
+
+\begin{lemma}[Uniform marginal bound]\label{lem:deficit}
+For every $L\geq M$,
+\begin{equation}
+ \Mop q_3\leq B_LK_2.
+ \label{eq:marginal-bound}
+\end{equation}
+Consequently, the kernels
+\begin{equation}
+ F_3=q_3,\qquad F_2=q_2-\Mop q_3
+ \label{eq:F-kernels}
+\end{equation}
+are nonnegative, with $F_2\geq B_LK_2$. Their anchored integrals are
+finite and strictly positive.
+\end{lemma}
+\begin{proof}
+Fix a pair $0,de$, with $0<d<M$ and $|e|=1$. For the third vertex $z$,
+let $r$ be its distance from the line through the pair. The triangle area
+is $dr/2$, and its circumradius is
+\begin{equation}
+ R_\triangle=\frac{|z|\,|z-de|}{2r}\leq\frac{M^2}{2r}
+ \quad\text{on }E_3(M).
+ \label{eq:circumradius-bound}
+\end{equation}
+Let $\varepsilon=M^2/(2L)\leq M/2$. Since
+$1-e^{-t}\leq\min\{1,t\}$ for $t\geq0$, we have
+\begin{align*}
+ d\int_{\R^3}q_3(0,de,z)\dd z
+ &\leq2A_3\int_{B(0,M)}\frac1r
+                    \min\{1,\varepsilon^2/r^2\}\dd z\\
+ &\leq8\pi A_3M\int_0^M\min\{1,\varepsilon^2/r^2\}\dd r\\
+ &\leq16\pi A_3M\varepsilon=B_L.
+\end{align*}
+In the second line, cylindrical coordinates cancel the factor $1/r$,
+and the axial length is at most $2M$. For the last line, split the
+integral at $\varepsilon$; it is at most $2\varepsilon$. Collinear third
+vertices form a null set. If the pair lies outside $E_2(M)$, no triangle
+in the support of $q_3$ contains it, so the bound also holds there.
+
+Let $Q_j$ be the anchored integral of $q_j$ and $Z_j$ that of $F_j$.
+The pair integral $\int K_2(0,u)\dd u=2\pi M^2$, together with
+$1-e^{-d^2/(2L^2)}\leq d^2/(2L^2)$, gives
+\begin{equation}
+ Q_2\leq\frac{32\pi^2A_3M^5}{L}
+              +\frac{\pi A_2M^4}{2L^2}.
+ \label{eq:Q2-bound}
+\end{equation}
+Indeed, the extra term integrates to $2\pi M^2\delta$, and the other
+term is bounded by
+$4\pi A_2\int_0^M d^3/(2L^2)\dd d$.
+Integrating \eqref{eq:marginal-bound} proves $Q_3<\infty$.
+No infinite quantities are subtracted in \eqref{eq:F-kernels}.
+The lower bound $q_2\geq2B_LK_2$ yields
+$F_2\geq B_LK_2$, and Tonelli gives
+\begin{equation}
+ Z_3=Q_3>0,\qquad Z_2=Q_2-Q_3>0.
+ \label{eq:ZQ}
+\end{equation}
+The strict positivity of $Q_3$ follows from the strictly positive
+circumradius on every nondegenerate triangle; that of $Z_2$ follows from
+its displayed lower bound.
+\end{proof}
+
+We can now choose the sphere scale. Take
+\begin{equation}
+ L=\max\left\{
+ M,\ \frac{128\pi^2A_3M^5}{\lambda_C},\
+ M^2\sqrt{\frac{2\pi A_2}{\lambda_C}}
+ \right\}.
+ \label{eq:L-choice}
+\end{equation}
+Each of the two summands in \eqref{eq:Q2-bound} is then at most
+$\lambda_C/4$, so
+\begin{equation}
+ Q_2\leq\lambda_C/2.
+ \label{eq:small-budget}
+\end{equation}
+All quantities on the right of \eqref{eq:L-choice} were fixed before
+$L$. Lemma~\ref{lem:budget} remains valid at this value because its
+probability bound was uniform in $L\geq M$.
+
+The triangle deficit need not be uniformly small over shapes:
+$R_\triangle$ is unbounded on $E_3(M)$. The estimate we use is instead the
+uniform pair-marginal bound \eqref{eq:marginal-bound}. This is why no lower
+altitude cutoff enters the argument.
+
+\subsection{Process 2: separated finite correction clusters}
+\label{subsec:correction}
+
+We next realise $q_2$ and $q_3$ as the full local product densities of one
+process with no eligible four-point tuples. Let $\Pi$ be a homogeneous
+Poisson process of centres with intensity
+\begin{equation}
+ \eta=\frac1{36\pi M^3}.
+ \label{eq:eta}
+\end{equation}
+Retain a centre if there is no other centre within distance $3M$. The
+retained centres are dependent, but have separation greater than $3M$
+almost surely and intensity
+\begin{equation}
+ \eta\exp\{-\eta|B(0,3M)|\}=\eta e^{-1}=\kappa.
+ \label{eq:hardcore-intensity}
+\end{equation}
+Here $|B(0,3M)|=36\pi M^3$.
+
+The first-intensity calculation can be obtained directly by Poisson
+insertion. For a nonnegative measurable test $h$,
+\begin{equation}
+ \E\sum_{z\in\Pi}h(z,\Pi\setminus\{z\})
+ =\eta\int_{\R^3}\E h(z,\Pi)\dd z.
+ \label{eq:insertion}
+\end{equation}
+On a bounded region, condition on the Poisson count, select one point,
+and use $n/n!=1/(n-1)!$ in the resulting nonnegative series.
+Exhaustion proves \eqref{eq:insertion} in the whole space. Applying it
+to the empty-ball condition gives \eqref{eq:hardcore-intensity} by the
+Poisson void probability. Pairs at exactly distance $3M$ have zero
+expected count in bounded windows, so strict separation holds almost
+surely.
+
+Set
+\begin{equation}
+ \beta=\lambda_C-Q_2+\frac{Q_3}{2}
+       =\lambda_C-Z_2-\frac{Z_3}{2}.
+ \label{eq:beta}
+\end{equation}
+By \eqref{eq:small-budget}, $\beta\geq\lambda_C/2>0$.
+Independently at each retained centre, choose a cluster size in
+$\{0,1,2,3\}$ with probabilities
+\begin{equation}
+ \pi_1=\frac\beta\kappa,\qquad
+ \pi_2=\frac{Z_2}{2\kappa},\qquad
+ \pi_3=\frac{Z_3}{6\kappa},\qquad
+ \pi_0=1-\pi_1-\pi_2-\pi_3.
+ \label{eq:cluster-probabilities}
+\end{equation}
+These are valid probabilities because
+\begin{equation}
+ \kappa(\pi_1+\pi_2+\pi_3)
+ =\lambda_C-\frac{Q_2}{2}+\frac{Q_3}{6}
+ \leq\lambda_C\leq\kappa.
+ \label{eq:cluster-budget}
+\end{equation}
+We used $0<Q_3<Q_2$ in the inequality.
+
+A size-zero cluster emits nothing and a size-one cluster emits its centre.
+For size $j=2,3$, emit the centre $z$ and $j-1$ offsets
+$z+y_2,\ldots,z+y_j$, with joint density
+\begin{equation}
+ \frac{F_j(0,y_2,\ldots,y_j)}{Z_j}
+ \quad\text{on }(\R^3)^{j-1}.
+ \label{eq:offset-law}
+\end{equation}
+Lemma~\ref{lem:deficit} proves that these are probability densities.
+Every cluster has diameter below $M$ and contains its centre. The union
+of the emitted points is $C$.
+
+Points from different clusters are at distance greater than
+$3M-2M=M$. Thus every tuple in $E_n(M)$ comes from one cluster. The
+process is stationary because the thinning rule commutes with
+translations and the offset laws do not depend on the centre location.
+It is simple and locally finite: only Poisson centres within distance
+$M$ of a bounded observation set can contribute, each emits at most
+three points, and the continuous offset laws give no coincidences.
+
+\begin{proposition}[The four correction densities]\label{prop:C-densities}
+The process $C$ has intensity $\lambda_C$ and, on the indicated local
+domains, full product densities
+\begin{align}
+ \rho_C^{(1)}&=\lambda_C,\label{eq:C1}\\
+ \rho_C^{(2)}&=F_2+\Mop F_3=q_2
+                      &&\text{on }E_2(M),\label{eq:C2}\\
+ \rho_C^{(3)}&=F_3=q_3
+                      &&\text{on }E_3(M),\label{eq:C3}\\
+ \rho_C^{(4)}&=0
+                      &&\text{on }E_4(M).\label{eq:C4}
+\end{align}
+Its full factorial expectation measures through order four have globally
+finite-almost-everywhere densities, and its bounded-set count moments are
+finite at every order.
+\end{proposition}
+\begin{proof}
+Consider a cluster of size $j$ and an ordered selection of $n\leq j$ of
+its points. After integrating its centre over space, symmetry and
+translation invariance of $F_j$ make every ordered selection have the
+same density. More explicitly, permute the selected point labels, choose
+one selected point as the new anchor, and subtract its offset from the
+remaining offsets. This linear change of variables has absolute
+Jacobian one. The kernel is unchanged by the permutation and common
+translation. Integrating the $j-n$ unused coordinates gives
+$\Mop^{j-n}F_j$. There are $j!/(j-n)!$ ordered selections.
+
+The retained-centre intensity $\kappa$ is sufficient for this calculation.
+For pairs, size-two clusters contribute
+$2\kappa\pi_2F_2/Z_2=F_2$, and size-three clusters contribute
+$6\kappa\pi_3\Mop F_3/Z_3=\Mop F_3$. For triples, the contribution is
+$6\kappa\pi_3F_3/Z_3=F_3$. There is no ordered selection of four points
+from one cluster. Since separation excludes other local allocations,
+these are the full local densities in \eqref{eq:C2}--\eqref{eq:C4}.
+The first density is
+\[
+ \kappa(\pi_1+2\pi_2+3\pi_3)
+ =\beta+Z_2+Z_3/2=\lambda_C.
+\]
+This calculation does not treat the retained centres as independent.
+
+We still need the full measures outside the local domains. Give the same
+independent marks to every original Poisson centre before retention, and
+let $C^\sharp$ be the unthinned emitted process. Then $C\subseteq C^\sharp$
+and, for bounded $B$,
+\begin{equation}
+ C^\sharp(B)\leq3\Pi(B^{+M}),
+ \qquad B^{+M}=\{x:\operatorname{dist}(x,B)<M\}.
+ \label{eq:C-domination}
+\end{equation}
+The right-hand side has finite moments of all orders. Absolute continuity
+can be checked by retaining every parent allocation in the unthinned
+process. Put $F_1=Z_1=1$, and for $1\leq n\leq3$ define the same-parent
+kernel
+\begin{equation}
+ G_n=\eta\sum_{j=n}^3
+        \frac{\pi_jj!}{(j-n)!Z_j}\Mop^{j-n}F_j,
+ \qquad G_n=0\quad(n>3).
+ \label{eq:G-kernels}
+\end{equation}
+In particular $G_1=\eta\sum_{j=1}^3j\pi_j$ is a constant.
+Label a tuple by the partition $\mathcal P$ of its indices according to
+its distinct Poisson parents. The Poisson factorial identity for those
+parents, and the ordered-selection calculation above, give
+\begin{equation}
+ \rho_{C^\sharp}^{(n)}(\mathbf x)
+ =\sum_{\mathcal P}\prod_{I\in\mathcal P}G_{|I|}(x_I).
+ \label{eq:all-parent}
+\end{equation}
+The sum is over every set partition of $\{1,\ldots,n\}$. The identity
+follows from iterated insertion \eqref{eq:insertion}; all summands are
+nonnegative, so Tonelli applies. This proves global absolute continuity,
+including all different-parent tuples. The moment bound
+\eqref{eq:C-domination} makes the full measure locally finite, so its
+density is finite almost everywhere.
+
+For nonnegative tuple tests, the coupling gives
+$\alpha_C^{(n)}\leq\alpha_{C^\sharp}^{(n)}$. Hence $C$ inherits global
+absolute continuity and finite-almost-everywhere densities. It also
+inherits the moment bounds from \eqref{eq:C-domination}.
+\end{proof}
+
+\subsection{The final mixture}
+
+All the ingredients now exist at finite parameter values. The final step
+is short because the two components were designed for the same coin.
+
+\begin{corollary}\label{cor:mixture}
+The law \eqref{eq:fair-coin} satisfies Theorem~\ref{thm:main}, with
+\begin{equation}
+ a_2=\frac{A_2+\delta}{2},\qquad
+ a_3=\frac{A_3}{2},\qquad
+ a_4=\frac{c}{96}.
+ \label{eq:final-constants}
+\end{equation}
+Its normalised functions on $E_n(M)$ are
+$g_n=a_n/(\lambda^n\Delta_n)$.
+\end{corollary}
+\begin{proof}
+Both alternatives are stationary, simple and locally finite, and their
+mean intensities average to $\lambda$ by
+\eqref{eq:component-intensities}. Proposition~\ref{prop:sphere-regularity}
+and Proposition~\ref{prop:C-densities} give globally finite-almost-everywhere
+full densities. A finite mixture preserves these properties, and
+\eqref{eq:mixture-measure}, \eqref{eq:Y2}--\eqref{eq:Y4} and
+\eqref{eq:C2}--\eqref{eq:C4} give exactly \eqref{eq:final-constants}.
+
+The parameter choices have no circular dependence. First
+$(\lambda,M)$ determines $(\kappa,\lambda_C,\lambda_Y)$. Next choose
+$K,c$ by \eqref{eq:Kc}, then obtain $A_2,A_3$ from
+\eqref{eq:A2A3}. Choose $L$ from \eqref{eq:L-choice}, and finally define
+$B_L,\delta$, the sphere band law and the cluster kernels. The uniform
+sphere budget and \eqref{eq:small-budget} verify both probability laws
+at that $L$. This works for every prescribed pair, without a restriction
+on $\lambda M^3$.
+
+Finite third count moments follow from the corresponding component
+bounds. The fourth-moment assertion is proved just below. Finally, the
+sphere law is empty with probability at least $1-\sum_kp_k>0.1$, so
+$\PP(X=\varnothing)>0$. Positive intensity implies
+$\PP(X\ne\varnothing)>0$. The event that the whole configuration is empty
+is measurable and invariant under every translation, with probability
+strictly between zero and one. Thus $X$ is nonergodic.
+\end{proof}
+
+\begin{proposition}\label{prop:fourth-infinite}
+Any process with the full local fourth density $a_4/V$ on $E_4(M)$,
+where $a_4>0$, has infinite fourth count moment in every nonempty open
+ball.
+\end{proposition}
+\begin{proof}
+Inside an arbitrary nonempty open ball, choose a smaller ball $B$ whose
+diameter is less than $M$. Choose three small neighbourhoods of the
+vertices of a fixed noncollinear triangle in its interior. Shrink them
+so that every resulting base triangle has area bounded above and away
+from zero and remains a positive distance from the boundary of $B$.
+They form a positive-measure family of base triangles.
+
+For each such triangle, a small planar disc about its barycentre and a
+uniformly short normal interval remain inside $B$. Write the fourth
+vertex in these coordinates as $(v,h)$. The tetrahedron volume is
+$V=A|h|/3$, while the coordinate Jacobian is one. Apart from $h=0$, all
+these configurations are in $E_4(M)$. The integral of $a_4/V$ over the
+fourth vertex contains a positive multiple of
+$\int_0^\varepsilon\dd h/h=\infty$. Tonelli, followed by integration
+over the positive-measure family of base triangles, gives
+$\alpha_X^{(4)}(B^4)=\infty$. Since $(X(B))_4\leq X(B)^4$, the raw
+fourth moment is infinite as well.
+\end{proof}
+
+The same argument excludes the additional requirement of finite fourth
+moments even in the capped problem. It does not exclude local finiteness,
+and it does not impose any further geometric cutoff on the process we
+have constructed.
+
+% BEGIN SIMULATION SECTION
+\section{Simulation study}
+\label{sec:simulation}
+\emph{Draft insertion point.} The reproducible simulation study is being
+prepared separately. This section will state the sampling law, numerical
+parameter choices, estimands, bin definitions, uncertainty estimates and
+actual results for $g_2,g_3,g_4$ once those outputs have been checked. No
+simulation result or empirical agreement is asserted in this draft.
+% END SIMULATION SECTION
+
+\appendix
+
+\section{Global densities and moments of the sphere process}
+\label{app:regularity}
+
+This appendix proves Proposition~\ref{prop:sphere-regularity}. The local
+formulas do not suffice for that proposition: they describe tuples on
+one sphere in the prescribed diameter range, whereas the full measures
+also include tuples spread across several spheres and several centres.
+There are two distinct questions. We first prove absolute continuity for
+every sphere allocation. We then show that the resulting sum of densities
+is finite almost everywhere. At order four this second step needs a
+geometric argument, because the fourth measure is not locally finite.
+
+\subsection{Every allocation has an absolutely continuous measure}
+\label{app:submersion}
+
+Conditionally on the sphere family, $Y$ is Poisson with nonatomic locally
+finite directing measure \eqref{eq:Lambda}. Hence
+$\alpha_Y^{(n)}=\E\Lambda^{\otimes n}$ as extended measures. Fix a band
+$k$ and a prescribed allocation of $n$ point labels to sphere indices
+$(m_i,j_i)$, where $m_i\in\mathbb Z^3$ indexes a centre and
+$j_i\in\mathbb Z$ indexes a radius. Repeated sphere indices are allowed.
+A point in this allocation has the form
+\begin{equation}
+ x_i=Z+P_km_i+(U+j_iH)\omega_i,
+ \qquad\omega_i\in S^2,\qquad i=1,\ldots,n.
+ \label{eq:allocation-map}
+\end{equation}
+The parameter measure is a nonnegative measurable weight times Lebesgue
+measure in $(Z,U)$ and product surface area measure in the directions.
+Band membership, Poisson surface factors and the conditional retention
+probabilities are part of this weight. When a sphere index is repeated,
+its retention indicator is counted only once; the weight uses the
+retention probability for each distinct selected sphere. This changes
+no rank calculation below.
+
+At positive radii, the angular derivatives of
+\eqref{eq:allocation-map} span the two-dimensional plane
+$\omega_i^\perp$ in the $i$th position block. Together these give $2n$
+independent tangent directions. Quotienting them out, the derivative with
+respect to $(Z,U)$ has $n$ rows
+\begin{equation}
+ (\omega_i^{\mathsf T},1),\qquad i=1,\ldots,n.
+ \label{eq:normal-rows}
+\end{equation}
+For $n\leq4$ these rows have rank $n$ for almost every collection of
+directions under product area measure. At order two, rank failure
+requires the directions to coincide. Three distinct points on $S^2$
+cannot be collinear, since a line intersects the sphere in at most two
+points. Thus three directions are almost surely affinely independent.
+Their affine plane intersects $S^2$ in a circle or a smaller set, of
+surface measure zero, so a fourth independently integrated direction
+almost surely avoids it. This proves the rank assertion, including all
+lower orders.
+
+It follows that the map \eqref{eq:allocation-map} has differential rank
+$3n$ almost everywhere. Here is the resulting absolute-continuity argument
+in detail. Use ordinary angular charts on the sphere. At a full-rank
+parameter point, select a nonzero $3n$-by-$3n$ minor of the derivative.
+The map consisting of the $3n$ position coordinates and the unused
+parameter coordinates is locally invertible. In these coordinates the
+position map is a coordinate projection. Fubini's theorem shows that the
+preimage of any Lebesgue-null position set has parameter measure zero.
+A countable cover by such inverse-function charts handles the full-rank
+set; the rank-failure set was already null for the parameter measure.
+Multiplication by a nonnegative measurable weight does not alter this
+conclusion. Thus the pushforward for the specified allocation is
+absolutely continuous.
+
+There are countably many sphere allocations. Summing their measures, and
+then mixing over the countably many bands, proves global absolute
+continuity of $\alpha_Y^{(n)}$ for $n\leq4$. In particular, no mass remains
+on a coincidence, collinearity or coplanarity set.
+
+We can also exhibit the density without invoking a Radon--Nikodym theorem
+for a potentially non-locally-finite fourth measure. For each fixed band
+and bounded observation set, the number of influencing spheres has a
+deterministic finite bound. Moreover,
+\[
+ 2\pi a(R)R\leq2\pi b_k\sup_{0<R\leq b_k}a(R)<\infty.
+\]
+The directing mass on that set is therefore bounded conditionally on the
+band, uniformly over the shift, phase and retention marks. All its count
+moments are finite. The conditional factorial measures for a fixed band
+are locally finite and absolutely continuous, so have finite-almost-everywhere
+densities $h_{n,k}$. The full measure has the extended density
+\begin{equation}
+ \rho_Y^{(n)}=\sum_{k\geq0}p_kh_{n,k}.
+ \label{eq:band-density-sum}
+\end{equation}
+The empty alternative contributes zero. A countable sum of finite densities
+can still be infinite on a set of positive measure, so the remaining
+parts of this appendix prove that this does not occur.
+
+\subsection{Finite third count moments}
+\label{app:third-moment}
+
+Fix a ball $B=B(x,r)$. There is a constant $J_B<\infty$, independent of the
+selected band, bounding the number of candidate spheres that can meet
+$B$. Indeed, their centres must lie in $B(x,b_k+r)$, and the lattice
+spacing satisfies $P_k\geq4b_k$ with $b_k\geq M$. A cubical packing bound
+therefore gives a uniform finite bound on the number of such centres,
+depending only on $r/M$. At any one centre, radii of spheres meeting $B$
+lie in an interval of length at most $2r$. A grid of spacing $H=2M$
+contains at most $\lfloor2r/H\rfloor+2$ such radii. Multiplying the two
+bounds gives $J_B$; retention can only decrease the number.
+
+We also have the uniform area bound
+\begin{equation}
+ \sigma_{z,R}(B)\leq C_B:=4\pi r^2.
+ \label{eq:cap-bound}
+\end{equation}
+For $R\leq r$, use the full sphere area. For $R>r$, a nonempty
+intersection is a spherical cap. If $d=|z-x|>0$, the cosine at its boundary
+is
+\[
+ \frac{R^2+d^2-r^2}{2Rd}
+ =\frac{d+(R^2-r^2)/d}{2R}
+ \geq\frac{\sqrt{R^2-r^2}}{R}.
+\]
+Thus the cap area is at most
+\[
+ 2\pi R^2\left(1-\sqrt{1-r^2/R^2}\right)\leq2\pi r^2.
+\]
+If $d=0$ and $R>r$, the intersection is empty, so the bound holds there
+as well.
+
+Write $m_{z,R}=a(R)\sigma_{z,R}(B)/(2R)$ for a sphere's contribution to
+$\Lambda(B)$. The number bound and \eqref{eq:cap-bound} imply
+\[
+ \Lambda(B)^3\leq J_B^2\sum_{(z,R)\text{ retained}}m_{z,R}^3,
+ \qquad
+ \sigma_{z,R}(B)^3\leq C_B^2\sigma_{z,R}(B).
+\]
+Translation of the centre gives
+\begin{equation}
+ \int_{\R^3}\sigma_{z,R}(B)\dd z=4\pi R^2|B|.
+ \label{eq:surface-centre-integral}
+\end{equation}
+Apply \eqref{eq:sphere-first-intensity},
+\eqref{eq:surface-centre-integral} and Tonelli to obtain
+\begin{align}
+ \E\Lambda(B)^3
+ &\leq\frac{\pi J_B^2C_B^2|B|}{2}
+             \int_0^\infty\frac{\gamma(R)a(R)^3}{R}\dd R\nonumber\\
+ &=\frac{\pi J_B^2C_B^2|B|}{2}
+             \,2\int_0^\infty f(R^2)\dd R
+ =\frac{\pi J_B^2C_B^2|B|}{2}K\sqrt\pi<\infty.
+ \label{eq:third-Lambda}
+\end{align}
+The cancellation $\gamma a^3/R=2f(R^2)$ treats both small and large
+radii. For a Poisson variable of mean $s$, the third raw moment is
+$s^3+3s^2+s$. Conditional expectation and
+\eqref{eq:third-Lambda} therefore give $\E Y(B)^3<\infty$.
+Every bounded Borel set is contained in a ball, proving the third-moment
+claim. In particular, the full second and third measures are locally
+finite, so their densities in \eqref{eq:band-density-sum} are finite
+almost everywhere globally.
+
+\subsection{Finite fourth density away from a null exceptional set}
+\label{app:radius-bound}
+
+The fourth measure has infinite mass on some bounded sets, so a moment
+bound cannot prove its density finite. Instead, we show that near almost
+every quadruple, sufficiently large radius bands make no contribution.
+Only finitely many locally finite fixed-band measures then remain.
+
+Fix a noncoplanar quadruple $\mathbf x=(x_1,x_2,x_3,x_4)$, and translate
+$x_1$ to zero. Put $u_i=x_i-x_1$, $i=2,3,4$, and let $W$ be the
+invertible matrix with rows $u_i^{\mathsf T}$. Let $D_*$ denote the
+quadruple diameter. For all sufficiently large $k$,
+$2b_k+2M>D_*$. By \eqref{eq:surface-gap}, the four points then cannot
+lie on spheres with two different centres. Any allocation in such a band
+must use concentric spheres.
+
+Let their common centre, relative to $x_1$, be $z$, and let $R=|z|$ be
+the radius of the sphere through $x_1$. Because all candidate radii use
+the same phase and step $H$, the other three radii have the form
+$R+Hm_i$, where $m=(m_2,m_3,m_4)\in\mathbb Z^3$. The reverse triangle
+inequality gives
+\begin{equation}
+ |Hm_i|\leq|u_i|\leq D_*.
+ \label{eq:integer-bound}
+\end{equation}
+The equations for the other points are
+$|u_i-z|^2=(R+Hm_i)^2$. Subtracting $|z|^2=R^2$ and putting $n=z/R$
+gives
+\begin{equation}
+ Wn=-Hm+\frac b{2R},\qquad |n|=1,
+ \qquad b_i=|u_i|^2-H^2m_i^2.
+ \label{eq:concentric-equations}
+\end{equation}
+Taking norms after multiplication by $W^{-1}$ yields
+\begin{equation}
+ R\left|1-H|W^{-1}m|\right|
+ \leq\frac12|W^{-1}b|.
+ \label{eq:radius-bound}
+\end{equation}
+This bounds $R$ unless $H|W^{-1}m|=1$.
+
+For $m=0$ the exceptional equality is impossible. For any fixed nonzero
+integer vector $m$, it is contained in the zero set of the polynomial
+\begin{equation}
+ P_m(W)=H^2|\adj(W)m|^2-(\det W)^2.
+ \label{eq:resonance-polynomial}
+\end{equation}
+This polynomial is not identically zero: substitution $W=tI$ gives
+$t^4(H^2|m|^2-t^2)$. A nonzero real polynomial has a Lebesgue-null zero
+set, as follows by induction on the number of variables and Fubini,
+using the finitely many roots of a nonzero one-variable polynomial.
+The coordinate change from the four vertices to $(x_1,W)$ is invertible
+and linear. Consequently the union of all the sets $P_m(W)=0$, together
+with the coplanarity set, is Lebesgue-null in the position space.
+Call this exceptional union $\mathcal N$.
+
+Take a quadruple outside $\mathcal N$. Choose a bounded neighbourhood on
+which every diameter is at most $D_0$ and $W^{-1}$ remains bounded. Only
+the finite integer set
+\[
+ \mathcal I=\{m\in\mathbb Z^3: |Hm_i|\leq D_0, i=2,3,4\}
+\]
+can appear in \eqref{eq:integer-bound}. At the chosen quadruple, the
+numbers $|1-H|W^{-1}m||$, $m\in\mathcal I$, have a positive minimum.
+By continuity and finiteness of $\mathcal I$, shrink the neighbourhood
+so that all these numbers are at least a common $\varepsilon_0>0$.
+The quantities $|W^{-1}b|$ have a common finite bound there, again because
+$\mathcal I$ is finite. Equation~\eqref{eq:radius-bound} gives a uniform
+upper bound on $R$ for every concentric allocation in that neighbourhood.
+The other radii differ from $R$ by at most $D_0$, so they are bounded
+as well.
+
+For all sufficiently large bands, different-centre allocations are
+excluded by \eqref{eq:surface-gap}, while concentric allocations are
+excluded because the band's lower radius endpoint exceeds this common
+bound. Thus, on the chosen bounded configuration neighbourhood, the full
+fourth measure is a sum over only finitely many bands. Every such
+fixed-band measure is locally finite by
+Section~\ref{app:submersion}. Its sum has a density finite almost
+everywhere on the neighbourhood.
+
+The complement of $\mathcal N$ has a countable cover by such
+neighbourhoods, so the fourth density is finite almost everywhere there.
+The absolute-continuity proof in Section~\ref{app:submersion} already
+shows that $\mathcal N$ itself has zero factorial measure. This finishes
+the proof of Proposition~\ref{prop:sphere-regularity}, both inside and
+outside the prescribed diameter domains.
+
+\begin{thebibliography}{9}
+
+\bibitem{Chapron2018}
+A.~Chapron (2018).
+\newblock A local Blaschke--Petkantschin formula in a Riemannian manifold.
+\newblock arXiv:1807.07384v1.
+\newblock \url{https://arxiv.org/abs/1807.07384}.
+
+\bibitem{DVJ2008}
+D.~J. Daley and D.~Vere-Jones (2008).
+\newblock \emph{An Introduction to the Theory of Point Processes.
+Volume II: General Theory and Structure}, second edition.
+\newblock Springer, New York.
+\newblock \url{https://doi.org/10.1007/978-0-387-49835-5}.
+
+\bibitem{KaganKnopoff1980}
+Y.~Y. Kagan and L.~Knopoff (1980).
+\newblock Spatial distribution of earthquakes: the two-point correlation function.
+\newblock \emph{Geophysical Journal of the Royal Astronomical Society}
+\textbf{62}, 303--320.
+\newblock \url{https://doi.org/10.1111/j.1365-246X.1980.tb04857.x}.
+
+\bibitem{Kagan1981Three}
+Y.~Y. Kagan (1981).
+\newblock Spatial distribution of earthquakes: the three-point moment function.
+\newblock \emph{Geophysical Journal of the Royal Astronomical Society}
+\textbf{67}, 697--717.
+\newblock \url{https://doi.org/10.1111/j.1365-246X.1981.tb06948.x}.
+
+\bibitem{Kagan1981Four}
+Y.~Y. Kagan (1981).
+\newblock Spatial distribution of earthquakes: the four-point moment function.
+\newblock \emph{Geophysical Journal of the Royal Astronomical Society}
+\textbf{67}, 719--733.
+\newblock \url{https://doi.org/10.1111/j.1365-246X.1981.tb06949.x}.
+
+\end{thebibliography}
+\end{document}

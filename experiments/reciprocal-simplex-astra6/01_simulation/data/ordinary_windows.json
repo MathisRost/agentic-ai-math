@@ -1,0 +1,44 @@
+{
+  "n_independent_whole_law_windows": 5000000,
+  "seed": 2026102140,
+  "window": "B(0,0.45)",
+  "window_volume": 0.3817035074111599,
+  "expected_total_points": 11.451105222334796,
+  "Y_realisations": 2500375,
+  "C_realisations": 2499625,
+  "observed_total_points": 7,
+  "nonempty_realisations": 7,
+  "maximum_count": 1,
+  "count_frequency": {
+    "0": 4999993,
+    "1": 7
+  },
+  "Y_points": 4,
+  "C_points": 3,
+  "sphere_envelope_event_probability": 9.047619051222375e-05,
+  "sphere_candidates": 234,
+  "intersecting_spheres": 229,
+  "correction_candidates": 167,
+  "correction_mark_counts_before_window_restriction": [
+    8,
+    136,
+    23,
+    0
+  ],
+  "conditional_illustration": {
+    "seed": 2026102141,
+    "sphere_centre": [
+      0,
+      0,
+      2
+    ],
+    "sphere_radius": 2,
+    "condition": "Given this latent sphere, condition N(B(0,.45)) >= 4.",
+    "unconditioned_cap_poisson_mean": 0.48618455700761654,
+    "drawn_count": 4,
+    "not_included_in_ordinary_windows": true,
+    "count_tail_numerical_tolerance": 1e-16
+  },
+  "elapsed_seconds": 1.4769930839538574,
+  "scope": "Independent exact restrictions to the stated small ball, up to floating-point sampling. No band truncation. Not a jointly consistent multi-window realisation sampler."
+}

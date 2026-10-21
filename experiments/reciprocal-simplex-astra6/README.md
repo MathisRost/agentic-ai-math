@@ -1,5 +1,17 @@
 # Reciprocal-simplex experiment — GPT-6-Astra
 
+## Main paper and reading order
+
+**[Main Astra draft — paper PDF](00_main_draft/reciprocal_simplex.pdf)** · **[Editable LaTeX](00_main_draft/reciprocal_simplex.tex)**
+
+The 23-page manuscript of 21 October 2026 is the current main draft for this Astra version. It follows the approach-4 proof with a reproducible simulation study. The source and figures are in `00_main_draft/`, the first folder in this directory. [Overleaf instructions](../../03_documentation/overleaf.md).
+
+1. [Paper and build](00_main_draft/README.md)
+2. [Simulation, full results and saved-data download](01_simulation/README.md)
+3. [Writing, independent reading, decisions and token records](02_writing_record/README.md)
+4. [Original experiment report](report/astra6_experiment_report.pdf) and the research evidence below
+5. [Presentation](../../agentic_ai_math_talk.pdf), [tutorial](../../02_tutorial/README.md), [agent architecture](../../03_documentation/architecture.md) and [reasoning records](../../03_documentation/reasoning.md)
+
 This folder publishes the completed 20 October 2026 experiment, run
 `20261020T164437Z_astra6`, separately from the
 [earlier-model experiment](../reciprocal-simplex-agentic-research/README.md).

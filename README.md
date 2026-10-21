@@ -1,40 +1,28 @@
 # Agentic AI in mathematical research
 
-A presentation about using LLMs and agentic systems in mathematical research,
-including a case study in building an AI research team to write a paper.
+## Start here
 
-**[Read the presentation (PDF)](agentic_ai_math_talk.pdf)**
+| Material | Read / edit |
+|---|---|
+| **Presentation** | [Slides PDF](agentic_ai_math_talk.pdf) · [Beamer source](agentic_ai_math_talk.tex) |
+| **Astra paper — main draft** | [Paper PDF](experiments/reciprocal-simplex-astra6/00_main_draft/reciprocal_simplex.pdf) · [LaTeX source](experiments/reciprocal-simplex-astra6/00_main_draft/reciprocal_simplex.tex) |
+| **Tutorial** | [Research setup guide PDF](02_tutorial/codex_research_setup_guide.pdf) · [Editable source](02_tutorial/codex_research_setup_guide.tex) |
+| **Agent architecture** | [Research and writing teams](03_documentation/architecture.md) |
+| **Reasoning and documentation** | [Proofs, decisions, reviews and tokens](03_documentation/reasoning.md) |
+| **Overleaf** | [Editing and synchronisation](03_documentation/overleaf.md) |
 
-The talk covers research examples, agent workflows, a point-process case study,
-and personal reflections on mathematical understanding and PhD education.
-Claims about model capabilities and research releases are dated and attributed
-in the slides and source notes.
+The numbered folders keep the presentation, papers, tutorial and documentation at the beginning of the repository. The Astra folder begins with `00_main_draft/`, followed by the simulation and writing record. Original research archives remain in place.
 
-## Contents
+The main Astra paper proves the diameter-capped reciprocal-simplex statement **S1**, using a fair-coin choice between separated spheres and a finite-cluster correction. The unrestricted exact S0 statement is false. The paper includes a simulation study and distinguishes ordinary process samples from weighted factorial-tuple estimates.
 
-- `agentic_ai_math_talk.pdf` — compiled presentation.
-- `agentic_ai_math_talk.tex` — editable Beamer source, including speaker notes.
-- `assets/` — diagrams, editable draw.io files, exports and attributed logos.
-- `scripts/` — diagram builders, local draw.io exporter and QR-code builder.
-- `sources/` — source records and provenance for the talk.
-- `style/sketch/` — diagram style references and Kalam fonts with their licence.
-- `experiments/` — reserved for experiments to be added later.
+## Experiments and reproducibility
 
-## Published research experiment
+- [Astra experiment](experiments/reciprocal-simplex-astra6/README.md): main paper, full research archive, 16-page experiment report, all submissions/reviews, architecture and accounting.
+- [Simulation code and results](experiments/reciprocal-simplex-astra6/01_simulation/README.md), including [all saved data](https://github.com/MathisRost/agentic-ai-math/releases/tag/astra-paper-2026-10-21).
+- [Writer/coder/reader record](experiments/reciprocal-simplex-astra6/02_writing_record/README.md).
+- [Earlier-model experiment](experiments/reciprocal-simplex-agentic-research/README.md), retained separately.
 
-The [`experiments/reciprocal-simplex-agentic-research/`](experiments/reciprocal-simplex-agentic-research/README.md)
-folder contains the complete public-facing architecture and audit bundle for a
-multi-agent mathematical research run: reusable agent files, role instructions,
-workflow configuration, the exact problem and approach assignments, frozen
-proof submissions and reviews, a literature dossier, the final review report,
-and a PDF of the saved reasoning summaries with per-agent runtime and token
-accounting.
-
-The bundle publishes structured reasoning summaries and decision records, not
-raw private chain-of-thought or copied third-party source PDFs.
-
-Other research-run logs and manuscript sources are not included. Some speaker
-notes refer to additional local materials.
+The repository publishes explicit proofs and concise reasoning/decision summaries, not private chain-of-thought, raw conversations or copied third-party papers. These are informal research case studies, not formal proof certification or a controlled model benchmark.
 
 ## Build the slides
 

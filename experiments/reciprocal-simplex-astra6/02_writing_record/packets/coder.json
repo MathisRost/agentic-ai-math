@@ -1,0 +1,37 @@
+{
+  "role": "coder",
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "fresh_context": true,
+  "run": "paper-run",
+  "brief_sha256": "2d3be46ca38cea25e7c55f732e2b70c68f36e0b20e806989bf2a9fbd685a1289",
+  "files": [
+    {
+      "path": "inputs/S1.md",
+      "source": "<local-home>/Documents/AI_Paper_writing/earthquake conjecture/agentic_research_setup_astra6/runs/20261020T164437Z_astra6/statements/S1.md",
+      "sha256": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8"
+    },
+    {
+      "path": "inputs/approach4_proof.md",
+      "source": "<local-home>/Documents/AI_Paper_writing/earthquake conjecture/agentic_research_setup_astra6/runs/20261020T164437Z_astra6/tracks/proof_4/submissions/v04.md",
+      "sha256": "e3f403b4c55b69845e83ea74d7348026a86cd9b36691b1a4cdc9a6983ac3df5f"
+    },
+    {
+      "path": "inputs/approach4_review.md",
+      "source": "<local-home>/Documents/AI_Paper_writing/earthquake conjecture/agentic_research_setup_astra6/runs/20261020T164437Z_astra6/reviews/proof_4_v04/review.md",
+      "sha256": "680b32c05642871d0207ffe59e4bc04d65d6a3bca26a06d61d96e60a2d031e7c"
+    },
+    {
+      "path": "inputs/AGENTS.md",
+      "source": "<local-home>/Documents/AI_Paper_writing/earthquake conjecture/agentic_research_setup_astra6/AGENTS.md",
+      "sha256": "8953c347f2338e89c3193a215088893b2c956707938b2fac76d6225fda500424"
+    },
+    {
+      "path": "inputs/accounting_instructions.md",
+      "source": "<local-home>/Documents/AI_Paper_writing/earthquake conjecture/agentic_research_setup_astra6/instructions/accounting.md",
+      "sha256": "0acf1391a2e7a345fc3661bf17fb27d2531534de95ac7f8cf0de6e2e8f011207"
+    }
+  ],
+  "output_ownership": "paper-run/coder",
+  "no_delegation": true
+}

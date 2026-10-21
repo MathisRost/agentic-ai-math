@@ -1,0 +1,146 @@
+{
+  "role": "writer",
+  "recorded_utc": "2026-10-21T06:16:17.540207+00:00",
+  "boundary": "before mathematical work",
+  "session_id": "<runtime-id>",
+  "session_path": "<local-home>/.codex/sessions/2026/10/21/rollout-2026-10-21T08-15-52-<runtime-id>.jsonl",
+  "session_meta": {
+    "id": "<runtime-id>",
+    "timestamp": "2026-10-21T06:15:52.084Z",
+    "model_provider": "openai"
+  },
+  "latest_turn_context": {
+    "turn_id": "<runtime-id>",
+    "model": "gpt-6-astra",
+    "effort": "xhigh",
+    "reasoning_effort": null,
+    "timestamp": "2026-10-21T06:15:54.191Z"
+  },
+  "latest_token_counters": {
+    "timestamp": "2026-10-21T06:16:02.080Z",
+    "info": {
+      "total_token_usage": {
+        "input_tokens": 31550,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 213,
+        "reasoning_output_tokens": 25,
+        "total_tokens": 31763
+      },
+      "last_token_usage": {
+        "input_tokens": 31550,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 213,
+        "reasoning_output_tokens": 25,
+        "total_tokens": 31763
+      },
+      "model_context_window": 258400
+    }
+  },
+  "model_effort_verified": true,
+  "input_hash_checks": [
+    {
+      "path": "packets/writer.json",
+      "expected": "f4b59143d1b1f22590eda7b9d965e9add3b17263c45a699c3920fae610c6d33c",
+      "actual": "f4b59143d1b1f22590eda7b9d965e9add3b17263c45a699c3920fae610c6d33c"
+    },
+    {
+      "path": "brief.md",
+      "expected": "2d3be46ca38cea25e7c55f732e2b70c68f36e0b20e806989bf2a9fbd685a1289",
+      "actual": "2d3be46ca38cea25e7c55f732e2b70c68f36e0b20e806989bf2a9fbd685a1289"
+    },
+    {
+      "path": "inputs/S0.md",
+      "expected": "3b5b5ad81bf56136bd79f0fde2d4aa39e3bed32aaf37511460007dfb0fc656f0",
+      "actual": "3b5b5ad81bf56136bd79f0fde2d4aa39e3bed32aaf37511460007dfb0fc656f0"
+    },
+    {
+      "path": "inputs/S1.md",
+      "expected": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8",
+      "actual": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8"
+    },
+    {
+      "path": "inputs/approach4_proof.md",
+      "expected": "e3f403b4c55b69845e83ea74d7348026a86cd9b36691b1a4cdc9a6983ac3df5f",
+      "actual": "e3f403b4c55b69845e83ea74d7348026a86cd9b36691b1a4cdc9a6983ac3df5f"
+    },
+    {
+      "path": "inputs/approach4_review.md",
+      "expected": "680b32c05642871d0207ffe59e4bc04d65d6a3bca26a06d61d96e60a2d031e7c",
+      "actual": "680b32c05642871d0207ffe59e4bc04d65d6a3bca26a06d61d96e60a2d031e7c"
+    },
+    {
+      "path": "inputs/review_report.md",
+      "expected": "68dfdad1db7e04203439ed15154f72294464165188577622ba620172dc1f33d2",
+      "actual": "68dfdad1db7e04203439ed15154f72294464165188577622ba620172dc1f33d2"
+    },
+    {
+      "path": "inputs/sphere_source_comparison.json",
+      "expected": "45d05ab7ccfdb98febc9fbd45e2c0edfc084dd0edc9842fd03164e547fc5eb16",
+      "actual": "45d05ab7ccfdb98febc9fbd45e2c0edfc084dd0edc9842fd03164e547fc5eb16"
+    },
+    {
+      "path": "inputs/sphere_source_evidence.json",
+      "expected": "da9a02abc5d45e51e15d48c000bbc7bcac40ac9db4d096173cdca2bc9c18924d",
+      "actual": "da9a02abc5d45e51e15d48c000bbc7bcac40ac9db4d096173cdca2bc9c18924d"
+    },
+    {
+      "path": "inputs/AGENTS.md",
+      "expected": "8953c347f2338e89c3193a215088893b2c956707938b2fac76d6225fda500424",
+      "actual": "8953c347f2338e89c3193a215088893b2c956707938b2fac76d6225fda500424"
+    },
+    {
+      "path": "inputs/accounting_instructions.md",
+      "expected": "0acf1391a2e7a345fc3661bf17fb27d2531534de95ac7f8cf0de6e2e8f011207",
+      "actual": "0acf1391a2e7a345fc3661bf17fb27d2531534de95ac7f8cf0de6e2e8f011207"
+    },
+    {
+      "path": "inputs/workflow.json",
+      "expected": "c354e6f731874d2811a8e6f436c6377ae793c325cfccdbd317d16e94eb1947f8",
+      "actual": "c354e6f731874d2811a8e6f436c6377ae793c325cfccdbd317d16e94eb1947f8"
+    },
+    {
+      "path": "inputs/dvj_context.md",
+      "expected": "ce16a2be5f95f15fb9779bb8e1acacea7d3c42e99c6233b00a6b63494bc55223",
+      "actual": "ce16a2be5f95f15fb9779bb8e1acacea7d3c42e99c6233b00a6b63494bc55223"
+    },
+    {
+      "path": "inputs/paper_index.md",
+      "expected": "d65bd9c36697b6a9ee5eee7c2f338397c092ab52e529b73817ea050287a6ebb8",
+      "actual": "d65bd9c36697b6a9ee5eee7c2f338397c092ab52e529b73817ea050287a6ebb8"
+    },
+    {
+      "path": "inputs/kagan_1982_fault_model.pdf",
+      "expected": "2df2d969c6fe4e659dc257896ba5ab661437d76485984ea3c0fe5dc5ad28629e",
+      "actual": "2df2d969c6fe4e659dc257896ba5ab661437d76485984ea3c0fe5dc5ad28629e"
+    },
+    {
+      "path": "inputs/kagan_knopoff_1980_two_point.pdf",
+      "expected": "51432497c5c9a3bf4160d08559f3870e93a7bdcade707f3c220bd7d80492a6f7",
+      "actual": "51432497c5c9a3bf4160d08559f3870e93a7bdcade707f3c220bd7d80492a6f7"
+    },
+    {
+      "path": "inputs/kagan_2014_earthquakes.pdf",
+      "expected": "d2aa51c3ee1a75acf808e72a52eeda5a1675981af942948ab4c95dd87ba3f069",
+      "actual": "d2aa51c3ee1a75acf808e72a52eeda5a1675981af942948ab4c95dd87ba3f069"
+    },
+    {
+      "path": "inputs/daley_vere_jones_2008_volume_ii.pdf",
+      "expected": "c1ea13a055b0da5379d774c55e530881ce5112ea747e7e1461d48994b37c5b62",
+      "actual": "c1ea13a055b0da5379d774c55e530881ce5112ea747e7e1461d48994b37c5b62"
+    },
+    {
+      "path": "inputs/kagan_1981_four_point.pdf",
+      "expected": "5e2f14c6b028f9b5c794e3cfe372decc783939214cdd906864fbb348d228ddbe",
+      "actual": "5e2f14c6b028f9b5c794e3cfe372decc783939214cdd906864fbb348d228ddbe"
+    },
+    {
+      "path": "inputs/kagan_1981_three_point.pdf",
+      "expected": "4a57556b2efa78c47ef166643f8964a2d17a63ef7af22480468d662ce5ae9266",
+      "actual": "4a57556b2efa78c47ef166643f8964a2d17a63ef7af22480468d662ce5ae9266"
+    }
+  ],
+  "all_inputs_verified": true,
+  "scope": "Only own session metadata was extracted; messages and reasoning were not extracted."
+}

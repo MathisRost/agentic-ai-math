@@ -20,3 +20,5 @@ target was accepted on the investigator-choice track's fourth submission.
 The folder includes a 16-page PDF, all frozen submissions and reviews, and
 per-agent/per-turn token and runtime records. This is a separate case study,
 not a controlled comparison with the earlier-model experiment.
+
+The Astra folder now begins with the [main paper](reciprocal-simplex-astra6/00_main_draft/README.md), followed by the [simulation](reciprocal-simplex-astra6/01_simulation/README.md) and [writing record](reciprocal-simplex-astra6/02_writing_record/README.md).

@@ -1,0 +1,47 @@
+{
+  "version": "v02",
+  "frozen_utc": "2026-10-21T06:35:34.148409+00:00",
+  "scope": "Four local formatting fixes only; mathematical formulas and prose content unchanged.",
+  "sha256": "1520ca9dda84d1a8511b8517e6550eb5eb5152bb2974a8bcdd2e0f1fcf82fa60",
+  "snapshot": "paper-run/writer/paper_v02.tex",
+  "v01_preserved": true,
+  "build": "latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build_v02 paper.tex",
+  "build_exit": 0,
+  "checks": {
+    "overfull_hboxes": 0,
+    "undefined_references_or_citations": 0,
+    "output_line": [
+      "Output written on build_v02/paper.pdf (18 pages, 383467 bytes)."
+    ]
+  },
+  "session_id": "<runtime-id>",
+  "session_path": "<local-home>/.codex/sessions/2026/10/21/rollout-2026-10-21T08-15-52-<runtime-id>.jsonl",
+  "current_turn": {
+    "turn_id": "<runtime-id>",
+    "model": "gpt-6-astra",
+    "effort": "xhigh"
+  },
+  "latest_measured_counters": {
+    "timestamp": "2026-10-21T06:35:19.337Z",
+    "info": {
+      "total_token_usage": {
+        "input_tokens": 2202669,
+        "cached_input_tokens": 2079616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29127,
+        "reasoning_output_tokens": 2749,
+        "total_tokens": 2231796
+      },
+      "last_token_usage": {
+        "input_tokens": 119026,
+        "cached_input_tokens": 118528,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 571,
+        "reasoning_output_tokens": 201,
+        "total_tokens": 119597
+      },
+      "model_context_window": 258400
+    }
+  },
+  "coverage": "Metadata-only cumulative checkpoint before handoff; not summed. Final response tail and charges NR."
+}

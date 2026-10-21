@@ -1,0 +1,27 @@
+{
+  "audience": "Probabilists and statistics researchers; measures, conditional expectation, Poisson processes assumed; factorial measures and spherical coarea explained.",
+  "fixed_result": "S1, accepted approach4 v04, full ordered global densities finite almost everywhere through order four; arbitrary prescribed lambda,M; finite third and infinite fourth local moments.",
+  "structure": [
+    "Earthquake motivation",
+    "Factorial expectation measures and normalisation",
+    "Capped problem and S0 obstruction",
+    "Whole-law mixture mechanism",
+    "Separated sphere process",
+    "Published spherical formula and sphere lemma",
+    "First four sphere densities",
+    "Residuals and finite correction process",
+    "Mixture corollary",
+    "Simulation section pending actual coder evidence",
+    "Appendix: global regularity and moment proofs"
+  ],
+  "mathematical_decisions": [
+    "No change to accepted claim or parameters.",
+    "Prove simple S0 pair variance obstruction directly.",
+    "Use p_empty>0 to give explicit nonergodicity proof.",
+    "Separate density absolute continuity from finite-a.e. finiteness.",
+    "All finite-cluster selection coefficients and all-parent domination are supplied."
+  ],
+  "source_status": "Frozen Chapron evidence available; coordinator will provide earthquake/DVJ verification notes.",
+  "simulation_status": "Awaiting coder; no empirical result drafted.",
+  "independent_review": "Coordinator dispatches reader; writer does not delegate."
+}

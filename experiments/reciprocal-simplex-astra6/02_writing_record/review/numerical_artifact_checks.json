@@ -1,0 +1,17 @@
+{
+  "sphere2_rows": 524288,
+  "sphere2_finite": true,
+  "order2_maximum_saved_mean_difference": 0.0,
+  "sphere3_rows": 524288,
+  "sphere3_finite": true,
+  "order3_maximum_saved_mean_difference": 0.0,
+  "sphere4_rows": 524288,
+  "sphere4_finite": true,
+  "order4_maximum_saved_mean_difference": 0.0,
+  "ordinary_realisations": 5000000,
+  "ordinary_points": 7,
+  "saved_coordinate_count": 7,
+  "ordinary_counts_match_coordinates": true,
+  "max_ratio_deviation_standard_errors": 1.8201118503226663,
+  "scope": "Recomputed sample contribution means and ordinary-window count reconciliation from saved arrays; not proof or an independent implementation of the sampler."
+}

@@ -1,0 +1,35 @@
+{
+  "recorded_utc": "2026-10-21T06:33:55.792295+00:00",
+  "boundary": "v02 formatting-only turn preflight",
+  "session_id": "<runtime-id>",
+  "session_path": "<local-home>/.codex/sessions/2026/10/21/rollout-2026-10-21T08-15-52-<runtime-id>.jsonl",
+  "current_turn": {
+    "turn_id": "<runtime-id>",
+    "model": "gpt-6-astra",
+    "effort": "xhigh"
+  },
+  "latest_measured_counters": {
+    "timestamp": "2026-10-21T06:27:37.375Z",
+    "info": {
+      "total_token_usage": {
+        "input_tokens": 1511276,
+        "cached_input_tokens": 1400320,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 25314,
+        "reasoning_output_tokens": 1989,
+        "total_tokens": 1536590
+      },
+      "last_token_usage": {
+        "input_tokens": 108119,
+        "cached_input_tokens": 107776,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 145,
+        "reasoning_output_tokens": 12,
+        "total_tokens": 108264
+      },
+      "model_context_window": 258400
+    }
+  },
+  "model_effort_verified": true,
+  "scope": "Metadata only; no messages or reasoning extracted."
+}

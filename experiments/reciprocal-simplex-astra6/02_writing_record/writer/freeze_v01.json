@@ -1,0 +1,52 @@
+{
+  "version": "v01",
+  "frozen_utc": "2026-10-21T06:27:24.538099+00:00",
+  "snapshot": "paper-run/writer/paper_v01.tex",
+  "sha256": "1445da724f1d284f2b721aa920b0059559fbf950c3578fa41fdb332fe0ded83d",
+  "bytes": 57512,
+  "lines": 1322,
+  "words_rough": 6895,
+  "checks": {
+    "desktop_compile": "success via compile_latex_document",
+    "duplicate_labels": [],
+    "undefined_references": [],
+    "undefined_citations": [],
+    "simulation_markers": [
+      1,
+      1
+    ]
+  },
+  "review_scope": "Writer self-check of complete construction and sources; independent reader not yet run.",
+  "source_packet": "sources_v01.json; all listed hashes match",
+  "simulation_status": "Pending checked coder outputs; no empirical claim",
+  "session_id": "<runtime-id>",
+  "session_path": "<local-home>/.codex/sessions/2026/10/21/rollout-2026-10-21T08-15-52-<runtime-id>.jsonl",
+  "latest_turn_context": {
+    "turn_id": "<runtime-id>",
+    "model": "gpt-6-astra",
+    "effort": "xhigh"
+  },
+  "latest_measured_counters": {
+    "timestamp": "2026-10-21T06:26:30.804Z",
+    "info": {
+      "total_token_usage": {
+        "input_tokens": 1189217,
+        "cached_input_tokens": 1081088,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 23399,
+        "reasoning_output_tokens": 1469,
+        "total_tokens": 1212616
+      },
+      "last_token_usage": {
+        "input_tokens": 105725,
+        "cached_input_tokens": 100736,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 167,
+        "reasoning_output_tokens": 93,
+        "total_tokens": 105892
+      },
+      "model_context_window": 258400
+    }
+  },
+  "coverage": "Latest metadata-only checkpoint before final handoff; cumulative counters are not summed, reasoning not added again to output. Completed response tail and monetary charges NR."
+}

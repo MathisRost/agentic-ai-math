@@ -1,0 +1,9 @@
+{
+  "coverage_v01.json": "361cbcc7c6c9f03381bc5ad957039bda47ab96a7abe5717ecc817e7eacae5894",
+  "input_verification.json": "5b05284d486847b258a14dfb12e14667396b9d659562bd325f1d2cc8034b3679",
+  "preflight.json": "d646491854643f81e3dcf94716a11991006d487e254af84bd8b726707c523178",
+  "reading_stumbles_v01.md": "5aca1c40fa9238b412d07c1c75e673fef97005eccdfeb49f6879d1eae384c1d1",
+  "review_v01.md": "f5b55b410d811b8903094f541dea8a86b82beb1bdc53b80b96de3ae5c3851cf7",
+  "review_v01.md.sha256": "cfe5d4ffd64e927fe837768dbe3f0fd0050007b1941e634255fa0389c7eaacf7",
+  "usage_snapshot_v01.json": "48dd7b7374e66a8a23168124ce61b996f8c34817fcd61e2b1b5c0c86f5fe5adb"
+}

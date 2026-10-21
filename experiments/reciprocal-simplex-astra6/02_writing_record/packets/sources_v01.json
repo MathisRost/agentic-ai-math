@@ -1,0 +1,30 @@
+[
+  {
+    "path": "paper-run/sources/kagan_1981_four_point_text.txt",
+    "sha256": "53ae314cb54668770235ded6009c3a44ece8aa7b1f6354261645eed364f40479"
+  },
+  {
+    "path": "paper-run/sources/kagan_knopoff_1980_two_point_text.txt",
+    "sha256": "b288229a8e5fb49b0436ea1220eaab41537970194c4212b4715d4be805ed0dc7"
+  },
+  {
+    "path": "paper-run/sources/dvj_page_265.txt",
+    "sha256": "60892a3cb295e54e81163ea314138b28625569e1cf6c00fe126636eec383ed69"
+  },
+  {
+    "path": "paper-run/sources/dvj_page_259.txt",
+    "sha256": "185c9b25f8e8eb315d731ea0199121df65321d5b1095c70cad38b9ec353f49d9"
+  },
+  {
+    "path": "paper-run/sources/dvj_page_260.txt",
+    "sha256": "ec5fb3df1fc5861595cc6484801b75aa3ac550656475d75c2886aab204968c59"
+  },
+  {
+    "path": "paper-run/sources/kagan_1981_three_point_text.txt",
+    "sha256": "bd66c637b296fbcc782c825199d4565dc93d19a9519e7784bad1f52d3116416d"
+  },
+  {
+    "path": "paper-run/sources/verification.md",
+    "sha256": "6d8e668c18a1af662ae105bc26b02abec1c121ea87da7ec51f456f0e70a0a767"
+  }
+]

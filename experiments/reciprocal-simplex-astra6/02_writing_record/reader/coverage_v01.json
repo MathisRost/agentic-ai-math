@@ -1,0 +1,36 @@
+{
+  "role": "reader",
+  "session_id": "<runtime-id>",
+  "manuscript": {
+    "path": "paper-run/review/draft_v01.tex",
+    "sha256": "2cd01584032ac721ceb65a4eefcccec93287ae44f97b375171b4a23da2c00af2",
+    "coverage": "Complete source, lines 1\u20131562, including abstract, theorem/construction, simulation, regularity appendix and bibliography"
+  },
+  "figures": {
+    "sampled_configurations.png": "Visually inspected",
+    "correlations.png": "Visually inspected",
+    "sampled_configurations.pdf": "Hash verified; not rendered",
+    "correlations.pdf": "Hash verified; not rendered"
+  },
+  "guide": {
+    "path": "<local-home>/.codex/skills/mathis-writer/references/FOCUSED_READER.md",
+    "sha256": "6313b8aa6c523796903c7f72c12cb2ba9b9bd9baec67c307718f43c93b2ad1dd"
+  },
+  "not_read": [
+    "brief.md",
+    "writer or coder private notes",
+    "old experiments",
+    "previous reviews",
+    "agent histories",
+    "external explanations",
+    "simulation code",
+    "supplementary data"
+  ],
+  "order": "Reading stumbles recorded in source order before claim/mechanism reconstruction",
+  "report": {
+    "path": "paper-run/reader/review_v01.md",
+    "sha256": "f5b55b410d811b8903094f541dea8a86b82beb1bdc53b80b96de3ae5c3851cf7",
+    "word_count": 958
+  },
+  "limitations": "Independent exposition reading; no formal correctness certification, source verification, numerical rerun or full-paper render."
+}

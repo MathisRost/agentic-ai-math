@@ -1,0 +1,52 @@
+[
+  {
+    "path": "data/conditional_sphere_illustration.npz",
+    "bytes": 886,
+    "sha256": "568bec1c0379dbccba45e9512fccc497983d07c43bf8fbff6db3e4b5a2a7fd62"
+  },
+  {
+    "path": "data/correction_pairs.npz",
+    "bytes": 25644627,
+    "sha256": "e81ab10c91c8e2f42951ac07fd3f1688eb5f837834ac3df34dd1725c8b5fa357"
+  },
+  {
+    "path": "data/correction_triples.npz",
+    "bytes": 25646535,
+    "sha256": "68ae923f90e4c2c6dabe1648ea0fc596fd9ffede6457cc0863a669d8d68d6d80"
+  },
+  {
+    "path": "data/ordinary_windows.npz",
+    "bytes": 846222,
+    "sha256": "46dc1d45bc8d9e9b018e5814576d153a5b9c5db046b381916b212e3f8533cb81"
+  },
+  {
+    "path": "data/reference2_sufficient_statistics.npz",
+    "bytes": 3901,
+    "sha256": "8fe77a841f7a5c76a021db4b40117e661b6d29fbf18a123a6c252d0e43905946"
+  },
+  {
+    "path": "data/reference3_sufficient_statistics.npz",
+    "bytes": 4455,
+    "sha256": "8de5fb256ba2566821b1b18d6f4f320291563323e3edc56628a124f8dc95b1a4"
+  },
+  {
+    "path": "data/reference4_sufficient_statistics.npz",
+    "bytes": 3357,
+    "sha256": "9dbdf7ca617b1a0be0dd5f33f4649ce4b4f470ad699cc226080ec430e604b993"
+  },
+  {
+    "path": "data/sphere2.npz",
+    "bytes": 21050034,
+    "sha256": "292c50b6ef320a044ae9e3cfe5d29ce47e98f9740b0855f0ca9df9cd92cc1dfa"
+  },
+  {
+    "path": "data/sphere3.npz",
+    "bytes": 33712666,
+    "sha256": "bf36a20d0615d78d1dfacdb306198530307bd24542b69d9898b1ffb81ec474a1"
+  },
+  {
+    "path": "data/sphere4.npz",
+    "bytes": 41471585,
+    "sha256": "3f0c40c8159373ae941dbc426f3607af773b37279ab346788032d93fb70439b6"
+  }
+]
