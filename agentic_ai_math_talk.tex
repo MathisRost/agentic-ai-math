@@ -223,9 +223,9 @@
   \noindent\makebox[\textwidth][c]{%
     \includegraphics[clip,width=\textwidth,height=30mm,keepaspectratio]{alphaproof_architecture.pdf}}\par
   \vspace{1mm}
-  \noindent\textbf{Function:} the model reads Lean goals and hypotheses. As output it proposes Lean tactics. Lean returns new proof states. This means it basically talks in Lean and gets Lean responses. \par
+  \noindent\textbf{Function:} the model reads Lean goals and hypotheses. As output, it proposes Lean tactics. Lean returns new proof states. This means it basically talks in Lean and gets Lean responses. \par
   \vspace{1mm}
-  \noindent\textbf{Additional Learning:} the model learns from proof attempts through reinforcement learning.\par
+  \noindent\textbf{Additional learning:} the model learns from proof attempts through reinforcement learning.\par
   \vspace{1.5mm}
   \noindent{IMO 2024: 28/42 points, silver-medal level (AlphaProof: 3 problems; AlphaGeometry 2: 1).}\par
   \vspace{0mm}
@@ -324,7 +324,7 @@
 
       {\bfseries Tool}\par
       An interface to observe or change the
-      environment, e.g. PDF-reader or Python ...\par
+      environment, e.g. a PDF reader or Python.\par
       \vspace{1.5mm}
 
       {\bfseries Agent}\par
@@ -463,7 +463,7 @@
 \end{frame}
 
 
-\begin{frame}[t]{Step 1: Defining the Problem}
+\begin{frame}[t]{Step 1: Defining the problem}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.67\textwidth}
       \raggedright\fontsize{9.5}{11}\selectfont
@@ -513,7 +513,7 @@
     No assertion that $g_2<1$ at all distances is intended.
     Both simulations use an outer buffer to give an exact restriction of the stationary process.}
 \end{frame}
-\begin{frame}[t]{Step 1: the precise problem}
+\begin{frame}[t]{Step 1: The precise problem}
 
   \noindent\begin{minipage}{\textwidth}
   \raggedright\fontsize{9.5}{11}\selectfont
@@ -561,7 +561,7 @@
     restriction, not a uniquely necessary or proved minimal choice.}
 \end{frame}
 
-\begin{frame}[t]{\fontsize{18}{22}\selectfont Step 2: configuration/agent files and execution}
+\begin{frame}[t]{\fontsize{18}{22}\selectfont Step 2: Configuration/agent files and execution}
   \vspace{1mm}
   \begin{columns}[c,onlytextwidth]
     \begin{column}{0.30\textwidth}
@@ -689,14 +689,14 @@
       {\fontsize{11}{13}\selectfont\bfseries Spheres and a cluster correction\par}
       \vspace{1mm}
       {\raggedright\fontsize{8.5}{10}\selectfont
-      Idea: I decide between 2 processes with probability $0.5$. Therefore\par
+      Idea: I choose between two processes, each with probability $0.5$. Therefore\par
       \noindent\makebox[\linewidth][c]{$\displaystyle
         g_n=\frac{\lambda_A^n g_{n,A}+\lambda_B^n g_{n,B}}{2\lambda_0^n},
         \quad \lambda_0=\frac{\lambda_A+\lambda_B}{2}.$}\par
       \vspace{0.5mm}
-      \textbf{Process A.} Takes care of the $g_4 \propto V^{-1}$ by placing non interacting spheres with random radius. A homogeneous Poisson process on this random sphere satisfies $g_4$. We also know $g_3, g_2$ here.  \par
+      \textbf{Process A.} Takes care of $g_4 \propto V^{-1}$ by placing non-interacting spheres with random radii. A homogeneous Poisson process on each sphere has the required $g_4$. We also know $g_3$ and $g_2$ here.\par
       \vspace{0.5mm}
-      \textbf{Process B.} Ensures that $g_{4,B}=0$ for diameter below $M$, using clusters of at most 3 points separated by more than $M$. $g_{2,B}$ and $g_{3,B}$ are designed according to the error in process A via the cluster kernels\par
+      \textbf{Process B.} Ensures that $g_{4,B}=0$ for diameters below $M$, using clusters of at most 3 points separated by more than $M$. $g_{2,B}$ and $g_{3,B}$ are designed according to the error in Process A via the cluster kernels\par
       \vspace{0.5mm}
       \noindent\makebox[\linewidth][c]{$\displaystyle
         F_3=q_3,\qquad F_2=q_2-\int q_3(\cdot,\cdot,z)\,dz.$}\par
@@ -826,7 +826,7 @@
   \vspace{0.5mm}
   {\fontsize{10}{12}\selectfont
     Reaching $B$ only helps me if I understand the mathematics.\par}
-    Reaching $B$ in different ways lets me think about where to go next i.e. $C$. \par
+    Reaching $B$ in different ways lets me think about where to go next, i.e. $C$. \par
   \vspace{2mm}
   {\fontsize{9}{11}\selectfont
     \textbf{My concern as a PhD student:}
