@@ -1,6 +1,6 @@
 # Astra paper: complete saved simulation data
 
-This data-only branch holds all 11 saved NPZ arrays from the 21 October 2026 study. It keeps large binary observations outside the main branch synchronised to Overleaf. The code, full-precision results, derivations, main paper, review and token records are on `main`, under `experiments/reciprocal-simplex-astra6/`.
+This data-only branch holds all 10 saved NPZ arrays from the 21 October 2026 study. It keeps large binary observations outside the main branch synchronised to Overleaf. The code, full-precision results, derivations, main paper, review and token records are on `main`, under `experiments/reciprocal-simplex-astra6/`.
 
 Download this branch as a ZIP from GitHub. Extract `data/*.npz` into `experiments/reciprocal-simplex-astra6/01_simulation/data/` in the main checkout. `data/array_manifest.json` records all file sizes and SHA256 hashes. NumPy can read the arrays directly; the simulation README on main gives a full data dictionary and exact regeneration commands/seeds.
 
