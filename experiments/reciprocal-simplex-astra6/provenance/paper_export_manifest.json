@@ -1,7 +1,7 @@
 {
   "source_run": "20261021_paper_approach4",
   "date": "2026-10-21",
-  "scope": "Public copies; private runtime identifiers and local paths redacted. Raw sample arrays published as a release asset.",
+  "scope": "Public copies; private runtime identifiers and local paths redacted. Raw sample arrays published on the separate data branch.",
   "files": [
     {
       "source": "manuscript/reciprocal_simplex.tex",
@@ -175,7 +175,7 @@
       "source": "coder/README.md",
       "destination": "experiments/reciprocal-simplex-astra6/01_simulation/README.md",
       "source_sha256": "dc304aaaa99ed8807e5115b0d066aa56f219462326352b6643b589de15535525",
-      "public_sha256": "59404bd330e27df209665dc6d6851803391fbc64460aed277fe956b593f76f3c",
+      "public_sha256": "e7caf447d7ce64c9aa5fb4cc8145a9e9e79b28b63f7a305892b5487b898f4fb5",
       "sanitised": true
     },
     {

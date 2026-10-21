@@ -1,7 +1,7 @@
 {
   "date": "2026-10-21",
   "base_commit": "332aa61",
-  "scope": "Main Astra paper publication; all listed paths relative to repository root. Raw arrays are in the release asset and have their own array manifest.",
+  "scope": "Main Astra paper publication; all listed paths relative to repository root. Raw arrays are on the separate data branch and have their own array manifest.",
   "files": [
     {
       "path": ".gitignore",
@@ -50,8 +50,8 @@
     },
     {
       "path": "03_documentation/overleaf.md",
-      "bytes": 1773,
-      "sha256": "45428f0bf5debf2cad64ded2c1c91db7b2c0625b5c81920af9058715eb93f289"
+      "bytes": 1772,
+      "sha256": "3cb04057270f223c3f9c356faf2a2562d16e024bccf9dba78492e6853e09aea2"
     },
     {
       "path": "03_documentation/reasoning.md",
@@ -60,8 +60,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3521,
-      "sha256": "a3e2f166da1e596e3f113016a0360c76b09abf59f8e866aea2c5cc5959ae428e"
+      "bytes": 3518,
+      "sha256": "d0135e29c10c9de146936ae60988922ca78a338fb0823ab814b0e6ad3b3988a1"
     },
     {
       "path": "experiments/README.md",
@@ -110,8 +110,8 @@
     },
     {
       "path": "experiments/reciprocal-simplex-astra6/01_simulation/README.md",
-      "bytes": 6632,
-      "sha256": "59404bd330e27df209665dc6d6851803391fbc64460aed277fe956b593f76f3c"
+      "bytes": 6639,
+      "sha256": "e7caf447d7ce64c9aa5fb4cc8145a9e9e79b28b63f7a305892b5487b898f4fb5"
     },
     {
       "path": "experiments/reciprocal-simplex-astra6/01_simulation/code/experiment.py",
@@ -440,13 +440,13 @@
     },
     {
       "path": "experiments/reciprocal-simplex-astra6/provenance/paper_export_manifest.json",
-      "bytes": 27041,
-      "sha256": "4d48bf27dc6d4377cc53bddfdc51684529e144a3b2b3c4896aafd0d5631ad30a"
+      "bytes": 27050,
+      "sha256": "af4ee1a728bf380abfd85ecd7afae5fa56afeee9694fbbcd6843f112f9498c4c"
     },
     {
       "path": "experiments/reciprocal-simplex-astra6/provenance/paper_publication.md",
-      "bytes": 2182,
-      "sha256": "d24f4ec3b85e5f6467e7c259492509ceced2236f2ec6db1c00d072cdbb189c9b"
+      "bytes": 2191,
+      "sha256": "46edbde57fda1736a3f6bb03b9670358bbd81932464832b2290106510f26ca79"
     },
     {
       "path": "experiments/reciprocal-simplex-astra6/provenance/release_manifest.json",
@@ -462,6 +462,11 @@
       "path": "scripts/verify_paper_release.py",
       "bytes": 1069,
       "sha256": "4e1c2e37e819d5cc78e6d20ed556d15d6d5af736958a2788155fe5567263037d"
+    },
+    {
+      "path": "experiments/reciprocal-simplex-astra6/provenance/data_publication.json",
+      "bytes": 426,
+      "sha256": "110ab5d525043b39c4b4adf684a85d58c3e9b54213c24c422025dac831033d17"
     }
   ]
 }

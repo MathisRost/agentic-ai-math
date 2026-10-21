@@ -18,7 +18,7 @@ The main Astra paper proves the diameter-capped reciprocal-simplex statement **S
 ## Experiments and reproducibility
 
 - [Astra experiment](experiments/reciprocal-simplex-astra6/README.md): main paper, full research archive, 16-page experiment report, all submissions/reviews, architecture and accounting.
-- [Simulation code and results](experiments/reciprocal-simplex-astra6/01_simulation/README.md), including [all saved data](https://github.com/MathisRost/agentic-ai-math/releases/tag/astra-paper-2026-10-21).
+- [Simulation code and results](experiments/reciprocal-simplex-astra6/01_simulation/README.md), including [all saved data](https://github.com/MathisRost/agentic-ai-math/tree/astra-paper-data-2026-10-21).
 - [Writer/coder/reader record](experiments/reciprocal-simplex-astra6/02_writing_record/README.md).
 - [Earlier-model experiment](experiments/reciprocal-simplex-agentic-research/README.md), retained separately.
 

@@ -1,6 +1,6 @@
 # Reproducible simulation supplement
 
-[Download all saved sample arrays](https://github.com/MathisRost/agentic-ai-math/releases/download/astra-paper-2026-10-21/astra_simulation_data.zip). Extract the archive here; it supplies the `data/*.npz` files described below. The binary arrays live in a GitHub release so the Overleaf project stays focused on editable source. `data/array_manifest.json` records every size and SHA256.
+[Download all saved sample arrays](https://github.com/MathisRost/agentic-ai-math/archive/refs/heads/astra-paper-data-2026-10-21.zip). Extract the ZIP, then copy its `data/*.npz` files into this folder's `data/` directory. The binary arrays live on a separate GitHub data branch so the Overleaf project stays focused on editable source. `data/array_manifest.json` records every size and SHA256.
 
 The current paper is `../00_main_draft/reciprocal_simplex.tex`; `simulation_section.tex` is the original frozen section before the reader's normalization clarifications.
 
