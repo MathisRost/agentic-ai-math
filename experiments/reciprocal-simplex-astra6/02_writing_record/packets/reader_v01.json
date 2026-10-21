@@ -1,0 +1,32 @@
+{
+  "role": "reader",
+  "model": "gpt-6-astra",
+  "effort": "xhigh",
+  "fresh_context": true,
+  "allowed_files": [
+    {
+      "path": "paper-run/review/draft_v01.tex",
+      "sha256": "2cd01584032ac721ceb65a4eefcccec93287ae44f97b375171b4a23da2c00af2"
+    },
+    {
+      "path": "paper-run/review/simulation/figures/sampled_configurations.png",
+      "sha256": "8bc48a870f9587ad698d0cb6995b94fce85b1702400be71bfded4cdbbff5c9f7"
+    },
+    {
+      "path": "paper-run/review/simulation/figures/sampled_configurations.pdf",
+      "sha256": "9e7b62e2fc3a3df82aea1f85a533ad5abb208384af332d8d4b90c1da19e65ada"
+    },
+    {
+      "path": "paper-run/review/simulation/figures/correlations.png",
+      "sha256": "f740267af456f9e69fd346771e3649c6712b78e0f7eb681b334bad9b35c3a195"
+    },
+    {
+      "path": "paper-run/review/simulation/figures/correlations.pdf",
+      "sha256": "850125fddb12edb74476b308d5516e607f3803011276b41ef26f91b2993c375e"
+    }
+  ],
+  "audience": "Probabilists and statistics researchers who know measures, conditional expectation and Poisson processes. Do not assume factorial moment measures, spherical coarea or point-process realisability background.",
+  "scope": "Read the complete frozen manuscript in order as an independent first reader. Use the focused reader guide, not author conversations or earlier reviews. Identify concrete comprehension difficulties and suspected mathematical defects; do not silently supply missing explanations. No desired verdict.",
+  "output_directory": "paper-run/reader",
+  "no_delegation": true
+}

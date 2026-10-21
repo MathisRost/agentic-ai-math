@@ -1,4 +1,4 @@
-# Publish the presentation and its editable assets only.
+# Publish curated presentation, papers, tutorials, documentation and experiments.
 /*
 !/.gitignore
 !/README.md
@@ -13,3 +13,15 @@
 **/.DS_Store
 **/__pycache__/
 **/*.pyc
+
+!/00_presentation/
+!/01_papers/
+!/02_tutorial/
+!/03_documentation/
+**/build/
+**/qa/
+**/*.aux
+**/*.log
+**/*.out
+**/*.fls
+**/*.fdb_latexmk

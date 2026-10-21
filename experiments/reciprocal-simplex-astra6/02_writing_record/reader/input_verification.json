@@ -1,0 +1,30 @@
+{
+  "packet_sha256": "2acb69d46c6f65e421d3d54eb33aee084bcc53f2b0e0d02facc67075baf6d851",
+  "allowed_files": [
+    {
+      "path": "paper-run/review/draft_v01.tex",
+      "sha256": "2cd01584032ac721ceb65a4eefcccec93287ae44f97b375171b4a23da2c00af2",
+      "verified": true
+    },
+    {
+      "path": "paper-run/review/simulation/figures/sampled_configurations.png",
+      "sha256": "8bc48a870f9587ad698d0cb6995b94fce85b1702400be71bfded4cdbbff5c9f7",
+      "verified": true
+    },
+    {
+      "path": "paper-run/review/simulation/figures/sampled_configurations.pdf",
+      "sha256": "9e7b62e2fc3a3df82aea1f85a533ad5abb208384af332d8d4b90c1da19e65ada",
+      "verified": true
+    },
+    {
+      "path": "paper-run/review/simulation/figures/correlations.png",
+      "sha256": "f740267af456f9e69fd346771e3649c6712b78e0f7eb681b334bad9b35c3a195",
+      "verified": true
+    },
+    {
+      "path": "paper-run/review/simulation/figures/correlations.pdf",
+      "sha256": "850125fddb12edb74476b308d5516e607f3803011276b41ef26f91b2993c375e",
+      "verified": true
+    }
+  ]
+}

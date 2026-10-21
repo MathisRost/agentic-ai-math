@@ -1,0 +1,91 @@
+--- frozen_reader_draft_v01.tex
++++ final_manuscript.tex
+@@ -5,7 +5,7 @@
+ \usepackage{lmodern,microtype}
+ \usepackage[margin=29mm]{geometry}
+ \usepackage{amsmath,amssymb,amsthm,mathtools}
+-\usepackage{booktabs,graphicx}
++\usepackage{booktabs,graphicx,placeins}
+ \usepackage{xcolor}
+ \usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+ \numberwithin{equation}{section}
+@@ -29,6 +29,7 @@
+ \newcommand{\Mop}{\mathcal M}
+ \DeclareMathOperator{\adj}{adj}
+ \title{Exact reciprocal-simplex product densities\newline below a prescribed spatial scale}
++\hypersetup{pdftitle={Exact reciprocal-simplex product densities below a prescribed spatial scale}}
+ \author{}
+ \date{}
+ \begin{document}
+@@ -518,13 +519,13 @@
+ is
+ \begin{equation}
+  \dd x_1\cdots\dd x_4
+- =6\Delta_3(\omega_1,\ldots,\omega_4)R^8
++ =6V(\omega_1,\ldots,\omega_4)R^8
+        \dd z\dd R\prod_{i=1}^4\dd\omega_i,
+  \label{eq:chapron}
+ \end{equation}
+ where $\dd\omega$ is surface area measure on the unit sphere and
+-$\Delta_3$ is ordinary tetrahedron volume. Since
+-$V(x_1,\ldots,x_4)=R^3\Delta_3(\omega_1,\ldots,\omega_4)$, the Jacobian
++$V$ is the ordinary tetrahedron volume defined in \eqref{eq:simplex}. Since
++$V(x_1,\ldots,x_4)=R^3V(\omega_1,\ldots,\omega_4)$, the Jacobian
+ is $6VR^5$. Chapron attributes the Euclidean identity to Miles; we use
+ the displayed formula in Chapron, without making a separate attribution
+ claim based on the original Miles paper.
+@@ -1170,6 +1171,12 @@
+ The subtracted quantity is at most $JL/2\leq1/2$. Integrating over $v$ gives
+ the unnormalised accepted density $F_2/Q_2$; thus an accepted row contributes
+ $Q_2H_{2j}$. The auxiliary vertex is not an emitted cluster point.
++For every mark estimator we sum these contributions over all proposals
++and divide by the total proposal count. Rejected proposals contribute zero;
++the same complete rows enter the variance calculation. For example, with
++triple acceptance indicator $I$, the identity
++$\E[TIH_{3j}]=\int q_3(0,y)H_{3j}(y)\,dy$
++gives the required unnormalised integral.
+ The retained-parent intensity and the cluster size probabilities cancel
+ the ordered-selection factors exactly as in the proof. We therefore need
+ only sample marks for this local factorial experiment; we do not replace
+@@ -1188,10 +1195,21 @@
+ For each order we generated $524\,288$ independent sphere proposals. We also
+ generated $524\,288$ pair proposals and $524\,288$ triple proposals,
+ accepting $497\,387$ pair marks and $90\,470$ triple marks. Independent
+-reference streams used $2\,097\,152$ uniform relative configurations per
+-order to integrate bin volumes and reciprocal simplex sizes. These
+-reference samples are numerical integration data, separately labelled from
+-the process samples. The full factorial integral estimates are
++reference streams used $2\,097\,152$ independent uniform draws
++$U_i\in B(0,1)^{n-1}$ per order. With $v_n=(4\pi/3)^{n-1}$ and reference
++sample size $N$, the estimators
++\[
++ \widehat B_{nj}=\frac{v_n}{N}\sum_{i=1}^N H_{nj}(U_i),\qquad
++ \widehat J_{nj}=\frac{v_n}{N}\sum_{i=1}^N
++       \frac{H_{nj}(U_i)}{\Delta_n(0,U_i)}
++\]
++approximate the bin volume and its reciprocal-simplex integral. The summand
++in the second expression is set to zero outside the bin. The reference
++theory average is $a_n\widehat J_{nj}/(\lambda^n\widehat B_{nj})$;
++the empirical average uses the sampled factorial integral over
++$\lambda^n\widehat B_{nj}$. These reference draws are numerical integration
++data, separately labelled from the process samples.
++The full factorial integral estimates are
+ one half the sphere estimate plus one half the relevant correction estimate,
+ implementing the whole-law mixture without cross-component tuples.
+ 
+@@ -1269,11 +1287,10 @@
+ tuple and its contribution, all ordinary-window counts and nonempty point
+ clouds, and the reference sufficient statistics. A feasibility pilot was
+ kept separate; it led us to end the reported fourth-order bins at volume
+-$0.075$, since larger volumes were rare under the proposal. The simulation
+-does not truncate the theorem's domain, claim ergodicity, or compare the
+-construction with earthquake catalogues.
+-
+-
++$0.075$, since larger volumes were rare under the proposal.
++
++
++\FloatBarrier
+ \appendix
+ 
+ \section{Global densities and moments of the sphere process}

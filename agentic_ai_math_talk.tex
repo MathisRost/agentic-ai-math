@@ -225,7 +225,7 @@
   \vspace{1mm}
   \noindent\textbf{Function:} the model reads Lean goals and hypotheses. as output it proposes Lean tactics. Lean returns new proof states. This means it basically talks in Lean and gets Lean responses. \par
   \vspace{1mm}
-  \noindent\textbf{Additional Learning:} rhe model learns from proof attempts through reinforcement learning.\par
+  \noindent\textbf{Additional Learning:} the model learns from proof attempts through reinforcement learning.\par
   \vspace{1.5mm}
   \noindent{IMO 2024: 28/42 points, silver-medal level (AlphaProof: 3 problems; AlphaGeometry 2: 1).}\par
   \vspace{0mm}
@@ -462,66 +462,26 @@
   \vspace{1.5mm}
 \end{frame}
 
-\begin{frame}[t]{Step 1: Defining the problem}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.72\textwidth}
-      \raggedright\fontsize{9.5}{11}\selectfont
-      For $n\geq1$, the \textbf{factorial moment measure} is\par
-      \noindent\makebox[\linewidth][c]{$\displaystyle
-        \alpha^{(n)}(A):=\mathbb E\bigl[
-          \sum\nolimits_{(x_1,\ldots,x_n)\in X^n_{\ne}}
-          \mathbf 1_A(x_1,\ldots,x_n)\bigr].$}\par
-      Here $A\subseteq(\mathbb R^d)^n$ is Borel and $X^n_{\ne}$ contains
-      all ordered $n$-tuples of distinct points of $X$.\par
-      \vspace{2mm}
-
-      For pairwise disjoint $B_1,\ldots,B_n$,\par
-      \noindent\makebox[\linewidth][c]{$\displaystyle
-        \alpha^{(n)}(B_1\times\cdots\times B_n)
-        =\mathbb E[X(B_1)\cdots X(B_n)].$}\par
-      No independence is needed.\par
-      \vspace{2mm}
-
-      When it exists, the \textbf{product density} $\rho^{(n)}$ satisfies\par
-      \noindent\makebox[\linewidth][c]{$\displaystyle
-        \alpha^{(n)}(A)=\int_A\rho^{(n)}(x_1,\ldots,x_n)\,\mathrm dx_1\cdots\mathrm dx_n.$}\par
-      \vspace{2mm}
-
-      For small disjoint regions around $x_1,x_2$,\par
-      \noindent\makebox[\linewidth][c]{$\displaystyle
-        \mathbb E[X(B_1)X(B_2)]
-        \;\approx\;\rho^{(2)}(x_1,x_2)\,|B_1|\,|B_2|,$}\par
-      provided $\rho^{(2)}$ varies little across $B_1\times B_2$.
-    \end{column}
-    \begin{column}{0.25\textwidth}
-      \centering
-      \includegraphics[clip,width=\linewidth,height=59mm,keepaspectratio]{factorial_moment_regions.pdf}
-    \end{column}
-  \end{columns}
-  \note{For general processes, counts in disjoint regions may be dependent.
-    One motivation is to compare $\mathbb E[X(B_1)X(B_2)]$ with
-    $\mathbb E[X(B_1)]\mathbb E[X(B_2)]$ when both expected counts are positive.
-    The next slide introduces the corresponding local comparison through product densities.
-    The diagrams show independent homogeneous Poisson samples, with two nearby
-    disjoint regions above and six pairwise disjoint regions below.}
-\end{frame}
 
 \begin{frame}[t]{Step 1: Defining the Problem}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.67\textwidth}
       \raggedright\fontsize{9.5}{11}\selectfont
-      For a homogeneous Poisson process, independence gives\par
-      \vspace{1.5mm}
-      \noindent\makebox[\linewidth][c]{$\displaystyle
-        \rho^{(2)}(x_1,x_2)=\lambda^2,\qquad
-        \rho^{(n)}(x_1,\ldots,x_n)=\lambda^n.$}\par
-      \vspace{1.5mm}
-      For a stationary process with intensity $\rho^{(1)}=\lambda>0$,
-      compare its product density with this reference:\par
-      \vspace{1.5mm}
-      \noindent\makebox[\linewidth][c]{$\displaystyle
-        g_n(x_1,\ldots,x_n)=\frac{\rho^{(n)}(x_1,\ldots,x_n)}{\lambda^n}.$}\par
+      Under suitable assumptions, as disjoint sets $B_1,B_2$
+      shrink to $x_1,x_2$,\par
       \vspace{1mm}
+      \noindent\makebox[\linewidth][c]{$\displaystyle
+        \frac{\mathbb{E}[X(B_1)X(B_2)]}
+             {\mathbb{E}[X(B_1)]\,\mathbb{E}[X(B_2)]}
+        \longrightarrow g_2(x_1,x_2).$}\par
+           \vspace{1.5mm}
+      or more general for disjoint sets $B_1,B_2,\ldots , B_n$ shrinking to $x_1,..., x_n$ we have that  \par
+      \vspace{1mm}
+      \noindent\makebox[\linewidth][c]{$\displaystyle
+        \frac{\mathbb{E}[X(B_1)X(B_2)\cdots X(B_n)]}
+             {\mathbb{E}[X(B_1)]\,\mathbb{E}[X(B_2)]\cdots \mathbb{E}[X(B_n)]}
+        \longrightarrow g_n(x_1,x_2, \ldots , x_n).$}\par
+      \vspace{1.5mm}
       This is the \textbf{$n$-point correlation function}.\par
       \vspace{1mm}
       Compared with Poisson at the same intensity:\par
@@ -552,7 +512,6 @@
     No assertion that $g_2<1$ at all distances is intended.
     Both simulations use an outer buffer to give an exact restriction of the stationary process.}
 \end{frame}
-
 \begin{frame}[t]{Step 1: the precise problem}
 
   \noindent\begin{minipage}{\textwidth}

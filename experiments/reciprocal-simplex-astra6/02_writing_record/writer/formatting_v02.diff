@@ -1,0 +1,62 @@
+--- paper_v01.tex
++++ paper_v02.tex
+@@ -82,9 +82,11 @@
+ Fix a positive intensity $\lambda$ and a positive diameter $M$. Our main
+ result constructs a stationary simple point process on $\R^3$ for which
+ \[
+- \rho^{(2)}(x_1,x_2)=\frac{a_2}{D(x_1,x_2)},\qquad
+- \rho^{(3)}(x_1,x_2,x_3)=\frac{a_3}{A(x_1,x_2,x_3)},\qquad
+- \rho^{(4)}(x_1,x_2,x_3,x_4)=\frac{a_4}{V(x_1,x_2,x_3,x_4)}
++ \begin{aligned}
++ \rho^{(2)}(x_1,x_2)&=\frac{a_2}{D(x_1,x_2)},\\
++ \rho^{(3)}(x_1,x_2,x_3)&=\frac{a_3}{A(x_1,x_2,x_3)},\\
++ \rho^{(4)}(x_1,x_2,x_3,x_4)&=\frac{a_4}{V(x_1,x_2,x_3,x_4)}
++ \end{aligned}
+ \]
+ whenever the corresponding configuration is nondegenerate and has diameter
+ less than $M$, apart from Lebesgue-null sets. Here $D$, $A$ and $V$ are
+@@ -660,10 +662,16 @@
+                          &&\text{on }E_4(M).\label{eq:Y4}
+ \end{align}
+ For the first line,
+-$\int_0^\infty q^{1/2}e^{-3q/L^2}\dd q
+-=L^3\sqrt\pi/(6\sqrt3)$. The pair integral uses
+-$\int_{D^2/4}^\infty e^{-2q/L^2}\dd q
+-=(L^2/2)e^{-D^2/(2L^2)}$, and the triangle integral uses
++\[
++ \int_0^\infty q^{1/2}e^{-3q/L^2}\dd q
++ =L^3\sqrt\pi/(6\sqrt3).
++\]
++The pair integral uses
++\[
++ \int_{D^2/4}^\infty e^{-2q/L^2}\dd q
++ =(L^2/2)e^{-D^2/(2L^2)},
++\]
++and the triangle integral uses
+ $\int_\R e^{-h^2/L^2}\dd h=L\sqrt\pi$.
+ Thus $\lambda_Y,A_2,A_3,c$ are independent of the still-free scale $L$.
+ 
+@@ -753,7 +761,9 @@
+ \end{equation}
+ Indeed, the extra term integrates to $2\pi M^2\delta$, and the other
+ term is bounded by
+-$4\pi A_2\int_0^M d^3/(2L^2)\dd d$.
++\[
++ 4\pi A_2\int_0^M d^3/(2L^2)\dd d.
++\]
+ Integrating \eqref{eq:marginal-bound} proves $Q_3<\infty$.
+ No infinite quantities are subtracted in \eqref{eq:F-kernels}.
+ The lower bound $q_2\geq2B_LK_2$ yields
+@@ -881,9 +891,11 @@
+  \rho_C^{(4)}&=0
+                       &&\text{on }E_4(M).\label{eq:C4}
+ \end{align}
++\begingroup\emergencystretch=1em
+ Its full factorial expectation measures through order four have globally
+ finite-almost-everywhere densities, and its bounded-set count moments are
+-finite at every order.
++finite at every order.\par
++\endgroup
+ \end{proposition}
+ \begin{proof}
+ Consider a cluster of size $j$ and an ordered selection of $n\leq j$ of

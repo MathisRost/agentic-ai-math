@@ -1,0 +1,19 @@
+{
+  "kind": "manuscript_and_simulation",
+  "created_date": "2026-10-21",
+  "source_run": "20261020T164437Z_astra6",
+  "statement": "S1",
+  "statement_sha256": "1075eb6bd3d54d5e0ddec1a1adee1fd30e474accb715304f42c46f21176226e8",
+  "roles": [
+    "writer",
+    "coder",
+    "reader"
+  ],
+  "requested_model": "gpt-6-astra",
+  "requested_effort": "xhigh",
+  "source_inputs_manifest_sha256": "fe7280b0899ff97760394e5abbf2ee105c441d61a317a54b7797c6001a8412e3",
+  "sources_addition_manifest_sha256": "45e3e68dfd2b20d6125c2a17093d784bc075b5dbb6043df975cef9895c5752e5",
+  "new_research_attempts": false,
+  "publication_authorised": false,
+  "private_chain_of_thought_recorded": false
+}

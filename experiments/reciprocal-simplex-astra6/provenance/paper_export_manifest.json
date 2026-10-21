@@ -1,0 +1,511 @@
+{
+  "source_run": "20261021_paper_approach4",
+  "date": "2026-10-21",
+  "scope": "Public copies; private runtime identifiers and local paths redacted. Raw sample arrays published on the separate data branch.",
+  "files": [
+    {
+      "source": "manuscript/reciprocal_simplex.tex",
+      "destination": "experiments/reciprocal-simplex-astra6/00_main_draft/reciprocal_simplex.tex",
+      "source_sha256": "2627122efd6c1236ed77f9668c77e649e515c3d2265f488295ae63d22d90dba4",
+      "public_sha256": "2627122efd6c1236ed77f9668c77e649e515c3d2265f488295ae63d22d90dba4",
+      "sanitised": false
+    },
+    {
+      "source": "manuscript/reciprocal_simplex.pdf",
+      "destination": "experiments/reciprocal-simplex-astra6/00_main_draft/reciprocal_simplex.pdf",
+      "source_sha256": "e9203e78b60244b93fcebf726fa72af3b41fcc55d9810ad661158aa1d1540aec",
+      "public_sha256": "e9203e78b60244b93fcebf726fa72af3b41fcc55d9810ad661158aa1d1540aec",
+      "sanitised": false
+    },
+    {
+      "source": "manuscript/build.py",
+      "destination": "experiments/reciprocal-simplex-astra6/00_main_draft/build.py",
+      "source_sha256": "872d43b2ee8aac81f25da82a89846d733fbbc05754fa3c7028d78d86f4a182f9",
+      "public_sha256": "872d43b2ee8aac81f25da82a89846d733fbbc05754fa3c7028d78d86f4a182f9",
+      "sanitised": false
+    },
+    {
+      "source": "manuscript/simulation/figures/sampled_configurations.png",
+      "destination": "experiments/reciprocal-simplex-astra6/00_main_draft/simulation/figures/sampled_configurations.png",
+      "source_sha256": "72fa8695a7c82919c42b5ed815411fd1ec0a5e55262a3f917c2d21fc778a0976",
+      "public_sha256": "72fa8695a7c82919c42b5ed815411fd1ec0a5e55262a3f917c2d21fc778a0976",
+      "sanitised": false
+    },
+    {
+      "source": "manuscript/simulation/figures/sampled_configurations.pdf",
+      "destination": "experiments/reciprocal-simplex-astra6/00_main_draft/simulation/figures/sampled_configurations.pdf",
+      "source_sha256": "a995372745d5db749f2d997d61fbb84b029c339464cfb5a88bb6314b2003bdcd",
+      "public_sha256": "a995372745d5db749f2d997d61fbb84b029c339464cfb5a88bb6314b2003bdcd",
+      "sanitised": false
+    },
+    {
+      "source": "manuscript/simulation/figures/correlations.png",
+      "destination": "experiments/reciprocal-simplex-astra6/00_main_draft/simulation/figures/correlations.png",
+      "source_sha256": "f740267af456f9e69fd346771e3649c6712b78e0f7eb681b334bad9b35c3a195",
+      "public_sha256": "f740267af456f9e69fd346771e3649c6712b78e0f7eb681b334bad9b35c3a195",
+      "sanitised": false
+    },
+    {
+      "source": "manuscript/simulation/figures/correlations.pdf",
+      "destination": "experiments/reciprocal-simplex-astra6/00_main_draft/simulation/figures/correlations.pdf",
+      "source_sha256": "850125fddb12edb74476b308d5516e607f3803011276b41ef26f91b2993c375e",
+      "public_sha256": "850125fddb12edb74476b308d5516e607f3803011276b41ef26f91b2993c375e",
+      "sanitised": false
+    },
+    {
+      "source": "coder/code/sample_windows.py",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/code/sample_windows.py",
+      "source_sha256": "abfc79f5dc5d68e100d2b9a794ad5e325965a18a2a0dda47df850eea9c0f8894",
+      "public_sha256": "abfc79f5dc5d68e100d2b9a794ad5e325965a18a2a0dda47df850eea9c0f8894",
+      "sanitised": false
+    },
+    {
+      "source": "coder/code/plot_configurations.py",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/code/plot_configurations.py",
+      "source_sha256": "01df6e9823a3e1a0942ae18baf1fb82734cc17a262285ff67bf7b9f0c7729805",
+      "public_sha256": "01df6e9823a3e1a0942ae18baf1fb82734cc17a262285ff67bf7b9f0c7729805",
+      "sanitised": false
+    },
+    {
+      "source": "coder/code/experiment.py",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/code/experiment.py",
+      "source_sha256": "025c428dec74a07fbcaf8976f259ff7bd5ddb3d65ac7d968e69e34de61deeceb",
+      "public_sha256": "025c428dec74a07fbcaf8976f259ff7bd5ddb3d65ac7d968e69e34de61deeceb",
+      "sanitised": false
+    },
+    {
+      "source": "coder/code/report.py",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/code/report.py",
+      "source_sha256": "baef2987d5a730a4a132d5b6baf7a384b70700f4553a00313bd4bf2ca22cf750",
+      "public_sha256": "baef2987d5a730a4a132d5b6baf7a384b70700f4553a00313bd4bf2ca22cf750",
+      "sanitised": false
+    },
+    {
+      "source": "coder/figures/sampled_configurations_v02.png",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/figures/sampled_configurations_v02.png",
+      "source_sha256": "72fa8695a7c82919c42b5ed815411fd1ec0a5e55262a3f917c2d21fc778a0976",
+      "public_sha256": "72fa8695a7c82919c42b5ed815411fd1ec0a5e55262a3f917c2d21fc778a0976",
+      "sanitised": false
+    },
+    {
+      "source": "coder/figures/sampled_configurations_v02.pdf",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/figures/sampled_configurations_v02.pdf",
+      "source_sha256": "a995372745d5db749f2d997d61fbb84b029c339464cfb5a88bb6314b2003bdcd",
+      "public_sha256": "a995372745d5db749f2d997d61fbb84b029c339464cfb5a88bb6314b2003bdcd",
+      "sanitised": false
+    },
+    {
+      "source": "coder/figures/sampled_configurations.png",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/figures/sampled_configurations.png",
+      "source_sha256": "6f0fe18d3e1111f02aefe5a84a1c22654d80b45f642956647d881301bf6614bb",
+      "public_sha256": "6f0fe18d3e1111f02aefe5a84a1c22654d80b45f642956647d881301bf6614bb",
+      "sanitised": false
+    },
+    {
+      "source": "coder/figures/sampled_configurations.pdf",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/figures/sampled_configurations.pdf",
+      "source_sha256": "f804ee95160fa723b225bfc1e1ca7b73b9a2e173b566516ac4d8b2e20885a3b1",
+      "public_sha256": "f804ee95160fa723b225bfc1e1ca7b73b9a2e173b566516ac4d8b2e20885a3b1",
+      "sanitised": false
+    },
+    {
+      "source": "coder/figures/correlations.png",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/figures/correlations.png",
+      "source_sha256": "f740267af456f9e69fd346771e3649c6712b78e0f7eb681b334bad9b35c3a195",
+      "public_sha256": "f740267af456f9e69fd346771e3649c6712b78e0f7eb681b334bad9b35c3a195",
+      "sanitised": false
+    },
+    {
+      "source": "coder/figures/correlations.pdf",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/figures/correlations.pdf",
+      "source_sha256": "452075fd9990d22813ff02c68d9d3cd0029bdbcbbec5d308515b62cfc592d6f7",
+      "public_sha256": "452075fd9990d22813ff02c68d9d3cd0029bdbcbbec5d308515b62cfc592d6f7",
+      "sanitised": false
+    },
+    {
+      "source": "coder/notes/estimator_derivation.md",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/notes/estimator_derivation.md",
+      "source_sha256": "d51c3e85d66d5b6f421488bf6f9e08c92b4ef97bd04a166d5a450e1adbbdbe21",
+      "public_sha256": "d51c3e85d66d5b6f421488bf6f9e08c92b4ef97bd04a166d5a450e1adbbdbe21",
+      "sanitised": true
+    },
+    {
+      "source": "coder/notes/decision_summary.md",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/notes/decision_summary.md",
+      "source_sha256": "b697e019501c462dfa3879ed63e3951973586d48d834bffa3af35c22df2baf03",
+      "public_sha256": "b697e019501c462dfa3879ed63e3951973586d48d834bffa3af35c22df2baf03",
+      "sanitised": true
+    },
+    {
+      "source": "coder/notes/small_ball_sampler.md",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/notes/small_ball_sampler.md",
+      "source_sha256": "e32576f9cd427f2f4e54361eddc66c05eaa60d0cd97c7c7f59c7b9a592eef4f6",
+      "public_sha256": "e32576f9cd427f2f4e54361eddc66c05eaa60d0cd97c7c7f59c7b9a592eef4f6",
+      "sanitised": true
+    },
+    {
+      "source": "coder/data/additional_checks.json",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/data/additional_checks.json",
+      "source_sha256": "052830b658476bdc49160a70ed4f4ff6ea2090de56e73c53b855ca2eef325853",
+      "public_sha256": "052830b658476bdc49160a70ed4f4ff6ea2090de56e73c53b855ca2eef325853",
+      "sanitised": true
+    },
+    {
+      "source": "coder/data/ordinary_windows.json",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/data/ordinary_windows.json",
+      "source_sha256": "8a724f61563d71a35cac53f4d48b5a9989d1424d49a38d865192ffcc70fb755d",
+      "public_sha256": "8a724f61563d71a35cac53f4d48b5a9989d1424d49a38d865192ffcc70fb755d",
+      "sanitised": true
+    },
+    {
+      "source": "coder/data/results.json",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/data/results.json",
+      "source_sha256": "eb4cc31f0a013a492e474c9a765bd4378d0c0ec28a211dbb54a1f03a88b38a66",
+      "public_sha256": "eb4cc31f0a013a492e474c9a765bd4378d0c0ec28a211dbb54a1f03a88b38a66",
+      "sanitised": true
+    },
+    {
+      "source": "coder/data/results.csv",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/data/results.csv",
+      "source_sha256": "5b7f4461ad6072368ceede63be4c66abf51817a18aeacdf620fa3c7b73064f2d",
+      "public_sha256": "7fc049dcc25e70b2abeb3b08a6892765203606e8f7aa4c54af3d7d484577f19a",
+      "sanitised": true
+    },
+    {
+      "source": "coder/README.md",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/README.md",
+      "source_sha256": "dc304aaaa99ed8807e5115b0d066aa56f219462326352b6643b589de15535525",
+      "public_sha256": "e7caf447d7ce64c9aa5fb4cc8145a9e9e79b28b63f7a305892b5487b898f4fb5",
+      "sanitised": true
+    },
+    {
+      "source": "coder/simulation_section.tex",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/simulation_section.tex",
+      "source_sha256": "d9d09d7cc38aa48ca6e92b591412b91ac25c8c4355e7dbf57874d19dbc43f8c2",
+      "public_sha256": "d9d09d7cc38aa48ca6e92b591412b91ac25c8c4355e7dbf57874d19dbc43f8c2",
+      "sanitised": true
+    },
+    {
+      "source": "coder/results_table.tex",
+      "destination": "experiments/reciprocal-simplex-astra6/01_simulation/results_table.tex",
+      "source_sha256": "bd409cb0ebf90586223cbe2c5eeeb0204505cfeda8125a7d18be5b76fd0c61ed",
+      "public_sha256": "bd409cb0ebf90586223cbe2c5eeeb0204505cfeda8125a7d18be5b76fd0c61ed",
+      "sanitised": true
+    },
+    {
+      "source": "brief.md",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/brief.md",
+      "source_sha256": "2d3be46ca38cea25e7c55f732e2b70c68f36e0b20e806989bf2a9fbd685a1289",
+      "public_sha256": "2d3be46ca38cea25e7c55f732e2b70c68f36e0b20e806989bf2a9fbd685a1289",
+      "sanitised": true
+    },
+    {
+      "source": "decisions.md",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/decisions.md",
+      "source_sha256": "fcd565bb95f88324b34b237b93c57200d1c75b3508c1fcb415fc9dab9b845f9b",
+      "public_sha256": "fcd565bb95f88324b34b237b93c57200d1c75b3508c1fcb415fc9dab9b845f9b",
+      "sanitised": true
+    },
+    {
+      "source": "token_usage.md",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/token_usage.md",
+      "source_sha256": "586077bb1ffadc880a0abb8839c60f3ab2af884340df77da11e6fba56aeee9ae",
+      "public_sha256": "586077bb1ffadc880a0abb8839c60f3ab2af884340df77da11e6fba56aeee9ae",
+      "sanitised": true
+    },
+    {
+      "source": "run_manifest.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/run_manifest.json",
+      "source_sha256": "7ca339839a335b978609c6c8042e149c2460d413b5a241641c85552591f9be92",
+      "public_sha256": "7ca339839a335b978609c6c8042e149c2460d413b5a241641c85552591f9be92",
+      "sanitised": true
+    },
+    {
+      "source": "status.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/status.json",
+      "source_sha256": "91745d8a2f219e05fda4fbf25d97ec14402b35896abf336346fa07fa73e9d944",
+      "public_sha256": "91745d8a2f219e05fda4fbf25d97ec14402b35896abf336346fa07fa73e9d944",
+      "sanitised": true
+    },
+    {
+      "source": "review/integrated_revision.diff",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/review/integrated_revision.diff",
+      "source_sha256": "ef651cd33e2980dce5333eb2182ba321117c5fad8bd629e6d4dc9bcf10153773",
+      "public_sha256": "ef651cd33e2980dce5333eb2182ba321117c5fad8bd629e6d4dc9bcf10153773",
+      "sanitised": true
+    },
+    {
+      "source": "review/numerical_artifact_checks.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/review/numerical_artifact_checks.json",
+      "source_sha256": "282b52c2f9652aa2c3629764c98b7407623509f36f5e265c29dc44ef111a33b3",
+      "public_sha256": "282b52c2f9652aa2c3629764c98b7407623509f36f5e265c29dc44ef111a33b3",
+      "sanitised": true
+    },
+    {
+      "source": "review/draft_v01.tex",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/review/draft_v01.tex",
+      "source_sha256": "2cd01584032ac721ceb65a4eefcccec93287ae44f97b375171b4a23da2c00af2",
+      "public_sha256": "2cd01584032ac721ceb65a4eefcccec93287ae44f97b375171b4a23da2c00af2",
+      "sanitised": true
+    },
+    {
+      "source": "review/coordinator_mathematical_checks.md",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/review/coordinator_mathematical_checks.md",
+      "source_sha256": "8fc1dbbaee2da37d2bd8cd6b37236d8feba0422305eb244adce3e3671b6f4f43",
+      "public_sha256": "8fc1dbbaee2da37d2bd8cd6b37236d8feba0422305eb244adce3e3671b6f4f43",
+      "sanitised": true
+    },
+    {
+      "source": "review/outcome.md",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/review/outcome.md",
+      "source_sha256": "b1d4056a722b0862f42a4e02106448bb562a318b3d334ae609cae8ae245d5340",
+      "public_sha256": "b1d4056a722b0862f42a4e02106448bb562a318b3d334ae609cae8ae245d5340",
+      "sanitised": true
+    },
+    {
+      "source": "review/simulation/figures/sampled_configurations.png",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/review/simulation/figures/sampled_configurations.png",
+      "source_sha256": "8bc48a870f9587ad698d0cb6995b94fce85b1702400be71bfded4cdbbff5c9f7",
+      "public_sha256": "8bc48a870f9587ad698d0cb6995b94fce85b1702400be71bfded4cdbbff5c9f7",
+      "sanitised": false
+    },
+    {
+      "source": "review/simulation/figures/sampled_configurations.pdf",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/review/simulation/figures/sampled_configurations.pdf",
+      "source_sha256": "9e7b62e2fc3a3df82aea1f85a533ad5abb208384af332d8d4b90c1da19e65ada",
+      "public_sha256": "9e7b62e2fc3a3df82aea1f85a533ad5abb208384af332d8d4b90c1da19e65ada",
+      "sanitised": false
+    },
+    {
+      "source": "review/simulation/figures/correlations.png",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/review/simulation/figures/correlations.png",
+      "source_sha256": "f740267af456f9e69fd346771e3649c6712b78e0f7eb681b334bad9b35c3a195",
+      "public_sha256": "f740267af456f9e69fd346771e3649c6712b78e0f7eb681b334bad9b35c3a195",
+      "sanitised": false
+    },
+    {
+      "source": "review/simulation/figures/correlations.pdf",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/review/simulation/figures/correlations.pdf",
+      "source_sha256": "850125fddb12edb74476b308d5516e607f3803011276b41ef26f91b2993c375e",
+      "public_sha256": "850125fddb12edb74476b308d5516e607f3803011276b41ef26f91b2993c375e",
+      "sanitised": false
+    },
+    {
+      "source": "reader/usage_snapshot_v01.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/reader/usage_snapshot_v01.json",
+      "source_sha256": "48dd7b7374e66a8a23168124ce61b996f8c34817fcd61e2b1b5c0c86f5fe5adb",
+      "public_sha256": "b83226f24e438044a6a0d0fd68208ee82fabf73b3233fa41149e0cb07cf63236",
+      "sanitised": true
+    },
+    {
+      "source": "reader/review_v01.md",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/reader/review_v01.md",
+      "source_sha256": "f5b55b410d811b8903094f541dea8a86b82beb1bdc53b80b96de3ae5c3851cf7",
+      "public_sha256": "f5b55b410d811b8903094f541dea8a86b82beb1bdc53b80b96de3ae5c3851cf7",
+      "sanitised": true
+    },
+    {
+      "source": "reader/reading_stumbles_v01.md",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/reader/reading_stumbles_v01.md",
+      "source_sha256": "5aca1c40fa9238b412d07c1c75e673fef97005eccdfeb49f6879d1eae384c1d1",
+      "public_sha256": "5aca1c40fa9238b412d07c1c75e673fef97005eccdfeb49f6879d1eae384c1d1",
+      "sanitised": true
+    },
+    {
+      "source": "reader/coverage_v01.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/reader/coverage_v01.json",
+      "source_sha256": "361cbcc7c6c9f03381bc5ad957039bda47ab96a7abe5717ecc817e7eacae5894",
+      "public_sha256": "dbc06d25d2f076e3491d9f533ac7747c0a98b777058f383995c17098104fb231",
+      "sanitised": true
+    },
+    {
+      "source": "reader/preflight.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/reader/preflight.json",
+      "source_sha256": "d646491854643f81e3dcf94716a11991006d487e254af84bd8b726707c523178",
+      "public_sha256": "8e4dd32b38e2c66ada19fff46c2debaf76c194db414cfbb74fc6d4570870b515",
+      "sanitised": true
+    },
+    {
+      "source": "reader/reader_manifest_v01.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/reader/reader_manifest_v01.json",
+      "source_sha256": "b1ab81146d74d349a060087f2885b17e5f753dc711eb58da03c410b4c728abf6",
+      "public_sha256": "b1ab81146d74d349a060087f2885b17e5f753dc711eb58da03c410b4c728abf6",
+      "sanitised": true
+    },
+    {
+      "source": "reader/input_verification.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/reader/input_verification.json",
+      "source_sha256": "5b05284d486847b258a14dfb12e14667396b9d659562bd325f1d2cc8034b3679",
+      "public_sha256": "2e1009edf4b9c3ba0deeac8843e6eee15e8588895d2c002d84f5439b5ef72361",
+      "sanitised": true
+    },
+    {
+      "source": "packets/reader_v01.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/packets/reader_v01.json",
+      "source_sha256": "2acb69d46c6f65e421d3d54eb33aee084bcc53f2b0e0d02facc67075baf6d851",
+      "public_sha256": "f1ebe3a1c4e2a5ba0e013be6369a69523df1b3c8c82ea562245502adbeadea55",
+      "sanitised": true
+    },
+    {
+      "source": "packets/attachment.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/packets/attachment.json",
+      "source_sha256": "3f79f218c3ec6589c290d1c3258d88007d10c3e35dcf6a6833b17031d5eb56c5",
+      "public_sha256": "fba3c6acac9ad4283106c066a87b499e2930ae4072ba93c1db035de994776cd1",
+      "sanitised": true
+    },
+    {
+      "source": "packets/writer.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/packets/writer.json",
+      "source_sha256": "f4b59143d1b1f22590eda7b9d965e9add3b17263c45a699c3920fae610c6d33c",
+      "public_sha256": "dfd4c9d3f5398a8f31ad22f0aad2dd87b154208c6c5598221086a724f7389106",
+      "sanitised": true
+    },
+    {
+      "source": "packets/coder.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/packets/coder.json",
+      "source_sha256": "01aa65ccc8a2329fca64d961682f8fe8d7f758e15f2eb7119302e125d39c56ed",
+      "public_sha256": "3bf9696fb0bb74240d8f5b394bf72607acbbc20f51a7dc3bb2d00b3f46f9e56b",
+      "sanitised": true
+    },
+    {
+      "source": "packets/sources_v01.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/packets/sources_v01.json",
+      "source_sha256": "45e3e68dfd2b20d6125c2a17093d784bc075b5dbb6043df975cef9895c5752e5",
+      "public_sha256": "eb2fcb2f565e05de9d196c0be425df4f7ef6aed020aec25474df0a886a8f3798",
+      "sanitised": true
+    },
+    {
+      "source": "accounting/coder_metadata.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/accounting/coder_metadata.json",
+      "source_sha256": "40572444c32f44394278096c81fba6757ab0dc37adac5e1f2d52217357bcb87d",
+      "public_sha256": "9f48e433b97513c04982b6ecbe945ac67c277ff09c812b633aa6aaa145dd6202",
+      "sanitised": true
+    },
+    {
+      "source": "accounting/writer_metadata.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/accounting/writer_metadata.json",
+      "source_sha256": "0a6b2b7b3f586bebe8de6ca196e87258440e56656ba3ffa2e0e1747e3ece5aa4",
+      "public_sha256": "05770d52ab58d23047e1f92c0c5bcbe3148109a668077d335e28fd685ca8a6c9",
+      "sanitised": true
+    },
+    {
+      "source": "accounting/agent_turns.jsonl",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/accounting/agent_turns.jsonl",
+      "source_sha256": "f10567d70ffe87cd486aa9b90f85d8ad6dd2fb15b4f711e8b3ab51eaeda8e12a",
+      "public_sha256": "0261b00a183056bb02613830dd5921c40512cda1e3aeff79766db7eeb25c5a44",
+      "sanitised": true
+    },
+    {
+      "source": "accounting/coordinator_metadata.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/accounting/coordinator_metadata.json",
+      "source_sha256": "4bdb43f631a79bb1c07f998f654cdb5dea8d28f6ebc40cf974d58e62f4ceaaf2",
+      "public_sha256": "06af03f8af0984ed1d1bccaf1de7802dd0fa46a065f655dbf5bcc3d2b5b66af5",
+      "sanitised": true
+    },
+    {
+      "source": "accounting/reader_metadata.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/accounting/reader_metadata.json",
+      "source_sha256": "8c80a29630b16f045ac5b3efe041e949661c89c3b5a2ebfbc5dcee5130dfc14d",
+      "public_sha256": "ab05879c1eea39bfab4540f95a91755d45e477a942fb4951e81db3a6472b39bf",
+      "sanitised": true
+    },
+    {
+      "source": "writer/source_addition_integrity.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/writer/source_addition_integrity.json",
+      "source_sha256": "7a6792cc54f37f47e10ec42ce40a17685de1d9fd811ee5b8bef288fac41a50d1",
+      "public_sha256": "b1e6a175eb7ca4ffb935a66432cdc5a14076f0c07fbfd51edc8ba4d7e585048f",
+      "sanitised": true
+    },
+    {
+      "source": "writer/paper_v01.tex",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/writer/paper_v01.tex",
+      "source_sha256": "1445da724f1d284f2b721aa920b0059559fbf950c3578fa41fdb332fe0ded83d",
+      "public_sha256": "1445da724f1d284f2b721aa920b0059559fbf950c3578fa41fdb332fe0ded83d",
+      "sanitised": true
+    },
+    {
+      "source": "writer/preflight_v02.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/writer/preflight_v02.json",
+      "source_sha256": "1c85855a35e27f45dced62fb1cd97dcbffc7251791f1f6dca44c32510fe54055",
+      "public_sha256": "e1d174d7a0a0349a07d6a473b4f04de493eb5d10d65bd3fa88fe4c8e73ec4291",
+      "sanitised": true
+    },
+    {
+      "source": "writer/paper_v02.tex",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/writer/paper_v02.tex",
+      "source_sha256": "1520ca9dda84d1a8511b8517e6550eb5eb5152bb2974a8bcdd2e0f1fcf82fa60",
+      "public_sha256": "1520ca9dda84d1a8511b8517e6550eb5eb5152bb2974a8bcdd2e0f1fcf82fa60",
+      "sanitised": true
+    },
+    {
+      "source": "writer/formatting_v02.diff",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/writer/formatting_v02.diff",
+      "source_sha256": "142c8ccb1159069755521165d0c0cd903d3b7cbe8be5c051f6ca7b35098635f2",
+      "public_sha256": "142c8ccb1159069755521165d0c0cd903d3b7cbe8be5c051f6ca7b35098635f2",
+      "sanitised": true
+    },
+    {
+      "source": "writer/decisions.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/writer/decisions.json",
+      "source_sha256": "94a892bbdfb4d5a64f4444ee91105d364996fa973d59606f104e8edaa8661660",
+      "public_sha256": "94a892bbdfb4d5a64f4444ee91105d364996fa973d59606f104e8edaa8661660",
+      "sanitised": true
+    },
+    {
+      "source": "writer/paper.tex",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/writer/paper.tex",
+      "source_sha256": "1520ca9dda84d1a8511b8517e6550eb5eb5152bb2974a8bcdd2e0f1fcf82fa60",
+      "public_sha256": "1520ca9dda84d1a8511b8517e6550eb5eb5152bb2974a8bcdd2e0f1fcf82fa60",
+      "sanitised": true
+    },
+    {
+      "source": "writer/freeze_v02.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/writer/freeze_v02.json",
+      "source_sha256": "295a426d16763d5bf652dadd1b72cf420dfbdab8ee15b833c85518b4bfad38a9",
+      "public_sha256": "497dfbabeb344e58477d9b4e0ab00c295ce14352712b7de4fa6449480029082c",
+      "sanitised": true
+    },
+    {
+      "source": "writer/freeze_v01.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/writer/freeze_v01.json",
+      "source_sha256": "b9bc5b3adeb84936cf2d0e6ca7a16e4dfb6c52251db1f0d55b07ba4fab355351",
+      "public_sha256": "4ff39e02161c72bd5f05aec74dc1da300e06c15451da8f94b9554a5e42e53d93",
+      "sanitised": true
+    },
+    {
+      "source": "writer/outcome_v01.md",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/writer/outcome_v01.md",
+      "source_sha256": "4f659fa183d7507e39dcedc3b613ff6e8c49ed7512b0c2b24ede3ce40750ec6a",
+      "public_sha256": "4f659fa183d7507e39dcedc3b613ff6e8c49ed7512b0c2b24ede3ce40750ec6a",
+      "sanitised": true
+    },
+    {
+      "source": "writer/preflight.json",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/writer/preflight.json",
+      "source_sha256": "d2f77dbdec388816c167668db9ab770bc4e89ad4e67a6bdd06553abbe239b6a4",
+      "public_sha256": "a7ebbcf772a93c8234ad00592008d13478c28533b9f81839228b0183f96f0b07",
+      "sanitised": true
+    },
+    {
+      "source": "sources/verification.md",
+      "destination": "experiments/reciprocal-simplex-astra6/02_writing_record/sources/verification.md",
+      "source_sha256": "6d8e668c18a1af662ae105bc26b02abec1c121ea87da7ec51f456f0e70a0a767",
+      "public_sha256": "bcac2b4dab5d46ca0ffd49462a556d82cc323168a497de778dbdda0a63aa438d",
+      "sanitised": true
+    },
+    {
+      "source": "codex_research_setup_guide.tex",
+      "destination": "02_tutorial/codex_research_setup_guide.tex",
+      "source_sha256": "77dfe90ebe7f0b41cb6515363c8150f49d9f3db16fe124dbb28cc6195c45820a",
+      "public_sha256": "77dfe90ebe7f0b41cb6515363c8150f49d9f3db16fe124dbb28cc6195c45820a",
+      "sanitised": false
+    },
+    {
+      "source": "codex_research_setup_guide.pdf",
+      "destination": "02_tutorial/codex_research_setup_guide.pdf",
+      "source_sha256": "673072029bef2fe6af9af12da299e6cbbfe462db26508ee2b0c79f6fd6e97deb",
+      "public_sha256": "673072029bef2fe6af9af12da299e6cbbfe462db26508ee2b0c79f6fd6e97deb",
+      "sanitised": false
+    }
+  ]
+}
